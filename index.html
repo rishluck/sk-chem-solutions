@@ -519,12 +519,16 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
 .par-divider{height:1px;background:var(--bdr);margin:3rem 0}
 .par-sub-h{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.8vw,2.2rem);
   font-weight:300;color:var(--ink);margin-bottom:1.5rem;font-style:italic}
-.cli-logo-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:.65rem}
-.clog{background:var(--mint);border:1px solid var(--bdr);border-radius:10px;
-  padding:.9rem .75rem;text-align:center;transition:all .35s;cursor:default}
-.clog:hover{background:var(--pale);border-color:var(--sage);transform:translateY(-3px)}
-.clog-name{font-size:12.5px;font-weight:600;color:var(--ink);display:block;line-height:1.3}
-.clog-tag{font-size:10px;color:var(--tl);font-weight:300;display:block;margin-top:3px}
+.cli-logo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
+.clog{background:var(--white);border:1px solid var(--bdr);border-radius:12px;
+  padding:1.1rem 1rem;text-align:center;transition:all .35s;cursor:default;display:flex;flex-direction:column;align-items:center;gap:.4rem}
+.clog:hover{background:var(--pale);border-color:var(--sage);transform:translateY(-3px);box-shadow:0 6px 20px rgba(42,94,64,.08)}
+.clog-logo-wrap{height:44px;display:flex;align-items:center;justify-content:center;width:100%}
+.clog-logo-img{max-height:38px;max-width:120px;width:auto;object-fit:contain;filter:grayscale(20%);transition:filter .3s}
+.clog:hover .clog-logo-img{filter:grayscale(0%)}
+.clog-logo-fb{display:none;font-weight:700;font-size:13px;color:var(--ink)}
+.clog-name{font-size:11.5px;font-weight:600;color:var(--ink);display:block;line-height:1.3}
+.clog-tag{font-size:10px;color:var(--tl);font-weight:300;display:block}
 
 /* ── INDUSTRY DETAIL PANEL ── */
 .ic{cursor:pointer}
@@ -1033,16 +1037,38 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
       <div class="par-sub-h">Proudly serving Sri Lanka's<br>leading manufacturers</div>
     </div>
     <div class="cli-logo-grid rv d1">
-      <div class="clog"><span class="clog-name">Ansel Lanka</span><span class="clog-tag">Rubber &amp; Latex</span></div>
-      <div class="clog"><span class="clog-name">NBC</span><span class="clog-tag">Rubber &amp; Latex</span></div>
-      <div class="clog"><span class="clog-name">Link Natural Products</span><span class="clog-tag">Personal Care</span></div>
-      <div class="clog"><span class="clog-name">ACE Healthcare</span><span class="clog-tag">Pharmaceutical</span></div>
-      <div class="clog"><span class="clog-name">Bellows</span><span class="clog-tag">Rubber</span></div>
-      <div class="clog"><span class="clog-name">Janet Lanka</span><span class="clog-tag">Personal Care</span></div>
-      <div class="clog"><span class="clog-name">Harumi Holdings</span><span class="clog-tag">Manufacturing</span></div>
-      <div class="clog"><span class="clog-name">4 Ever</span><span class="clog-tag">Personal Care</span></div>
-      <div class="clog"><span class="clog-name">Rubber Plantations</span><span class="clog-tag">Rubber &amp; Latex</span></div>
-      <div class="clog"><span class="clog-name">Textile Plants</span><span class="clog-tag">Textile Washing</span></div>
+      <div class="clog">
+        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/ansell_logo.ashx.png" alt="Ansell" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">Ansell</span></div>
+        <span class="clog-name">Ansell Lanka</span><span class="clog-tag">Rubber &amp; Latex</span>
+      </div>
+      <div class="clog">
+        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/logo-2.png" alt="NBC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">NBC</span></div>
+        <span class="clog-name">NBC</span><span class="clog-tag">Rubber &amp; Latex</span>
+      </div>
+      <div class="clog">
+        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/bellose-logo-blk.png" alt="Bellosé" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">Bellosé</span></div>
+        <span class="clog-name">Bellosé</span><span class="clog-tag">Personal Care</span>
+      </div>
+      <div class="clog">
+        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/link-natural-logo.svg" alt="Link Natural" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">Link Natural</span></div>
+        <span class="clog-name">Link Natural</span><span class="clog-tag">Personal Care &amp; Pharma</span>
+      </div>
+      <div class="clog">
+        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/harumi-holdings-pvt-ltd-314151.jpg" alt="Dreamron" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">Dreamron</span></div>
+        <span class="clog-name">Dreamron</span><span class="clog-tag">Personal Care</span>
+      </div>
+      <div class="clog">
+        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/Janet_Logos_1_-02.png.avif" alt="Janet" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">Janet</span></div>
+        <span class="clog-name">Janet Lanka</span><span class="clog-tag">Personal Care</span>
+      </div>
+      <div class="clog">
+        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/logo.webp" alt="4rever Skin Naturals" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">4rever</span></div>
+        <span class="clog-name">4rever Skin Naturals</span><span class="clog-tag">Personal Care</span>
+      </div>
+      <div class="clog">
+        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/sm-logo.png" alt="ACE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">ACE</span></div>
+        <span class="clog-name">ACE</span><span class="clog-tag">Pharmaceutical</span>
+      </div>
     </div>
     <p style="font-size:12px;color:var(--tl);font-style:italic;margin-top:1rem;font-weight:300;text-align:center">And many more trusted manufacturing partners across Sri Lanka.</p>
 
