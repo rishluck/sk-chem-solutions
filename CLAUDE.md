@@ -6,7 +6,27 @@ Static website for **S.K. Chem Solutions** — a Sri Lankan B2B chemical raw mat
 ## Files
 - `index.html` — Full homepage (HTML + CSS + JS, single file)
 - `industry.html` — Industry detail page (URL param `?ind=rubber` etc.)
-- `Images/` — Any local assets
+- `Images/All/` — General use images (hero, nature/greenery)
+- `Images/Industries/Personal Care/` — Personal care lifestyle photos
+- `Images/Industries/Home Care/` — Home care product photos
+- `Images/Industries/Food Industry/` — Food & beverage photos
+- `Images/Gallery/` — Charity, Events, Office, Warehouse (folders exist, images TBD)
+- `Images/Partners/` — Global, Local (folders exist, images TBD)
+- `Images/Products/` — Product photos (TBD)
+
+## Real Images in Use
+| File | Used In |
+|------|---------|
+| `Images/All/hero.jpg` | Homepage hero, rubber industry card, flagship card 1, rubber industry.html hero |
+| `Images/All/closeup-shot-trees-greenery-...jpg` | About section image |
+| `Images/All/green-plant-leaves-with-blue-sky-background.jpg` | Sustainability section background |
+| `Images/All/young-woman-smelling-leaf-forest.jpg` | Personal Care card, personal industry hero, shampoo service row |
+| `Images/Industries/Personal Care/front-view-blonde-lady-...jpg` | Premium Skincare service row |
+| `Images/Industries/Personal Care/natural-self-care-product.jpg` | Natural Beauty service row |
+| `Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg` | Home Care card, home industry hero, dishwashing service row |
+| `Images/Industries/Food Industry/orange-coffee-cocktail-white-surface.jpg` | Food card (flagship card 2), food industry hero, beverage service row |
+| `Images/Industries/Food Industry/assortment-tasty-sugary-...jpg` | Food industry card (homepage), bakery service row |
+| `Images/Industries/Food Industry/cupcake-with-cherries-...jpg` | Natural sweetening service row |
 
 ## Live Site
 - GitHub repo: `https://github.com/rishluck/sk-chem-solutions.git`
