@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industry — S.K. Chem Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:#FAF8F4;color:#1C3829;overflow-x:hidden}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{text-decoration:none;color:inherit}
+button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:none}
+
+:root{
+  --ink:#1C3829;--leaf:#2A5E40;--mid:#3A7D58;--sage:#5C9470;--fresh:#4CAF76;
+  --pale:#E6F0E9;--mint:#EEF5F0;--cream:#FAF8F4;--white:#fff;--bdr:#D4E4D9;
+  --tm:#4A6654;--tl:#7A9688;
+}
+.W{max-width:1300px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem)}
+.sec{padding:clamp(4rem,8vw,7rem) 0}
+
+/* PROGRESS */
+#prog{position:fixed;top:0;left:0;right:0;height:2px;z-index:9999;
+  background:var(--fresh);transform-origin:left;transform:scaleX(0);pointer-events:none}
+
+/* NAV */
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;
+  padding:0 clamp(1.5rem,4vw,3.5rem);height:70px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(28,56,41,.96);backdrop-filter:blur(20px)}
+.nav-left,.nav-right{display:flex;gap:2rem;list-style:none;flex:1}
+.nav-right{justify-content:flex-end}
+.nav-left a,.nav-right a{font-size:12px;font-weight:400;color:rgba(255,255,255,.75);
+  letter-spacing:.8px;text-transform:uppercase;transition:color .3s}
+.nav-left a:hover,.nav-right a:hover{color:#fff}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;
+  color:#fff;letter-spacing:.5px;text-align:center;white-space:nowrap}
+.nav-brand span{display:block;font-size:8px;font-weight:300;letter-spacing:2px;
+  color:rgba(255,255,255,.5);text-transform:uppercase;margin-top:1px}
+.n-cta-pill{padding:8px 20px;border:1px solid rgba(255,255,255,.3);border-radius:50px;
+  font-size:11px;font-weight:500;color:#fff;letter-spacing:.8px;text-transform:uppercase;transition:all .3s}
+.n-cta-pill:hover{background:var(--fresh);border-color:var(--fresh)}
+.hbg{display:none;flex-direction:column;gap:5px;padding:4px}
+.hbg span{width:22px;height:1px;background:#fff;display:block}
+.mob{display:none;position:fixed;top:70px;left:0;right:0;z-index:899;
+  background:rgba(28,56,41,.97);backdrop-filter:blur(20px);
+  flex-direction:column;transform:translateY(-110%);opacity:0;pointer-events:none;transition:all .35s}
+.mob.open{transform:none;opacity:1;pointer-events:all}
+.mob a{display:block;padding:14px clamp(1.5rem,4vw,3.5rem);font-size:15px;
+  color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.05)}
+.mob a:last-child{color:var(--fresh);border:none}
+
+/* HERO */
+#ih{height:75vh;min-height:540px;position:relative;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:flex-end;padding-top:70px}
+.ih-bg{position:absolute;inset:0}
+.ih-bg img{width:100%;height:100%;object-fit:cover}
+.ih-overlay{position:absolute;inset:0;
+  background:linear-gradient(160deg,rgba(10,22,14,.82) 0%,rgba(28,56,41,.5) 50%,rgba(15,32,20,.78) 100%)}
+.ih-content{position:relative;z-index:2;padding:0 clamp(1.5rem,5vw,4rem) clamp(3rem,5vw,4.5rem)}
+.ih-breadcrumb{display:flex;align-items:center;gap:.5rem;margin-bottom:1.75rem;
+  font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.4)}
+.ih-breadcrumb a{color:rgba(255,255,255,.4);transition:color .3s}
+.ih-breadcrumb a:hover{color:var(--fresh)}
+.ih-breadcrumb .sep{color:rgba(255,255,255,.2)}
+.ih-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:10px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;color:var(--fresh);
+  margin-bottom:1.1rem;padding:5px 14px;border-radius:50px;
+  border:1px solid rgba(76,175,118,.3);background:rgba(76,175,118,.08);width:fit-content}
+.ih-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,8vw,7rem);
+  font-weight:300;color:#fff;line-height:.92;margin-bottom:1.25rem}
+.ih-h1 em{font-style:italic;color:rgba(255,255,255,.8)}
+.ih-tagline{font-size:clamp(13px,1.4vw,15px);color:rgba(255,255,255,.5);
+  font-weight:300;max-width:500px;line-height:1.8}
+
+/* OVERVIEW */
+#ind-ov{background:var(--cream)}
+.ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,7rem);align-items:start}
+.ov-eyebrow{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--mid);margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
+.ov-eyebrow::before{content:'';width:28px;height:1px;background:var(--fresh)}
+.ov-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);
+  font-weight:300;color:var(--ink);line-height:1.15;margin-bottom:1.5rem}
+.ov-h em{font-style:italic;color:var(--mid)}
+.ov-p{font-size:15px;color:var(--tm);font-weight:300;line-height:1.95;margin-bottom:1rem}
+.ov-stats{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.75rem}
+.ov-stat{padding:1.1rem 1rem;background:var(--white);border:1px solid var(--bdr);
+  border-radius:10px;text-align:center;transition:all .3s}
+.ov-stat:hover{border-color:var(--fresh);background:var(--mint)}
+.ov-stat-n{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;
+  color:var(--ink);display:block;line-height:1}
+.ov-stat-l{font-size:11px;color:var(--tl);font-weight:300;display:block;margin-top:.3rem}
+.ov-quick{background:var(--ink);border-radius:16px;padding:2.25rem 2rem}
+.ov-quick-h{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;
+  color:#fff;margin-bottom:1.5rem;font-style:italic}
+.ov-q-item{display:flex;align-items:flex-start;gap:.85rem;padding:.85rem 0;
+  border-bottom:1px solid rgba(255,255,255,.07)}
+.ov-q-item:last-child{border:none}
+.ov-q-ico{font-size:1.15rem;flex-shrink:0;margin-top:2px}
+.ov-q-t{font-size:13.5px;font-weight:600;color:#fff;display:block;margin-bottom:3px}
+.ov-q-s{font-size:12px;color:rgba(255,255,255,.48);font-weight:300;line-height:1.65}
+
+/* CHEMICALS */
+#ind-chem{background:var(--white)}
+.chem-head{text-align:center;padding:clamp(3rem,6vw,5rem) 0 0;margin-bottom:3rem}
+.chem-eyebrow{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
+  color:var(--mid);margin-bottom:1rem;display:inline-flex;align-items:center;gap:.75rem}
+.chem-eyebrow::before,.chem-eyebrow::after{content:'';width:28px;height:1px;background:var(--fresh)}
+.chem-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);
+  font-weight:300;color:var(--ink);line-height:1.15}
+.chem-h em{font-style:italic;color:var(--mid)}
+.chem-row{display:grid;grid-template-columns:1fr 1fr;min-height:500px;margin-bottom:3px}
+.chem-row.rev .chem-img{order:2}.chem-row.rev .chem-txt{order:1}
+.chem-img{position:relative;overflow:hidden;min-height:420px}
+.chem-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.chem-img:hover img{transform:scale(1.05)}
+.chem-img-ov{position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(28,56,41,.18),transparent)}
+.chem-txt{padding:clamp(2.5rem,6vw,4.5rem) clamp(2rem,5vw,4rem);
+  display:flex;flex-direction:column;justify-content:center;background:var(--cream)}
+.chem-formula-badge{display:inline-flex;align-items:center;
+  font-family:monospace;font-size:11.5px;color:var(--mid);
+  background:var(--mint);border:1px solid var(--bdr);border-radius:50px;
+  padding:5px 16px;margin-bottom:1.5rem;width:fit-content;letter-spacing:.5px}
+.chem-name{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.2rem);
+  font-weight:300;color:var(--ink);line-height:1.05;margin-bottom:1.25rem}
+.chem-name em{font-style:italic;color:var(--mid)}
+.chem-desc{font-size:14.5px;color:var(--tm);font-weight:300;line-height:1.95;margin-bottom:1.75rem}
+.chem-use-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.75rem}
+.chem-use-tag{font-size:11px;padding:4px 12px;border-radius:50px;
+  background:var(--pale);color:var(--leaf);border:1px solid #c0d9c9;font-weight:400}
+.chem-specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1.75rem}
+.chem-spec{background:var(--white);border:1px solid var(--bdr);border-radius:8px;padding:.65rem .9rem}
+.chem-spec strong{display:block;font-size:9px;font-weight:700;letter-spacing:1px;
+  text-transform:uppercase;color:var(--mid);margin-bottom:3px}
+.chem-spec span{font-size:13px;color:var(--tm);font-weight:300}
+.chem-supplier{display:inline-flex;align-items:center;gap:.75rem;
+  padding:.85rem 1.25rem;background:var(--ink);border-radius:10px}
+.chem-sup-flag{font-size:1.4rem}
+.chem-sup-txt strong{font-size:13.5px;font-weight:600;color:#fff;display:block}
+.chem-sup-txt span{font-size:11.5px;color:rgba(255,255,255,.45);font-weight:300}
+
+/* APPLICATIONS */
+#ind-apps{background:var(--ink)}
+.apps-head{text-align:center;margin-bottom:3.5rem}
+.apps-eyebrow{display:block;font-size:10px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--fresh);margin-bottom:1rem}
+.apps-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);
+  font-weight:300;color:#fff;line-height:1.15}
+.apps-h em{font-style:italic;color:rgba(255,255,255,.65)}
+.apps-grid{display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1px;background:rgba(255,255,255,.06)}
+.app-card{padding:2.25rem 2rem;background:var(--ink);transition:background .35s;cursor:default}
+.app-card:hover{background:rgba(255,255,255,.04)}
+.app-ico{font-size:2rem;display:block;margin-bottom:1.1rem}
+.app-t{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;
+  color:#fff;margin-bottom:.65rem;line-height:1.2}
+.app-s{font-size:13px;color:rgba(255,255,255,.48);font-weight:300;line-height:1.8}
+
+/* CTA */
+#ind-cta{background:var(--leaf);padding:clamp(4rem,8vw,6rem) 0;position:relative;overflow:hidden}
+#ind-cta::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 70% 80% at 80% 50%,rgba(76,175,118,.2),transparent);
+  pointer-events:none}
+.cta-in{position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto}
+.cta-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);
+  color:#fff;font-weight:300;line-height:1.2;margin-bottom:1rem}
+.cta-h em{font-style:italic}
+.cta-p{font-size:14px;color:rgba(255,255,255,.58);font-weight:300;margin-bottom:2rem;line-height:1.8}
+.cta-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
+.btn-white{display:inline-flex;align-items:center;gap:7px;padding:14px 30px;border-radius:50px;
+  background:#fff;color:var(--ink);font-size:13px;font-weight:600;transition:all .35s}
+.btn-white:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.2)}
+.btn-ghost-w{display:inline-flex;align-items:center;gap:7px;padding:14px 30px;border-radius:50px;
+  background:rgba(255,255,255,.1);color:#fff;font-size:13px;font-weight:400;
+  border:1px solid rgba(255,255,255,.25);transition:all .35s}
+.btn-ghost-w:hover{background:rgba(255,255,255,.18);transform:translateY(-3px)}
+
+/* FOOTER */
+footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;
+  padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.ft-logo{display:flex;align-items:center;gap:.75rem;margin-bottom:.9rem}
+.ft-mark{width:36px;height:36px;border-radius:8px;
+  background:linear-gradient(135deg,var(--mid),var(--fresh));
+  display:flex;align-items:center;justify-content:center;
+  font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:#fff}
+.ft-name{font-family:'Cormorant Garamond',serif;font-size:18px;color:#fff;font-weight:400}
+.ft-tag{font-size:13px;color:rgba(255,255,255,.4);font-weight:300;line-height:1.75;max-width:260px}
+.ft-col h5{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  color:rgba(255,255,255,.25);margin-bottom:.85rem}
+.ft-col ul{list-style:none}.ft-col li{margin-bottom:.4rem}
+.ft-col a{font-size:13px;color:rgba(255,255,255,.45);font-weight:300;transition:color .3s}
+.ft-col a:hover{color:var(--fresh)}
+.ft-btm{display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem;padding-top:1.75rem}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.25);font-weight:300}
+.ft-pills{display:flex;gap:.5rem;flex-wrap:wrap}
+.ft-pill{font-size:11px;padding:4px 10px;border-radius:50px;
+  background:rgba(255,255,255,.04);color:rgba(255,255,255,.4);
+  border:1px solid rgba(255,255,255,.07)}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
+.rv.fl{transform:translateX(-30px)}.rv.fr{transform:translateX(30px)}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}
+.rv.on{opacity:1;transform:none}
+
+/* ── MOTION GRAPHICS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes orbFloat{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-20px) scale(1.04)}}
+@keyframes orbPulse{0%,100%{opacity:1}50%{opacity:.55}}
+@keyframes shimLine{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+@keyframes spinSlow{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+@keyframes popIn{from{transform:scale(.8);opacity:0}to{transform:scale(1);opacity:1}}
+
+/* Page fade in */
+body{animation:fadeIn .5s ease both}
+
+/* Hero orbs */
+.ih-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:1}
+.ih-orb-1{width:520px;height:520px;top:-15%;right:2%;
+  background:radial-gradient(circle,rgba(76,175,118,.13) 0%,transparent 65%);
+  animation:orbFloat 11s ease-in-out infinite,orbPulse 11s ease-in-out infinite}
+.ih-orb-2{width:340px;height:340px;bottom:-5%;left:-5%;
+  background:radial-gradient(circle,rgba(76,175,118,.1) 0%,transparent 65%);
+  animation:orbFloat 14s ease-in-out infinite reverse,orbPulse 14s ease-in-out infinite}
+.ih-orb-3{width:200px;height:200px;top:42%;left:38%;
+  background:radial-gradient(circle,rgba(76,175,118,.07) 0%,transparent 65%);
+  animation:orbFloat 8s ease-in-out infinite 1.5s}
+
+/* Animated shim line at hero bottom */
+.ih-shim-line{position:absolute;bottom:0;left:0;right:0;height:2px;z-index:2;
+  background:linear-gradient(90deg,transparent 0%,var(--fresh) 50%,transparent 100%);
+  background-size:200% 100%;animation:shimLine 3.5s ease-in-out infinite}
+
+/* Floating formula text on hero */
+.ih-float-formula{position:absolute;right:clamp(1.5rem,4vw,3.5rem);top:50%;
+  transform:translateY(-50%);z-index:2;
+  font-family:monospace;font-size:11px;letter-spacing:3px;
+  color:rgba(76,175,118,.35);writing-mode:vertical-lr;
+  opacity:0;animation:fadeIn 1s ease 1.2s forwards}
+
+/* Decorative ring on hero */
+.ih-ring{position:absolute;width:320px;height:320px;border-radius:50%;
+  border:1px solid rgba(76,175,118,.08);bottom:10%;left:20%;z-index:1;
+  animation:spinSlow 40s linear infinite}
+.ih-ring::before{content:'';position:absolute;inset:30px;border-radius:50%;
+  border:1px solid rgba(76,175,118,.05)}
+
+/* Nav brand hover */
+.nav-brand{transition:opacity .3s}
+.nav-brand:hover{opacity:.8}
+
+/* Chem row entrance */
+.chem-row{opacity:0;transform:translateY(30px);
+  transition:opacity .8s ease,transform .8s ease}
+.chem-row.vis{opacity:1;transform:none}
+
+/* App card staggered */
+.app-card{opacity:0;transform:translateY(20px);
+  transition:opacity .6s ease,transform .6s ease}
+.app-card.vis{opacity:1;transform:none}
+
+/* Animated stat items */
+.ov-stat{opacity:0;transform:translateY(16px);
+  transition:opacity .6s ease,transform .6s ease}
+.ov-stat.vis{opacity:1;transform:none}
+
+/* Shimmer on chem formula badge */
+.chem-formula-badge{
+  background-size:200% auto;
+  animation:shimLine 4s ease-in-out infinite}
+
+/* Scroll indicator */
+.ih-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
+  z-index:2;display:flex;flex-direction:column;align-items:center;gap:.5rem;
+  opacity:0;animation:fadeIn .8s ease 1.4s forwards}
+.ih-scroll-line{width:1px;height:48px;background:rgba(255,255,255,.25);
+  animation:scrollLine 2s ease-in-out infinite}
+.ih-scroll span{font-size:9px;color:rgba(255,255,255,.35);letter-spacing:2px;text-transform:uppercase}
+@keyframes scrollLine{0%,100%{transform:scaleY(1);opacity:.3}50%{transform:scaleY(.45);opacity:.8}}
+
+@media(max-width:960px){
+  .nav-left,.nav-right,.n-cta-pill{display:none}.hbg{display:flex}.mob{display:flex}
+  .ov-grid,.chem-row{grid-template-columns:1fr}
+  .chem-row.rev .chem-img,.chem-row.rev .chem-txt{order:unset}
+  .apps-grid{grid-template-columns:1fr 1fr}
+  .ft-grid{grid-template-columns:1fr 1fr}
+  .ih-h1{font-size:3.5rem}
+}
+@media(max-width:600px){
+  .apps-grid,.ft-grid{grid-template-columns:1fr}
+  .chem-specs-grid{grid-template-columns:1fr}
+  .ov-stats{grid-template-columns:1fr 1fr}
+}
+</style>
+</head>
+<body>
+
+<div id="prog"></div>
+
+<nav id="nav">
+  <ul class="nav-left">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="index.html#flagship">Products</a></li>
+    <li><a href="index.html#industries">Industries</a></li>
+  </ul>
+  <a href="index.html" class="nav-brand">S.K. Chem Solutions<span>Battaramulla · Est. 2017</span></a>
+  <ul class="nav-right">
+    <li><a href="index.html#partners">Partners</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#contact" class="n-cta-pill">Contact Us</a></li>
+  </ul>
+  <button class="hbg" id="hbg"><span></span><span></span><span></span></button>
+</nav>
+<div class="mob" id="mob">
+  <a href="index.html#about" onclick="cm()">About</a>
+  <a href="index.html#flagship" onclick="cm()">Products</a>
+  <a href="index.html#industries" onclick="cm()">Industries</a>
+  <a href="index.html#partners" onclick="cm()">Partners</a>
+  <a href="index.html#gallery" onclick="cm()">Gallery</a>
+  <a href="index.html#contact" onclick="cm()">Contact Us →</a>
+</div>
+
+<!-- HERO -->
+<section id="ih">
+  <div class="ih-bg"><img id="ih-img" src="" alt=""></div>
+  <div class="ih-overlay"></div>
+  <div class="ih-orb ih-orb-1"></div>
+  <div class="ih-orb ih-orb-2"></div>
+  <div class="ih-orb ih-orb-3"></div>
+  <div class="ih-ring"></div>
+  <div class="ih-float-formula" id="ih-float-formula"></div>
+  <div class="ih-shim-line"></div>
+  <div class="ih-scroll"><span>Scroll</span><div class="ih-scroll-line"></div></div>
+  <div class="ih-content">
+    <div class="ih-breadcrumb">
+      <a href="index.html">Home</a>
+      <span class="sep">›</span>
+      <a href="index.html#industries">Industries</a>
+      <span class="sep">›</span>
+      <span id="ih-bc">—</span>
+    </div>
+    <div class="ih-badge" id="ih-badge"></div>
+    <h1 class="ih-h1" id="ih-h1"></h1>
+    <p class="ih-tagline" id="ih-tagline"></p>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
+<section id="ind-ov" class="sec">
+  <div class="W">
+    <div class="ov-grid">
+      <div class="rv fl">
+        <div class="ov-eyebrow">About This Industry</div>
+        <h2 class="ov-h" id="ov-h"></h2>
+        <p class="ov-p" id="ov-p1"></p>
+        <p class="ov-p" id="ov-p2"></p>
+        <div class="ov-stats" id="ov-stats"></div>
+      </div>
+      <div class="ov-quick rv fr">
+        <div class="ov-quick-h" id="ov-quick-h"></div>
+        <div id="ov-q-list"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHEMICALS -->
+<section id="ind-chem">
+  <div class="chem-head W rv">
+    <div class="chem-eyebrow">What We Supply</div>
+    <h2 class="chem-h">Our <em>chemical range</em> for this sector</h2>
+  </div>
+  <div id="chem-list"></div>
+</section>
+
+<!-- APPLICATIONS -->
+<section id="ind-apps" class="sec">
+  <div class="W">
+    <div class="apps-head rv">
+      <span class="apps-eyebrow">Industry Applications</span>
+      <h2 class="apps-h">How our chemicals<br>are <em>put to work</em></h2>
+    </div>
+    <div class="apps-grid rv d1" id="apps-grid"></div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section id="ind-cta">
+  <div class="W">
+    <div class="cta-in rv">
+      <h2 class="cta-h">Ready to source quality<br><em>materials for your business?</em></h2>
+      <p class="cta-p">Year-round supply · Competitive pricing · Full quality documentation · Sri Lanka wide delivery</p>
+      <div class="cta-btns">
+        <a href="index.html#contact" class="btn-white">Contact Us Today</a>
+        <a href="index.html#industries" class="btn-ghost-w">← All Industries</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="W">
+    <div class="ft-grid">
+      <div>
+        <div class="ft-logo"><div class="ft-mark">SK</div><span class="ft-name">S.K. Chem Solutions</span></div>
+        <p class="ft-tag">Connecting Industries with Quality Solutions since 2017. Your trusted partner for premium raw materials — delivered with consistency and care.</p>
+      </div>
+      <div class="ft-col"><h5>Company</h5><ul>
+        <li><a href="index.html#about">About Us</a></li>
+        <li><a href="index.html#vm">Vision &amp; Mission</a></li>
+        <li><a href="index.html#sustain">Sustainability</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul></div>
+      <div class="ft-col"><h5>Products</h5><ul>
+        <li><a href="index.html#flagship">Formic Acid</a></li>
+        <li><a href="index.html#flagship">Sodium Metabisulfite</a></li>
+        <li><a href="index.html#products">Personal Care</a></li>
+        <li><a href="index.html#products">Food Grade</a></li>
+      </ul></div>
+      <div class="ft-col"><h5>Industries</h5><ul>
+        <li><a href="industry.html?ind=rubber">Rubber &amp; Latex</a></li>
+        <li><a href="industry.html?ind=personal">Personal Care</a></li>
+        <li><a href="industry.html?ind=home">Home Care</a></li>
+        <li><a href="industry.html?ind=food">Food Industry</a></li>
+        <li><a href="industry.html?ind=pharma">Pharmaceutical</a></li>
+        <li><a href="industry.html?ind=textile">Textile Washing</a></li>
+      </ul></div>
+    </div>
+    <div class="ft-btm">
+      <p class="ft-copy">&copy; 2025 S.K. Chem Solutions · Battaramulla, Sri Lanka</p>
+      <div class="ft-pills"><span class="ft-pill">🌿 Eco Responsible</span><span class="ft-pill">🤝 Trusted Partner</span><span class="ft-pill">🌍 Global Sourcing</span></div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* Progress */
+const prog=document.getElementById('prog');
+window.addEventListener('scroll',()=>{
+  prog.style.transform='scaleX('+(scrollY/(document.body.scrollHeight-innerHeight))+')';
+},{passive:true});
+
+/* Hamburger */
+function cm(){document.getElementById('mob').classList.remove('open')}
+document.getElementById('hbg').addEventListener('click',()=>document.getElementById('mob').classList.toggle('open'));
+
+/* Reveal */
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('on')})},{threshold:.1});
+document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
+
+/* Parallax */
+window.addEventListener('scroll',()=>{
+  const bg=document.querySelector('.ih-bg img');
+  if(bg)bg.style.transform=`translateY(${scrollY*.25}px)`;
+},{passive:true});
+
+/* ── INDUSTRY DATA ── */
+const IND={
+  rubber:{
+    name:'Rubber &amp; Latex',nameRaw:'Rubber & Latex',badge:'🌿 Core Sector',
+    img:'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop&crop=center&auto=format&q=85',
+    tagline:'Essential coagulants and processing chemicals for Sri Lanka\'s plantation sector.',
+    ovH:'The backbone of<br><em>Sri Lankan industry</em>',
+    ovP1:'Sri Lanka has a long and proud history in natural rubber production. S.K. Chem Solutions has been a trusted supplier to rubber plantations and processing facilities since 2017, providing essential chemicals that keep the industry running.',
+    ovP2:'From latex coagulation on the plantation to sheet manufacturing and preservation, we supply high-purity, consistently available materials sourced from world-leading manufacturers.',
+    stats:[{n:'#1',l:'Sector We Serve'},{n:'3+',l:'Core Chemicals'},{n:'BASF',l:'Sourced'},{n:'Year-round',l:'Supply'}],
+    quickH:'Chemicals at a Glance',
+    quick:[
+      {ico:'🧪',t:'Formic Acid',s:'Primary coagulant for natural rubber. Industrial grade, 35 kg carboys.'},
+      {ico:'🔬',t:'Sodium Metabisulfite',s:'Antioxidant & preservative. Food & industrial grade. 25 kg bags.'},
+      {ico:'⚗️',t:'Sodium Sulphite',s:'Antioxidant for rubber processing. Industrial grade. 25 kg bags.'}
+    ],
+    chems:[
+      {name:'Formic Acid',nameEm:'Formic <em>Acid</em>',formula:'HCOOH · CH₂O₂',grade:'Industrial Grade',pack:'35 kg Carboys',supplier:'BASF China',flag:'🇨🇳',
+       img:'https://loremflickr.com/900/650/chemical,acid,laboratory?lock=101',
+       desc:'High-purity formic acid is the essential coagulant used across rubber plantations and latex processing facilities throughout Sri Lanka. It rapidly and efficiently coagulates natural rubber latex — making it the industry standard for wet rubber processing.',
+       uses:['Latex coagulation','Rubber sheet manufacturing','Crepe rubber production','Plantation use'],
+       specs:[{l:'Purity',v:'≥85%'},{l:'Appearance',v:'Colourless liquid'},{l:'Flash Point',v:'59°C'},{l:'Packaging',v:'35 kg carboys'}]},
+      {name:'Sodium Metabisulfite',nameEm:'Sodium <em>Metabisulfite</em>',formula:'Na₂S₂O₅',grade:'Food / Industrial Grade',pack:'25 kg Bags',supplier:'BASF Germany',flag:'🇩🇪',
+       img:'https://loremflickr.com/900/650/chemical,powder,industrial?lock=102',
+       desc:'A versatile antioxidant, preservative, and reducing agent widely used in rubber processing to prevent oxidation during latex transport and sheet manufacturing. Also supplied food-grade for food and beverage applications.',
+       uses:['Latex preservation','Antioxidant in rubber sheets','Food & beverage preservative','Dechlorination'],
+       specs:[{l:'Purity',v:'≥96%'},{l:'Grade',v:'Food & Industrial'},{l:'Appearance',v:'White powder'},{l:'Packaging',v:'25 kg bags'}]},
+      {name:'Sodium Sulphite',nameEm:'Sodium <em>Sulphite</em>',formula:'Na₂SO₃',grade:'Industrial Grade',pack:'25 kg Bags',supplier:'BASF Germany',flag:'🇩🇪',
+       img:'https://loremflickr.com/900/650/industrial,chemical,factory?lock=103',
+       desc:'Industrial-grade sodium sulphite used as an antioxidant in rubber and textile processing. Helps maintain product quality by preventing oxidation and is an essential processing chemical for sheet rubber and crepe production.',
+       uses:['Rubber processing','Antioxidant agent','Textile washing','Chemical processing'],
+       specs:[{l:'Purity',v:'≥96%'},{l:'Grade',v:'Industrial'},{l:'Appearance',v:'White crystalline powder'},{l:'Packaging',v:'25 kg bags'}]}
+    ],
+    apps:[
+      {ico:'🌿',t:'Plantation Coagulation',s:'Diluted formic acid applied directly to fresh latex on the plantation, initiating rapid, clean coagulation into rubber slabs.'},
+      {ico:'🏭',t:'Sheet Rubber Processing',s:'Coagulated rubber processed through roller mills and drying chambers. Antioxidants prevent yellowing and oxidation.'},
+      {ico:'🚛',t:'Latex Transport & Preservation',s:'Sodium metabisulfite preserves fresh latex before transport to prevent premature coagulation in transit.'},
+      {ico:'🔬',t:'Quality Control',s:'Consistent purity levels and full documentation ensure reproducible results in every processing batch.'},
+      {ico:'🤝',t:'Reliable Supply',s:'Year-round supply guaranteed through our established chain with BASF Germany and BASF China.'},
+      {ico:'📦',t:'Flexible Packaging',s:'Formic acid in 35 kg carboys, sulphites in 25 kg bags — plantation-ready for easy handling.'}
+    ]
+  },
+
+  personal:{
+    name:'Personal Care',nameRaw:'Personal Care',badge:'✨ Growing Sector',
+    img:'https://loremflickr.com/1920/1080/cosmetics,skincare,spa,luxury?lock=201',
+    tagline:'Cosmetic-grade and high-purity ingredients for skincare, haircare, and personal hygiene manufacturers.',
+    ovH:'Premium ingredients<br>for <em>everyday beauty</em>',
+    ovP1:'Sri Lanka\'s personal care manufacturing sector is growing rapidly, with increasing demand for high-quality cosmetic ingredients. S.K. Chem Solutions supplies a comprehensive range of cosmetic-grade raw materials sourced from Europe, Korea, and Malaysia.',
+    ovP2:'From mild surfactants to antioxidants and humectants, our personal care range covers the essential building blocks for shampoos, body washes, moisturisers, and more.',
+    stats:[{n:'5+',l:'Products'},{n:'USP/BP',l:'Grade Available'},{n:'Germany',l:'& Korea Sourced'},{n:'Cosmetic',l:'Grade Certified'}],
+    quickH:'Products at a Glance',
+    quick:[
+      {ico:'✨',t:'CAPB (Betaine)',s:'Mild amphoteric surfactant. Cosmetic grade. 200 kg drums.'},
+      {ico:'🌿',t:'Vitamin E Acetate',s:'Tocopheryl acetate for skincare. Cosmetic grade. 5 kg containers.'},
+      {ico:'💧',t:'Monopropylene Glycol',s:'USP/Food grade humectant & solvent. 215 kg drums.'},
+      {ico:'🧴',t:'Isopropyl Alcohol',s:'High-purity IPA. 160 kg drums.'},
+      {ico:'🌻',t:'Glycerine (Vegetable)',s:'USP/BP grade moisturiser. 250 kg drums.'}
+    ],
+    chems:[
+      {name:'CAPB — Betaine',nameEm:'CAPB — <em>Betaine</em>',formula:'Cocamidopropyl Betaine',grade:'Cosmetic Grade',pack:'200 kg Drums',supplier:'Vance Group, Malaysia',flag:'🇲🇾',
+       img:'https://loremflickr.com/900/650/cosmetic,foam,shampoo,bubble?lock=104',
+       desc:'Cocamidopropyl Betaine (CAPB) is a mild amphoteric surfactant derived from coconut oil. It produces a rich, stable foam while being gentle on skin and eyes — making it ideal for shampoos, body washes, facial cleansers, and baby care products.',
+       uses:['Shampoos & conditioners','Body washes','Facial cleansers','Baby care products'],
+       specs:[{l:'Active Content',v:'30% ± 2%'},{l:'Grade',v:'Cosmetic'},{l:'Appearance',v:'Clear to pale yellow liquid'},{l:'Packaging',v:'200 kg drums'}]},
+      {name:'Vitamin E Acetate',nameEm:'Vitamin E <em>Acetate</em>',formula:'Tocopheryl Acetate',grade:'Cosmetic Grade',pack:'5 kg Containers',supplier:'BASF Germany',flag:'🇩🇪',
+       img:'https://loremflickr.com/900/650/vitamin,serum,skincare,golden?lock=105',
+       desc:'Premium tocopheryl acetate (Vitamin E Acetate) is a powerful antioxidant used extensively in skincare and haircare formulations. It protects skin from oxidative stress, improves moisturisation, and enhances formulation stability.',
+       uses:['Anti-aging skincare','Moisturisers & serums','Hair care treatments','Sun care products'],
+       specs:[{l:'Purity',v:'≥96%'},{l:'Grade',v:'Cosmetic / USP'},{l:'Appearance',v:'Light yellow oily liquid'},{l:'Packaging',v:'5 kg containers'}]},
+      {name:'Monopropylene Glycol',nameEm:'Monopropylene <em>Glycol</em>',formula:'C₃H₈O₂ · MPG',grade:'USP / Food Grade',pack:'215 kg Drums',supplier:'SK Pickglobal, Korea',flag:'🇰🇷',
+       img:'https://loremflickr.com/900/650/chemical,liquid,clear,transparent?lock=106',
+       desc:'A versatile, multi-functional ingredient used as a humectant, solvent, preservative booster, and skin-conditioning agent in personal care and food applications. USP/food grade makes it suitable for both cosmetic and edible formulations.',
+       uses:['Humectant in skincare','Solvent for fragrances','Preservative booster','Food applications'],
+       specs:[{l:'Purity',v:'≥99.5%'},{l:'Grade',v:'USP / Food'},{l:'Appearance',v:'Colourless, viscous liquid'},{l:'Packaging',v:'215 kg drums'}]},
+      {name:'Isopropyl Alcohol',nameEm:'Isopropyl <em>Alcohol</em>',formula:'C₃H₈O · IPA',grade:'High Purity',pack:'160 kg Drums',supplier:'LG Chem, Korea',flag:'🇰🇷',
+       img:'https://loremflickr.com/900/650/laboratory,clean,industrial?lock=107',
+       desc:'High-purity isopropyl alcohol used as a solvent, antiseptic, and preservative across personal care, pharmaceutical, and industrial applications. Essential for hand sanitiser formulation, cosmetic manufacturing, and laboratory use.',
+       uses:['Hand sanitisers','Cosmetic solvent','Pharmaceutical use','Surface disinfection'],
+       specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'High Purity'},{l:'Appearance',v:'Colourless liquid'},{l:'Packaging',v:'160 kg drums'}]},
+      {name:'Glycerine (Vegetable)',nameEm:'Glycerine <em>(Vegetable)</em>',formula:'C₃H₈O₃ · Glycerol',grade:'USP / BP Grade',pack:'250 kg Drums',supplier:'Vance Group, Malaysia',flag:'🇲🇾',
+       img:'https://loremflickr.com/900/650/cosmetic,moisturizer,cream,luxury?lock=108',
+       desc:'Premium vegetable-derived glycerine — a key moisturising and humectant agent in personal care, food, and pharmaceutical products. Its ability to attract and retain moisture makes it indispensable in skincare, haircare, and oral care formulations.',
+       uses:['Skin moisturiser','Hair care products','Oral care formulations','Food & pharma applications'],
+       specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'USP / BP / Food'},{l:'Appearance',v:'Clear, viscous liquid'},{l:'Packaging',v:'250 kg drums'}]}
+    ],
+    apps:[
+      {ico:'🧴',t:'Shampoos & Body Washes',s:'CAPB and glycerine form the backbone of gentle, effective haircare and body wash formulations.'},
+      {ico:'✨',t:'Skincare & Moisturisers',s:'Vitamin E, glycerine, and MPG deliver moisture-binding, antioxidant, and sensory-enhancing properties to skincare.'},
+      {ico:'🌿',t:'Natural & Organic Products',s:'Vegetable-derived ingredients supporting the growing demand for natural and sustainably sourced personal care.'},
+      {ico:'💧',t:'Hand Sanitisers',s:'High-purity IPA and glycerine are the two key active and conditioning ingredients in effective sanitiser formulations.'},
+      {ico:'👶',t:'Baby Care Products',s:'Mild, cosmetic-grade CAPB and glycerine are safe and gentle for baby shampoos and body washes.'},
+      {ico:'🔬',t:'Formulation Flexibility',s:'Surfactants, antioxidants, humectants, and solvents — a comprehensive toolkit for cosmetic formulators.'}
+    ]
+  },
+
+  home:{
+    name:'Home Care',nameRaw:'Home Care',badge:'🏠 Established Sector',
+    img:'https://loremflickr.com/1920/1080/cleaning,detergent,household,bright?lock=301',
+    tagline:'Raw materials for cleaning agents, detergents, and household product manufacturers.',
+    ovH:'The chemistry behind<br><em>a cleaner home</em>',
+    ovP1:'Sri Lanka\'s home care manufacturing sector produces a wide range of cleaning products for both household and industrial use. S.K. Chem Solutions supplies key raw materials that go into these formulations.',
+    ovP2:'Our home care range covers surfactants, solvents, and specialty chemicals that provide the cleaning power, foam, and stability required in modern household product formulations.',
+    stats:[{n:'Year-round',l:'Supply'},{n:'100%',l:'Quality Assured'},{n:'Multi-use',l:'Ingredients'},{n:'B2B',l:'Supply Only'}],
+    quickH:'Home Care Chemicals',
+    quick:[
+      {ico:'🧼',t:'Specialty Surfactants',s:'Core cleaning and foaming agents for detergent formulations.'},
+      {ico:'⚗️',t:'Chelating Agents',s:'Water softening and stability-enhancing ingredients.'},
+      {ico:'💧',t:'Specialty Solvents',s:'Grease-cutting solvents for surface cleaners.'}
+    ],
+    chems:[
+      {name:'Specialty Surfactants',nameEm:'Specialty <em>Surfactants</em>',formula:'Anionic & Non-ionic',grade:'Industrial Grade',pack:'Drums / IBC Tanks',supplier:'Global Manufacturers',flag:'🌍',
+       img:'https://loremflickr.com/900/650/cleaning,detergent,foam,bubbles?lock=302',
+       desc:'Surfactants are the core active ingredients in home care formulations — they lower surface tension, allowing water to penetrate dirt and oils more effectively. We supply anionic and non-ionic surfactants for dishwashing, laundry, and surface cleaning products.',
+       uses:['Dishwashing liquids','Laundry detergents','Floor cleaners','Multi-surface sprays'],
+       specs:[{l:'Grade',v:'Industrial'},{l:'Type',v:'Anionic / Non-ionic'},{l:'Form',v:'Liquid / Powder'},{l:'Packaging',v:'Drums / IBC tanks'}]},
+      {name:'Chelating Agents',nameEm:'Chelating <em>Agents</em>',formula:'EDTA & Alternatives',grade:'Industrial Grade',pack:'25 kg Bags / Drums',supplier:'Global Manufacturers',flag:'🌍',
+       img:'https://loremflickr.com/900/650/laboratory,chemical,science?lock=303',
+       desc:'Chelating agents bind metal ions in hard water, preventing them from interfering with surfactant performance and causing scale. Essential for maintaining effectiveness and shelf stability of liquid detergents and cleaning products.',
+       uses:['Hard water treatment','Detergent stability','Cream cleaners','Industrial cleaning'],
+       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid / Powder'},{l:'Application',v:'Water softening'},{l:'Packaging',v:'25 kg bags / drums'}]}
+    ],
+    apps:[
+      {ico:'🍽️',t:'Dishwashing Products',s:'Surfactants and chelating agents combine to deliver effective, rinse-clean dishwashing liquids for household and commercial use.'},
+      {ico:'🧺',t:'Laundry Detergents',s:'Specialty ingredients for powder and liquid laundry products including fabric conditioners and stain removers.'},
+      {ico:'🏠',t:'Surface Care',s:'Grease-cutting solvents and surfactants for kitchen, bathroom, and multi-surface cleaning sprays.'},
+      {ico:'🏭',t:'Industrial Cleaning',s:'Higher-concentration grades for industrial and commercial cleaning product manufacturing at scale.'},
+      {ico:'✅',t:'Stable Formulations',s:'Chelating agents help formulators achieve stable, shelf-stable products with consistent performance.'},
+      {ico:'📦',t:'Bulk Supply',s:'Home care ingredients supplied in bulk drums and IBC tanks for manufacturing convenience.'}
+    ]
+  },
+
+  food:{
+    name:'Food Industry',nameRaw:'Food Industry',badge:'🌾 Growth Sector',
+    img:'https://loremflickr.com/1920/1080/food,processing,manufacturing,clean?lock=401',
+    tagline:'Food-grade additives and processing aids meeting international safety standards.',
+    ovH:'Food-grade quality<br><em>you can trust</em>',
+    ovP1:'Sri Lanka\'s food and beverage manufacturing sector continues to grow, with increasing demand for high-quality food-grade ingredients and additives. S.K. Chem Solutions supplies internationally certified food-grade chemicals for local manufacturers.',
+    ovP2:'Our food-grade range includes preservatives, antioxidants, humectants, and solvents that comply with international food safety standards — helping manufacturers produce safe, high-quality food products.',
+    stats:[{n:'Food Safe',l:'Grade Certified'},{n:'International',l:'Standards Met'},{n:'Year-round',l:'Supply'},{n:'Full Docs',l:'CoA & SDS'}],
+    quickH:'Food Grade Products',
+    quick:[
+      {ico:'🧂',t:'Sodium Metabisulfite (Food Grade)',s:'Preservative and antioxidant. 25 kg bags.'},
+      {ico:'💧',t:'Monopropylene Glycol (Food Grade)',s:'Humectant & carrier solvent. 215 kg drums.'},
+      {ico:'🌻',t:'Glycerine (Food Grade)',s:'Natural humectant & sweetener. 250 kg drums.'}
+    ],
+    chems:[
+      {name:'Sodium Metabisulfite',nameEm:'Sodium <em>Metabisulfite</em>',formula:'Na₂S₂O₅ · Food Grade (E223)',grade:'Food Grade',pack:'25 kg Bags',supplier:'BASF Germany',flag:'🇩🇪',
+       img:'https://loremflickr.com/900/650/food,ingredient,powder,white?lock=402',
+       desc:'Food-grade sodium metabisulfite is a widely used preservative, antioxidant, and oxygen scavenger in the food and beverage industry. It prevents oxidative spoilage, browning, and microbial growth in juices, wines, dried fruits, and seafood.',
+       uses:['Fruit juice preservation','Dried fruit treatment','Wine & beverage production','Seafood preservation'],
+       specs:[{l:'Purity',v:'≥96%'},{l:'Grade',v:'Food Grade (E223)'},{l:'Appearance',v:'White powder'},{l:'Packaging',v:'25 kg bags'}]},
+      {name:'Monopropylene Glycol',nameEm:'Monopropylene <em>Glycol</em>',formula:'C₃H₈O₂ · Food Grade',grade:'USP / Food Grade',pack:'215 kg Drums',supplier:'SK Pickglobal, Korea',flag:'🇰🇷',
+       img:'https://loremflickr.com/900/650/food,ingredient,liquid,clear?lock=403',
+       desc:'Food-grade MPG used as a humectant, solvent, preservative carrier, and anti-caking agent in food applications. Its GRAS status makes it suitable for a wide range of food formulations from bakery to beverages.',
+       uses:['Food flavouring carrier','Humectant in bakery','Ice cream & dairy','Pharmaceutical excipient'],
+       specs:[{l:'Purity',v:'≥99.5%'},{l:'Grade',v:'USP / Food / GRAS'},{l:'Appearance',v:'Colourless, viscous liquid'},{l:'Packaging',v:'215 kg drums'}]},
+      {name:'Glycerine (Vegetable)',nameEm:'Glycerine <em>(Vegetable)</em>',formula:'C₃H₈O₃ · Food Grade',grade:'USP / Food Grade',pack:'250 kg Drums',supplier:'Vance Group, Malaysia',flag:'🇲🇾',
+       img:'https://loremflickr.com/900/650/food,sweet,natural,organic?lock=404',
+       desc:'Vegetable-derived glycerine used in food and beverage applications as a humectant, sweetener, solvent, and preservative. Its sweet taste, moist-retaining properties, and GRAS status make it a versatile food ingredient.',
+       uses:['Confectionery & bakery','Liqueur & beverage','Dried fruit coating','Nutritional supplements'],
+       specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'USP / Food / Halal'},{l:'Appearance',v:'Clear, viscous, sweet liquid'},{l:'Packaging',v:'250 kg drums'}]}
+    ],
+    apps:[
+      {ico:'🥤',t:'Beverages & Juices',s:'Sodium metabisulfite used as a preservative in fruit juices, soft drinks, wines, and other beverages.'},
+      {ico:'🍞',t:'Bakery & Confectionery',s:'Glycerine and MPG used as humectants in baked goods and confectionery to maintain moisture and extend shelf life.'},
+      {ico:'🐟',t:'Seafood Processing',s:'Food-grade preservatives used in treatment and preservation of fresh and dried seafood products.'},
+      {ico:'🌿',t:'Natural Preservation',s:'Antioxidant preservatives help reduce artificial additives while maintaining product quality and safety.'},
+      {ico:'✅',t:'Compliance & Documentation',s:'All food-grade materials supplied with full CoA, SDS, and food safety certifications for regulatory compliance.'},
+      {ico:'📦',t:'Industrial Supply',s:'Available in bulk to support Sri Lanka\'s growing food manufacturing sector with year-round availability.'}
+    ]
+  },
+
+  pharma:{
+    name:'Pharmaceutical',nameRaw:'Pharmaceutical',badge:'💊 Expanding Into',
+    img:'https://loremflickr.com/1920/1080/pharmaceutical,laboratory,medicine,clean?lock=501',
+    tagline:'USP/BP grade excipients and specialty ingredients for pharmaceutical manufacturers in Sri Lanka.',
+    ovH:'Pharmaceutical-grade<br><em>quality and compliance</em>',
+    ovP1:'S.K. Chem Solutions is expanding into the pharmaceutical sector, supplying USP/BP grade excipients and specialty chemicals to pharmaceutical manufacturers in Sri Lanka.',
+    ovP2:'Every pharmaceutical-grade product we supply comes with full documentation — Certificate of Analysis, Safety Data Sheet, and pharmacopoeia compliance records — ensuring your manufacturing processes meet the strictest quality standards.',
+    stats:[{n:'USP/BP',l:'Grade'},{n:'Full Docs',l:'CoA & SDS'},{n:'Expanding',l:'Sector'},{n:'Certified',l:'Quality'}],
+    quickH:'Pharmaceutical Products',
+    quick:[
+      {ico:'🔬',t:'Isopropyl Alcohol (USP)',s:'High-purity IPA. 160 kg drums.'},
+      {ico:'💧',t:'Monopropylene Glycol (USP)',s:'USP grade excipient & solvent. 215 kg drums.'},
+      {ico:'🌻',t:'Glycerine (BP/PhEur Grade)',s:'Pharmaceutical excipient. 250 kg drums.'}
+    ],
+    chems:[
+      {name:'Isopropyl Alcohol',nameEm:'Isopropyl <em>Alcohol</em>',formula:'C₃H₈O · IPA · USP',grade:'USP Grade',pack:'160 kg Drums',supplier:'LG Chem, Korea',flag:'🇰🇷',
+       img:'https://loremflickr.com/900/650/pharmaceutical,laboratory,clean,sterile?lock=502',
+       desc:'USP-grade isopropyl alcohol used in pharmaceutical manufacturing for equipment cleaning, surface sanitisation, API extraction, and hand sanitiser production. High purity and consistent specification make it suitable for GMP-compliant facilities.',
+       uses:['Equipment sanitisation','Pharmaceutical solvent','Hand sanitiser production','Surface disinfection'],
+       specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'USP / High Purity'},{l:'Appearance',v:'Colourless liquid'},{l:'Packaging',v:'160 kg drums'}]},
+      {name:'Monopropylene Glycol',nameEm:'Monopropylene <em>Glycol</em>',formula:'C₃H₈O₂ · USP Grade',grade:'USP / PhEur Grade',pack:'215 kg Drums',supplier:'SK Pickglobal, Korea',flag:'🇰🇷',
+       img:'https://loremflickr.com/900/650/medicine,capsule,pharmaceutical?lock=503',
+       desc:'USP-grade MPG serves as a pharmaceutical excipient — acting as solvent, humectant, and carrier for active pharmaceutical ingredients (APIs) in oral, topical, and injectable formulations. Wide regulatory acceptance makes it a versatile excipient.',
+       uses:['Oral liquid formulations','Topical preparations','Injectable vehicle','Tablet coating'],
+       specs:[{l:'Purity',v:'≥99.5%'},{l:'Grade',v:'USP / PhEur'},{l:'Appearance',v:'Colourless, odourless liquid'},{l:'Packaging',v:'215 kg drums'}]},
+      {name:'Glycerine (BP Grade)',nameEm:'Glycerine <em>(BP Grade)</em>',formula:'C₃H₈O₃ · BP/PhEur',grade:'BP / PhEur Grade',pack:'250 kg Drums',supplier:'Vance Group, Malaysia',flag:'🇲🇾',
+       img:'https://loremflickr.com/900/650/pharmacy,medicine,tablet,pill?lock=504',
+       desc:'BP/PhEur grade glycerine used as a pharmaceutical excipient in a wide range of dosage forms. Its lubricating, humectant, and sweetening properties make it suitable for tablets, suppositories, capsule shells, oral liquids, and topical preparations.',
+       uses:['Tablet & capsule formulations','Oral liquids & syrups','Suppositories','Topical preparations'],
+       specs:[{l:'Purity',v:'≥99.5%'},{l:'Grade',v:'BP / PhEur / USP'},{l:'Appearance',v:'Clear, viscous, sweet liquid'},{l:'Packaging',v:'250 kg drums'}]}
+    ],
+    apps:[
+      {ico:'💊',t:'Tablet & Capsule Manufacturing',s:'Excipients serving as binders, lubricants, and moisture-retention agents in solid dosage form production.'},
+      {ico:'🧪',t:'Liquid Formulations',s:'USP-grade solvents and carriers for oral liquids, syrups, suspensions, and elixirs.'},
+      {ico:'🔬',t:'GMP Facility Sanitisation',s:'High-purity IPA for equipment cleaning and surface disinfection in GMP-compliant manufacturing environments.'},
+      {ico:'💉',t:'Topical & Parenteral',s:'Pharmaceutical-grade excipients suitable for topical, transdermal, and selected injectable formulations.'},
+      {ico:'📋',t:'Full Documentation',s:'CoA, SDS, and pharmacopoeia compliance records supplied with every batch for your regulatory submissions.'},
+      {ico:'🌍',t:'Internationally Sourced',s:'All pharmaceutical-grade materials from LG Chem (Korea) and Vance Group (Malaysia) — globally recognised manufacturers.'}
+    ]
+  },
+
+  textile:{
+    name:'Textile Washing',nameRaw:'Textile Washing',badge:'🧵 Established Sector',
+    img:'https://loremflickr.com/1920/1080/textile,fabric,weaving,thread?lock=601',
+    tagline:'Specialty chemicals and solvents for textile processing and garment washing operations.',
+    ovH:'The right chemistry<br>for <em>clean textiles</em>',
+    ovP1:'Sri Lanka\'s textile and garment sector is a major contributor to the national economy. Textile washing plants and garment factories require reliable, high-performance chemicals for processing, cleaning, and finishing operations.',
+    ovP2:'S.K. Chem Solutions supplies specialty solvents and processing chemicals that deliver consistent, high-quality results for textile washing and fabric treatment operations island-wide.',
+    stats:[{n:'B2B',l:'Supply Only'},{n:'Year-round',l:'Availability'},{n:'Industrial',l:'Grade'},{n:'Bulk',l:'Quantities'}],
+    quickH:'Textile Chemicals',
+    quick:[
+      {ico:'⚗️',t:'Specialty Solvents',s:'Industrial-grade solvents for fabric processing and finishing.'},
+      {ico:'🧼',t:'Processing Chemicals',s:'Specialty chemicals for desizing, scouring, and finishing.'},
+      {ico:'🌿',t:'Eco-Responsible Options',s:'Environmentally responsible alternatives available on request.'}
+    ],
+    chems:[
+      {name:'Specialty Solvents',nameEm:'Specialty <em>Solvents</em>',formula:'Industrial Grade',grade:'Industrial Grade',pack:'Drums / IBC Tanks',supplier:'Global Manufacturers',flag:'🌍',
+       img:'https://loremflickr.com/900/650/textile,fabric,industrial,manufacturing?lock=602',
+       desc:'Industrial-grade specialty solvents for textile processing applications including desizing, scouring, and garment washing. Our solvents are selected for performance, safety profile, and compatibility with textile processing equipment.',
+       uses:['Garment washing','Desizing','Fabric scouring','Finishing operations'],
+       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid'},{l:'Application',v:'Textile processing'},{l:'Packaging',v:'Drums / IBC tanks'}]},
+      {name:'Processing Chemicals',nameEm:'Processing <em>Chemicals</em>',formula:'Specialty Blend',grade:'Industrial Grade',pack:'As Required',supplier:'Global Manufacturers',flag:'🌍',
+       img:'https://loremflickr.com/900/650/factory,industrial,process,manufacturing?lock=603',
+       desc:'Specialty processing chemicals for use in textile washing and fabric treatment operations. Our range supports key stages of textile processing — from initial preparation to final finishing — delivering consistent, high-quality results.',
+       uses:['Pre-treatment','Washing & rinsing','Fabric softening','Industrial finishing'],
+       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid / Powder'},{l:'Application',v:'Textile washing'},{l:'Packaging',v:'As per requirement'}]}
+    ],
+    apps:[
+      {ico:'🧵',t:'Fabric Desizing',s:'Removing sizing agents from grey fabric prior to dyeing — ensuring uniform dye uptake and superior finish quality.'},
+      {ico:'🏭',t:'Scouring & Pre-treatment',s:'Removing natural impurities, waxes, and oils from raw fabric to prepare it for dyeing and finishing.'},
+      {ico:'👔',t:'Garment Washing',s:'Specialty solvents and surfactants for denim washing, stone wash, enzyme wash, and garment finishing effects.'},
+      {ico:'✅',t:'Quality Finishing',s:'Finishing chemicals that impart the right hand-feel, appearance, and durability to the final fabric or garment.'},
+      {ico:'🌿',t:'Eco-Responsible Options',s:'Supporting the industry\'s transition toward more sustainable and environmentally responsible processing chemicals.'},
+      {ico:'📦',t:'Bulk Industrial Supply',s:'Available in drums and IBC tanks to support continuous, high-volume textile manufacturing operations.'}
+    ]
+  }
+};
+
+/* ── BUILD PAGE ── */
+const p=new URLSearchParams(window.location.search);
+const key=p.get('ind')||'rubber';
+const d=IND[key]||IND.rubber;
+
+document.title=`${d.nameRaw} — S.K. Chem Solutions`;
+document.getElementById('ih-img').src=d.img;
+document.getElementById('ih-bc').textContent=d.nameRaw;
+document.getElementById('ih-badge').textContent=d.badge;
+document.getElementById('ih-h1').innerHTML=d.name;
+document.getElementById('ih-tagline').textContent=d.tagline;
+document.getElementById('ov-h').innerHTML=d.ovH;
+document.getElementById('ov-p1').textContent=d.ovP1;
+document.getElementById('ov-p2').textContent=d.ovP2;
+document.getElementById('ov-stats').innerHTML=d.stats.map(s=>`<div class="ov-stat"><span class="ov-stat-n">${s.n}</span><span class="ov-stat-l">${s.l}</span></div>`).join('');
+document.getElementById('ov-quick-h').textContent=d.quickH;
+document.getElementById('ov-q-list').innerHTML=d.quick.map(q=>`<div class="ov-q-item"><span class="ov-q-ico">${q.ico}</span><div><span class="ov-q-t">${q.t}</span><span class="ov-q-s">${q.s}</span></div></div>`).join('');
+
+document.getElementById('chem-list').innerHTML=d.chems.map((c,i)=>`
+<div class="chem-row${i%2===1?' rev':''}">
+  <div class="chem-img">
+    <img src="${c.img}" alt="${c.name}">
+    <div class="chem-img-ov"></div>
+  </div>
+  <div class="chem-txt">
+    <div class="chem-formula-badge">${c.formula}</div>
+    <div class="chem-name">${c.nameEm}</div>
+    <p class="chem-desc">${c.desc}</p>
+    <div class="chem-use-tags">${c.uses.map(u=>`<span class="chem-use-tag">${u}</span>`).join('')}</div>
+    <div class="chem-specs-grid">${c.specs.map(s=>`<div class="chem-spec"><strong>${s.l}</strong><span>${s.v}</span></div>`).join('')}</div>
+    <div class="chem-supplier">
+      <span class="chem-sup-flag">${c.flag}</span>
+      <div class="chem-sup-txt"><strong>${c.supplier}</strong><span>Authorised Supplier</span></div>
+    </div>
+  </div>
+</div>`).join('');
+
+document.getElementById('apps-grid').innerHTML=d.apps.map(a=>`
+<div class="app-card">
+  <span class="app-ico">${a.ico}</span>
+  <div class="app-t">${a.t}</div>
+  <p class="app-s">${a.s}</p>
+</div>`).join('');
+
+/* ── MOTION: hero text staggered entrance ── */
+setTimeout(()=>{
+  const seq=[
+    ['.ih-breadcrumb', .05],
+    ['#ih-badge',       .25],
+    ['#ih-h1',          .45],
+    ['#ih-tagline',     .65]
+  ];
+  seq.forEach(([sel,delay])=>{
+    const el=document.querySelector(sel);
+    if(el){el.style.cssText=`opacity:0;animation:fadeUp .75s ease ${delay}s forwards`}
+  });
+  /* Floating formula text */
+  const ff=document.getElementById('ih-float-formula');
+  if(ff && d.chems && d.chems[0]) ff.textContent=d.chems[0].formula;
+},10);
+
+/* ── MOTION: stat tiles staggered in ── */
+const statObs=new IntersectionObserver(es=>{
+  if(es[0].isIntersecting){
+    document.querySelectorAll('.ov-stat').forEach((el,i)=>{
+      setTimeout(()=>el.classList.add('vis'),i*90);
+    });
+    statObs.disconnect();
+  }
+},{threshold:.4});
+const ovEl=document.getElementById('ind-ov');
+if(ovEl) statObs.observe(ovEl);
+
+/* ── MOTION: chemical rows slide in ── */
+const chemObs=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('vis');chemObs.unobserve(e.target)}
+  });
+},{threshold:.15});
+setTimeout(()=>{
+  document.querySelectorAll('.chem-row').forEach(el=>chemObs.observe(el));
+},100);
+
+/* ── MOTION: app cards staggered ── */
+const appObs=new IntersectionObserver(es=>{
+  if(es[0].isIntersecting){
+    document.querySelectorAll('.app-card').forEach((c,i)=>{
+      setTimeout(()=>c.classList.add('vis'),i*80);
+    });
+    appObs.disconnect();
+  }
+},{threshold:.1});
+setTimeout(()=>{
+  const grid=document.getElementById('apps-grid');
+  if(grid) appObs.observe(grid);
+},100);
+</script>
+</body>
+</html>
