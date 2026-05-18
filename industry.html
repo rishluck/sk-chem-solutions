@@ -374,8 +374,8 @@ body{animation:fadeIn .5s ease both}
 <!-- CHEMICALS -->
 <section id="ind-chem">
   <div class="chem-head W rv">
-    <div class="chem-eyebrow">What We Supply</div>
-    <h2 class="chem-h">Our <em>chemical range</em> for this sector</h2>
+    <div class="chem-eyebrow">What We Enable</div>
+    <h2 class="chem-h">Services that <em>power your</em> production</h2>
   </div>
   <div id="chem-list"></div>
 </section>
@@ -467,248 +467,266 @@ const IND={
   rubber:{
     name:'Rubber &amp; Latex',nameRaw:'Rubber & Latex',badge:'🌿 Core Sector',
     img:'https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop&crop=center&auto=format&q=85',
-    tagline:'Essential coagulants and processing chemicals for Sri Lanka\'s plantation sector.',
+    tagline:'Enabling Sri Lanka\'s rubber plantations and processors to coagulate, preserve, and ship quality rubber — reliably, year-round.',
     ovH:'The backbone of<br><em>Sri Lankan industry</em>',
-    ovP1:'Sri Lanka has a long and proud history in natural rubber production. S.K. Chem Solutions has been a trusted supplier to rubber plantations and processing facilities since 2017, providing essential chemicals that keep the industry running.',
-    ovP2:'From latex coagulation on the plantation to sheet manufacturing and preservation, we supply high-purity, consistently available materials sourced from world-leading manufacturers.',
-    stats:[{n:'#1',l:'Sector We Serve'},{n:'3+',l:'Core Chemicals'},{n:'BASF',l:'Sourced'},{n:'Year-round',l:'Supply'}],
-    quickH:'Chemicals at a Glance',
+    ovP1:'Sri Lanka has a long and proud history in natural rubber production. S.K. Chem Solutions has been a trusted supply partner to rubber plantations and processing facilities since 2017 — providing the chemicals that enable every stage of rubber manufacturing.',
+    ovP2:'From latex coagulation on the plantation to sheet antioxidation and transport preservation, we enable consistent, quality output from field to export — with year-round supply and full technical documentation.',
+    stats:[{n:'#1',l:'Sector We Serve'},{n:'3+',l:'Core Services'},{n:'BASF',l:'Sourced'},{n:'Year-round',l:'Supply'}],
+    quickH:'Services at a Glance',
     quick:[
-      {ico:'🧪',t:'Formic Acid',s:'Primary coagulant for natural rubber. Industrial grade, 35 kg carboys.'},
-      {ico:'🔬',t:'Sodium Metabisulfite',s:'Antioxidant & preservative. Food & industrial grade. 25 kg bags.'},
-      {ico:'⚗️',t:'Sodium Sulphite',s:'Antioxidant for rubber processing. Industrial grade. 25 kg bags.'}
+      {ico:'🌿',t:'Latex Coagulation',s:'Formic acid for fast, clean coagulation on the plantation and in processing. 35 kg carboys.'},
+      {ico:'📦',t:'Sheet Preservation',s:'Sodium metabisulfite prevents yellowing and oxidation in processed rubber sheets. 25 kg bags.'},
+      {ico:'🚛',t:'Latex Protection in Transit',s:'Sodium sulphite maintains quality during transport and holding periods. 25 kg bags.'}
     ],
     chems:[
-      {name:'Formic Acid',nameEm:'Formic <em>Acid</em>',formula:'HCOOH · CH₂O₂',grade:'Industrial Grade',pack:'35 kg Carboys',supplier:'BASF China',flag:'🇨🇳',
-       img:'https://loremflickr.com/900/650/chemical,acid,laboratory?lock=101',
-       desc:'High-purity formic acid is the essential coagulant used across rubber plantations and latex processing facilities throughout Sri Lanka. It rapidly and efficiently coagulates natural rubber latex — making it the industry standard for wet rubber processing.',
-       uses:['Latex coagulation','Rubber sheet manufacturing','Crepe rubber production','Plantation use'],
-       specs:[{l:'Purity',v:'≥85%'},{l:'Appearance',v:'Colourless liquid'},{l:'Flash Point',v:'59°C'},{l:'Packaging',v:'35 kg carboys'}]},
-      {name:'Sodium Metabisulfite',nameEm:'Sodium <em>Metabisulfite</em>',formula:'Na₂S₂O₅',grade:'Food / Industrial Grade',pack:'25 kg Bags',supplier:'BASF Germany',flag:'🇩🇪',
-       img:'https://loremflickr.com/900/650/chemical,powder,industrial?lock=102',
-       desc:'A versatile antioxidant, preservative, and reducing agent widely used in rubber processing to prevent oxidation during latex transport and sheet manufacturing. Also supplied food-grade for food and beverage applications.',
-       uses:['Latex preservation','Antioxidant in rubber sheets','Food & beverage preservative','Dechlorination'],
-       specs:[{l:'Purity',v:'≥96%'},{l:'Grade',v:'Food & Industrial'},{l:'Appearance',v:'White powder'},{l:'Packaging',v:'25 kg bags'}]},
-      {name:'Sodium Sulphite',nameEm:'Sodium <em>Sulphite</em>',formula:'Na₂SO₃',grade:'Industrial Grade',pack:'25 kg Bags',supplier:'BASF Germany',flag:'🇩🇪',
-       img:'https://loremflickr.com/900/650/industrial,chemical,factory?lock=103',
-       desc:'Industrial-grade sodium sulphite used as an antioxidant in rubber and textile processing. Helps maintain product quality by preventing oxidation and is an essential processing chemical for sheet rubber and crepe production.',
-       uses:['Rubber processing','Antioxidant agent','Textile washing','Chemical processing'],
-       specs:[{l:'Purity',v:'≥96%'},{l:'Grade',v:'Industrial'},{l:'Appearance',v:'White crystalline powder'},{l:'Packaging',v:'25 kg bags'}]}
+      {service:'Latex Coagulation',serviceEm:'Latex <em>Coagulation</em>',chemical:'Formic Acid · HCOOH',
+       img:'https://loremflickr.com/900/650/rubber,plantation,worker?lock=101',
+       desc:'Give your plantation the fast, clean coagulation it needs. We supply industrial-grade formic acid that turns fresh field latex into firm, uniform rubber slabs — enabling efficient sheet production and consistent throughput from field to factory.',
+       outcomes:['Rapid, clean coagulation','Consistent quality output','Plantation-ready packaging','Year-round supply'],
+       specs:[{l:'Purity',v:'≥85%'},{l:'Packaging',v:'35 kg carboys'},{l:'Supply',v:'Year-round'},{l:'Docs',v:'CoA & SDS'}],
+       supplier:'BASF China',flag:'🇨🇳'},
+      {service:'Sheet Rubber Preservation',serviceEm:'Sheet Rubber <em>Preservation</em>',chemical:'Sodium Metabisulfite · Na₂S₂O₅',
+       img:'https://loremflickr.com/900/650/rubber,factory,production?lock=102',
+       desc:'Protect your processed rubber sheets from yellowing, oxidation, and quality degradation — during processing, storage, and export. Our sodium metabisulfite ensures your sheets reach buyers in peak condition, protecting your reputation and margins.',
+       outcomes:['Oxidation prevention','Colour & grade protection','Extended storage life','Export-ready quality'],
+       specs:[{l:'Purity',v:'≥96%'},{l:'Packaging',v:'25 kg bags'},{l:'Grade',v:'Food & Industrial'},{l:'Docs',v:'CoA & SDS'}],
+       supplier:'BASF Germany',flag:'🇩🇪'},
+      {service:'Latex Transport & Antioxidation',serviceEm:'Latex Transport &amp; <em>Antioxidation</em>',chemical:'Sodium Sulphite · Na₂SO₃',
+       img:'https://loremflickr.com/900/650/latex,transport,industrial?lock=103',
+       desc:'Maintain the quality of fresh latex from plantation to processing facility. Our sodium sulphite acts as a reliable antioxidant during transit and holding — giving you a wider processing window and reducing quality loss between harvest and production.',
+       outcomes:['Fresh latex protection','Extended processing window','Antioxidation in transit','Industrial-grade reliability'],
+       specs:[{l:'Purity',v:'≥96%'},{l:'Packaging',v:'25 kg bags'},{l:'Grade',v:'Industrial'},{l:'Docs',v:'CoA & SDS'}],
+       supplier:'BASF Germany',flag:'🇩🇪'}
     ],
     apps:[
-      {ico:'🌿',t:'Plantation Coagulation',s:'Diluted formic acid applied directly to fresh latex on the plantation, initiating rapid, clean coagulation into rubber slabs.'},
-      {ico:'🏭',t:'Sheet Rubber Processing',s:'Coagulated rubber processed through roller mills and drying chambers. Antioxidants prevent yellowing and oxidation.'},
-      {ico:'🚛',t:'Latex Transport & Preservation',s:'Sodium metabisulfite preserves fresh latex before transport to prevent premature coagulation in transit.'},
-      {ico:'🔬',t:'Quality Control',s:'Consistent purity levels and full documentation ensure reproducible results in every processing batch.'},
-      {ico:'🤝',t:'Reliable Supply',s:'Year-round supply guaranteed through our established chain with BASF Germany and BASF China.'},
-      {ico:'📦',t:'Flexible Packaging',s:'Formic acid in 35 kg carboys, sulphites in 25 kg bags — plantation-ready for easy handling.'}
+      {ico:'🌿',t:'Plantation Coagulation',s:'Diluted formic acid applied to fresh latex on the plantation — initiating rapid, clean coagulation into uniform rubber slabs ready for processing.'},
+      {ico:'🏭',t:'Sheet Rubber Processing',s:'Antioxidants prevent yellowing and oxidation during roller mill processing and drying — ensuring export-grade quality at every stage.'},
+      {ico:'🚛',t:'Latex Transport & Preservation',s:'Sodium sulphite protects fresh latex in transit, maintaining quality from plantation gate to processing facility.'},
+      {ico:'📋',t:'Quality Assurance',s:'Consistent purity levels and full documentation ensure reproducible results and traceable supply for every batch.'},
+      {ico:'🤝',t:'Reliable Year-Round Supply',s:'Guaranteed through our established supply chain with BASF Germany and BASF China — no seasonal shortfalls.'},
+      {ico:'📦',t:'Plantation-Ready Packaging',s:'Formic acid in 35 kg carboys, sulphites in 25 kg bags — convenient formats for daily plantation and factory use.'}
     ]
   },
 
   personal:{
     name:'Personal Care',nameRaw:'Personal Care',badge:'✨ Growing Sector',
-    img:'https://loremflickr.com/1920/1080/cosmetics,skincare,spa,luxury?lock=201',
-    tagline:'Cosmetic-grade and high-purity ingredients for skincare, haircare, and personal hygiene manufacturers.',
+    img:'https://loremflickr.com/1920/1080/beauty,woman,skincare,spa?lock=210',
+    tagline:'Enabling Sri Lankan manufacturers to produce gentle, effective, and premium personal care products.',
     ovH:'Premium ingredients<br>for <em>everyday beauty</em>',
-    ovP1:'Sri Lanka\'s personal care manufacturing sector is growing rapidly, with increasing demand for high-quality cosmetic ingredients. S.K. Chem Solutions supplies a comprehensive range of cosmetic-grade raw materials sourced from Europe, Korea, and Malaysia.',
-    ovP2:'From mild surfactants to antioxidants and humectants, our personal care range covers the essential building blocks for shampoos, body washes, moisturisers, and more.',
-    stats:[{n:'5+',l:'Products'},{n:'USP/BP',l:'Grade Available'},{n:'Germany',l:'& Korea Sourced'},{n:'Cosmetic',l:'Grade Certified'}],
-    quickH:'Products at a Glance',
+    ovP1:'Sri Lanka\'s personal care manufacturing sector is growing rapidly, with increasing demand for high-quality cosmetic products. S.K. Chem Solutions enables local manufacturers to compete — by providing cosmetic-grade ingredients sourced from Europe, Korea, and Malaysia.',
+    ovP2:'From mild surfactants for gentle shampoos to antioxidants for premium skincare, our personal care range gives formulators the building blocks to produce products that consumers love and trust.',
+    stats:[{n:'5+',l:'Services Enabled'},{n:'USP/BP',l:'Grade Available'},{n:'Germany',l:'& Korea Sourced'},{n:'Cosmetic',l:'Grade Certified'}],
+    quickH:'Services at a Glance',
     quick:[
-      {ico:'✨',t:'CAPB (Betaine)',s:'Mild amphoteric surfactant. Cosmetic grade. 200 kg drums.'},
-      {ico:'🌿',t:'Vitamin E Acetate',s:'Tocopheryl acetate for skincare. Cosmetic grade. 5 kg containers.'},
-      {ico:'💧',t:'Monopropylene Glycol',s:'USP/Food grade humectant & solvent. 215 kg drums.'},
-      {ico:'🧴',t:'Isopropyl Alcohol',s:'High-purity IPA. 160 kg drums.'},
-      {ico:'🌻',t:'Glycerine (Vegetable)',s:'USP/BP grade moisturiser. 250 kg drums.'}
+      {ico:'✨',t:'Gentle Cleansing (CAPB)',s:'Mild surfactant enabling shampoos, body washes & baby care. 200 kg drums.'},
+      {ico:'🌿',t:'Skincare Enrichment (Vit. E)',s:'Antioxidant for premium anti-aging products. 5 kg containers.'},
+      {ico:'💧',t:'Moisture Formulation (MPG)',s:'Humectant for moisturisers & hair care. 215 kg drums.'},
+      {ico:'🧴',t:'Sanitiser Production (IPA)',s:'High-purity alcohol for sanitisers & antiseptics. 160 kg drums.'},
+      {ico:'🌻',t:'Natural Hydration (Glycerine)',s:'Plant-derived moisture for natural beauty lines. 250 kg drums.'}
     ],
     chems:[
-      {name:'CAPB — Betaine',nameEm:'CAPB — <em>Betaine</em>',formula:'Cocamidopropyl Betaine',grade:'Cosmetic Grade',pack:'200 kg Drums',supplier:'Vance Group, Malaysia',flag:'🇲🇾',
-       img:'https://loremflickr.com/900/650/cosmetic,foam,shampoo,bubble?lock=104',
-       desc:'Cocamidopropyl Betaine (CAPB) is a mild amphoteric surfactant derived from coconut oil. It produces a rich, stable foam while being gentle on skin and eyes — making it ideal for shampoos, body washes, facial cleansers, and baby care products.',
-       uses:['Shampoos & conditioners','Body washes','Facial cleansers','Baby care products'],
-       specs:[{l:'Active Content',v:'30% ± 2%'},{l:'Grade',v:'Cosmetic'},{l:'Appearance',v:'Clear to pale yellow liquid'},{l:'Packaging',v:'200 kg drums'}]},
-      {name:'Vitamin E Acetate',nameEm:'Vitamin E <em>Acetate</em>',formula:'Tocopheryl Acetate',grade:'Cosmetic Grade',pack:'5 kg Containers',supplier:'BASF Germany',flag:'🇩🇪',
-       img:'https://loremflickr.com/900/650/vitamin,serum,skincare,golden?lock=105',
-       desc:'Premium tocopheryl acetate (Vitamin E Acetate) is a powerful antioxidant used extensively in skincare and haircare formulations. It protects skin from oxidative stress, improves moisturisation, and enhances formulation stability.',
-       uses:['Anti-aging skincare','Moisturisers & serums','Hair care treatments','Sun care products'],
-       specs:[{l:'Purity',v:'≥96%'},{l:'Grade',v:'Cosmetic / USP'},{l:'Appearance',v:'Light yellow oily liquid'},{l:'Packaging',v:'5 kg containers'}]},
-      {name:'Monopropylene Glycol',nameEm:'Monopropylene <em>Glycol</em>',formula:'C₃H₈O₂ · MPG',grade:'USP / Food Grade',pack:'215 kg Drums',supplier:'SK Pickglobal, Korea',flag:'🇰🇷',
-       img:'https://loremflickr.com/900/650/chemical,liquid,clear,transparent?lock=106',
-       desc:'A versatile, multi-functional ingredient used as a humectant, solvent, preservative booster, and skin-conditioning agent in personal care and food applications. USP/food grade makes it suitable for both cosmetic and edible formulations.',
-       uses:['Humectant in skincare','Solvent for fragrances','Preservative booster','Food applications'],
-       specs:[{l:'Purity',v:'≥99.5%'},{l:'Grade',v:'USP / Food'},{l:'Appearance',v:'Colourless, viscous liquid'},{l:'Packaging',v:'215 kg drums'}]},
-      {name:'Isopropyl Alcohol',nameEm:'Isopropyl <em>Alcohol</em>',formula:'C₃H₈O · IPA',grade:'High Purity',pack:'160 kg Drums',supplier:'LG Chem, Korea',flag:'🇰🇷',
-       img:'https://loremflickr.com/900/650/laboratory,clean,industrial?lock=107',
-       desc:'High-purity isopropyl alcohol used as a solvent, antiseptic, and preservative across personal care, pharmaceutical, and industrial applications. Essential for hand sanitiser formulation, cosmetic manufacturing, and laboratory use.',
-       uses:['Hand sanitisers','Cosmetic solvent','Pharmaceutical use','Surface disinfection'],
-       specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'High Purity'},{l:'Appearance',v:'Colourless liquid'},{l:'Packaging',v:'160 kg drums'}]},
-      {name:'Glycerine (Vegetable)',nameEm:'Glycerine <em>(Vegetable)</em>',formula:'C₃H₈O₃ · Glycerol',grade:'USP / BP Grade',pack:'250 kg Drums',supplier:'Vance Group, Malaysia',flag:'🇲🇾',
-       img:'https://loremflickr.com/900/650/cosmetic,moisturizer,cream,luxury?lock=108',
-       desc:'Premium vegetable-derived glycerine — a key moisturising and humectant agent in personal care, food, and pharmaceutical products. Its ability to attract and retain moisture makes it indispensable in skincare, haircare, and oral care formulations.',
-       uses:['Skin moisturiser','Hair care products','Oral care formulations','Food & pharma applications'],
-       specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'USP / BP / Food'},{l:'Appearance',v:'Clear, viscous liquid'},{l:'Packaging',v:'250 kg drums'}]}
+      {service:'Shampoo & Body Wash Formulation',serviceEm:'Shampoo &amp; Body Wash <em>Formulation</em>',chemical:'CAPB · Cocamidopropyl Betaine',
+       img:'https://loremflickr.com/900/650/shampoo,haircare,woman,washing?lock=201',
+       desc:'Help Sri Lankan consumers enjoy a rich, gentle lather every day. Our cosmetic-grade CAPB is the mild surfactant that gives your shampoos, body washes, and baby care products gentle cleansing performance — sourced from a globally recognised manufacturer and proven in markets worldwide.',
+       outcomes:['Gentle on skin & eyes','Rich, stable foam','Baby-safe formulations','Coconut-derived, natural origin'],
+       specs:[{l:'Active Content',v:'30% ±2%'},{l:'Grade',v:'Cosmetic'},{l:'Packaging',v:'200 kg drums'},{l:'Docs',v:'CoA & SDS'}],
+       supplier:'Vance Group, Malaysia',flag:'🇲🇾'},
+      {service:'Premium Skincare & Anti-Aging',serviceEm:'Premium Skincare &amp; <em>Anti-Aging</em>',chemical:'Vitamin E Acetate · Tocopheryl Acetate',
+       img:'https://loremflickr.com/900/650/skincare,woman,serum,luxury?lock=202',
+       desc:'Elevate your skincare line to premium positioning. BASF Germany\'s Vitamin E Acetate adds proven antioxidant protection, visible skin improvement, and formulation stability — giving your moisturisers and serums the credibility to command higher shelf prices.',
+       outcomes:['Premium product positioning','Antioxidant skin protection','Improved formulation stability','BASF Germany provenance'],
+       specs:[{l:'Purity',v:'≥96%'},{l:'Grade',v:'Cosmetic / USP'},{l:'Packaging',v:'5 kg containers'},{l:'Docs',v:'CoA & SDS'}],
+       supplier:'BASF Germany',flag:'🇩🇪'},
+      {service:'Moisturiser & Cosmetic Base Formulation',serviceEm:'Moisturiser &amp; Cosmetic <em>Base Formulation</em>',chemical:'Monopropylene Glycol · C₃H₈O₂',
+       img:'https://loremflickr.com/900/650/moisturizer,lotion,cosmetic,cream?lock=203',
+       desc:'Build effective moisturisers, hair conditioners, and skincare bases that keep skin hydrated and feeling great. Our USP/food-grade MPG works as a humectant, solvent, and preservative booster — giving your cosmetic formulations longer shelf life and better sensory performance.',
+       outcomes:['Superior moisture retention','Improved skin feel','Longer product shelf life','Dual cosmetic & food grade'],
+       specs:[{l:'Purity',v:'≥99.5%'},{l:'Grade',v:'USP / Food'},{l:'Packaging',v:'215 kg drums'},{l:'Docs',v:'CoA & SDS'}],
+       supplier:'SK Pickglobal, Korea',flag:'🇰🇷'},
+      {service:'Hand Sanitiser & Antiseptic Production',serviceEm:'Hand Sanitiser &amp; <em>Antiseptic Production</em>',chemical:'Isopropyl Alcohol · C₃H₈O (IPA)',
+       img:'https://loremflickr.com/900/650/sanitizer,hygiene,hands?lock=204',
+       desc:'Meet market demand for effective hand hygiene products with confidence. Our high-purity IPA from LG Chem Korea delivers the consistent specification and reliable supply your sanitiser production needs — with full documentation for regulatory compliance.',
+       outcomes:['WHO-compliant formulation','Consistent high purity','Reliable supply chain','Full regulatory docs'],
+       specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'High Purity'},{l:'Packaging',v:'160 kg drums'},{l:'Docs',v:'CoA & SDS'}],
+       supplier:'LG Chem, Korea',flag:'🇰🇷'},
+      {service:'Natural Beauty & Skin Hydration',serviceEm:'Natural Beauty &amp; <em>Skin Hydration</em>',chemical:'Vegetable Glycerine · C₃H₈O₃',
+       img:'https://loremflickr.com/900/650/natural,botanical,beauty,organic?lock=205',
+       desc:'Tap into the growing demand for natural, plant-derived personal care. Our USP/BP vegetable glycerine keeps skin deeply moisturised, hair nourished, and oral care products effective — a clean, naturally-sourced ingredient your eco-conscious customers can trust.',
+       outcomes:['Natural origin, plant-derived','Deep skin hydration','Suitable for natural product claims','USP/BP & Halal certified'],
+       specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'USP / BP / Food'},{l:'Packaging',v:'250 kg drums'},{l:'Docs',v:'CoA & Halal Cert'}],
+       supplier:'Vance Group, Malaysia',flag:'🇲🇾'}
     ],
     apps:[
-      {ico:'🧴',t:'Shampoos & Body Washes',s:'CAPB and glycerine form the backbone of gentle, effective haircare and body wash formulations.'},
-      {ico:'✨',t:'Skincare & Moisturisers',s:'Vitamin E, glycerine, and MPG deliver moisture-binding, antioxidant, and sensory-enhancing properties to skincare.'},
-      {ico:'🌿',t:'Natural & Organic Products',s:'Vegetable-derived ingredients supporting the growing demand for natural and sustainably sourced personal care.'},
-      {ico:'💧',t:'Hand Sanitisers',s:'High-purity IPA and glycerine are the two key active and conditioning ingredients in effective sanitiser formulations.'},
+      {ico:'🧴',t:'Shampoos & Body Washes',s:'CAPB and glycerine enable gentle, effective haircare and body wash formulations that are kind to skin and loved by consumers.'},
+      {ico:'✨',t:'Skincare & Moisturisers',s:'Vitamin E, glycerine, and MPG deliver moisture-binding, antioxidant, and premium sensory properties to skincare formulations.'},
+      {ico:'🌿',t:'Natural & Organic Products',s:'Vegetable-derived ingredients supporting the growing market for natural and sustainably sourced personal care products.'},
+      {ico:'💧',t:'Hand Sanitisers',s:'High-purity IPA and glycerine are the two key ingredients in effective, skin-friendly sanitiser formulations.'},
       {ico:'👶',t:'Baby Care Products',s:'Mild, cosmetic-grade CAPB and glycerine are safe and gentle for baby shampoos and body washes.'},
-      {ico:'🔬',t:'Formulation Flexibility',s:'Surfactants, antioxidants, humectants, and solvents — a comprehensive toolkit for cosmetic formulators.'}
+      {ico:'🔬',t:'Flexible Formulation',s:'Surfactants, antioxidants, humectants, and solvents — a complete toolkit for personal care formulators.'}
     ]
   },
 
   home:{
     name:'Home Care',nameRaw:'Home Care',badge:'🏠 Established Sector',
-    img:'https://loremflickr.com/1920/1080/cleaning,detergent,household,bright?lock=301',
-    tagline:'Raw materials for cleaning agents, detergents, and household product manufacturers.',
+    img:'https://loremflickr.com/1920/1080/home,clean,modern,interior?lock=310',
+    tagline:'Enabling Sri Lankan manufacturers to produce powerful, reliable household cleaning and detergent products.',
     ovH:'The chemistry behind<br><em>a cleaner home</em>',
-    ovP1:'Sri Lanka\'s home care manufacturing sector produces a wide range of cleaning products for both household and industrial use. S.K. Chem Solutions supplies key raw materials that go into these formulations.',
-    ovP2:'Our home care range covers surfactants, solvents, and specialty chemicals that provide the cleaning power, foam, and stability required in modern household product formulations.',
+    ovP1:'Sri Lanka\'s home care manufacturing sector produces a wide range of cleaning products for both household and industrial use. S.K. Chem Solutions enables local manufacturers to produce consistently effective, market-ready products.',
+    ovP2:'Our home care range covers surfactants and chelating agents — core ingredients that provide the cleaning power, foam performance, and formulation stability required in modern household product manufacturing.',
     stats:[{n:'Year-round',l:'Supply'},{n:'100%',l:'Quality Assured'},{n:'Multi-use',l:'Ingredients'},{n:'B2B',l:'Supply Only'}],
-    quickH:'Home Care Chemicals',
+    quickH:'Services at a Glance',
     quick:[
-      {ico:'🧼',t:'Specialty Surfactants',s:'Core cleaning and foaming agents for detergent formulations.'},
-      {ico:'⚗️',t:'Chelating Agents',s:'Water softening and stability-enhancing ingredients.'},
-      {ico:'💧',t:'Specialty Solvents',s:'Grease-cutting solvents for surface cleaners.'}
+      {ico:'🧼',t:'Powerful Cleaning (Surfactants)',s:'Core cleaning and foaming agents for dishwashing and surface cleaner manufacturing.'},
+      {ico:'💧',t:'Hard Water Solutions (Chelating)',s:'Water softening and stability agents for detergent manufacturing.'},
+      {ico:'🌿',t:'Eco-Responsible Options',s:'Environmentally responsible alternatives available on request.'}
     ],
     chems:[
-      {name:'Specialty Surfactants',nameEm:'Specialty <em>Surfactants</em>',formula:'Anionic & Non-ionic',grade:'Industrial Grade',pack:'Drums / IBC Tanks',supplier:'Global Manufacturers',flag:'🌍',
-       img:'https://loremflickr.com/900/650/cleaning,detergent,foam,bubbles?lock=302',
-       desc:'Surfactants are the core active ingredients in home care formulations — they lower surface tension, allowing water to penetrate dirt and oils more effectively. We supply anionic and non-ionic surfactants for dishwashing, laundry, and surface cleaning products.',
-       uses:['Dishwashing liquids','Laundry detergents','Floor cleaners','Multi-surface sprays'],
-       specs:[{l:'Grade',v:'Industrial'},{l:'Type',v:'Anionic / Non-ionic'},{l:'Form',v:'Liquid / Powder'},{l:'Packaging',v:'Drums / IBC tanks'}]},
-      {name:'Chelating Agents',nameEm:'Chelating <em>Agents</em>',formula:'EDTA & Alternatives',grade:'Industrial Grade',pack:'25 kg Bags / Drums',supplier:'Global Manufacturers',flag:'🌍',
-       img:'https://loremflickr.com/900/650/laboratory,chemical,science?lock=303',
-       desc:'Chelating agents bind metal ions in hard water, preventing them from interfering with surfactant performance and causing scale. Essential for maintaining effectiveness and shelf stability of liquid detergents and cleaning products.',
-       uses:['Hard water treatment','Detergent stability','Cream cleaners','Industrial cleaning'],
-       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid / Powder'},{l:'Application',v:'Water softening'},{l:'Packaging',v:'25 kg bags / drums'}]}
+      {service:'High-Performance Dishwashing & Surface Cleaning',serviceEm:'High-Performance Dishwashing &amp; <em>Surface Cleaning</em>',chemical:'Specialty Surfactants · Anionic & Non-ionic',
+       img:'https://loremflickr.com/900/650/kitchen,clean,dishwashing,bright?lock=301',
+       desc:'Manufacture dishwashing liquids and surface cleaners that consumers trust to cut through grease and grime. Our surfactants deliver the cleaning power, foam density, and rinse-clean performance that make household cleaning products effective and satisfying to use.',
+       outcomes:['Superior grease-cutting power','Rich, lasting foam','Rinse-clean performance','Versatile for all surfaces'],
+       specs:[{l:'Grade',v:'Industrial'},{l:'Type',v:'Anionic / Non-ionic'},{l:'Packaging',v:'Drums / IBC tanks'},{l:'Supply',v:'Year-round'}],
+       supplier:'Global Manufacturers',flag:'🌍'},
+      {service:'Stable Detergent Formulation in Hard Water',serviceEm:'Stable Detergent <em>Formulation in Hard Water</em>',chemical:'Chelating Agents · EDTA & Alternatives',
+       img:'https://loremflickr.com/900/650/laundry,washing,detergent,clean?lock=302',
+       desc:'Make sure your laundry and cleaning products perform reliably even in Sri Lanka\'s hard water conditions. Our chelating agents bind calcium and magnesium ions — ensuring your formulations stay stable, effective, and ready to use right out of the bottle.',
+       outcomes:['Hard water compatibility','Long-term formula stability','Consistent consumer performance','Extended shelf life'],
+       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid / Powder'},{l:'Packaging',v:'25 kg bags / drums'},{l:'Supply',v:'Year-round'}],
+       supplier:'Global Manufacturers',flag:'🌍'}
     ],
     apps:[
       {ico:'🍽️',t:'Dishwashing Products',s:'Surfactants and chelating agents combine to deliver effective, rinse-clean dishwashing liquids for household and commercial use.'},
-      {ico:'🧺',t:'Laundry Detergents',s:'Specialty ingredients for powder and liquid laundry products including fabric conditioners and stain removers.'},
-      {ico:'🏠',t:'Surface Care',s:'Grease-cutting solvents and surfactants for kitchen, bathroom, and multi-surface cleaning sprays.'},
+      {ico:'🧺',t:'Laundry Detergents',s:'Specialty ingredients for powder and liquid laundry products that work in Sri Lanka\'s hard water conditions.'},
+      {ico:'🏠',t:'Surface Care',s:'Grease-cutting surfactants for kitchen, bathroom, and multi-surface cleaning sprays that consumers rely on daily.'},
       {ico:'🏭',t:'Industrial Cleaning',s:'Higher-concentration grades for industrial and commercial cleaning product manufacturing at scale.'},
-      {ico:'✅',t:'Stable Formulations',s:'Chelating agents help formulators achieve stable, shelf-stable products with consistent performance.'},
-      {ico:'📦',t:'Bulk Supply',s:'Home care ingredients supplied in bulk drums and IBC tanks for manufacturing convenience.'}
+      {ico:'✅',t:'Stable Formulations',s:'Chelating agents help formulators achieve consistent, shelf-stable products that perform reliably from first use to last.'},
+      {ico:'📦',t:'Bulk Supply',s:'Home care ingredients supplied in drums and IBC tanks for manufacturing convenience and cost efficiency.'}
     ]
   },
 
   food:{
     name:'Food Industry',nameRaw:'Food Industry',badge:'🌾 Growth Sector',
-    img:'https://loremflickr.com/1920/1080/food,processing,manufacturing,clean?lock=401',
-    tagline:'Food-grade additives and processing aids meeting international safety standards.',
+    img:'https://loremflickr.com/1920/1080/food,chef,kitchen,restaurant?lock=410',
+    tagline:'Enabling Sri Lankan food manufacturers to produce safer, fresher, and longer-lasting products.',
     ovH:'Food-grade quality<br><em>you can trust</em>',
-    ovP1:'Sri Lanka\'s food and beverage manufacturing sector continues to grow, with increasing demand for high-quality food-grade ingredients and additives. S.K. Chem Solutions supplies internationally certified food-grade chemicals for local manufacturers.',
-    ovP2:'Our food-grade range includes preservatives, antioxidants, humectants, and solvents that comply with international food safety standards — helping manufacturers produce safe, high-quality food products.',
+    ovP1:'Sri Lanka\'s food and beverage manufacturing sector continues to grow, with increasing demand for high-quality food-grade ingredients. S.K. Chem Solutions enables local manufacturers to produce safe, market-ready food products that meet international standards.',
+    ovP2:'Our food-grade range includes preservatives, humectants, and food-safe solvents that comply with international food safety standards — helping manufacturers extend shelf life, improve product quality, and achieve regulatory compliance.',
     stats:[{n:'Food Safe',l:'Grade Certified'},{n:'International',l:'Standards Met'},{n:'Year-round',l:'Supply'},{n:'Full Docs',l:'CoA & SDS'}],
-    quickH:'Food Grade Products',
+    quickH:'Services at a Glance',
     quick:[
-      {ico:'🧂',t:'Sodium Metabisulfite (Food Grade)',s:'Preservative and antioxidant. 25 kg bags.'},
-      {ico:'💧',t:'Monopropylene Glycol (Food Grade)',s:'Humectant & carrier solvent. 215 kg drums.'},
-      {ico:'🌻',t:'Glycerine (Food Grade)',s:'Natural humectant & sweetener. 250 kg drums.'}
+      {ico:'🥤',t:'Beverage Preservation (E223)',s:'Food-grade antioxidant preservative for juices and beverages. 25 kg bags.'},
+      {ico:'🍞',t:'Bakery Freshness (MPG)',s:'GRAS humectant for longer shelf life in bakery products. 215 kg drums.'},
+      {ico:'🌿',t:'Natural Sweetening (Glycerine)',s:'USP/Halal food-grade humectant and sweetener. 250 kg drums.'}
     ],
     chems:[
-      {name:'Sodium Metabisulfite',nameEm:'Sodium <em>Metabisulfite</em>',formula:'Na₂S₂O₅ · Food Grade (E223)',grade:'Food Grade',pack:'25 kg Bags',supplier:'BASF Germany',flag:'🇩🇪',
-       img:'https://loremflickr.com/900/650/food,ingredient,powder,white?lock=402',
-       desc:'Food-grade sodium metabisulfite is a widely used preservative, antioxidant, and oxygen scavenger in the food and beverage industry. It prevents oxidative spoilage, browning, and microbial growth in juices, wines, dried fruits, and seafood.',
-       uses:['Fruit juice preservation','Dried fruit treatment','Wine & beverage production','Seafood preservation'],
-       specs:[{l:'Purity',v:'≥96%'},{l:'Grade',v:'Food Grade (E223)'},{l:'Appearance',v:'White powder'},{l:'Packaging',v:'25 kg bags'}]},
-      {name:'Monopropylene Glycol',nameEm:'Monopropylene <em>Glycol</em>',formula:'C₃H₈O₂ · Food Grade',grade:'USP / Food Grade',pack:'215 kg Drums',supplier:'SK Pickglobal, Korea',flag:'🇰🇷',
-       img:'https://loremflickr.com/900/650/food,ingredient,liquid,clear?lock=403',
-       desc:'Food-grade MPG used as a humectant, solvent, preservative carrier, and anti-caking agent in food applications. Its GRAS status makes it suitable for a wide range of food formulations from bakery to beverages.',
-       uses:['Food flavouring carrier','Humectant in bakery','Ice cream & dairy','Pharmaceutical excipient'],
-       specs:[{l:'Purity',v:'≥99.5%'},{l:'Grade',v:'USP / Food / GRAS'},{l:'Appearance',v:'Colourless, viscous liquid'},{l:'Packaging',v:'215 kg drums'}]},
-      {name:'Glycerine (Vegetable)',nameEm:'Glycerine <em>(Vegetable)</em>',formula:'C₃H₈O₃ · Food Grade',grade:'USP / Food Grade',pack:'250 kg Drums',supplier:'Vance Group, Malaysia',flag:'🇲🇾',
-       img:'https://loremflickr.com/900/650/food,sweet,natural,organic?lock=404',
-       desc:'Vegetable-derived glycerine used in food and beverage applications as a humectant, sweetener, solvent, and preservative. Its sweet taste, moist-retaining properties, and GRAS status make it a versatile food ingredient.',
-       uses:['Confectionery & bakery','Liqueur & beverage','Dried fruit coating','Nutritional supplements'],
-       specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'USP / Food / Halal'},{l:'Appearance',v:'Clear, viscous, sweet liquid'},{l:'Packaging',v:'250 kg drums'}]}
+      {service:'Beverage & Fruit Juice Preservation',serviceEm:'Beverage &amp; Fruit Juice <em>Preservation</em>',chemical:'Sodium Metabisulfite · Na₂S₂O₅ (E223)',
+       img:'https://loremflickr.com/900/650/juice,beverage,fruit,fresh?lock=401',
+       desc:'Keep your juices, soft drinks, and beverages fresh and vibrant without compromising taste. Our food-grade sodium metabisulfite (E223) is the proven antioxidant preservative that prevents browning, oxidation, and spoilage — helping you extend shelf life and reduce product waste.',
+       outcomes:['Extended shelf life','Natural colour retention','Spoilage prevention','International food compliance'],
+       specs:[{l:'Purity',v:'≥96%'},{l:'Grade',v:'Food Grade (E223)'},{l:'Packaging',v:'25 kg bags'},{l:'Docs',v:'CoA, SDS, Halal'}],
+       supplier:'BASF Germany',flag:'🇩🇪'},
+      {service:'Bakery & Confectionery Freshness',serviceEm:'Bakery &amp; Confectionery <em>Freshness</em>',chemical:'Monopropylene Glycol · C₃H₈O₂ (GRAS)',
+       img:'https://loremflickr.com/900/650/bakery,bread,confectionery,fresh?lock=402',
+       desc:'Give your baked goods and confectionery the moisture retention and shelf life that consumers and retailers demand. Our GRAS-certified MPG works as a humectant to keep cakes, pastries, and confections soft, moist, and fresh — from factory to consumer.',
+       outcomes:['Stays moist & fresh longer','Extended product shelf life','Improved texture & mouthfeel','GRAS & food-safe certified'],
+       specs:[{l:'Purity',v:'≥99.5%'},{l:'Grade',v:'USP / Food / GRAS'},{l:'Packaging',v:'215 kg drums'},{l:'Docs',v:'CoA & Food Safety'}],
+       supplier:'SK Pickglobal, Korea',flag:'🇰🇷'},
+      {service:'Natural Sweetening & Moisture Control',serviceEm:'Natural Sweetening &amp; <em>Moisture Control</em>',chemical:'Vegetable Glycerine · C₃H₈O₃ (Halal)',
+       img:'https://loremflickr.com/900/650/confectionery,natural,food,organic?lock=403',
+       desc:'Add mouthfeel, natural sweetness, and moisture retention to your food and supplement products. Our USP/Halal vegetable glycerine is a clean, naturally-derived ingredient accepted globally — perfect for manufacturers targeting premium, natural, or health-conscious markets.',
+       outcomes:['Natural sweetness & mouthfeel','Halal & USP certified','Suitable for premium food claims','Versatile food applications'],
+       specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'USP / Food / Halal'},{l:'Packaging',v:'250 kg drums'},{l:'Docs',v:'CoA & Halal Cert'}],
+       supplier:'Vance Group, Malaysia',flag:'🇲🇾'}
     ],
     apps:[
-      {ico:'🥤',t:'Beverages & Juices',s:'Sodium metabisulfite used as a preservative in fruit juices, soft drinks, wines, and other beverages.'},
+      {ico:'🥤',t:'Beverages & Juices',s:'Sodium metabisulfite preserves the colour, freshness, and taste of fruit juices, soft drinks, wines, and other beverages.'},
       {ico:'🍞',t:'Bakery & Confectionery',s:'Glycerine and MPG used as humectants in baked goods and confectionery to maintain moisture and extend shelf life.'},
-      {ico:'🐟',t:'Seafood Processing',s:'Food-grade preservatives used in treatment and preservation of fresh and dried seafood products.'},
-      {ico:'🌿',t:'Natural Preservation',s:'Antioxidant preservatives help reduce artificial additives while maintaining product quality and safety.'},
-      {ico:'✅',t:'Compliance & Documentation',s:'All food-grade materials supplied with full CoA, SDS, and food safety certifications for regulatory compliance.'},
-      {ico:'📦',t:'Industrial Supply',s:'Available in bulk to support Sri Lanka\'s growing food manufacturing sector with year-round availability.'}
+      {ico:'🐟',t:'Seafood Processing',s:'Food-grade preservatives for treatment and preservation of fresh, canned, and dried seafood products.'},
+      {ico:'🌿',t:'Natural Preservation',s:'Antioxidant preservatives help reduce artificial additives while maintaining product quality and safety for health-conscious consumers.'},
+      {ico:'✅',t:'Compliance & Documentation',s:'All food-grade materials supplied with full CoA, SDS, Halal certification, and food safety compliance records.'},
+      {ico:'📦',t:'Industrial-Scale Supply',s:'Available in bulk to support Sri Lanka\'s growing food manufacturing sector with year-round availability and consistent quality.'}
     ]
   },
 
   pharma:{
     name:'Pharmaceutical',nameRaw:'Pharmaceutical',badge:'💊 Expanding Into',
-    img:'https://loremflickr.com/1920/1080/pharmaceutical,laboratory,medicine,clean?lock=501',
-    tagline:'USP/BP grade excipients and specialty ingredients for pharmaceutical manufacturers in Sri Lanka.',
+    img:'https://loremflickr.com/1920/1080/healthcare,hospital,medicine,clean?lock=510',
+    tagline:'Enabling Sri Lankan pharmaceutical manufacturers to meet the highest standards of quality and compliance.',
     ovH:'Pharmaceutical-grade<br><em>quality and compliance</em>',
-    ovP1:'S.K. Chem Solutions is expanding into the pharmaceutical sector, supplying USP/BP grade excipients and specialty chemicals to pharmaceutical manufacturers in Sri Lanka.',
-    ovP2:'Every pharmaceutical-grade product we supply comes with full documentation — Certificate of Analysis, Safety Data Sheet, and pharmacopoeia compliance records — ensuring your manufacturing processes meet the strictest quality standards.',
+    ovP1:'S.K. Chem Solutions is expanding into the pharmaceutical sector, supplying USP/BP grade excipients and specialty chemicals that enable Sri Lankan manufacturers to produce medicines that meet global quality standards.',
+    ovP2:'Every pharmaceutical-grade product we supply comes with full documentation — Certificate of Analysis, Safety Data Sheet, and pharmacopoeia compliance records — so your manufacturing processes meet the strictest quality and regulatory requirements.',
     stats:[{n:'USP/BP',l:'Grade'},{n:'Full Docs',l:'CoA & SDS'},{n:'Expanding',l:'Sector'},{n:'Certified',l:'Quality'}],
-    quickH:'Pharmaceutical Products',
+    quickH:'Services at a Glance',
     quick:[
-      {ico:'🔬',t:'Isopropyl Alcohol (USP)',s:'High-purity IPA. 160 kg drums.'},
-      {ico:'💧',t:'Monopropylene Glycol (USP)',s:'USP grade excipient & solvent. 215 kg drums.'},
-      {ico:'🌻',t:'Glycerine (BP/PhEur Grade)',s:'Pharmaceutical excipient. 250 kg drums.'}
+      {ico:'🔬',t:'Facility Sanitisation (IPA)',s:'USP-grade IPA for GMP-compliant cleaning. 160 kg drums.'},
+      {ico:'💊',t:'Oral Liquid Formulation (MPG)',s:'USP/PhEur excipient for syrups & oral liquids. 215 kg drums.'},
+      {ico:'💉',t:'Solid Dosage & Topical (Glycerine)',s:'BP/PhEur excipient for tablets, capsules & topicals. 250 kg drums.'}
     ],
     chems:[
-      {name:'Isopropyl Alcohol',nameEm:'Isopropyl <em>Alcohol</em>',formula:'C₃H₈O · IPA · USP',grade:'USP Grade',pack:'160 kg Drums',supplier:'LG Chem, Korea',flag:'🇰🇷',
-       img:'https://loremflickr.com/900/650/pharmaceutical,laboratory,clean,sterile?lock=502',
-       desc:'USP-grade isopropyl alcohol used in pharmaceutical manufacturing for equipment cleaning, surface sanitisation, API extraction, and hand sanitiser production. High purity and consistent specification make it suitable for GMP-compliant facilities.',
-       uses:['Equipment sanitisation','Pharmaceutical solvent','Hand sanitiser production','Surface disinfection'],
-       specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'USP / High Purity'},{l:'Appearance',v:'Colourless liquid'},{l:'Packaging',v:'160 kg drums'}]},
-      {name:'Monopropylene Glycol',nameEm:'Monopropylene <em>Glycol</em>',formula:'C₃H₈O₂ · USP Grade',grade:'USP / PhEur Grade',pack:'215 kg Drums',supplier:'SK Pickglobal, Korea',flag:'🇰🇷',
-       img:'https://loremflickr.com/900/650/medicine,capsule,pharmaceutical?lock=503',
-       desc:'USP-grade MPG serves as a pharmaceutical excipient — acting as solvent, humectant, and carrier for active pharmaceutical ingredients (APIs) in oral, topical, and injectable formulations. Wide regulatory acceptance makes it a versatile excipient.',
-       uses:['Oral liquid formulations','Topical preparations','Injectable vehicle','Tablet coating'],
-       specs:[{l:'Purity',v:'≥99.5%'},{l:'Grade',v:'USP / PhEur'},{l:'Appearance',v:'Colourless, odourless liquid'},{l:'Packaging',v:'215 kg drums'}]},
-      {name:'Glycerine (BP Grade)',nameEm:'Glycerine <em>(BP Grade)</em>',formula:'C₃H₈O₃ · BP/PhEur',grade:'BP / PhEur Grade',pack:'250 kg Drums',supplier:'Vance Group, Malaysia',flag:'🇲🇾',
-       img:'https://loremflickr.com/900/650/pharmacy,medicine,tablet,pill?lock=504',
-       desc:'BP/PhEur grade glycerine used as a pharmaceutical excipient in a wide range of dosage forms. Its lubricating, humectant, and sweetening properties make it suitable for tablets, suppositories, capsule shells, oral liquids, and topical preparations.',
-       uses:['Tablet & capsule formulations','Oral liquids & syrups','Suppositories','Topical preparations'],
-       specs:[{l:'Purity',v:'≥99.5%'},{l:'Grade',v:'BP / PhEur / USP'},{l:'Appearance',v:'Clear, viscous, sweet liquid'},{l:'Packaging',v:'250 kg drums'}]}
+      {service:'GMP Facility Sanitisation & Cleaning',serviceEm:'GMP Facility Sanitisation &amp; <em>Cleaning</em>',chemical:'Isopropyl Alcohol · C₃H₈O (USP)',
+       img:'https://loremflickr.com/900/650/pharmaceutical,cleanroom,sterile?lock=501',
+       desc:'Maintain the hygiene standards your GMP certification demands. Our USP-grade IPA from LG Chem Korea delivers the consistent purity, specification, and traceability required for equipment cleaning, surface disinfection, and validated cleaning procedures in regulated pharmaceutical environments.',
+       outcomes:['GMP-compliant hygiene','Validated cleaning procedures','Consistent specification','Full traceability & docs'],
+       specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'USP / High Purity'},{l:'Packaging',v:'160 kg drums'},{l:'Docs',v:'CoA, SDS, USP Compliance'}],
+       supplier:'LG Chem, Korea',flag:'🇰🇷'},
+      {service:'Oral Liquid & Syrup Formulation',serviceEm:'Oral Liquid &amp; Syrup <em>Formulation</em>',chemical:'Monopropylene Glycol · C₃H₈O₂ (USP/PhEur)',
+       img:'https://loremflickr.com/900/650/medicine,syrup,pharmacy,bottle?lock=502',
+       desc:'Formulate stable oral liquids, syrups, and suspensions that meet pharmacopoeia standards. Our USP/PhEur-grade MPG acts as solvent, co-solvent, and humectant — enabling clean, palatable, and stable liquid dosage forms with broad regulatory acceptance across global markets.',
+       outcomes:['Pharmacopoeia-compliant grade','Broad regulatory acceptance','Stable, palatable formulations','Suitable for paediatric use'],
+       specs:[{l:'Purity',v:'≥99.5%'},{l:'Grade',v:'USP / PhEur'},{l:'Packaging',v:'215 kg drums'},{l:'Docs',v:'CoA, SDS, PhEur Compliance'}],
+       supplier:'SK Pickglobal, Korea',flag:'🇰🇷'},
+      {service:'Solid Dosage & Topical Formulation',serviceEm:'Solid Dosage &amp; Topical <em>Formulation</em>',chemical:'Glycerine · C₃H₈O₃ (BP/PhEur)',
+       img:'https://loremflickr.com/900/650/tablet,capsule,medicine,pharmaceutical?lock=503',
+       desc:'Achieve consistent, high-quality tablets, capsules, suppositories, and topical preparations with our BP/PhEur-grade glycerine. Its lubricating, moisture-retaining, and sweetening properties make it one of the most versatile and widely accepted excipients in pharmaceutical manufacturing.',
+       outcomes:['Versatile solid & topical use','BP/PhEur & USP compliant','Excellent excipient properties','Global pharmacopoeia accepted'],
+       specs:[{l:'Purity',v:'≥99.5%'},{l:'Grade',v:'BP / PhEur / USP'},{l:'Packaging',v:'250 kg drums'},{l:'Docs',v:'CoA, SDS, BP Compliance'}],
+       supplier:'Vance Group, Malaysia',flag:'🇲🇾'}
     ],
     apps:[
-      {ico:'💊',t:'Tablet & Capsule Manufacturing',s:'Excipients serving as binders, lubricants, and moisture-retention agents in solid dosage form production.'},
-      {ico:'🧪',t:'Liquid Formulations',s:'USP-grade solvents and carriers for oral liquids, syrups, suspensions, and elixirs.'},
+      {ico:'💊',t:'Tablet & Capsule Manufacturing',s:'Excipients serving as binders, lubricants, and moisture-retention agents in solid dosage form production for Sri Lankan pharma manufacturers.'},
+      {ico:'🧪',t:'Liquid Formulations',s:'USP-grade solvents and carriers for oral liquids, syrups, suspensions, and elixirs that meet global pharmacopoeia standards.'},
       {ico:'🔬',t:'GMP Facility Sanitisation',s:'High-purity IPA for equipment cleaning and surface disinfection in GMP-compliant manufacturing environments.'},
       {ico:'💉',t:'Topical & Parenteral',s:'Pharmaceutical-grade excipients suitable for topical, transdermal, and selected injectable formulations.'},
-      {ico:'📋',t:'Full Documentation',s:'CoA, SDS, and pharmacopoeia compliance records supplied with every batch for your regulatory submissions.'},
-      {ico:'🌍',t:'Internationally Sourced',s:'All pharmaceutical-grade materials from LG Chem (Korea) and Vance Group (Malaysia) — globally recognised manufacturers.'}
+      {ico:'📋',t:'Full Documentation Package',s:'CoA, SDS, and pharmacopoeia compliance records supplied with every batch for your regulatory submissions and audits.'},
+      {ico:'🌍',t:'Internationally Sourced',s:'All pharmaceutical-grade materials from LG Chem (Korea) and Vance Group (Malaysia) — globally recognised, trusted manufacturers.'}
     ]
   },
 
   textile:{
     name:'Textile Washing',nameRaw:'Textile Washing',badge:'🧵 Established Sector',
-    img:'https://loremflickr.com/1920/1080/textile,fabric,weaving,thread?lock=601',
-    tagline:'Specialty chemicals and solvents for textile processing and garment washing operations.',
+    img:'https://loremflickr.com/1920/1080/fashion,garment,textile,production?lock=610',
+    tagline:'Enabling Sri Lankan garment and textile manufacturers to achieve premium washing and finishing results.',
     ovH:'The right chemistry<br>for <em>clean textiles</em>',
-    ovP1:'Sri Lanka\'s textile and garment sector is a major contributor to the national economy. Textile washing plants and garment factories require reliable, high-performance chemicals for processing, cleaning, and finishing operations.',
-    ovP2:'S.K. Chem Solutions supplies specialty solvents and processing chemicals that deliver consistent, high-quality results for textile washing and fabric treatment operations island-wide.',
+    ovP1:'Sri Lanka\'s textile and garment sector is a major contributor to the national economy. Washing plants and garment factories need reliable, high-performance chemicals to meet the exacting standards of international buyers.',
+    ovP2:'S.K. Chem Solutions supplies specialty solvents and processing chemicals that enable consistent, premium wash results — from garment finishing to pre-dyeing fabric preparation — helping manufacturers meet buyer specifications every time.',
     stats:[{n:'B2B',l:'Supply Only'},{n:'Year-round',l:'Availability'},{n:'Industrial',l:'Grade'},{n:'Bulk',l:'Quantities'}],
-    quickH:'Textile Chemicals',
+    quickH:'Services at a Glance',
     quick:[
-      {ico:'⚗️',t:'Specialty Solvents',s:'Industrial-grade solvents for fabric processing and finishing.'},
-      {ico:'🧼',t:'Processing Chemicals',s:'Specialty chemicals for desizing, scouring, and finishing.'},
+      {ico:'👔',t:'Garment Washing & Finishing',s:'Specialty solvents for premium wash effects on denim and garments. Drums / IBC tanks.'},
+      {ico:'🧵',t:'Fabric Scouring & Pre-Treatment',s:'Processing chemicals for pre-dyeing fabric preparation.'},
       {ico:'🌿',t:'Eco-Responsible Options',s:'Environmentally responsible alternatives available on request.'}
     ],
     chems:[
-      {name:'Specialty Solvents',nameEm:'Specialty <em>Solvents</em>',formula:'Industrial Grade',grade:'Industrial Grade',pack:'Drums / IBC Tanks',supplier:'Global Manufacturers',flag:'🌍',
-       img:'https://loremflickr.com/900/650/textile,fabric,industrial,manufacturing?lock=602',
-       desc:'Industrial-grade specialty solvents for textile processing applications including desizing, scouring, and garment washing. Our solvents are selected for performance, safety profile, and compatibility with textile processing equipment.',
-       uses:['Garment washing','Desizing','Fabric scouring','Finishing operations'],
-       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid'},{l:'Application',v:'Textile processing'},{l:'Packaging',v:'Drums / IBC tanks'}]},
-      {name:'Processing Chemicals',nameEm:'Processing <em>Chemicals</em>',formula:'Specialty Blend',grade:'Industrial Grade',pack:'As Required',supplier:'Global Manufacturers',flag:'🌍',
-       img:'https://loremflickr.com/900/650/factory,industrial,process,manufacturing?lock=603',
-       desc:'Specialty processing chemicals for use in textile washing and fabric treatment operations. Our range supports key stages of textile processing — from initial preparation to final finishing — delivering consistent, high-quality results.',
-       uses:['Pre-treatment','Washing & rinsing','Fabric softening','Industrial finishing'],
-       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid / Powder'},{l:'Application',v:'Textile washing'},{l:'Packaging',v:'As per requirement'}]}
+      {service:'Garment Washing & Denim Finishing',serviceEm:'Garment Washing &amp; Denim <em>Finishing</em>',chemical:'Specialty Solvents · Industrial Grade',
+       img:'https://loremflickr.com/900/650/denim,garment,washing,factory?lock=601',
+       desc:'Deliver the premium wash effects that international buyers expect. Our industrial-grade specialty solvents enable consistent stone wash, enzyme wash, and garment finishing — so your garments arrive at buyers with the right look, feel, and quality, on time, every time.',
+       outcomes:['Consistent wash effects','Premium finish quality','Compatible with all machinery','Bulk industrial supply'],
+       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid'},{l:'Packaging',v:'Drums / IBC tanks'},{l:'Supply',v:'Year-round'}],
+       supplier:'Global Manufacturers',flag:'🌍'},
+      {service:'Fabric Scouring & Pre-Treatment',serviceEm:'Fabric Scouring &amp; <em>Pre-Treatment</em>',chemical:'Processing Chemicals · Specialty Blend',
+       img:'https://loremflickr.com/900/650/fabric,textile,manufacturing,weaving?lock=602',
+       desc:'Prepare your grey fabric for dyeing with thorough, efficient scouring and pre-treatment. Our processing chemicals remove sizing agents, natural waxes, and impurities — ensuring even dye uptake, superior colour consistency, and a high-quality finish that your buyers can see.',
+       outcomes:['Even dye uptake','Superior colour quality','Impurity-free fabric','Faster processing cycles'],
+       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid / Powder'},{l:'Packaging',v:'As per requirement'},{l:'Supply',v:'Year-round'}],
+       supplier:'Global Manufacturers',flag:'🌍'}
     ],
     apps:[
-      {ico:'🧵',t:'Fabric Desizing',s:'Removing sizing agents from grey fabric prior to dyeing — ensuring uniform dye uptake and superior finish quality.'},
-      {ico:'🏭',t:'Scouring & Pre-treatment',s:'Removing natural impurities, waxes, and oils from raw fabric to prepare it for dyeing and finishing.'},
-      {ico:'👔',t:'Garment Washing',s:'Specialty solvents and surfactants for denim washing, stone wash, enzyme wash, and garment finishing effects.'},
+      {ico:'🧵',t:'Fabric Desizing',s:'Removing sizing agents from grey fabric prior to dyeing — ensuring uniform dye uptake and superior finish quality for every batch.'},
+      {ico:'🏭',t:'Scouring & Pre-treatment',s:'Removing natural impurities, waxes, and oils from raw fabric to prepare it perfectly for dyeing and finishing.'},
+      {ico:'👔',t:'Garment Washing',s:'Specialty solvents and surfactants for denim washing, stone wash, enzyme wash, and premium garment finishing effects.'},
       {ico:'✅',t:'Quality Finishing',s:'Finishing chemicals that impart the right hand-feel, appearance, and durability to the final fabric or garment.'},
       {ico:'🌿',t:'Eco-Responsible Options',s:'Supporting the industry\'s transition toward more sustainable and environmentally responsible processing chemicals.'},
-      {ico:'📦',t:'Bulk Industrial Supply',s:'Available in drums and IBC tanks to support continuous, high-volume textile manufacturing operations.'}
+      {ico:'📦',t:'Bulk Industrial Supply',s:'Available in drums and IBC tanks to support continuous, high-volume textile manufacturing operations island-wide.'}
     ]
   }
 };
@@ -734,14 +752,14 @@ document.getElementById('ov-q-list').innerHTML=d.quick.map(q=>`<div class="ov-q-
 document.getElementById('chem-list').innerHTML=d.chems.map((c,i)=>`
 <div class="chem-row${i%2===1?' rev':''}">
   <div class="chem-img">
-    <img src="${c.img}" alt="${c.name}">
+    <img src="${c.img}" alt="${c.service}">
     <div class="chem-img-ov"></div>
   </div>
   <div class="chem-txt">
-    <div class="chem-formula-badge">${c.formula}</div>
-    <div class="chem-name">${c.nameEm}</div>
+    <div class="chem-formula-badge">✦ ${c.chemical}</div>
+    <div class="chem-name">${c.serviceEm}</div>
     <p class="chem-desc">${c.desc}</p>
-    <div class="chem-use-tags">${c.uses.map(u=>`<span class="chem-use-tag">${u}</span>`).join('')}</div>
+    <div class="chem-use-tags">${c.outcomes.map(u=>`<span class="chem-use-tag">${u}</span>`).join('')}</div>
     <div class="chem-specs-grid">${c.specs.map(s=>`<div class="chem-spec"><strong>${s.l}</strong><span>${s.v}</span></div>`).join('')}</div>
     <div class="chem-supplier">
       <span class="chem-sup-flag">${c.flag}</span>
@@ -771,7 +789,7 @@ setTimeout(()=>{
   });
   /* Floating formula text */
   const ff=document.getElementById('ih-float-formula');
-  if(ff && d.chems && d.chems[0]) ff.textContent=d.chems[0].formula;
+  if(ff && d.chems && d.chems[0]) ff.textContent=d.chems[0].chemical;
 },10);
 
 /* ── MOTION: stat tiles staggered in ── */
