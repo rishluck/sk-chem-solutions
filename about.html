@@ -112,6 +112,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .sk-rule{flex:1;height:1px;background:var(--bdr)}
 .sk-text{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--tl);font-weight:400;white-space:nowrap}
 
+/* ── SUSTAIN ── */
+#sustain{position:relative;overflow:hidden;min-height:580px;display:flex;align-items:center;justify-content:center}
+.sus-bg{position:absolute;inset:0}
+.sus-bg img{width:100%;height:100%;object-fit:cover}
+.sus-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,16,.9) 0%,rgba(28,56,41,.78) 100%)}
+.sus-inner{position:relative;z-index:2;max-width:780px;text-align:center;padding:clamp(5rem,10vw,8rem) clamp(1.5rem,4vw,3rem)}
+.sus-quote-mark{font-family:'Cormorant Garamond',serif;font-size:8rem;line-height:.5;color:rgba(76,175,118,.2);display:block;margin-bottom:1.5rem}
+.sus-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,4.2rem);font-weight:300;font-style:italic;color:#fff;line-height:1.2;margin-bottom:1.5rem}
+.sus-p{font-size:15px;color:rgba(255,255,255,.6);font-weight:300;line-height:1.9;margin-bottom:2.5rem}
+.sus-pts{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;text-align:left;margin-top:2rem}
+.spt{display:flex;align-items:flex-start;gap:.75rem;padding:.9rem 1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;transition:all .35s}
+.spt:hover{background:rgba(255,255,255,.1);border-color:rgba(76,175,118,.3)}
+.spt-ic{font-size:1.1rem;flex-shrink:0;margin-top:2px}
+.spt-t{font-size:13px;font-weight:600;color:#fff;display:block;margin-bottom:2px}
+.spt-s{font-size:12px;color:rgba(255,255,255,.5);font-weight:300;line-height:1.6}
+
 /* ── RESPONSIVE ── */
 @media(max-width:900px){
   .story-wrap{grid-template-columns:1fr}
@@ -124,6 +140,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 @media(max-width:600px){
   .srv-grid{grid-template-columns:1fr}
   .nav-links{display:none}
+  .sus-pts{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -283,6 +300,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
         <div class="why-ico">🌱</div>
         <div><div class="why-t">Socially &amp; Environmentally Responsible</div><div class="why-s">Committed to sustainable sourcing, community welfare, and responsible business practices.</div></div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUSTAIN -->
+<section id="sustain">
+  <div class="sus-bg">
+    <img src="Images/All/green-plant-leaves-with-blue-sky-background.jpg" alt="Sustainability">
+  </div>
+  <div class="sus-overlay"></div>
+  <div class="sus-inner">
+    <span class="sus-quote-mark">"</span>
+    <h2 class="sus-h">Doing business right means<br>caring for our planet</h2>
+    <p class="sus-p">We believe true success means creating value not just for our clients — but for our communities and our planet. Sustainability is not a policy, it's who we are.</p>
+    <div class="sus-pts">
+      <div class="spt"><span class="spt-ic">🌿</span><div><span class="spt-t">Responsible Sourcing</span><span class="spt-s">Partnering only with manufacturers who maintain high environmental and safety standards globally.</span></div></div>
+      <div class="spt"><span class="spt-ic">🔬</span><div><span class="spt-t">Quality &amp; Safety First</span><span class="spt-s">Every product meets strict regulatory standards — protecting consumers, workers, and the environment.</span></div></div>
+      <div class="spt"><span class="spt-ic">🤝</span><div><span class="spt-t">Community Support</span><span class="spt-s">Supporting needy communities in Sri Lanka is at the heart of how we do business.</span></div></div>
+      <div class="spt"><span class="spt-ic">♻️</span><div><span class="spt-t">Sustainable Practices</span><span class="spt-s">Promoting environmentally responsible operations across our supply chain.</span></div></div>
     </div>
   </div>
 </section>

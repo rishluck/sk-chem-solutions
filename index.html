@@ -315,31 +315,6 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
   border:1px solid var(--bdr);color:var(--tm);transition:all .3s;cursor:default}
 .chip:hover{border-color:var(--fresh);color:var(--ink);background:var(--pale);transform:translateY(-2px)}
 
-/* ── SUSTAIN — full-image editorial ── */
-#sustain{position:relative;overflow:hidden;min-height:600px;
-  display:flex;align-items:center;justify-content:center}
-.sus-bg{position:absolute;inset:0}
-.sus-bg img{width:100%;height:100%;object-fit:cover}
-.sus-overlay{position:absolute;inset:0;
-  background:linear-gradient(135deg,rgba(10,22,16,.88) 0%,rgba(28,56,41,.75) 100%)}
-.sus-inner{position:relative;z-index:2;max-width:780px;text-align:center;
-  padding:clamp(5rem,10vw,8rem) clamp(1.5rem,4vw,3rem)}
-.sus-quote-mark{font-family:'Cormorant Garamond',serif;font-size:8rem;line-height:.5;
-  color:rgba(76,175,118,.2);display:block;margin-bottom:1.5rem}
-.sus-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,4.2rem);
-  font-weight:300;font-style:italic;color:#fff;line-height:1.2;margin-bottom:1.5rem}
-.sus-p{font-size:15px;color:rgba(255,255,255,.6);font-weight:300;line-height:1.9;
-  margin-bottom:2.5rem}
-.sus-pts{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;
-  text-align:left;margin-top:2rem}
-.spt{display:flex;align-items:flex-start;gap:.75rem;padding:.9rem 1rem;
-  background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;
-  transition:all .35s}
-.spt:hover{background:rgba(255,255,255,.1);border-color:rgba(76,175,118,.3)}
-.spt-ic{font-size:1.1rem;flex-shrink:0;margin-top:2px}
-.spt-t{font-size:13px;font-weight:600;color:#fff;display:block;margin-bottom:2px}
-.spt-s{font-size:12px;color:rgba(255,255,255,.5);font-weight:300;line-height:1.6}
-
 /* ── CSR ── */
 #csr{background:var(--cream)}
 .csr-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,7rem);align-items:start}
@@ -1016,25 +991,6 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
   </div>
 </section>
 
-<!-- ══ SUSTAIN — full-image editorial ══ -->
-<section id="sustain">
-  <div class="sus-bg">
-    <img src="Images/All/green-plant-leaves-with-blue-sky-background.jpg" alt="Sustainability">
-  </div>
-  <div class="sus-overlay"></div>
-  <div class="sus-inner rv">
-    <span class="sus-quote-mark">"</span>
-    <h2 class="sus-h">Doing business right means<br>caring for our planet</h2>
-    <p class="sus-p">We believe true success means creating value not just for our clients — but for our communities and our planet. Sustainability is not a policy, it's who we are.</p>
-    <div class="sus-pts">
-      <div class="spt"><span class="spt-ic">🌿</span><div><span class="spt-t">Responsible Sourcing</span><span class="spt-s">Partnering only with manufacturers who maintain high environmental and safety standards globally.</span></div></div>
-      <div class="spt"><span class="spt-ic">🔬</span><div><span class="spt-t">Quality &amp; Safety First</span><span class="spt-s">Every product meets strict regulatory standards — protecting consumers, workers, and the environment.</span></div></div>
-      <div class="spt"><span class="spt-ic">🤝</span><div><span class="spt-t">Community Support</span><span class="spt-s">Supporting needy communities in Sri Lanka is at the heart of how we do business.</span></div></div>
-      <div class="spt"><span class="spt-ic">♻️</span><div><span class="spt-t">Sustainable Practices</span><span class="spt-s">Promoting environmentally responsible operations across our supply chain.</span></div></div>
-    </div>
-  </div>
-</section>
-
 <!-- ══ CSR ══ -->
 <section id="csr" class="sec" style="background:var(--cream)">
   <div class="W">
@@ -1131,7 +1087,7 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
         <div class="ft-logo"><div class="ft-mark">SK</div><span class="ft-name">S.K. Chem Solutions</span></div>
         <p class="ft-tag">Connecting Industries with Quality Solutions since 2017. Your trusted partner for premium raw materials — delivered with consistency and care for the environment.</p>
       </div>
-      <div class="ft-col"><h5>Company</h5><ul><li><a href="#about">About Us</a></li><li><a href="#vm">Vision &amp; Mission</a></li><li><a href="#sustain">Sustainability</a></li><li><a href="#csr">Social Responsibility</a></li><li><a href="#contact">Contact</a></li></ul></div>
+      <div class="ft-col"><h5>Company</h5><ul><li><a href="#about">About Us</a></li><li><a href="#vm">Vision &amp; Mission</a></li><li><a href="about.html#sustain">Sustainability</a></li><li><a href="#csr">Social Responsibility</a></li><li><a href="#contact">Contact</a></li></ul></div>
       <div class="ft-col"><h5>Industries</h5><ul><li><a href="industry.html?ind=rubber">Rubber &amp; Latex</a></li><li><a href="industry.html?ind=personal">Personal Care</a></li><li><a href="industry.html?ind=home">Home Care</a></li><li><a href="industry.html?ind=food">Food Industry</a></li><li><a href="industry.html?ind=pharma">Pharmaceutical</a></li></ul></div>
       <div class="ft-col"><h5>Industries</h5><ul><li><a href="#industries">Rubber &amp; Latex</a></li><li><a href="#industries">Textile Washing</a></li><li><a href="#industries">Personal Care</a></li><li><a href="#industries">Food Industry</a></li><li><a href="#industries">Pharmaceutical</a></li></ul></div>
     </div>
