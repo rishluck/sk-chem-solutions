@@ -78,8 +78,8 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
   font-size:clamp(3.5rem,9.5vw,10rem);
   opacity:0;animation:fadeUp .9s .4s forwards}
 .hero-h1 em{font-style:italic;color:rgba(255,255,255,.85)}
-.hero-sub{font-size:clamp(13px,1.4vw,15px);color:rgba(255,255,255,.6);
-  font-weight:300;letter-spacing:.5px;max-width:500px;line-height:1.7;
+.hero-sub{font-size:clamp(14px,1.5vw,16px);color:rgba(255,255,255,.62);
+  font-weight:300;letter-spacing:.3px;max-width:560px;line-height:1.75;
   opacity:0;animation:fadeUp .9s .6s forwards}
 .hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
   z-index:2;display:flex;flex-direction:column;align-items:center;gap:.5rem;
@@ -90,7 +90,7 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 @keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
 
 /* ── STATS ROW ── */
-#stats{background:var(--cream);border-bottom:1px solid var(--bdr)}
+#stats{background:var(--cream);border-bottom:1px solid var(--bdr);border-top:3px solid var(--fresh)}
 .stats-row{display:flex;align-items:stretch}
 .stat-item{flex:1;padding:2.25rem 2rem;border-right:1px solid var(--bdr);
   text-align:center;transition:background .3s;cursor:default}
@@ -144,85 +144,10 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .vm-txt{font-size:14px;color:rgba(255,255,255,.55);font-weight:300;line-height:1.9}
 .vm-divider{width:1px;background:rgba(255,255,255,.08);align-self:stretch}
 
-/* ── FLAGSHIP — editorial full-height cards ── */
-#flagship{background:var(--ink)}
-.fp-intro{padding:0 0 2.5rem;display:flex;align-items:flex-end;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-
-.fp-eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--fresh);
-  margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
-.fp-eyebrow::before{content:'';width:28px;height:1px;background:var(--fresh)}
-.fp-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.8rem);
-  font-weight:300;color:#fff;line-height:1.15}
-.fp-h em{font-style:italic;color:rgba(255,255,255,.7)}
-.fp-intro-right{font-size:13.5px;color:rgba(255,255,255,.5);font-weight:300;
-  line-height:1.8;max-width:340px}
-.fp-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px}
-.fpc{position:relative;height:560px;overflow:hidden;cursor:default}
-.fpc-bg{position:absolute;inset:0}
-.fpc-bg img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.23,1,.32,1)}
-.fpc:hover .fpc-bg img{transform:scale(1.06)}
-.fpc-overlay{position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(10,24,15,.92) 0%,rgba(28,56,41,.3) 55%,transparent 100%)}
-.fpc-corner{position:absolute;top:1.5rem;left:1.75rem;
-  font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);font-weight:400}
-.fpc-content{position:absolute;bottom:0;left:0;right:0;padding:2.5rem 2rem}
-.fpc-label{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--fresh);margin-bottom:.65rem;display:block}
-.fpc-name{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.2rem);
-  font-weight:300;color:#fff;line-height:1;margin-bottom:.4rem}
-.fpc-formula{font-family:monospace;font-size:11px;color:rgba(255,255,255,.35);letter-spacing:1px;margin-bottom:1.1rem}
-.fpc-desc{font-size:13.5px;color:rgba(255,255,255,.6);font-weight:300;line-height:1.75;margin-bottom:1.1rem}
-.fpc-tags{display:flex;flex-wrap:wrap;gap:.35rem}
-.fpill{font-size:10.5px;padding:4px 11px;border-radius:50px;border:1px solid rgba(255,255,255,.18);
-  color:rgba(255,255,255,.6);font-weight:400;transition:all .25s}
-.fpc:hover .fpill{border-color:rgba(76,175,118,.4);color:#7be0a8}
-.fpc-source{margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.1);
-  display:flex;align-items:center;gap:.6rem}
-.fpc-flag{font-size:1rem}
-.fpc-src{font-size:11.5px;color:rgba(255,255,255,.45);font-weight:300}
-.fpc-src strong{color:rgba(255,255,255,.7);font-weight:500}
-
-/* ── ALL PRODUCTS ── */
-#products{background:var(--cream)}
-.prod-head{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;
-  gap:1.5rem;margin-bottom:2.5rem}
-.prod-eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);
-  margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
-.prod-eyebrow::before{content:'';width:28px;height:1px;background:var(--fresh)}
-.prod-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);
-  font-weight:300;color:var(--ink);line-height:1.15}
-.prod-tabs{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:2rem}
-.ptab{padding:7px 17px;border-radius:50px;font-size:12px;font-weight:400;letter-spacing:.3px;
-  border:1px solid var(--bdr);color:var(--tm);background:transparent;
-  transition:all .3s;cursor:pointer}
-.ptab.on{background:var(--ink);border-color:var(--ink);color:#fff}
-.ptab:hover:not(.on){border-color:var(--sage);color:var(--ink);background:var(--mint)}
-.ppanel{display:none}.ppanel.on{display:block}
-.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
-.pc{background:var(--white);border:1px solid var(--bdr);border-radius:12px;padding:1.6rem;
-  transition:all .4s;cursor:default}
-.pc:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(28,56,41,.1);border-color:#b8d4c2}
-.pc-ico{font-size:1.6rem;margin-bottom:.85rem;display:inline-block;transition:transform .3s}
-.pc:hover .pc-ico{transform:scale(1.2) rotate(-6deg)}
-.pc-sup{font-size:9.5px;font-weight:600;letter-spacing:1.3px;text-transform:uppercase;
-  color:var(--mid);margin-bottom:.35rem}
-.pc-name{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:600;
-  color:var(--ink);margin-bottom:.4rem}
-.pc-desc{font-size:12.5px;color:var(--tl);font-weight:300;line-height:1.7}
-.pc-pills{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.75rem}
-.pc-pill{font-size:10px;padding:3px 10px;border-radius:50px;
-  background:var(--pale);color:var(--leaf);border:1px solid #c0d9c9}
-.empty-panel{text-align:center;padding:3.5rem 2rem;border:1px dashed var(--bdr);border-radius:14px}
-.empty-panel p{color:var(--tl);font-size:13.5px;margin:.6rem 0 1.5rem}
 .btn-ink{display:inline-flex;align-items:center;gap:7px;padding:12px 26px;border-radius:50px;
   background:var(--ink);color:#fff;font-size:13px;font-weight:500;transition:all .35s}
 .btn-ink:hover{background:var(--leaf);transform:translateY(-2px)}
-.prod-foot{margin-top:2rem;padding:1.25rem 1.5rem;background:var(--mint);
-  border:1px solid var(--bdr);border-radius:10px;
-  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
-.prod-foot p{font-size:13px;color:var(--tl);font-weight:300}
 
-/* ── INDUSTRIES — editorial image grid ── */
 /* ── INDUSTRIES — bento editorial ── */
 #industries{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 0}
 .ind-intro{margin-bottom:2.5rem;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem}
@@ -396,7 +321,7 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .tm-name{font-size:13.5px;font-weight:600;color:var(--ink)}
 .tm-role{font-size:11.5px;color:var(--tl);font-weight:300}
 /* Form */
-.fbox{background:var(--cream);border:1px solid var(--bdr);border-radius:16px;padding:2.5rem}
+.fbox{background:var(--white);border:1px solid var(--bdr);border-radius:20px;padding:2.5rem;box-shadow:0 4px 24px rgba(28,56,41,.06)}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
 .fg{margin-bottom:.85rem}
 .fg label{display:block;font-size:10px;font-weight:700;letter-spacing:1px;
@@ -562,11 +487,8 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
   .ind-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
   .ind-grid .ic{height:320px}
   .ic:nth-child(1),.ic:nth-child(6){grid-column:auto}
-  .pg{grid-template-columns:1fr 1fr}
   .sup-logo-grid{grid-template-columns:1fr 1fr}
   .cli-logo-grid{grid-template-columns:repeat(3,1fr)}
-  .gal-masonry{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px 220px 220px}
-  .gi.tall{grid-row:span 1}
   .ft-grid{grid-template-columns:1fr 1fr}
   .cta-inner{flex-direction:column;text-align:center}
   .sus-pts{grid-template-columns:1fr}
@@ -577,8 +499,6 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
 @media(max-width:600px){
   .ind-grid{grid-template-columns:1fr}
   .ind-grid .ic{height:280px}
-  .pg{grid-template-columns:1fr}
-  .gal-masonry{grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
   .ft-grid{grid-template-columns:1fr}
   .csr-photo-grid{grid-template-columns:1fr}
@@ -632,10 +552,14 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
     <span class="hero-eyebrow">— Premium Raw Materials —</span>
     <h1 class="hero-h1">Connecting<br><em>Industries</em><br>with Quality</h1>
     <p class="hero-sub">Enabling Sri Lanka's manufacturers to produce better products — quality chemistry, reliable supply, and partnership you can count on.</p>
+    <div style="display:flex;gap:.85rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;opacity:0;animation:fadeUp .9s .8s forwards">
+      <a href="#contact" class="btn-white">Enquire Now →</a>
+      <a href="#industries" class="btn-ghost-w">View Industries</a>
+    </div>
   </div>
   <div class="hero-scroll">
-    <span>Scroll</span>
     <div class="hero-scroll-line"></div>
+    <span>Scroll</span>
   </div>
 </section>
 
@@ -651,7 +575,7 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
       <span class="stat-l">Global Suppliers</span>
     </div>
     <div class="stat-item">
-      <span class="stat-n" data-count="5" data-suf="">5</span>
+      <span class="stat-n" data-count="6" data-suf="+">6+</span>
       <span class="stat-l">Industries Served</span>
     </div>
     <div class="stat-item">
@@ -687,7 +611,7 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
           <div><span class="ach-t">Sustainable &amp; Responsible</span><span class="ach-s">Eco-responsible operations and care for community and environment.</span></div>
         </div>
       </div>
-      <div class="about-yr-tag rv d5">
+      <div class="about-yr-tag rv d4">
         <strong>2017</strong> — founded in Battaramulla, Sri Lanka
       </div>
     </div>
@@ -834,6 +758,7 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
   <div class="W">
     <div class="gal-intro rv">
       <div>
+        <div class="par-eyebrow" style="margin-bottom:.6rem">Community &amp; Impact</div>
         <h2 class="gal-h">Our Community<br>&amp; <em>What We Do</em></h2>
         <div class="gal-filter" style="margin-top:1.25rem">
           <button class="gf on" data-f="all">All</button>
@@ -1089,7 +1014,7 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
       </div>
       <div class="ft-col"><h5>Company</h5><ul><li><a href="#about">About Us</a></li><li><a href="#vm">Vision &amp; Mission</a></li><li><a href="about.html#sustain">Sustainability</a></li><li><a href="#csr">Social Responsibility</a></li><li><a href="#contact">Contact</a></li></ul></div>
       <div class="ft-col"><h5>Industries</h5><ul><li><a href="industry.html?ind=rubber">Rubber &amp; Latex</a></li><li><a href="industry.html?ind=personal">Personal Care</a></li><li><a href="industry.html?ind=home">Home Care</a></li><li><a href="industry.html?ind=food">Food Industry</a></li><li><a href="industry.html?ind=pharma">Pharmaceutical</a></li></ul></div>
-      <div class="ft-col"><h5>Industries</h5><ul><li><a href="#industries">Rubber &amp; Latex</a></li><li><a href="#industries">Textile Washing</a></li><li><a href="#industries">Personal Care</a></li><li><a href="#industries">Food Industry</a></li><li><a href="#industries">Pharmaceutical</a></li></ul></div>
+      <div class="ft-col"><h5>Contact</h5><ul><li><a href="#contact">Send Enquiry</a></li><li><a href="tel:+94777598284">+94 777 598 284</a></li><li><a href="tel:+94777414367">+94 777 414 367</a></li><li><a href="mailto:gimith@skchemsolutions.lk">Email Us</a></li><li><a href="#partners">Our Partners</a></li></ul></div>
     </div>
     <div class="ft-btm">
       <p class="ft-copy">&copy; 2025 S.K. Chem Solutions · No 6, Lakshapana Mawatha, Battaramulla, Sri Lanka</p>
