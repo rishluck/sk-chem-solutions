@@ -266,21 +266,20 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .gf.on{background:var(--ink);border-color:var(--ink);color:#fff}
 .gf:hover:not(.on){border-color:var(--sage);color:var(--ink)}
 
-/* Editorial masonry grid */
-.gal-masonry{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;
-  grid-template-rows:260px 260px;gap:4px}
-.gi{overflow:hidden;cursor:pointer;position:relative;background:#ddd;
-  transition:transform .3s}
-.gi:hover{z-index:2;transform:scale(1.01)}
-.gi.span-col{grid-column:span 1}.gi.tall{grid-row:span 2}
-.gi img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.gi:hover img{transform:scale(1.07)}
-.gi-ov{position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(28,56,41,.85) 0%,transparent 50%);
-  opacity:0;transition:opacity .35s;display:flex;align-items:flex-end;padding:.85rem 1rem}
-.gi:hover .gi-ov{opacity:1}
-.gi-lbl{color:#fff;font-size:12px;font-weight:400;letter-spacing:.3px}
-.gi.hidden{opacity:0;pointer-events:none}
+/* 2-row horizontal carousel */
+.gal-carousel{position:relative}
+.gal-track-wrap{overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;border-radius:10px}
+.gal-track-wrap::-webkit-scrollbar{display:none}
+.gal-track{display:grid;grid-template-rows:repeat(2,210px);grid-auto-columns:290px;grid-auto-flow:column;gap:6px;width:max-content}
+.gci{overflow:hidden;cursor:pointer;position:relative;background:var(--pale);border-radius:8px}
+.gci img{width:100%;height:100%;object-fit:cover;transition:transform .55s}
+.gci:hover img{transform:scale(1.07)}
+.gci-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(28,56,41,.85) 0%,transparent 55%);opacity:0;transition:opacity .35s;display:flex;align-items:flex-end;padding:.75rem 1rem}
+.gci:hover .gci-ov{opacity:1}
+.gci-lbl{color:#fff;font-size:11.5px;font-weight:400;letter-spacing:.3px}
+.gal-nav{display:flex;gap:.5rem}
+.gal-btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--bdr);background:var(--white);color:var(--ink);cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:.25s;line-height:1}
+.gal-btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 .gal-note{text-align:center;margin-top:1.25rem;font-size:12px;color:var(--tl);font-weight:300;letter-spacing:.3px}
 
 /* ── PARTNERS ── */
@@ -614,7 +613,7 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
 <!-- ══ NAV ══ -->
 <nav id="nav">
   <ul class="nav-left">
-    <li><a href="#about">About</a></li>
+    <li><a href="about.html">About Us</a></li>
     <li><a href="#industries">Industries</a></li>
   </ul>
   <a href="#hero" class="nav-brand">
@@ -629,7 +628,7 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
   <button class="hbg" id="hbg"><span></span><span></span><span></span></button>
 </nav>
 <div class="mob" id="mob">
-  <a href="#about"      onclick="cm()">About</a>
+  <a href="about.html"  onclick="cm()">About Us</a>
   <a href="#industries" onclick="cm()">Industries</a>
   <a href="#partners"   onclick="cm()">Partners</a>
   <a href="#gallery"    onclick="cm()">Gallery</a>
@@ -830,29 +829,30 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
       <div>
         <h2 class="gal-h">Our Community<br>&amp; <em>What We Do</em></h2>
       </div>
-      <div class="gal-filter">
-        <button class="gf on" data-f="all">All</button>
-        <button class="gf" data-f="charity">🤝 Community</button>
-        <button class="gf" data-f="products">📦 Products</button>
-        <button class="gf" data-f="warehouse">🏭 Warehouse</button>
-        <button class="gf" data-f="operations">⚙️ Operations</button>
+      <div class="gal-nav">
+        <button class="gal-btn" id="gal-prev">&#8592;</button>
+        <button class="gal-btn" id="gal-next">&#8594;</button>
       </div>
     </div>
-    <div class="gal-masonry rv d1" id="gal-grid">
-      <div class="gi tall" data-cat="charity" onclick="olb(this,'Community Outreach','S.K. Chem Solutions giving back')"><img src="Images/Gallery/Charity/charity-1.jpeg" alt="Community Outreach"><div class="gi-ov"><span class="gi-lbl">Community Outreach</span></div></div>
-      <div class="gi" data-cat="charity" onclick="olb(this,'Planting Initiative','Supporting sustainable communities')"><img src="Images/Gallery/Charity/charity-2.jpeg" alt="Planting Initiative"><div class="gi-ov"><span class="gi-lbl">Planting Initiative</span></div></div>
-      <div class="gi" data-cat="charity" onclick="olb(this,'Giving Back','Community welfare programme')"><img src="Images/Gallery/Charity/charity-3.jpeg" alt="Giving Back"><div class="gi-ov"><span class="gi-lbl">Giving Back</span></div></div>
-      <div class="gi" data-cat="charity" onclick="olb(this,'CSR Activity','Supporting rural communities')"><img src="Images/Gallery/Charity/charity-4.jpeg" alt="CSR Activity"><div class="gi-ov"><span class="gi-lbl">CSR Activity</span></div></div>
-      <div class="gi tall" data-cat="charity" onclick="olb(this,'Community Support','Creating impact beyond business')"><img src="Images/Gallery/Charity/charity-5.jpeg" alt="Community Support"><div class="gi-ov"><span class="gi-lbl">Community Support</span></div></div>
-      <div class="gi" data-cat="charity" onclick="olb(this,'Outreach Programme','Empowering local communities')"><img src="Images/Gallery/Charity/charity-6.jpeg" alt="Outreach Programme"><div class="gi-ov"><span class="gi-lbl">Outreach Programme</span></div></div>
-      <div class="gi" data-cat="charity" onclick="olb(this,'Social Initiative','S.K. Chem team in action')"><img src="Images/Gallery/Charity/charity-7.jpeg" alt="Social Initiative"><div class="gi-ov"><span class="gi-lbl">Social Initiative</span></div></div>
-      <div class="gi" data-cat="charity" onclick="olb(this,'Green Gifting','Nurturing growth in communities')"><img src="Images/Gallery/Charity/charity-8.jpeg" alt="Green Gifting"><div class="gi-ov"><span class="gi-lbl">Green Gifting</span></div></div>
-      <div class="gi tall" data-cat="charity" onclick="olb(this,'Team Effort','Together for a better tomorrow')"><img src="Images/Gallery/Charity/charity-9.jpeg" alt="Team Effort"><div class="gi-ov"><span class="gi-lbl">Team Effort</span></div></div>
-      <div class="gi" data-cat="charity" onclick="olb(this,'Rural Support','Reaching those who need it most')"><img src="Images/Gallery/Charity/charity-10.jpeg" alt="Rural Support"><div class="gi-ov"><span class="gi-lbl">Rural Support</span></div></div>
-      <div class="gi" data-cat="charity" onclick="olb(this,'Community Care','Putting people first')"><img src="Images/Gallery/Charity/charity-11.jpeg" alt="Community Care"><div class="gi-ov"><span class="gi-lbl">Community Care</span></div></div>
-      <div class="gi" data-cat="charity" onclick="olb(this,'Welfare Drive','Driven by purpose, not just profit')"><img src="Images/Gallery/Charity/charity-12.jpeg" alt="Welfare Drive"><div class="gi-ov"><span class="gi-lbl">Welfare Drive</span></div></div>
-      <div class="gi" data-cat="charity" onclick="olb(this,'Local Roots','Built on community values')"><img src="Images/Gallery/Charity/charity-13.jpeg" alt="Local Roots"><div class="gi-ov"><span class="gi-lbl">Local Roots</span></div></div>
-      <div class="gi" data-cat="charity" onclick="olb(this,'Growing Together','A shared future for all')"><img src="Images/Gallery/Charity/charity-14.jpeg" alt="Growing Together"><div class="gi-ov"><span class="gi-lbl">Growing Together</span></div></div>
+    <div class="gal-carousel rv d1">
+      <div class="gal-track-wrap" id="gal-wrap">
+        <div class="gal-track">
+          <div class="gci" onclick="olb(this,'Community Outreach','S.K. Chem Solutions giving back')"><img src="Images/Gallery/Charity/charity-1.jpeg" alt="Community Outreach"><div class="gci-ov"><span class="gci-lbl">Community Outreach</span></div></div>
+          <div class="gci" onclick="olb(this,'Planting Initiative','Supporting sustainable communities')"><img src="Images/Gallery/Charity/charity-2.jpeg" alt="Planting Initiative"><div class="gci-ov"><span class="gci-lbl">Planting Initiative</span></div></div>
+          <div class="gci" onclick="olb(this,'Giving Back','Community welfare programme')"><img src="Images/Gallery/Charity/charity-3.jpeg" alt="Giving Back"><div class="gci-ov"><span class="gci-lbl">Giving Back</span></div></div>
+          <div class="gci" onclick="olb(this,'CSR Activity','Supporting rural communities')"><img src="Images/Gallery/Charity/charity-4.jpeg" alt="CSR Activity"><div class="gci-ov"><span class="gci-lbl">CSR Activity</span></div></div>
+          <div class="gci" onclick="olb(this,'Community Support','Creating impact beyond business')"><img src="Images/Gallery/Charity/charity-5.jpeg" alt="Community Support"><div class="gci-ov"><span class="gci-lbl">Community Support</span></div></div>
+          <div class="gci" onclick="olb(this,'Outreach Programme','Empowering local communities')"><img src="Images/Gallery/Charity/charity-6.jpeg" alt="Outreach Programme"><div class="gci-ov"><span class="gci-lbl">Outreach Programme</span></div></div>
+          <div class="gci" onclick="olb(this,'Social Initiative','S.K. Chem team in action')"><img src="Images/Gallery/Charity/charity-7.jpeg" alt="Social Initiative"><div class="gci-ov"><span class="gci-lbl">Social Initiative</span></div></div>
+          <div class="gci" onclick="olb(this,'Green Gifting','Nurturing growth in communities')"><img src="Images/Gallery/Charity/charity-8.jpeg" alt="Green Gifting"><div class="gci-ov"><span class="gci-lbl">Green Gifting</span></div></div>
+          <div class="gci" onclick="olb(this,'Team Effort','Together for a better tomorrow')"><img src="Images/Gallery/Charity/charity-9.jpeg" alt="Team Effort"><div class="gci-ov"><span class="gci-lbl">Team Effort</span></div></div>
+          <div class="gci" onclick="olb(this,'Rural Support','Reaching those who need it most')"><img src="Images/Gallery/Charity/charity-10.jpeg" alt="Rural Support"><div class="gci-ov"><span class="gci-lbl">Rural Support</span></div></div>
+          <div class="gci" onclick="olb(this,'Community Care','Putting people first')"><img src="Images/Gallery/Charity/charity-11.jpeg" alt="Community Care"><div class="gci-ov"><span class="gci-lbl">Community Care</span></div></div>
+          <div class="gci" onclick="olb(this,'Welfare Drive','Driven by purpose, not just profit')"><img src="Images/Gallery/Charity/charity-12.jpeg" alt="Welfare Drive"><div class="gci-ov"><span class="gci-lbl">Welfare Drive</span></div></div>
+          <div class="gci" onclick="olb(this,'Local Roots','Built on community values')"><img src="Images/Gallery/Charity/charity-13.jpeg" alt="Local Roots"><div class="gci-ov"><span class="gci-lbl">Local Roots</span></div></div>
+          <div class="gci" onclick="olb(this,'Growing Together','A shared future for all')"><img src="Images/Gallery/Charity/charity-14.jpeg" alt="Growing Together"><div class="gci-ov"><span class="gci-lbl">Growing Together</span></div></div>
+        </div>
+      </div>
     </div>
     <p class="gal-note rv">More photos — products, warehouse &amp; events — coming soon.</p>
   </div>
@@ -1189,16 +1189,10 @@ document.querySelectorAll('.ptab').forEach(b=>{
 });
 
 /* Gallery filter */
-document.querySelectorAll('.gf').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.gf').forEach(b=>b.classList.remove('on'));
-    btn.classList.add('on');
-    const f=btn.dataset.f;
-    document.querySelectorAll('#gal-grid .gi').forEach(gi=>{
-      gi.classList.toggle('hidden',!(f==='all'||(gi.dataset.cat||'').includes(f)));
-    });
-  });
-});
+const galWrap=document.getElementById('gal-wrap');
+const galStep=592;
+document.getElementById('gal-prev').onclick=()=>galWrap.scrollBy({left:-galStep,behavior:'smooth'});
+document.getElementById('gal-next').onclick=()=>galWrap.scrollBy({left:galStep,behavior:'smooth'});
 
 /* Lightbox */
 function olb(el,t,d){

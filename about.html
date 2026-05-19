@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>About Us — S.K. Chem Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#1C3829;--leaf:#2A5E40;--mid:#3A7D58;--sage:#5C9470;--fresh:#4CAF76;
+  --pale:#E6F0E9;--mint:#EEF5F0;--cream:#FAF8F4;--white:#fff;--bdr:#D4E4D9;
+  --tm:#4A6654;--tl:#7A9688;
+}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--white);overflow-x:hidden}
+a{text-decoration:none;color:inherit}
+img{display:block;max-width:100%}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(1.5rem,5vw,4rem);height:68px;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--bdr)}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-size:1.15rem;font-weight:400;color:var(--ink);display:flex;flex-direction:column;align-items:center;line-height:1.2}
+.nav-brand span{font-size:9px;letter-spacing:.12em;color:var(--tl);font-family:'DM Sans',sans-serif;font-weight:300;text-transform:uppercase}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+.nav-links a{font-size:13px;font-weight:400;color:var(--tm);letter-spacing:.02em;transition:color .25s}
+.nav-links a:hover,.nav-links a.active{color:var(--ink)}
+.n-cta-pill{background:var(--ink);color:#fff!important;padding:8px 20px;border-radius:50px;font-size:12.5px!important;transition:background .25s!important}
+.n-cta-pill:hover{background:var(--leaf)!important}
+
+/* ── PAGE HERO ── */
+.ph{padding:clamp(7rem,14vw,10rem) clamp(1.5rem,5vw,4rem) clamp(3rem,6vw,5rem);background:var(--ink);position:relative;overflow:hidden}
+.ph::after{content:'';position:absolute;right:-10%;top:-20%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(76,175,118,.12) 0%,transparent 70%);pointer-events:none}
+.ph-eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--fresh);font-weight:400;margin-bottom:1.2rem}
+.ph-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,5.5rem);font-weight:300;color:#fff;line-height:1.1;margin-bottom:1.5rem}
+.ph-h em{font-style:italic;color:rgba(255,255,255,.7)}
+.ph-sub{font-size:16px;color:rgba(255,255,255,.55);font-weight:300;max-width:560px;line-height:1.8}
+.ph-yr{display:inline-flex;align-items:center;gap:.75rem;margin-top:2.5rem;padding:.6rem 1.25rem;border:1px solid rgba(255,255,255,.15);border-radius:50px;font-size:12px;color:rgba(255,255,255,.5);font-weight:300;letter-spacing:.05em}
+.ph-yr strong{color:var(--fresh);font-weight:500}
+
+/* ── LAYOUT ── */
+.W{max-width:1200px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem)}
+.sec{padding:clamp(4rem,8vw,7rem) 0}
+
+/* ── STORY ── */
+.story-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,7rem);align-items:center}
+.story-img{border-radius:16px;overflow:hidden;position:relative;aspect-ratio:4/5}
+.story-img img{width:100%;height:100%;object-fit:cover}
+.story-eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fresh);font-weight:400;margin-bottom:1rem}
+.story-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:300;line-height:1.2;margin-bottom:1.5rem;color:var(--ink)}
+.story-h em{font-style:italic;color:var(--mid)}
+.story-p{font-size:15px;color:var(--tm);font-weight:300;line-height:1.9;margin-bottom:1.25rem}
+.story-tag{display:inline-flex;align-items:center;gap:.5rem;margin-top:.5rem;padding:.5rem 1rem;background:var(--mint);border:1px solid var(--bdr);border-radius:50px;font-size:12px;color:var(--tm);font-weight:400}
+
+/* ── VM ── */
+.vm-wrap{background:var(--ink);border-radius:20px;padding:clamp(3rem,6vw,5rem);display:grid;grid-template-columns:1fr 1px 1fr;gap:3rem;align-items:start}
+.vm-divider-v{background:rgba(255,255,255,.12);align-self:stretch}
+.vm-tag{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--fresh);font-weight:500;display:block;margin-bottom:1rem}
+.vm-title{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:300;color:#fff;line-height:1.2;margin-bottom:1.25rem}
+.vm-txt{font-size:14px;color:rgba(255,255,255,.55);font-weight:300;line-height:1.85}
+
+/* ── SERVICES GRID ── */
+.srv-eyebrow{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--fresh);font-weight:400;margin-bottom:1rem;text-align:center}
+.srv-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3rem);font-weight:300;color:var(--ink);text-align:center;margin-bottom:.75rem}
+.srv-h em{font-style:italic;color:var(--mid)}
+.srv-sub{font-size:14px;color:var(--tl);font-weight:300;text-align:center;margin-bottom:3.5rem;max-width:520px;margin-left:auto;margin-right:auto;line-height:1.8}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
+.srv-card{background:var(--white);border:1px solid var(--bdr);border-radius:14px;padding:1.75rem 1.5rem;transition:all .35s;position:relative;overflow:hidden}
+.srv-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--mint) 0%,transparent 60%);opacity:0;transition:opacity .35s}
+.srv-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(42,94,64,.1);border-color:var(--sage)}
+.srv-card:hover::before{opacity:1}
+.srv-ico{font-size:1.75rem;margin-bottom:1rem;display:block;position:relative}
+.srv-ind{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--fresh);font-weight:500;margin-bottom:.4rem;position:relative}
+.srv-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:400;color:var(--ink);margin-bottom:.6rem;position:relative}
+.srv-desc{font-size:13px;color:var(--tm);font-weight:300;line-height:1.75;position:relative}
+.srv-pills{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.85rem;position:relative}
+.srv-pill{font-size:10.5px;background:var(--mint);border:1px solid var(--bdr);border-radius:50px;padding:3px 10px;color:var(--tm);font-weight:400}
+
+/* ── WHY US ── */
+.why-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+.why-card{display:flex;gap:1.25rem;padding:1.5rem;border-radius:14px;border:1px solid var(--bdr);align-items:flex-start;background:var(--white);transition:all .3s}
+.why-card:hover{background:var(--mint);border-color:var(--sage)}
+.why-ico{width:44px;height:44px;border-radius:12px;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0;border:1px solid var(--bdr)}
+.why-t{font-size:14px;font-weight:500;color:var(--ink);margin-bottom:.3rem}
+.why-s{font-size:13px;color:var(--tm);font-weight:300;line-height:1.7}
+
+/* ── SUPPLIERS ── */
+.sup-strip{display:flex;flex-wrap:wrap;gap:1rem;justify-content:center}
+.sup-badge{display:flex;align-items:center;gap:.75rem;padding:.75rem 1.25rem;border:1px solid var(--bdr);border-radius:50px;background:var(--white);transition:all .3s}
+.sup-badge:hover{border-color:var(--sage);background:var(--mint)}
+.sup-flag{font-size:1.3rem}
+.sup-info strong{display:block;font-size:13px;font-weight:500;color:var(--ink)}
+.sup-info span{font-size:11px;color:var(--tl);font-weight:300}
+
+/* ── CTA ── */
+.about-cta{background:var(--ink);border-radius:20px;padding:clamp(2.5rem,5vw,4rem);text-align:center}
+.about-cta-h{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,3rem);font-weight:300;color:#fff;margin-bottom:1rem;line-height:1.2}
+.about-cta-h em{font-style:italic;color:rgba(255,255,255,.7)}
+.about-cta-p{font-size:14px;color:rgba(255,255,255,.5);font-weight:300;margin-bottom:2rem;line-height:1.8}
+.btn-w{display:inline-flex;align-items:center;gap:.5rem;background:#fff;color:var(--ink);font-size:13.5px;font-weight:500;padding:13px 28px;border-radius:50px;transition:all .3s}
+.btn-w:hover{background:var(--pale);transform:translateY(-2px)}
+.btn-ghost{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:rgba(255,255,255,.7);font-size:13.5px;font-weight:400;padding:13px 28px;border-radius:50px;border:1px solid rgba(255,255,255,.2);transition:all .3s;margin-left:.75rem}
+.btn-ghost:hover{border-color:rgba(255,255,255,.5);color:#fff}
+
+/* ── FOOTER ── */
+.ft-mini{background:var(--ink);padding:1.75rem clamp(1.5rem,5vw,4rem);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
+.ft-mini-brand{font-family:'Cormorant Garamond',serif;font-size:1rem;color:rgba(255,255,255,.7);font-weight:300}
+.ft-mini-copy{font-size:11.5px;color:rgba(255,255,255,.35);font-weight:300}
+
+/* ── SECTION DIVIDER ── */
+.sec-kicker{display:flex;align-items:center;gap:1rem;margin-bottom:3rem}
+.sk-rule{flex:1;height:1px;background:var(--bdr)}
+.sk-text{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--tl);font-weight:400;white-space:nowrap}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .story-wrap{grid-template-columns:1fr}
+  .story-img{aspect-ratio:16/9;order:-1}
+  .vm-wrap{grid-template-columns:1fr;gap:2rem}
+  .vm-divider-v{display:none}
+  .srv-grid{grid-template-columns:1fr 1fr}
+  .why-wrap{grid-template-columns:1fr}
+}
+@media(max-width:600px){
+  .srv-grid{grid-template-columns:1fr}
+  .nav-links{display:none}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <ul class="nav-links">
+    <li><a href="about.html" class="active">About Us</a></li>
+    <li><a href="index.html#industries">Industries</a></li>
+  </ul>
+  <a href="index.html" class="nav-brand">
+    S.K. Chem Solutions
+    <span>Battaramulla · Est. 2017</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#partners">Partners</a></li>
+    <li><a href="index.html#gallery">Gallery</a></li>
+    <li><a href="index.html#contact" class="n-cta-pill">Contact Us</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="ph">
+  <div class="W">
+    <div class="ph-eyebrow">Who We Are</div>
+    <h1 class="ph-h">Rooted in trust.<br><em>Driven by quality.</em></h1>
+    <p class="ph-sub">A trusted importer of premium chemical raw materials — enabling Sri Lanka's manufacturers to produce better products since 2017.</p>
+    <div class="ph-yr"><strong>Est. 2017</strong> · Battaramulla, Sri Lanka · B2B Supply Only</div>
+  </div>
+</section>
+
+<!-- STORY -->
+<section class="sec" style="background:var(--white)">
+  <div class="W">
+    <div class="story-wrap">
+      <div class="story-img">
+        <img src="Images/All/closeup-shot-trees-greenery-maksimir-park-zagreb-croatia-springtime.jpg" alt="S.K. Chem Solutions">
+      </div>
+      <div>
+        <div class="story-eyebrow">Our Story</div>
+        <h2 class="story-h">Built on<br><em>long-term partnership</em></h2>
+        <p class="story-p">S.K. Chem Solutions was established in 2017 as a B2B importer of premium chemical raw materials from the world's leading manufacturers — including BASF (Germany & China), LG Chem (Korea), Vance Group (Malaysia), and SK Pickglobal (Korea).</p>
+        <p class="story-p">We supply six key industries across Sri Lanka: Rubber & Latex, Personal Care, Home Care, Food, Pharmaceutical, and Textile Washing — providing the raw materials that manufacturers need to produce market-ready, quality products.</p>
+        <p class="story-p">Every supply relationship is built on reliability, technical documentation, and genuine care for our clients' success — not just a transaction.</p>
+        <div class="story-tag">🌍 Sourced globally &nbsp;·&nbsp; 🤝 Delivered locally &nbsp;·&nbsp; 🌱 Sustainably minded</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VISION & MISSION -->
+<section class="sec" style="background:var(--cream)">
+  <div class="W">
+    <div class="sec-kicker">
+      <div class="sk-rule"></div>
+      <span class="sk-text">Our Purpose</span>
+      <div class="sk-rule"></div>
+    </div>
+    <div class="vm-wrap">
+      <div>
+        <span class="vm-tag">Vision</span>
+        <div class="vm-title">Trusted Partner<br>to Industry</div>
+        <p class="vm-txt">To be the trusted and reliable partner to the industry, delivering sustainable solutions that add value to our customers while maintaining a strong commitment to social and environmental responsibility.</p>
+      </div>
+      <div class="vm-divider-v"></div>
+      <div>
+        <span class="vm-tag">Mission</span>
+        <div class="vm-title">Innovate.<br>Partner. Sustain.</div>
+        <p class="vm-txt">Deliver innovative solutions to industry, building long-term partnerships with our customers while promoting sustainable practices and responsible care for society and the environment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KEY SERVICES -->
+<section class="sec" style="background:var(--white)">
+  <div class="W">
+    <div class="srv-eyebrow">What We Enable</div>
+    <h2 class="srv-h">Products &amp; <em>Services</em></h2>
+    <p class="srv-sub">Key chemical raw materials we supply — sourced from world-class manufacturers, delivered with full documentation.</p>
+    <div class="srv-grid">
+      <div class="srv-card">
+        <span class="srv-ico">🌿</span>
+        <div class="srv-ind">Rubber &amp; Latex</div>
+        <div class="srv-name">Latex Coagulation</div>
+        <p class="srv-desc">Fast, clean coagulation from field to factory using industrial-grade Formic Acid from BASF China.</p>
+        <div class="srv-pills"><span class="srv-pill">Formic Acid</span><span class="srv-pill">BASF China</span><span class="srv-pill">35 kg carboys</span></div>
+      </div>
+      <div class="srv-card">
+        <span class="srv-ico">📦</span>
+        <div class="srv-ind">Rubber &amp; Food</div>
+        <div class="srv-name">Sheet Preservation &amp; Food Freshness</div>
+        <p class="srv-desc">Prevents oxidation in rubber sheets and extends shelf life in food products with Sodium Metabisulfite.</p>
+        <div class="srv-pills"><span class="srv-pill">Sodium Metabisulfite</span><span class="srv-pill">BASF Germany</span></div>
+      </div>
+      <div class="srv-card">
+        <span class="srv-ico">✨</span>
+        <div class="srv-ind">Personal Care</div>
+        <div class="srv-name">Shampoo &amp; Skincare Formulation</div>
+        <p class="srv-desc">Cosmetic-grade CAPB, Vitamin E Acetate, Glycerine, MPG, and IPA for gentle, effective personal care products.</p>
+        <div class="srv-pills"><span class="srv-pill">CAPB</span><span class="srv-pill">Vitamin E</span><span class="srv-pill">Glycerine</span><span class="srv-pill">IPA</span></div>
+      </div>
+      <div class="srv-card">
+        <span class="srv-ico">🏠</span>
+        <div class="srv-ind">Home Care</div>
+        <div class="srv-name">Cleaning &amp; Detergent Power</div>
+        <p class="srv-desc">Specialty surfactants and chelating agents for high-performance dishwashing and laundry products.</p>
+        <div class="srv-pills"><span class="srv-pill">Surfactants</span><span class="srv-pill">Chelating Agents</span></div>
+      </div>
+      <div class="srv-card">
+        <span class="srv-ico">🌾</span>
+        <div class="srv-ind">Food Industry</div>
+        <div class="srv-name">Bakery Freshness &amp; Preservation</div>
+        <p class="srv-desc">Food-grade MPG and Glycerine keep baked goods moist and beverages fresh — GRAS and Halal certified.</p>
+        <div class="srv-pills"><span class="srv-pill">MPG</span><span class="srv-pill">Glycerine</span><span class="srv-pill">Food Grade</span></div>
+      </div>
+      <div class="srv-card">
+        <span class="srv-ico">💊</span>
+        <div class="srv-ind">Pharmaceutical</div>
+        <div class="srv-name">GMP &amp; Excipient Supply</div>
+        <p class="srv-desc">USP/BP-grade IPA, MPG, and Glycerine for facility sanitation, oral formulations, and solid dosage.</p>
+        <div class="srv-pills"><span class="srv-pill">USP Grade</span><span class="srv-pill">BP / PhEur</span><span class="srv-pill">Full Docs</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="sec" style="background:var(--cream)">
+  <div class="W">
+    <div class="srv-eyebrow">Why S.K. Chem</div>
+    <h2 class="srv-h">What sets us <em>apart</em></h2>
+    <p class="srv-sub" style="margin-bottom:2.5rem">Six reasons Sri Lanka's leading manufacturers trust us as their supply partner.</p>
+    <div class="why-wrap">
+      <div class="why-card">
+        <div class="why-ico">🗓️</div>
+        <div><div class="why-t">Established Since 2017</div><div class="why-s">7+ years of trusted, consistent supply to Sri Lankan manufacturers across six industries.</div></div>
+      </div>
+      <div class="why-card">
+        <div class="why-ico">🌍</div>
+        <div><div class="why-t">Global Sourcing, Local Delivery</div><div class="why-s">Direct partnerships with BASF, LG Chem, Vance Group, and SK Pickglobal — the world's best manufacturers.</div></div>
+      </div>
+      <div class="why-card">
+        <div class="why-ico">📋</div>
+        <div><div class="why-t">Full Documentation</div><div class="why-s">Every batch comes with CoA, SDS, Halal certificates, and regulatory compliance records as required.</div></div>
+      </div>
+      <div class="why-card">
+        <div class="why-ico">📦</div>
+        <div><div class="why-t">Year-Round Availability</div><div class="why-s">No seasonal shortfalls. We maintain consistent supply so your production never stops.</div></div>
+      </div>
+      <div class="why-card">
+        <div class="why-ico">🤝</div>
+        <div><div class="why-t">Genuine Partnership</div><div class="why-s">We don't just supply chemicals — we invest in understanding your business and supporting your growth.</div></div>
+      </div>
+      <div class="why-card">
+        <div class="why-ico">🌱</div>
+        <div><div class="why-t">Socially &amp; Environmentally Responsible</div><div class="why-s">Committed to sustainable sourcing, community welfare, and responsible business practices.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUPPLIERS -->
+<section class="sec" style="background:var(--white)">
+  <div class="W" style="text-align:center">
+    <div class="srv-eyebrow">Our Suppliers</div>
+    <h2 class="srv-h">Sourced from the <em>world's best</em></h2>
+    <p class="srv-sub">We source exclusively from globally recognised chemical manufacturers.</p>
+    <div class="sup-strip">
+      <div class="sup-badge"><span class="sup-flag">🇩🇪</span><div class="sup-info"><strong>BASF Germany</strong><span>Sodium Metabisulfite · Sodium Sulphite · Vitamin E</span></div></div>
+      <div class="sup-badge"><span class="sup-flag">🇨🇳</span><div class="sup-info"><strong>BASF China</strong><span>Formic Acid</span></div></div>
+      <div class="sup-badge"><span class="sup-flag">🇲🇾</span><div class="sup-info"><strong>Vance Group</strong><span>CAPB · Glycerine</span></div></div>
+      <div class="sup-badge"><span class="sup-flag">🇰🇷</span><div class="sup-info"><strong>SK Pickglobal</strong><span>Monopropylene Glycol</span></div></div>
+      <div class="sup-badge"><span class="sup-flag">🇰🇷</span><div class="sup-info"><strong>LG Chem</strong><span>Isopropyl Alcohol</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec" style="background:var(--cream)">
+  <div class="W">
+    <div class="about-cta">
+      <h2 class="about-cta-h">Ready to work<br><em>together?</em></h2>
+      <p class="about-cta-p">Tell us what you need. We'll get back to you with the right solution, the right grade, and the right price.</p>
+      <a href="index.html#contact" class="btn-w">Contact Us →</a>
+      <a href="index.html#industries" class="btn-ghost">View Industries</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ft-mini">
+  <div class="ft-mini-brand">S.K. Chem Solutions</div>
+  <div class="ft-mini-copy">© 2025 S.K. Chem Solutions · Battaramulla, Sri Lanka · B2B Supply Only</div>
+</footer>
+
+</body>
+</html>
