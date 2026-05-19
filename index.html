@@ -223,35 +223,42 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .prod-foot p{font-size:13px;color:var(--tl);font-weight:300}
 
 /* ── INDUSTRIES — editorial image grid ── */
-#industries{background:var(--ink);padding:clamp(4rem,8vw,7rem) 0}
-.ind-intro{margin-bottom:3rem;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
-.ind-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.8rem);
-  font-weight:300;color:#fff;line-height:1.15}
-.ind-h em{font-style:italic;color:rgba(255,255,255,.6)}
-.ind-sub{font-size:13.5px;color:rgba(255,255,255,.45);font-weight:300;max-width:300px;line-height:1.75}
-.ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px}
-.ic{position:relative;overflow:hidden;height:320px;cursor:default}
+/* ── INDUSTRIES — bento editorial ── */
+#industries{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 0}
+.ind-intro{margin-bottom:2.5rem;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem}
+.ind-eyebrow{display:block;font-size:10px;color:var(--fresh);letter-spacing:3px;text-transform:uppercase;font-weight:500;margin-bottom:1rem;opacity:.75}
+.ind-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:300;color:#fff;line-height:.95}
+.ind-h em{font-style:italic;color:rgba(255,255,255,.4)}
+.ind-side{display:flex;flex-direction:column;align-items:flex-end;gap:1rem}
+.ind-sub{font-size:13px;color:rgba(255,255,255,.38);font-weight:300;max-width:260px;line-height:1.8;text-align:right}
+.ind-count-badge{display:flex;align-items:baseline;gap:.4rem}
+.ind-count-n{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:rgba(255,255,255,.12);line-height:1}
+.ind-count-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.25)}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:460px 280px;gap:4px}
+.ic:nth-child(1){grid-column:1/3}
+.ic:nth-child(6){grid-column:3/5}
+.ic{position:relative;overflow:hidden;cursor:pointer;background:var(--ink)}
 .ic-bg{position:absolute;inset:0}
-.ic-bg img{width:100%;height:100%;object-fit:cover;transition:transform .7s cubic-bezier(.23,1,.32,1)}
-.ic:hover .ic-bg img{transform:scale(1.08)}
-.ic-overlay{position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(10,24,15,.9) 0%,rgba(28,56,41,.25) 60%,transparent 100%);
-  transition:opacity .4s}
-.ic-badge{position:absolute;top:1rem;right:1rem;
-  font-size:9px;font-weight:600;letter-spacing:1px;text-transform:uppercase;
-  padding:4px 10px;border-radius:50px}
-.ic-badge.main{background:var(--mid);color:#fff}
-.ic-badge.grow{background:var(--fresh);color:#fff}
-.ic-badge.new{background:rgba(255,255,255,.12);color:rgba(255,255,255,.8);border:1px solid rgba(255,255,255,.15)}
-.ic-content{position:absolute;bottom:0;left:0;right:0;padding:1.6rem 1.5rem}
-.ic-ico{font-size:1.5rem;display:block;margin-bottom:.4rem;transition:transform .3s}
-.ic:hover .ic-ico{transform:scale(1.15)}
-.ic-name{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;
-  color:#fff;margin-bottom:.3rem;line-height:1}
-.ic-chem{font-size:11px;color:var(--fresh);font-weight:500;margin-top:.4rem;opacity:.85}
-.ic-desc{font-size:12px;color:rgba(255,255,255,.55);font-weight:300;line-height:1.55;
-  max-height:0;overflow:hidden;transition:max-height .4s,margin-top .4s}
-.ic:hover .ic-desc{max-height:80px;margin-top:.4rem}
+.ic-bg img{width:100%;height:100%;object-fit:cover;transition:transform .85s cubic-bezier(.23,1,.32,1)}
+.ic:hover .ic-bg img{transform:scale(1.07)}
+.ic-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(4,12,7,.95) 0%,rgba(12,28,18,.55) 45%,rgba(28,56,41,.15) 100%);transition:background .5s}
+.ic:hover .ic-overlay{background:linear-gradient(to top,rgba(3,8,5,.98) 0%,rgba(8,22,13,.82) 65%,rgba(28,56,41,.4) 100%)}
+.ic::before{content:attr(data-num);position:absolute;right:-.04em;top:-.1em;font-family:'Cormorant Garamond',serif;font-size:clamp(8rem,16vw,14rem);font-weight:700;color:rgba(255,255,255,.032);line-height:1;z-index:1;pointer-events:none;letter-spacing:-.02em;transition:color .6s,transform .6s}
+.ic:hover::before{color:rgba(76,175,118,.055);transform:scale(1.04) translateY(-1%)}
+.ic::after{content:'';position:absolute;bottom:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--fresh),var(--mid));transform:scaleX(0);transform-origin:left;transition:transform .65s cubic-bezier(.23,1,.32,1);z-index:3}
+.ic:hover::after{transform:scaleX(1)}
+.ic-badge{position:absolute;top:1.25rem;left:1.5rem;z-index:2;font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:4px 12px;border-radius:50px}
+.ic-badge.main{background:rgba(76,175,118,.2);border:1px solid rgba(76,175,118,.4);color:var(--fresh)}
+.ic-badge.grow{background:rgba(76,175,118,.18);border:1px solid rgba(76,175,118,.35);color:var(--fresh)}
+.ic-badge.new{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.65)}
+.ic-content{position:absolute;bottom:0;left:0;right:0;padding:1.75rem 1.75rem 2rem;z-index:2}
+.ic-ico{display:none}
+.ic-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,2.2vw,2rem);font-weight:400;color:#fff;line-height:1.1;margin-bottom:.15rem}
+.ic:nth-child(1) .ic-name,.ic:nth-child(6) .ic-name{font-size:clamp(1.8rem,3vw,2.7rem)}
+.ic-chem{font-size:11px;color:rgba(255,255,255,.32);font-weight:300;margin-top:.3rem;line-height:1.5;letter-spacing:.2px}
+.ic-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.85rem;opacity:0;transform:translateY(10px);transition:opacity .4s .05s,transform .4s .05s}
+.ic:hover .ic-tags{opacity:1;transform:none}
+.ic-tag{font-size:9.5px;font-weight:500;letter-spacing:.6px;text-transform:uppercase;padding:4px 10px;border-radius:50px;background:rgba(76,175,118,.14);border:1px solid rgba(76,175,118,.28);color:rgba(255,255,255,.78)}
 
 /* ── GALLERY — editorial masonry ── */
 #gallery{background:var(--cream)}
@@ -530,13 +537,8 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
 .clog-tag{font-size:10px;color:var(--tl);font-weight:300;display:block}
 
 /* ── INDUSTRY DETAIL PANEL ── */
-.ic{cursor:pointer}
-.ic-explore{position:absolute;bottom:1.6rem;right:1.5rem;
-  font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
-  color:rgba(255,255,255,.5);display:flex;align-items:center;gap:.4rem;
-  transition:color .3s,gap .3s}
-.ic:hover .ic-explore{color:var(--fresh);gap:.65rem}
-.ic-explore::after{content:'→';font-size:12px}
+.ic-explore{position:absolute;top:1.25rem;right:1.5rem;z-index:2;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:.9rem;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.65) rotate(-45deg);transition:all .45s cubic-bezier(.23,1,.32,1)}
+.ic:hover .ic-explore{opacity:1;transform:scale(1) rotate(0deg);background:var(--fresh);border-color:var(--fresh)}
 .ind-backdrop{position:fixed;inset:0;z-index:849;background:rgba(0,0,0,.65);
   backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .4s}
 .ind-backdrop.open{opacity:1;pointer-events:all}
@@ -582,7 +584,10 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
   .about-img-side{min-height:380px}
   .vm-grid{grid-template-columns:1fr}.vm-divider{display:none}
   .fp-grid{grid-template-columns:1fr}
-  .ind-grid,.pg{grid-template-columns:1fr 1fr}
+  .ind-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
+  .ind-grid .ic{height:320px}
+  .ic:nth-child(1),.ic:nth-child(6){grid-column:auto}
+  .pg{grid-template-columns:1fr 1fr}
   .sup-logo-grid{grid-template-columns:1fr 1fr}
   .cli-logo-grid{grid-template-columns:repeat(3,1fr)}
   .gal-masonry{grid-template-columns:1fr 1fr;grid-template-rows:220px 220px 220px 220px}
@@ -595,7 +600,9 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
   .ind-panel-img-wrap{height:240px}
 }
 @media(max-width:600px){
-  .ind-grid,.pg{grid-template-columns:1fr}
+  .ind-grid{grid-template-columns:1fr}
+  .ind-grid .ic{height:280px}
+  .pg{grid-template-columns:1fr}
   .gal-masonry{grid-template-columns:1fr}
   .frow{grid-template-columns:1fr}
   .ft-grid{grid-template-columns:1fr}
@@ -744,79 +751,104 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
   <div class="W">
     <div class="ind-intro rv">
       <div>
-        <h2 class="ind-h">What we<br><em>enable</em></h2>
+        <span class="ind-eyebrow">— Our Industries</span>
+        <h2 class="ind-h">Industries<br>we <em>serve</em></h2>
       </div>
-      <p class="ind-sub">Six industries. One mission — enabling better products through quality chemistry and reliable supply.</p>
+      <div class="ind-side">
+        <p class="ind-sub">Six industries. One mission — enabling better products through quality chemistry and reliable supply.</p>
+        <div class="ind-count-badge">
+          <span class="ind-count-n">06</span>
+          <span class="ind-count-l">Industries</span>
+        </div>
+      </div>
     </div>
-    <div class="ind-grid rv d1">
-      <div class="ic" onclick="location.href='industry.html?ind=rubber'">
-        <div class="ic-bg"><img src="Images/All/isuru-ranasinha-AVhFLfD_Lv8-unsplash.jpg" alt="Rubber"></div>
-        <div class="ic-overlay"></div>
-        <span class="ic-badge main">Biggest Sector</span>
-        <div class="ic-content">
-          <span class="ic-ico">🌿</span>
-          <div class="ic-name">Rubber &amp; Latex</div>
-          <div class="ic-chem">Latex Coagulation · Sheet Preservation · Export Protection</div>
-          <p class="ic-desc">We enable your plantation to coagulate, preserve, and ship quality rubber — reliably, year-round.</p>
+  </div>
+  <div class="ind-grid rv d1">
+    <div class="ic" data-num="01" onclick="location.href='industry.html?ind=rubber'">
+      <div class="ic-bg"><img src="Images/All/isuru-ranasinha-AVhFLfD_Lv8-unsplash.jpg" alt="Rubber &amp; Latex"></div>
+      <div class="ic-overlay"></div>
+      <span class="ic-badge main">Biggest Sector</span>
+      <span class="ic-explore">→</span>
+      <div class="ic-content">
+        <div class="ic-name">Rubber &amp; Latex</div>
+        <div class="ic-chem">Formic Acid · Sodium Metabisulfite · Sodium Sulphite</div>
+        <div class="ic-tags">
+          <span class="ic-tag">Latex Coagulation</span>
+          <span class="ic-tag">Sheet Preservation</span>
+          <span class="ic-tag">Export Protection</span>
         </div>
-        <span class="ic-explore">Explore</span>
       </div>
-      <div class="ic" onclick="location.href='industry.html?ind=personal'">
-        <div class="ic-bg"><img src="Images/Industries/Personal Care/look-studio-TQSPgNqeCo8-unsplash.jpg" alt="Personal Care"></div>
-        <div class="ic-overlay"></div>
-        <div class="ic-content">
-          <span class="ic-ico">✨</span>
-          <div class="ic-name">Personal Care</div>
-          <div class="ic-chem">Shampoo Formulation · Skincare Enrichment · Natural Hydration</div>
-          <p class="ic-desc">We enable your brand to produce gentle, effective, and premium personal care products.</p>
+    </div>
+    <div class="ic" data-num="02" onclick="location.href='industry.html?ind=personal'">
+      <div class="ic-bg"><img src="Images/Industries/Personal Care/look-studio-TQSPgNqeCo8-unsplash.jpg" alt="Personal Care"></div>
+      <div class="ic-overlay"></div>
+      <span class="ic-explore">→</span>
+      <div class="ic-content">
+        <div class="ic-name">Personal Care</div>
+        <div class="ic-chem">CAPB · Glycerine · Vitamin E Acetate</div>
+        <div class="ic-tags">
+          <span class="ic-tag">Shampoo Formulation</span>
+          <span class="ic-tag">Skincare Enrichment</span>
+          <span class="ic-tag">Natural Hydration</span>
         </div>
-        <span class="ic-explore">Explore</span>
       </div>
-      <div class="ic" onclick="location.href='industry.html?ind=home'">
-        <div class="ic-bg"><img src="Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg" alt="Home Care"></div>
-        <div class="ic-overlay"></div>
-        <div class="ic-content">
-          <span class="ic-ico">🏠</span>
-          <div class="ic-name">Home Care</div>
-          <div class="ic-chem">Dishwashing Power · Detergent Stability · Surface Care</div>
-          <p class="ic-desc">We enable your cleaning products to cut through grease, work in hard water, and reach every home.</p>
+    </div>
+    <div class="ic" data-num="03" onclick="location.href='industry.html?ind=home'">
+      <div class="ic-bg"><img src="Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg" alt="Home Care"></div>
+      <div class="ic-overlay"></div>
+      <span class="ic-explore">→</span>
+      <div class="ic-content">
+        <div class="ic-name">Home Care</div>
+        <div class="ic-chem">CAPB · Sodium Lauryl Sulphate</div>
+        <div class="ic-tags">
+          <span class="ic-tag">Dishwashing Power</span>
+          <span class="ic-tag">Detergent Stability</span>
+          <span class="ic-tag">Surface Care</span>
         </div>
-        <span class="ic-explore">Explore</span>
       </div>
-      <div class="ic" onclick="location.href='industry.html?ind=food'">
-        <div class="ic-bg"><img src="Images/Industries/Food Industry/assortment-tasty-sugary-confectionery-products-variety-flavor-freshly-baked-buns-criossants-muffins-bars-chocolate-sweet-dessert-homemade-yummy-snack-baked-goods-flat-lay.jpg" alt="Food"></div>
-        <div class="ic-overlay"></div>
-        <span class="ic-badge grow">Growth Sector</span>
-        <div class="ic-content">
-          <span class="ic-ico">🌾</span>
-          <div class="ic-name">Food Industry</div>
-          <div class="ic-chem">Beverage Preservation · Bakery Freshness · Natural Sweetening</div>
-          <p class="ic-desc">We enable your food products to stay fresher, safer, and shelf-ready — with certified ingredients.</p>
+    </div>
+    <div class="ic" data-num="04" onclick="location.href='industry.html?ind=food'">
+      <div class="ic-bg"><img src="Images/Industries/Food Industry/assortment-tasty-sugary-confectionery-products-variety-flavor-freshly-baked-buns-criossants-muffins-bars-chocolate-sweet-dessert-homemade-yummy-snack-baked-goods-flat-lay.jpg" alt="Food Industry"></div>
+      <div class="ic-overlay"></div>
+      <span class="ic-badge grow">Growth Sector</span>
+      <span class="ic-explore">→</span>
+      <div class="ic-content">
+        <div class="ic-name">Food Industry</div>
+        <div class="ic-chem">Sodium Metabisulfite · Monopropylene Glycol</div>
+        <div class="ic-tags">
+          <span class="ic-tag">Beverage Preservation</span>
+          <span class="ic-tag">Bakery Freshness</span>
+          <span class="ic-tag">Natural Sweetening</span>
         </div>
-        <span class="ic-explore">Explore</span>
       </div>
-      <div class="ic" onclick="location.href='industry.html?ind=pharma'">
-        <div class="ic-bg"><img src="Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg" alt="Pharma"></div>
-        <div class="ic-overlay"></div>
-        <span class="ic-badge new">Expanding Into</span>
-        <div class="ic-content">
-          <span class="ic-ico">💊</span>
-          <div class="ic-name">Pharmaceutical</div>
-          <div class="ic-chem">GMP Facility Hygiene · Oral Formulation · Solid Dosage</div>
-          <p class="ic-desc">We enable your pharmaceutical production to achieve GMP compliance and global quality standards.</p>
+    </div>
+    <div class="ic" data-num="05" onclick="location.href='industry.html?ind=pharma'">
+      <div class="ic-bg"><img src="Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg" alt="Pharmaceutical"></div>
+      <div class="ic-overlay"></div>
+      <span class="ic-badge new">Expanding Into</span>
+      <span class="ic-explore">→</span>
+      <div class="ic-content">
+        <div class="ic-name">Pharmaceutical</div>
+        <div class="ic-chem">IPA · Glycerine · Sodium Sulphite</div>
+        <div class="ic-tags">
+          <span class="ic-tag">GMP Facility Hygiene</span>
+          <span class="ic-tag">Oral Formulation</span>
+          <span class="ic-tag">Solid Dosage</span>
         </div>
-        <span class="ic-explore">Explore</span>
       </div>
-      <div class="ic" onclick="location.href='industry.html?ind=textile'">
-        <div class="ic-bg"><img src="Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg" alt="Textile"></div>
-        <div class="ic-overlay"></div>
-        <div class="ic-content">
-          <span class="ic-ico">🧵</span>
-          <div class="ic-name">Textile Washing</div>
-          <div class="ic-chem">Garment Washing · Fabric Scouring · Premium Finishing</div>
-          <p class="ic-desc">We enable premium wash results that meet the exacting standards of international buyers.</p>
+    </div>
+    <div class="ic" data-num="06" onclick="location.href='industry.html?ind=textile'">
+      <div class="ic-bg"><img src="Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg" alt="Textile Washing"></div>
+      <div class="ic-overlay"></div>
+      <span class="ic-explore">→</span>
+      <div class="ic-content">
+        <div class="ic-name">Textile Washing</div>
+        <div class="ic-chem">Formic Acid · Sodium Sulphite</div>
+        <div class="ic-tags">
+          <span class="ic-tag">Garment Washing</span>
+          <span class="ic-tag">Fabric Scouring</span>
+          <span class="ic-tag">Premium Finishing</span>
         </div>
-        <span class="ic-explore">Explore</span>
       </div>
     </div>
   </div>
