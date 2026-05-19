@@ -6,27 +6,62 @@ Static website for **S.K. Chem Solutions** — a Sri Lankan B2B chemical raw mat
 ## Files
 - `index.html` — Full homepage (HTML + CSS + JS, single file)
 - `industry.html` — Industry detail page (URL param `?ind=rubber` etc.)
-- `Images/All/` — General use images (hero, nature/greenery)
-- `Images/Industries/Personal Care/` — Personal care lifestyle photos
-- `Images/Industries/Home Care/` — Home care product photos
-- `Images/Industries/Food Industry/` — Food & beverage photos
-- `Images/Gallery/` — Charity, Events, Office, Warehouse (folders exist, images TBD)
-- `Images/Partners/` — Global, Local (folders exist, images TBD)
+- `Images/All/` — General use images (hero, nature/greenery, rubber plantation)
+- `Images/Industries/Rubber/` — Rubber tapping, sheets, gloves
+- `Images/Industries/Personal Care/` — Skincare, shower, cosmetics
+- `Images/Industries/Home Care/` — Cleaning products
+- `Images/Industries/Food Industry/` — Bakery, beverages
+- `Images/Industries/Pharmaceutical/` — Cleanroom, medicine
+- `Images/Industries/Textile Washing/` — Garments, dye
+- `Images/Gallery/Charity/` — 14 CSR/community event photos (charity-1.jpeg … charity-14.jpeg)
+- `Images/Partners/Local/` — 8 local client logos
+- `Images/Partners/Global/` — Global supplier logos (TBD)
 - `Images/Products/` — Product photos (TBD)
+
+## No External Image Dependencies
+All images are now local — zero loremflickr usage remaining.
 
 ## Real Images in Use
 | File | Used In |
 |------|---------|
-| `Images/All/hero.jpg` | Homepage hero, rubber industry card, flagship card 1, rubber industry.html hero |
+| `Images/All/hero.jpg` | Homepage hero only |
+| `Images/All/isuru-ranasinha-AVhFLfD_Lv8-unsplash.jpg` | Rubber industry card (homepage), rubber industry.html hero |
+| `Images/All/isuru-ranasinha-3JdlP4prtjg-unsplash.jpg` | Flagship card 1, rubber chems[0] Latex Coagulation |
 | `Images/All/closeup-shot-trees-greenery-...jpg` | About section image |
 | `Images/All/green-plant-leaves-with-blue-sky-background.jpg` | Sustainability section background |
-| `Images/All/young-woman-smelling-leaf-forest.jpg` | Personal Care card, personal industry hero, shampoo service row |
-| `Images/Industries/Personal Care/front-view-blonde-lady-...jpg` | Premium Skincare service row |
-| `Images/Industries/Personal Care/natural-self-care-product.jpg` | Natural Beauty service row |
-| `Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg` | Home Care card, home industry hero, dishwashing service row |
-| `Images/Industries/Food Industry/orange-coffee-cocktail-white-surface.jpg` | Food card (flagship card 2), food industry hero, beverage service row |
-| `Images/Industries/Food Industry/assortment-tasty-sugary-...jpg` | Food industry card (homepage), bakery service row |
-| `Images/Industries/Food Industry/cupcake-with-cherries-...jpg` | Natural sweetening service row |
+| `Images/All/young-woman-smelling-leaf-forest.jpg` | Personal Care chems[2] Moisturiser row |
+| `Images/Industries/Rubber/alex-shuper-D5LVMChT3PU-unsplash.jpg` | Rubber chems[1] Sheet Preservation |
+| `Images/Industries/Rubber/zuniar-ayu-DwyeIjDscCc-unsplash.jpg` | Rubber chems[2] Latex Transport |
+| `Images/Industries/Rubber/divazus-fabric-store-7BziR1wr8X8-unsplash.jpg` | (in repo, unused) |
+| `Images/Industries/Rubber/divazus-fabric-store-FG5697_i5VE-unsplash.jpg` | (in repo, unused) |
+| `Images/Industries/Personal Care/look-studio-TQSPgNqeCo8-unsplash.jpg` | Personal Care card (homepage), personal industry.html hero |
+| `Images/Industries/Personal Care/robbie-4xlQ0LrcilQ-unsplash.jpg` | Personal chems[0] Shampoo row |
+| `Images/Industries/Personal Care/laura-jaeger-7LAbLSKbkaQ-unsplash.jpg` | Personal chems[1] Skincare row |
+| `Images/Industries/Personal Care/natural-self-care-product.jpg` | Personal chems[4] Natural Beauty row |
+| `Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg` | Home Care card, home industry.html hero, home chems[0] Dishwashing |
+| `Images/Industries/Home Care/puroclean-of-fort-worth--dc38HdQR1M-unsplash.jpg` | Home chems[1] Detergent Stability |
+| `Images/Industries/Food Industry/orange-coffee-cocktail-white-surface.jpg` | Food card (flagship card 2), food industry.html hero, food chems[0] Beverage |
+| `Images/Industries/Food Industry/andy-li-RndRFJ1v1kk-unsplash.jpg` | Food chems[1] Bakery row |
+| `Images/Industries/Food Industry/cupcake-with-cherries-...jpg` | Food chems[2] Natural Sweetening |
+| `Images/Industries/Food Industry/assortment-tasty-sugary-...jpg` | Food industry card (homepage) |
+| `Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg` | Pharma card (homepage), pharma industry.html hero, pharma chems[0] GMP |
+| `Images/Industries/Pharmaceutical/thaismara-figueredo-MTMn2VDnLGM-unsplash.jpg` | Pharma chems[1] Syrup row |
+| `Images/Industries/Pharmaceutical/crystalweed-cannabis-XYGuytPoYHI-unsplash.jpg` | Personal chems[3] Sanitiser row, Pharma chems[2] Solid Dosage |
+| `Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg` | Textile card (homepage), textile industry.html hero, textile chems[0] Garment row |
+| `Images/Industries/Textile Washing/engin-akyurt-8g__j-nqWXc-unsplash.jpg` | Textile chems[1] Scouring row |
+| `Images/Gallery/Charity/charity-1.jpeg … charity-14.jpeg` | Gallery section (Community filter), CSR section photos |
+
+## Local Client Logos (`Images/Partners/Local/`)
+| File | Company | Sector |
+|------|---------|--------|
+| `ansell_logo.ashx.png` | Ansell Lanka | Rubber & Latex |
+| `logo-2.png` | NBC | Rubber & Latex |
+| `bellose-logo-blk.png` | Bellosé | Personal Care |
+| `link-natural-logo.svg` | Link Natural | Personal Care & Pharma |
+| `harumi-holdings-pvt-ltd-314151.jpg` | Dreamron | Personal Care |
+| `Janet_Logos_1_-02.png.avif` | Janet Lanka | Personal Care |
+| `logo.webp` | 4rever Skin Naturals | Personal Care |
+| `sm-logo.png` | ACE | Pharmaceutical |
 
 ## Live Site
 - GitHub repo: `https://github.com/rishluck/sk-chem-solutions.git`
@@ -72,12 +107,7 @@ This applies to: industry cards on homepage, flagship cards, product tabs, indus
 - SK Pickglobal 🇰🇷 — Monopropylene Glycol
 - LG Chem 🇰🇷 — Isopropyl Alcohol
 
-Logos use Clearbit API: `https://logo.clearbit.com/{domain}` with `onerror` fallback to a styled text mark.
-
-## Images
-- Hero (homepage + rubber industry page): Unsplash photo `1441974231531-c6227db76b6e` (sunlit forest path)
-- All other images: `https://loremflickr.com/{w}/{h}/{keywords}?lock={N}` — use lifestyle/application keywords, NOT chemical/lab keywords
-- Lock numbers: homepage uses 3–17, industry.html uses 101–610
+Global supplier logos use Clearbit API: `https://logo.clearbit.com/{domain}` with `onerror` fallback.
 
 ## industry.html Structure
 - Single file serves all 6 industries via URL param `?ind=rubber`
@@ -86,6 +116,12 @@ Logos use Clearbit API: `https://logo.clearbit.com/{domain}` with `onerror` fall
 - Template renders: `✦ ${c.chemical}` as badge → `${c.serviceEm}` as headline
 - Motion graphics: orbFloat, shimLine, spinSlow, fadeUp keyframe animations
 - Scroll-triggered reveals via IntersectionObserver
+
+## Gallery Section
+- Filter buttons: All, Community (charity), Products, Warehouse, Operations
+- 14 real charity photos in `data-cat="charity"` items
+- Products/Warehouse/Operations filters ready for when real photos are added
+- CSR section (separate from gallery) shows charity-3, charity-7, charity-12
 
 ## Navigation
 - Logo click → `index.html` (from industry.html) or `#hero` (from homepage)
