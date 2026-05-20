@@ -451,12 +451,33 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
   .ind-panel-img-wrap{height:240px}
 }
 @media(max-width:600px){
+  /* Industries */
   .ind-grid{grid-template-columns:1fr}
   .ind-grid .ic{height:280px}
+
+  /* Footer */
   .frow{grid-template-columns:1fr}
   .ft-grid{grid-template-columns:1fr}
-  .csr-photo-grid{grid-template-columns:1fr}
-  .stat-item{flex:0 0 100%}
+
+  /* Stats — keep 2×2, not 1-per-row */
+  .stat-item{flex:0 0 50%}
+
+  /* Gallery — filter scrolls horizontally; intro stacks cleanly */
+  .gal-intro{flex-direction:column;align-items:flex-start;gap:1rem}
+  .gal-filter{flex-wrap:nowrap;overflow-x:auto;width:100%;padding-bottom:.2rem;scrollbar-width:none}
+  .gal-filter::-webkit-scrollbar{display:none}
+  .gf{white-space:nowrap;flex-shrink:0}
+  .gal-nav{margin-top:0}
+
+  /* Partners — horizontal scroll row */
+  .par-logo-row{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
+    justify-content:flex-start;padding-bottom:.75rem;scrollbar-width:none}
+  .par-logo-row::-webkit-scrollbar{display:none}
+  .par-item{flex:0 0 140px}
+
+  /* CSR photos — 2-col grid, shorter rows */
+  .csr-photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px}
+  .csr-ph.tall{grid-row:auto}
 }
 </style>
 </head>
