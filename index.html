@@ -27,8 +27,6 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .serif{font-family:'Cormorant Garamond',Georgia,serif}
 
 /* ── SCROLL PROGRESS ── */
-#prog{position:fixed;top:0;left:0;right:0;height:2px;z-index:9999;
-  background:var(--fresh);transform-origin:left;transform:scaleX(0);pointer-events:none}
 
 /* ── NAV — editorial transparent ── */
 #nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:0 clamp(1.5rem,4vw,3.5rem);
@@ -482,8 +480,6 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
 </style>
 </head>
 <body>
-
-<div id="prog"></div>
 
 <!-- ══ NAV ══ -->
 <nav id="nav">
@@ -984,11 +980,6 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
 </div>
 
 <script>
-/* Progress */
-const prog=document.getElementById('prog');
-window.addEventListener('scroll',()=>{
-  prog.style.transform='scaleX('+(scrollY/(document.body.scrollHeight-innerHeight))+')';
-},{passive:true});
 
 /* Nav */
 const nav=document.getElementById('nav');
