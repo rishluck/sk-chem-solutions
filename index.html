@@ -217,29 +217,37 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 
 /* ── PARTNERS ── */
 #partners{background:var(--white)}
-.par-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,8rem);align-items:start}
 .par-eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);
   margin-bottom:1.2rem;display:flex;align-items:center;gap:.75rem}
 .par-eyebrow::before{content:'';width:28px;height:1px;background:var(--fresh)}
 .par-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);
-  font-weight:300;color:var(--ink);line-height:1.15;margin-bottom:2rem}
-.sup-list{display:flex;flex-direction:column}
-.si{display:flex;align-items:center;gap:1rem;padding:1rem 0;
-  border-bottom:1px solid var(--bdr);transition:all .35s;cursor:default}
-.si:first-child{border-top:1px solid var(--bdr)}
-.si:hover{padding-left:.75rem}
-.si-flag{font-size:1.6rem;flex-shrink:0;transition:transform .3s}
-.si:hover .si-flag{transform:scale(1.15)}
-.si-info strong{font-size:13.5px;font-weight:600;color:var(--ink);display:block}
-.si-info span{font-size:12px;color:var(--tl);font-weight:300}
-.si-arrow{margin-left:auto;color:var(--bdr);font-size:16px;transition:all .35s}
-.si:hover .si-arrow{color:var(--fresh);transform:translateX(4px)}
-.cli-side-head{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;
-  color:var(--ink);margin-bottom:1.25rem;font-style:italic}
-.cli-chips{display:flex;flex-wrap:wrap;gap:.5rem}
-.chip{padding:7px 16px;border-radius:50px;font-size:12.5px;font-weight:400;
-  border:1px solid var(--bdr);color:var(--tm);transition:all .3s;cursor:default}
-.chip:hover{border-color:var(--fresh);color:var(--ink);background:var(--pale);transform:translateY(-2px)}
+  font-weight:300;color:var(--ink);line-height:1.15;margin-bottom:1.75rem}
+.par-filters{display:flex;gap:.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
+.par-btn{padding:8px 22px;border-radius:50px;font-size:12px;font-weight:500;
+  border:1.5px solid var(--bdr);color:var(--tm);background:transparent;
+  cursor:pointer;transition:all .3s;letter-spacing:.3px;font-family:inherit}
+.par-btn.active,.par-btn:hover{background:var(--fresh);border-color:var(--fresh);color:#fff}
+.par-logo-row{display:flex;flex-wrap:wrap;gap:.85rem;justify-content:flex-start;align-items:stretch}
+.par-item{flex:0 0 auto;width:155px;background:var(--white);border:1px solid var(--bdr);border-radius:12px;
+  padding:1.25rem 1rem;display:flex;flex-direction:column;align-items:center;gap:.35rem;
+  text-align:center;transition:all .35s;cursor:default}
+.par-item:hover{background:var(--pale);border-color:var(--sage);transform:translateY(-3px);
+  box-shadow:0 8px 24px rgba(42,94,64,.1)}
+.par-item.hidden{display:none}
+.par-item-logo{height:44px;display:flex;align-items:center;justify-content:center;width:100%;margin-bottom:.4rem}
+.par-item-logo img{max-height:38px;max-width:120px;width:auto;object-fit:contain;filter:grayscale(25%);transition:filter .3s}
+.par-item:hover .par-item-logo img{filter:grayscale(0%)}
+.par-item-logo-fb{display:none;align-items:center;justify-content:center;
+  height:38px;padding:0 12px;border-radius:8px;
+  background:linear-gradient(135deg,var(--leaf),var(--fresh));
+  font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:#fff}
+.par-item-name{font-size:11.5px;font-weight:600;color:var(--ink);display:block;line-height:1.3}
+.par-item-sub{font-size:10px;color:var(--tm);font-weight:300;display:block}
+.par-cat-badge{font-size:9px;letter-spacing:.5px;text-transform:uppercase;
+  padding:3px 8px;border-radius:50px;font-weight:500;display:inline-block;margin-top:.15rem}
+.par-cat-badge.global{background:rgba(42,94,64,.1);color:var(--leaf)}
+.par-cat-badge.local{background:rgba(76,175,118,.12);color:var(--mid)}
+.par-note{font-size:12px;color:var(--tl);font-style:italic;margin-top:1.75rem;font-weight:300;text-align:center}
 
 /* ── CSR ── */
 #csr{background:var(--cream)}
@@ -399,44 +407,6 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
 .rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
 .rv.on{opacity:1;transform:none}
 :focus-visible{outline:2px solid var(--fresh);outline-offset:3px;border-radius:3px}
-
-/* ── SUPPLIER LOGO GRID ── */
-.sup-logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:3.5rem}
-.slog{background:var(--white);border:1px solid var(--bdr);border-radius:14px;
-  padding:1.75rem 1.5rem;transition:all .4s;cursor:default;display:flex;flex-direction:column;gap:.4rem}
-.slog:hover{transform:translateY(-5px);box-shadow:0 20px 50px rgba(28,56,41,.1);border-color:var(--fresh)}
-.slog-mark{display:inline-flex;align-items:center;justify-content:center;
-  width:60px;height:38px;border-radius:8px;
-  background:linear-gradient(135deg,var(--leaf),var(--fresh));
-  font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;
-  color:#fff;letter-spacing:.5px;margin-bottom:.6rem}
-.slog-logo-area{height:56px;display:flex;align-items:center;justify-content:flex-start;
-  margin-bottom:1rem;padding-bottom:1rem;border-bottom:1px solid var(--bdr)}
-.slog-logo-img{height:42px;width:auto;max-width:150px;
-  object-fit:contain;object-position:left center;display:block}
-.slog-logo-fb{display:none;align-items:center;justify-content:center;
-  height:42px;padding:0 14px;border-radius:8px;
-  background:linear-gradient(135deg,var(--leaf),var(--fresh));
-  font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;
-  color:#fff;letter-spacing:.5px}
-.slog-name{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--ink)}
-.slog-country{font-size:12px;color:var(--tl);font-weight:400}
-.slog-tag{font-size:11.5px;color:var(--mid);font-weight:300;font-style:italic}
-
-/* ── CLIENT LOGO GRID ── */
-.par-divider{height:1px;background:var(--bdr);margin:3rem 0}
-.par-sub-h{font-family:'Cormorant Garamond',serif;font-size:clamp(1.4rem,2.8vw,2.2rem);
-  font-weight:300;color:var(--ink);margin-bottom:1.5rem;font-style:italic}
-.cli-logo-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem}
-.clog{background:var(--white);border:1px solid var(--bdr);border-radius:12px;
-  padding:1.1rem 1rem;text-align:center;transition:all .35s;cursor:default;display:flex;flex-direction:column;align-items:center;gap:.4rem}
-.clog:hover{background:var(--pale);border-color:var(--sage);transform:translateY(-3px);box-shadow:0 6px 20px rgba(42,94,64,.08)}
-.clog-logo-wrap{height:44px;display:flex;align-items:center;justify-content:center;width:100%}
-.clog-logo-img{max-height:38px;max-width:120px;width:auto;object-fit:contain;filter:grayscale(20%);transition:filter .3s}
-.clog:hover .clog-logo-img{filter:grayscale(0%)}
-.clog-logo-fb{display:none;font-weight:700;font-size:13px;color:var(--ink)}
-.clog-name{font-size:11.5px;font-weight:600;color:var(--ink);display:block;line-height:1.3}
-.clog-tag{font-size:10px;color:var(--tl);font-weight:300;display:block}
 
 /* ── INDUSTRY DETAIL PANEL ── */
 .ic-explore{position:absolute;top:1.25rem;right:1.5rem;z-index:2;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:.9rem;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.65) rotate(-45deg);transition:all .45s cubic-bezier(.23,1,.32,1)}
@@ -799,119 +769,104 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
 <!-- ══ PARTNERS ══ -->
 <section id="partners" class="sec" style="background:var(--white)">
   <div class="W">
-
-    <!-- Suppliers -->
-    <div class="rv" style="margin-bottom:2.5rem">
-      <div class="par-eyebrow">Global Supplier Network</div>
-      <h2 class="par-h">Sourcing from the<br>world's best</h2>
-      <p style="font-size:15px;color:var(--tl);font-weight:300;max-width:520px;line-height:1.85">Partnering directly with world-renowned chemical manufacturers across Europe and Asia — ensuring the highest quality and year-round supply.</p>
+    <div class="rv" style="margin-bottom:2rem">
+      <div class="par-eyebrow">Partners &amp; Clients</div>
+      <h2 class="par-h">Trusted by the best,<br>sourced from the world</h2>
     </div>
-    <div class="sup-logo-grid rv d1">
-      <div class="slog">
-        <div class="slog-logo-area">
-          <img class="slog-logo-img" src="https://logo.clearbit.com/basf.com" alt="BASF"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="slog-logo-fb">BASF</div>
-        </div>
-        <div class="slog-name">BASF SE</div>
-        <div class="slog-country">🇩🇪 Germany</div>
-        <div class="slog-tag">World's Leading Chemical Company</div>
-      </div>
-      <div class="slog">
-        <div class="slog-logo-area">
-          <img class="slog-logo-img" src="https://logo.clearbit.com/basf.com" alt="BASF China"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="slog-logo-fb">BASF</div>
-        </div>
-        <div class="slog-name">BASF China</div>
-        <div class="slog-country">🇨🇳 China</div>
-        <div class="slog-tag">Regional Manufacturing Hub</div>
-      </div>
-      <div class="slog">
-        <div class="slog-logo-area">
-          <img class="slog-logo-img" src="https://logo.clearbit.com/vancebioenergy.com" alt="Vance Group"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="slog-logo-fb">Vance</div>
-        </div>
-        <div class="slog-name">Vance Group</div>
-        <div class="slog-country">🇲🇾 Malaysia</div>
-        <div class="slog-tag">Specialty &amp; Oleochemicals</div>
-      </div>
-      <div class="slog">
-        <div class="slog-logo-area">
-          <img class="slog-logo-img" src="https://logo.clearbit.com/sk.com" alt="SK Pickglobal"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="slog-logo-fb">SK</div>
-        </div>
-        <div class="slog-name">SK Pickglobal</div>
-        <div class="slog-country">🇰🇷 Korea</div>
-        <div class="slog-tag">Industrial Specialty Chemicals</div>
-      </div>
-      <div class="slog">
-        <div class="slog-logo-area">
-          <img class="slog-logo-img" src="https://logo.clearbit.com/lgchem.com" alt="LG Chem"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="slog-logo-fb">LG Chem</div>
-        </div>
-        <div class="slog-name">LG Chem</div>
-        <div class="slog-country">🇰🇷 Korea</div>
-        <div class="slog-tag">Advanced Chemical Materials</div>
-      </div>
-      <div class="slog">
-        <div class="slog-logo-area">
-          <img class="slog-logo-img" src="https://logo.clearbit.com/luxichemical.com" alt="LUXI Chemical"
-               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="slog-logo-fb">LUXI</div>
-        </div>
-        <div class="slog-name">LUXI Chemical</div>
-        <div class="slog-country">🇨🇳 China</div>
-        <div class="slog-tag">Industrial Chemicals</div>
-      </div>
+    <div class="par-filters rv d1">
+      <button class="par-btn active" data-filter="all">All</button>
+      <button class="par-btn" data-filter="global">🌍 Global Suppliers</button>
+      <button class="par-btn" data-filter="local">🇱🇰 Local Clients</button>
     </div>
-
-    <div class="par-divider"></div>
-
-    <!-- Clients -->
-    <div class="rv" style="margin-bottom:1.75rem">
-      <div class="par-eyebrow">Trusted Clients</div>
-      <div class="par-sub-h">Proudly serving Sri Lanka's<br>leading manufacturers</div>
-    </div>
-    <div class="cli-logo-grid rv d1">
-      <div class="clog">
-        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/ansell_logo.ashx.png" alt="Ansell" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">Ansell</span></div>
-        <span class="clog-name">Ansell Lanka</span><span class="clog-tag">Rubber &amp; Latex</span>
+    <div class="par-logo-row rv d2">
+      <!-- Global Suppliers -->
+      <div class="par-item" data-cat="global">
+        <div class="par-item-logo"><img src="https://logo.clearbit.com/basf.com" alt="BASF" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">BASF</span></div>
+        <span class="par-item-name">BASF SE</span>
+        <span class="par-item-sub">🇩🇪 Germany</span>
+        <span class="par-cat-badge global">Supplier</span>
       </div>
-      <div class="clog">
-        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/logo-2.png" alt="NBC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">NBC</span></div>
-        <span class="clog-name">NBC</span><span class="clog-tag">Rubber &amp; Latex</span>
+      <div class="par-item" data-cat="global">
+        <div class="par-item-logo"><img src="https://logo.clearbit.com/basf.com" alt="BASF China" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">BASF</span></div>
+        <span class="par-item-name">BASF China</span>
+        <span class="par-item-sub">🇨🇳 China</span>
+        <span class="par-cat-badge global">Supplier</span>
       </div>
-      <div class="clog">
-        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/bellose-logo-blk.png" alt="Bellosé" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">Bellosé</span></div>
-        <span class="clog-name">Bellosé</span><span class="clog-tag">Personal Care</span>
+      <div class="par-item" data-cat="global">
+        <div class="par-item-logo"><img src="https://logo.clearbit.com/vancebioenergy.com" alt="Vance Group" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">Vance</span></div>
+        <span class="par-item-name">Vance Group</span>
+        <span class="par-item-sub">🇲🇾 Malaysia</span>
+        <span class="par-cat-badge global">Supplier</span>
       </div>
-      <div class="clog">
-        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/link-natural-logo.svg" alt="Link Natural" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">Link Natural</span></div>
-        <span class="clog-name">Link Natural</span><span class="clog-tag">Personal Care &amp; Pharma</span>
+      <div class="par-item" data-cat="global">
+        <div class="par-item-logo"><img src="https://logo.clearbit.com/sk.com" alt="SK Pickglobal" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">SK</span></div>
+        <span class="par-item-name">SK Pickglobal</span>
+        <span class="par-item-sub">🇰🇷 Korea</span>
+        <span class="par-cat-badge global">Supplier</span>
       </div>
-      <div class="clog">
-        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/harumi-holdings-pvt-ltd-314151.jpg" alt="Dreamron" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">Dreamron</span></div>
-        <span class="clog-name">Dreamron</span><span class="clog-tag">Personal Care</span>
+      <div class="par-item" data-cat="global">
+        <div class="par-item-logo"><img src="https://logo.clearbit.com/lgchem.com" alt="LG Chem" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">LG Chem</span></div>
+        <span class="par-item-name">LG Chem</span>
+        <span class="par-item-sub">🇰🇷 Korea</span>
+        <span class="par-cat-badge global">Supplier</span>
       </div>
-      <div class="clog">
-        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/Janet_Logos_1_-02.png.avif" alt="Janet" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">Janet</span></div>
-        <span class="clog-name">Janet Lanka</span><span class="clog-tag">Personal Care</span>
+      <div class="par-item" data-cat="global">
+        <div class="par-item-logo"><img src="https://logo.clearbit.com/luxichemical.com" alt="LUXI Chemical" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">LUXI</span></div>
+        <span class="par-item-name">LUXI Chemical</span>
+        <span class="par-item-sub">🇨🇳 China</span>
+        <span class="par-cat-badge global">Supplier</span>
       </div>
-      <div class="clog">
-        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/logo.webp" alt="4rever Skin Naturals" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">4rever</span></div>
-        <span class="clog-name">4rever Skin Naturals</span><span class="clog-tag">Personal Care</span>
+      <!-- Local Clients -->
+      <div class="par-item" data-cat="local">
+        <div class="par-item-logo"><img src="Images/Partners/Local/ansell_logo.ashx.png" alt="Ansell" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">Ansell</span></div>
+        <span class="par-item-name">Ansell Lanka</span>
+        <span class="par-item-sub">Rubber &amp; Latex</span>
+        <span class="par-cat-badge local">Client</span>
       </div>
-      <div class="clog">
-        <div class="clog-logo-wrap"><img class="clog-logo-img" src="Images/Partners/Local/sm-logo.png" alt="ACE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="clog-logo-fb">ACE</span></div>
-        <span class="clog-name">ACE</span><span class="clog-tag">Pharmaceutical</span>
+      <div class="par-item" data-cat="local">
+        <div class="par-item-logo"><img src="Images/Partners/Local/logo-2.png" alt="NBC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">NBC</span></div>
+        <span class="par-item-name">NBC</span>
+        <span class="par-item-sub">Rubber &amp; Latex</span>
+        <span class="par-cat-badge local">Client</span>
+      </div>
+      <div class="par-item" data-cat="local">
+        <div class="par-item-logo"><img src="Images/Partners/Local/bellose-logo-blk.png" alt="Bellosé" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">Bellos&#233;</span></div>
+        <span class="par-item-name">Bellosé</span>
+        <span class="par-item-sub">Personal Care</span>
+        <span class="par-cat-badge local">Client</span>
+      </div>
+      <div class="par-item" data-cat="local">
+        <div class="par-item-logo"><img src="Images/Partners/Local/link-natural-logo.svg" alt="Link Natural" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">Link Natural</span></div>
+        <span class="par-item-name">Link Natural</span>
+        <span class="par-item-sub">Personal Care &amp; Pharma</span>
+        <span class="par-cat-badge local">Client</span>
+      </div>
+      <div class="par-item" data-cat="local">
+        <div class="par-item-logo"><img src="Images/Partners/Local/harumi-holdings-pvt-ltd-314151.jpg" alt="Dreamron" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">Dreamron</span></div>
+        <span class="par-item-name">Dreamron</span>
+        <span class="par-item-sub">Personal Care</span>
+        <span class="par-cat-badge local">Client</span>
+      </div>
+      <div class="par-item" data-cat="local">
+        <div class="par-item-logo"><img src="Images/Partners/Local/Janet_Logos_1_-02.png.avif" alt="Janet" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">Janet</span></div>
+        <span class="par-item-name">Janet Lanka</span>
+        <span class="par-item-sub">Personal Care</span>
+        <span class="par-cat-badge local">Client</span>
+      </div>
+      <div class="par-item" data-cat="local">
+        <div class="par-item-logo"><img src="Images/Partners/Local/logo.webp" alt="4rever Skin Naturals" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">4rever</span></div>
+        <span class="par-item-name">4rever Skin Naturals</span>
+        <span class="par-item-sub">Personal Care</span>
+        <span class="par-cat-badge local">Client</span>
+      </div>
+      <div class="par-item" data-cat="local">
+        <div class="par-item-logo"><img src="Images/Partners/Local/sm-logo.png" alt="ACE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">ACE</span></div>
+        <span class="par-item-name">ACE</span>
+        <span class="par-item-sub">Pharmaceutical</span>
+        <span class="par-cat-badge local">Client</span>
       </div>
     </div>
-    <p style="font-size:12px;color:var(--tl);font-style:italic;margin-top:1rem;font-weight:300;text-align:center">And many more trusted manufacturing partners across Sri Lanka.</p>
-
+    <p class="par-note rv d3">And many more trusted manufacturing partners across Sri Lanka.</p>
   </div>
 </section>
 
@@ -1253,6 +1208,18 @@ function sf(){
   burst();
   setTimeout(()=>{document.getElementById('fw').style.display='none';document.getElementById('fok').style.display='block';},300);
 }
+
+/* Partners filter */
+document.querySelectorAll('.par-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.par-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const f=btn.dataset.filter;
+    document.querySelectorAll('.par-item').forEach(item=>{
+      item.classList.toggle('hidden',f!=='all'&&item.dataset.cat!==f);
+    });
+  });
+});
 
 /* Keyboard accessibility for industry cards */
 document.querySelectorAll('.ic').forEach(el=>{
