@@ -111,7 +111,7 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .chem-eyebrow::before,.chem-eyebrow::after{content:'';width:28px;height:1px;background:var(--fresh)}
 .chem-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);
   font-weight:300;color:var(--ink);line-height:1.15}
-.chem-h em{font-style:italic;color:var(--mid)}
+.chem-h em{font-style:italic;color:var(--leaf)}
 .chem-row{display:grid;grid-template-columns:1fr 1fr;min-height:500px;margin-bottom:3px}
 .chem-row.rev .chem-img{order:2}.chem-row.rev .chem-txt{order:1}
 .chem-img{position:relative;overflow:hidden;min-height:420px}
@@ -120,23 +120,24 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .chem-img-ov{position:absolute;inset:0;
   background:linear-gradient(135deg,rgba(46,46,44,.08),transparent)}
 .chem-txt{padding:clamp(2.5rem,6vw,4.5rem) clamp(2rem,5vw,4rem);
-  display:flex;flex-direction:column;justify-content:center;background:var(--cream)}
+  display:flex;flex-direction:column;justify-content:center;background:var(--white)}
 .chem-formula-badge{display:inline-flex;align-items:center;
-  font-family:monospace;font-size:11.5px;color:var(--mid);
-  background:var(--mint);border:1px solid var(--bdr);border-radius:50px;
-  padding:5px 16px;margin-bottom:1.5rem;width:fit-content;letter-spacing:.5px}
+  font-family:monospace;font-size:11px;color:var(--fresh);
+  background:var(--ink);border:none;border-radius:6px;
+  padding:6px 14px;margin-bottom:1.75rem;width:fit-content;letter-spacing:.8px;font-weight:600}
 .chem-name{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.2rem);
   font-weight:300;color:var(--ink);line-height:1.05;margin-bottom:1.25rem}
-.chem-name em{font-style:italic;color:var(--mid)}
+.chem-name em{font-style:italic;color:var(--leaf)}
 .chem-desc{font-size:14.5px;color:var(--tm);font-weight:300;line-height:1.95;margin-bottom:1.75rem}
-.chem-use-tags{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.75rem}
-.chem-use-tag{font-size:11px;padding:4px 12px;border-radius:50px;
-  background:var(--pale);color:var(--leaf);border:1px solid #c0d9c9;font-weight:400}
-.chem-specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:.5rem;margin-bottom:1.75rem}
-.chem-spec{background:var(--white);border:1px solid var(--bdr);border-radius:8px;padding:.65rem .9rem}
-.chem-spec strong{display:block;font-size:9px;font-weight:700;letter-spacing:1px;
-  text-transform:uppercase;color:var(--mid);margin-bottom:3px}
-.chem-spec span{font-size:13px;color:var(--tm);font-weight:300}
+.chem-use-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem}
+.chem-use-tag{font-size:11px;padding:5px 14px;border-radius:50px;
+  background:transparent;color:var(--leaf);border:1.5px solid var(--sage);font-weight:500;letter-spacing:.1px}
+.chem-specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.75rem}
+.chem-spec{background:var(--white);border:1px solid var(--bdr);
+  border-left:3px solid var(--mid);border-radius:4px;padding:.85rem 1rem}
+.chem-spec strong{display:block;font-size:9px;font-weight:700;letter-spacing:1.5px;
+  text-transform:uppercase;color:var(--tm);margin-bottom:4px}
+.chem-spec span{font-size:14px;color:var(--ink);font-weight:400}
 .chem-supplier{display:inline-flex;align-items:center;gap:.75rem;
   padding:.85rem 1.25rem;background:var(--ink);border-radius:10px}
 .chem-sup-flag{font-size:1.4rem}
