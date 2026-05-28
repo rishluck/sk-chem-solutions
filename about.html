@@ -10,9 +10,9 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --ink:#1C3829;--leaf:#2A5E40;--mid:#3A7D58;--sage:#5C9470;--fresh:#4CAF76;
-  --pale:#E6F0E9;--mint:#EEF5F0;--cream:#FAF8F4;--white:#fff;--bdr:#D4E4D9;
-  --tm:#4A6654;--tl:#7A9688;
+  --ink:#0D2618;--leaf:#186E3A;--mid:#1D9E52;--sage:#36C46A;--fresh:#00C055;
+  --pale:#C5F5D8;--mint:#E8FAF2;--cream:#F4FEF9;--white:#fff;--bdr:#96E8B8;
+  --tm:#1A5030;--tl:#4A7A5E;
 }
 html{scroll-behavior:smooth}
 body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--white);overflow-x:hidden}
@@ -31,7 +31,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 
 /* ── PAGE HERO ── */
 .ph{padding:clamp(7rem,14vw,10rem) clamp(1.5rem,5vw,4rem) clamp(3.5rem,6vw,5rem);background:var(--ink);position:relative;overflow:hidden}
-.ph::after{content:'';position:absolute;right:-10%;top:-20%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(76,175,118,.12) 0%,transparent 70%);pointer-events:none}
+.ph::after{content:'';position:absolute;right:-10%;top:-20%;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(0,192,85,.12) 0%,transparent 70%);pointer-events:none}
 .ph-eyebrow{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--fresh);font-weight:400;margin-bottom:1.2rem}
 .ph-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,5.5rem);font-weight:300;color:#fff;line-height:1.1;margin-bottom:1.5rem}
 .ph-h em{font-style:italic;color:rgba(255,255,255,.7)}
@@ -68,7 +68,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.25rem}
 .srv-card{background:var(--white);border:1px solid var(--bdr);border-radius:14px;padding:1.75rem 1.5rem;transition:all .35s;position:relative;overflow:hidden}
 .srv-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--mint) 0%,transparent 60%);opacity:0;transition:opacity .35s}
-.srv-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(42,94,64,.1);border-color:var(--sage)}
+.srv-card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(24,110,58,.1);border-color:var(--sage)}
 .srv-card:hover::before{opacity:1}
 .srv-ico{font-size:1.75rem;margin-bottom:1rem;display:block;position:relative}
 .srv-ind{font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--fresh);font-weight:500;margin-bottom:.4rem;position:relative}
@@ -117,14 +117,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 #sustain{position:relative;overflow:hidden;min-height:580px;display:flex;align-items:center;justify-content:center}
 .sus-bg{position:absolute;inset:0}
 .sus-bg img{width:100%;height:100%;object-fit:cover}
-.sus-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,22,16,.9) 0%,rgba(28,56,41,.78) 100%)}
+.sus-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(5,12,8,.85) 0%,rgba(13,38,24,.68) 100%)}
 .sus-inner{position:relative;z-index:2;max-width:780px;text-align:center;padding:clamp(5rem,10vw,8rem) clamp(1.5rem,4vw,3rem)}
-.sus-quote-mark{font-family:'Cormorant Garamond',serif;font-size:8rem;line-height:.5;color:rgba(76,175,118,.2);display:block;margin-bottom:1.5rem}
+.sus-quote-mark{font-family:'Cormorant Garamond',serif;font-size:8rem;line-height:.5;color:rgba(0,192,85,.2);display:block;margin-bottom:1.5rem}
 .sus-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,4.2rem);font-weight:300;font-style:italic;color:#fff;line-height:1.2;margin-bottom:1.5rem}
 .sus-p{font-size:15px;color:rgba(255,255,255,.72);font-weight:300;line-height:1.85;margin-bottom:2.5rem}
 .sus-pts{display:grid;grid-template-columns:repeat(2,1fr);gap:.75rem;text-align:left;margin-top:2rem}
 .spt{display:flex;align-items:flex-start;gap:.75rem;padding:.9rem 1rem;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:10px;transition:all .35s}
-.spt:hover{background:rgba(255,255,255,.1);border-color:rgba(76,175,118,.3)}
+.spt:hover{background:rgba(255,255,255,.1);border-color:rgba(0,192,85,.3)}
 .spt-ic{font-size:1.1rem;flex-shrink:0;margin-top:2px}
 .spt-t{font-size:13px;font-weight:600;color:#fff;display:block;margin-bottom:2px}
 .spt-s{font-size:12px;color:rgba(255,255,255,.5);font-weight:300;line-height:1.6}
