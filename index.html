@@ -10,7 +10,7 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+body{font-family:'DM Sans',sans-serif;background:#0C0E08;color:rgba(255,255,255,.8);overflow-x:hidden}
 img{display:block;width:100%;height:100%;object-fit:cover}
 a{text-decoration:none;color:inherit}
 button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:none}
@@ -78,11 +78,12 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
   text-transform:uppercase;margin-bottom:1.5rem;
   opacity:0;animation:fadeUp .8s .2s forwards;
   text-shadow:0 0 20px rgba(204,238,64,.6)}
-.hero-h1{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:.92;
+.hero-h1{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:.88;
   color:#fff;margin-bottom:1.5rem;
-  font-size:clamp(3.5rem,9.5vw,10rem);
-  opacity:0;animation:fadeUp .9s .4s forwards}
-.hero-h1 em{font-style:italic;color:var(--fresh)}
+  font-size:clamp(4rem,11vw,12rem);
+  opacity:0;animation:fadeUp .9s .4s forwards;
+  letter-spacing:-.02em}
+.hero-h1 em{font-style:italic;color:var(--fresh);text-shadow:0 0 60px rgba(204,238,64,.4)}
 .hero-sub{font-size:clamp(14px,1.5vw,16px);color:rgba(255,255,255,.82);
   font-weight:300;letter-spacing:.3px;max-width:560px;line-height:1.75;
   opacity:0;animation:fadeUp .9s .6s forwards}
@@ -491,6 +492,83 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
   .csr-photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px}
   .csr-ph.tall{grid-row:auto}
 }
+
+/* ══ DARK THEME — full site ══ */
+body{background:#0C0E08;color:rgba(255,255,255,.8)}
+
+/* About */
+#about{background:#0F1109}
+.about-img-overlay{background:linear-gradient(to right,rgba(12,14,8,.25),transparent)}
+.about-h{color:#fff}
+.about-h em{color:var(--fresh)}
+.about-p{color:rgba(255,255,255,.68)}
+.ach{border-left-color:transparent}
+.ach:hover{border-left-color:var(--fresh);background:rgba(255,255,255,.04);padding-left:1.25rem}
+.ach-t{color:#fff}
+.ach-s{color:rgba(255,255,255,.58)}
+.about-yr-tag{color:rgba(255,255,255,.38)}
+.about-yr-tag strong{color:#fff}
+.about-eyebrow{color:var(--fresh)}
+
+/* Gallery */
+#gallery{background:#0C0E08}
+.gal-h{color:#fff}
+.gal-h em{color:var(--fresh)}
+.gf{border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.58);background:transparent}
+.gf:hover:not(.on){border-color:var(--mid);color:var(--mid)}
+.gal-btn{background:#1A1E10;border-color:rgba(255,255,255,.1);color:#fff}
+.gal-btn:hover{background:linear-gradient(135deg,#A0D400,#CCEE40);color:var(--ink);border-color:transparent}
+.gal-note{color:rgba(255,255,255,.32)}
+.gci{background:#1A1E10}
+
+/* Partners */
+#partners{background:#0F1109}
+.par-h{color:#fff}
+.par-btn{border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.58);background:transparent}
+.par-btn.active,.par-btn:hover{background:linear-gradient(135deg,#A0D400,#CCEE40);border-color:transparent;color:var(--ink);font-weight:600}
+.par-note{color:rgba(255,255,255,.35);font-style:italic}
+.par-item{background:#161A0C;border-color:rgba(255,255,255,.07)}
+.par-item:hover{background:#1E240E;border-color:rgba(160,212,0,.35);transform:translateY(-3px);box-shadow:0 8px 24px rgba(160,212,0,.12)}
+.par-item-name{color:#fff}
+.par-item-sub{color:rgba(255,255,255,.48)}
+.par-item-logo img{filter:brightness(1.15) grayscale(20%)}
+.par-item:hover .par-item-logo img{filter:brightness(1) grayscale(0%)}
+.par-cat-badge.global{background:rgba(160,212,0,.14);color:var(--mid)}
+.par-cat-badge.local{background:rgba(204,238,64,.12);color:var(--fresh)}
+
+/* CSR */
+#csr{background:#0C0E08}
+.csr-h{color:#fff}
+.csr-h em{color:var(--fresh)}
+.csr-p{color:rgba(255,255,255,.68)}
+.crp{border-bottom-color:rgba(255,255,255,.07)}
+.crp:first-child{border-top-color:rgba(255,255,255,.07)}
+.crp-t{color:#fff}
+.crp-s{color:rgba(255,255,255,.58)}
+
+/* Contact */
+#contact{background:#0F1109}
+.con-h{color:#fff}
+.con-h em{color:var(--fresh)}
+.ci{border-bottom-color:rgba(255,255,255,.07)}
+.ci:first-of-type{border-top-color:rgba(255,255,255,.07)}
+.ci-body a,.ci-body p{color:rgba(255,255,255,.62)}
+.ci-body a:hover{color:#fff}
+.ci-body strong{color:var(--mid)}
+.con-team-head{color:var(--mid)}
+.tm{border-bottom-color:rgba(255,255,255,.07)}
+.tm-name{color:#fff}
+.tm-role{color:rgba(255,255,255,.42)}
+.fbox{background:#141810;border-color:rgba(255,255,255,.08);box-shadow:0 4px 32px rgba(0,0,0,.35)}
+.fg label{color:rgba(255,255,255,.42)}
+.fg input,.fg select,.fg textarea{background:#1A1E12;border-color:rgba(255,255,255,.1);color:#fff}
+.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.28)}
+.fg select option{background:#1A1E12;color:#fff}
+.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--mid);background:#1E2416;box-shadow:0 0 0 3px rgba(160,212,0,.15)}
+
+/* Eyebrows on dark bg */
+.par-eyebrow{color:var(--mid)}
+.con-eyebrow::before,.par-eyebrow::before,.about-eyebrow::before{background:linear-gradient(90deg,#A0D400,#CCEE40)}
 </style>
 </head>
 <body>
@@ -711,7 +789,7 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
 </section>
 
 <!-- ══ PARTNERS ══ -->
-<section id="partners" class="sec" style="background:var(--white)">
+<section id="partners" class="sec">
   <div class="W">
     <div class="rv" style="margin-bottom:2rem">
       <div class="par-eyebrow">Partners &amp; Clients</div>
@@ -858,7 +936,7 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
 </section>
 
 <!-- ══ CSR ══ -->
-<section id="csr" class="sec" style="background:var(--cream)">
+<section id="csr" class="sec">
   <div class="W">
     <div class="csr-wrap">
       <div class="csr-left rv fl">
@@ -904,7 +982,7 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
 </section>
 
 <!-- ══ CONTACT ══ -->
-<section id="contact" class="sec" style="background:var(--white)">
+<section id="contact" class="sec">
   <div class="W">
     <div class="con-wrap">
       <div class="con-left rv fl">
