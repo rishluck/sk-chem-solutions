@@ -15,9 +15,9 @@ a{text-decoration:none;color:inherit}
 button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:none}
 
 :root{
-  --ink:#2E2E2C;--leaf:#6EA840;--mid:#96BE5E;--sage:#ADCB6A;--fresh:#BDCE7C;
-  --pale:#D8EAAA;--mint:#EBF4D2;--cream:#F5FAE6;--white:#fff;--bdr:#C8DE90;
-  --tm:#2A4016;--tl:#567828;
+  --ink:#181A12;--leaf:#78BC00;--mid:#A0D400;--sage:#B8DE20;--fresh:#CCEE40;
+  --pale:#DCF472;--mint:#EAF9B2;--cream:#F2FBD8;--white:#fff;--bdr:#B4D840;
+  --tm:#263A10;--tl:#486618;
 }
 .W{max-width:1300px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem)}
 .sec{padding:clamp(4rem,8vw,7rem) 0}
@@ -42,7 +42,7 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
   color:rgba(255,255,255,.5);text-transform:uppercase;margin-top:1px}
 .n-cta-pill{padding:8px 20px;border:1px solid rgba(255,255,255,.3);border-radius:50px;
   font-size:11px;font-weight:500;color:#fff;letter-spacing:.8px;text-transform:uppercase;transition:all .3s}
-.n-cta-pill:hover{background:linear-gradient(135deg,#96BE5E,#BDCE7C);border-color:transparent;color:var(--ink)}
+.n-cta-pill:hover{background:linear-gradient(135deg,#A0D400,#CCEE40);border-color:transparent;color:var(--ink)}
 .hbg{display:none;flex-direction:column;gap:5px;padding:4px}
 .hbg span{width:22px;height:1px;background:#fff;display:block}
 .mob{display:none;position:fixed;top:70px;left:0;right:0;z-index:899;
@@ -69,7 +69,7 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .ih-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:10px;font-weight:600;
   letter-spacing:2px;text-transform:uppercase;color:var(--fresh);
   margin-bottom:1.1rem;padding:5px 14px;border-radius:50px;
-  border:1px solid rgba(189,206,124,.42);background:rgba(189,206,124,.1);width:fit-content}
+  border:1px solid rgba(204,238,64,.42);background:rgba(204,238,64,.1);width:fit-content}
 .ih-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,8vw,7rem);
   font-weight:300;color:#fff;line-height:.92;margin-bottom:1.25rem}
 .ih-h1 em{font-style:italic;color:rgba(255,255,255,.8)}
@@ -81,7 +81,7 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,7rem);align-items:start}
 .ov-eyebrow{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
   color:var(--mid);margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
-.ov-eyebrow::before{content:'';width:28px;height:2px;background:linear-gradient(90deg,#96BE5E,#BDCE7C);border-radius:2px}
+.ov-eyebrow::before{content:'';width:28px;height:2px;background:linear-gradient(90deg,#A0D400,#CCEE40);border-radius:2px}
 .ov-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);
   font-weight:300;color:var(--ink);line-height:1.15;margin-bottom:1.5rem}
 .ov-h em{font-style:italic;color:var(--leaf)}
@@ -108,7 +108,7 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .chem-head{text-align:center;padding:clamp(3rem,6vw,5rem) 0 0;margin-bottom:3rem}
 .chem-eyebrow{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
   color:var(--mid);margin-bottom:1rem;display:inline-flex;align-items:center;gap:.75rem}
-.chem-eyebrow::before,.chem-eyebrow::after{content:'';width:28px;height:2px;background:linear-gradient(90deg,#96BE5E,#BDCE7C);border-radius:2px}
+.chem-eyebrow::before,.chem-eyebrow::after{content:'';width:28px;height:2px;background:linear-gradient(90deg,#A0D400,#CCEE40);border-radius:2px}
 .chem-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);
   font-weight:300;color:var(--ink);line-height:1.15}
 .chem-h em{font-style:italic;color:var(--leaf)}
@@ -162,7 +162,7 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .app-s{font-size:13px;color:rgba(255,255,255,.48);font-weight:300;line-height:1.8}
 
 /* CTA */
-#ind-cta{background:linear-gradient(135deg,#96BE5E 0%,#BDCE7C 100%);padding:clamp(4rem,8vw,6rem) 0;position:relative;overflow:hidden}
+#ind-cta{background:linear-gradient(135deg,#A0D400 0%,#CCEE40 100%);padding:clamp(4rem,8vw,6rem) 0;position:relative;overflow:hidden}
 #ind-cta::before{content:'';position:absolute;inset:0;
   background:radial-gradient(ellipse 70% 80% at 80% 50%,rgba(255,255,255,.18),transparent);
   pointer-events:none}
@@ -228,13 +228,13 @@ body{animation:fadeIn .5s ease both}
 /* Hero orbs */
 .ih-orb{position:absolute;border-radius:50%;pointer-events:none;z-index:1}
 .ih-orb-1{width:520px;height:520px;top:-15%;right:2%;
-  background:radial-gradient(circle,rgba(189,206,124,.16) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(204,238,64,.16) 0%,transparent 65%);
   animation:orbFloat 11s ease-in-out infinite,orbPulse 11s ease-in-out infinite}
 .ih-orb-2{width:340px;height:340px;bottom:-5%;left:-5%;
-  background:radial-gradient(circle,rgba(189,206,124,.12) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(204,238,64,.12) 0%,transparent 65%);
   animation:orbFloat 14s ease-in-out infinite reverse,orbPulse 14s ease-in-out infinite}
 .ih-orb-3{width:200px;height:200px;top:42%;left:38%;
-  background:radial-gradient(circle,rgba(189,206,124,.09) 0%,transparent 65%);
+  background:radial-gradient(circle,rgba(204,238,64,.09) 0%,transparent 65%);
   animation:orbFloat 8s ease-in-out infinite 1.5s}
 
 /* Animated shim line at hero bottom */
@@ -246,15 +246,15 @@ body{animation:fadeIn .5s ease both}
 .ih-float-formula{position:absolute;right:clamp(1.5rem,4vw,3.5rem);top:50%;
   transform:translateY(-50%);z-index:2;
   font-family:monospace;font-size:11px;letter-spacing:3px;
-  color:rgba(189,206,124,.42);writing-mode:vertical-lr;
+  color:rgba(204,238,64,.42);writing-mode:vertical-lr;
   opacity:0;animation:fadeIn 1s ease 1.2s forwards}
 
 /* Decorative ring on hero */
 .ih-ring{position:absolute;width:320px;height:320px;border-radius:50%;
-  border:1px solid rgba(189,206,124,.1);bottom:10%;left:20%;z-index:1;
+  border:1px solid rgba(204,238,64,.1);bottom:10%;left:20%;z-index:1;
   animation:spinSlow 40s linear infinite}
 .ih-ring::before{content:'';position:absolute;inset:30px;border-radius:50%;
-  border:1px solid rgba(189,206,124,.08)}
+  border:1px solid rgba(204,238,64,.08)}
 
 /* Nav brand hover */
 .nav-brand{transition:opacity .3s}
