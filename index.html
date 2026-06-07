@@ -3,377 +3,459 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="S.K. Chem Solutions — Sri Lanka's trusted B2B importer of premium chemical raw materials. Serving Rubber, Personal Care, Food, Pharmaceutical and Textile industries since 2017.">
+<meta name="description" content="S.K. Chem Solutions — Sri Lanka's trusted B2B importer of premium chemical raw materials since 2017.">
 <title>S.K. Chem Solutions | Quality Raw Materials — Sri Lanka</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'DM Sans',sans-serif;background:#0C0E08;color:rgba(255,255,255,.8);overflow-x:hidden}
+
+:root{
+  --lime:#A0D400;
+  --lime-lt:#CCEE40;
+  --lime-dk:#78BC00;
+  --ink:#181A12;
+  --d0:#090B06;
+  --d1:#0E1009;
+  --d2:#141810;
+  --d3:#1C2214;
+  --d4:#242C1A;
+  --w100:#fff;
+  --w80:rgba(255,255,255,.8);
+  --w60:rgba(255,255,255,.6);
+  --w40:rgba(255,255,255,.4);
+  --w12:rgba(255,255,255,.12);
+  --w07:rgba(255,255,255,.07);
+}
+
+body{font-family:'DM Sans',sans-serif;background:var(--d0);color:var(--w80);overflow-x:hidden}
 img{display:block;width:100%;height:100%;object-fit:cover}
 a{text-decoration:none;color:inherit}
 button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:none}
-
-:root{
-  --ink:#181A12;--leaf:#78BC00;--mid:#A0D400;--sage:#B8DE20;--fresh:#CCEE40;
-  --pale:#DCF472;--mint:#EAF9B2;--cream:#F2FBD8;--white:#fff;--bdr:#B4D840;
-  --tm:#263A10;--tl:#486618;
-}
-
-/* ── UTILS ── */
 .W{max-width:1240px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem)}
-.sec{padding:clamp(4.5rem,9vw,8rem) 0}
-.serif{font-family:'Cormorant Garamond',Georgia,serif}
+.sec{padding:clamp(5rem,10vw,8rem) 0}
 
-/* ── SCROLL PROGRESS ── */
+/* ── BUTTONS ── */
+.btn-lime{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:50px;
+  background:linear-gradient(135deg,var(--lime),var(--lime-lt));color:var(--ink);
+  font-size:13px;font-weight:700;letter-spacing:.3px;transition:all .3s;
+  box-shadow:0 4px 22px rgba(160,212,0,.32)}
+.btn-lime:hover{transform:translateY(-3px);box-shadow:0 12px 36px rgba(160,212,0,.52)}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:50px;
+  background:rgba(255,255,255,.07);color:#fff;font-size:13px;font-weight:400;
+  border:1px solid rgba(255,255,255,.18);transition:all .3s}
+.btn-ghost:hover{background:rgba(255,255,255,.13);transform:translateY(-3px)}
 
-/* ── NAV — editorial transparent ── */
-#nav{position:fixed;top:0;left:0;right:0;z-index:900;padding:0 clamp(1.5rem,4vw,3.5rem);
-  height:70px;display:flex;align-items:center;justify-content:space-between;
-  transition:background .5s,backdrop-filter .5s}
-#nav.scrolled{background:rgba(46,46,44,.95);backdrop-filter:blur(20px)}
+/* ── EYEBROW LABEL ── */
+.ey{font-size:10px;font-weight:600;letter-spacing:3px;text-transform:uppercase;
+  color:var(--lime);display:flex;align-items:center;gap:.6rem;margin-bottom:.85rem}
+.ey::before{content:'';width:22px;height:2px;background:linear-gradient(90deg,var(--lime),var(--lime-lt));border-radius:2px;flex-shrink:0}
+
+/* ── REVEAL ── */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .72s ease,transform .72s ease}
+.rv.fl{transform:translateX(-28px)}.rv.fr{transform:translateX(28px)}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+.rv.on{opacity:1;transform:none}
+:focus-visible{outline:2px solid var(--lime);outline-offset:3px;border-radius:3px}
+
+/* ── NAV ── */
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;
+  padding:0 clamp(1.5rem,4vw,3.5rem);height:70px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:background .4s,backdrop-filter .4s}
+#nav.scrolled{background:rgba(9,11,6,.96);backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(255,255,255,.06)}
 .nav-left,.nav-right{display:flex;gap:2rem;list-style:none;flex:1}
 .nav-right{justify-content:flex-end}
-.nav-left a,.nav-right a{font-size:12px;font-weight:400;color:rgba(255,255,255,.75);
+.nav-left a,.nav-right a{font-size:11.5px;font-weight:400;color:var(--w60);
   letter-spacing:.8px;text-transform:uppercase;transition:color .3s}
 .nav-left a:hover,.nav-right a:hover{color:#fff}
 .nav-brand{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;
-  color:#fff;letter-spacing:.5px;text-align:center;white-space:nowrap}
+  color:#fff;letter-spacing:.5px;text-align:center;white-space:nowrap;
+  position:relative;padding-bottom:4px}
+.nav-brand::after{content:'';position:absolute;bottom:0;left:50%;transform:translateX(-50%);
+  width:0;height:1.5px;background:linear-gradient(90deg,var(--lime),var(--lime-lt));
+  transition:width .4s;border-radius:2px}
+.nav-brand:hover::after{width:100%}
 .nav-brand span{display:block;font-size:8px;font-weight:300;letter-spacing:2px;
-  color:rgba(255,255,255,.5);text-transform:uppercase;margin-top:1px}
-.n-cta-pill{padding:8px 20px;border:1px solid rgba(255,255,255,.3);border-radius:50px;
-  font-size:11px;font-weight:500;color:#fff;letter-spacing:.8px;text-transform:uppercase;
-  transition:all .3s}
-.n-cta-pill:hover{background:linear-gradient(135deg,#A0D400,#CCEE40);border-color:transparent;color:var(--ink)}
+  color:var(--w40);text-transform:uppercase;margin-top:1px}
+.n-cta{padding:8px 20px;border:1px solid rgba(255,255,255,.25);border-radius:50px;
+  font-size:11px;font-weight:500;color:#fff;letter-spacing:.8px;text-transform:uppercase;transition:all .3s}
+.n-cta:hover{background:linear-gradient(135deg,var(--lime),var(--lime-lt));border-color:transparent;color:var(--ink)}
 .hbg{display:none;flex-direction:column;gap:5px;padding:4px}
 .hbg span{width:22px;height:1px;background:#fff;display:block;transition:all .3s}
 .mob{display:none;position:fixed;top:70px;left:0;right:0;z-index:899;
-  background:rgba(46,46,44,.97);backdrop-filter:blur(20px);
+  background:rgba(9,11,6,.97);backdrop-filter:blur(20px);
   flex-direction:column;transform:translateY(-110%);opacity:0;pointer-events:none;transition:all .35s}
 .mob.open{transform:none;opacity:1;pointer-events:all}
 .mob a{display:block;padding:14px clamp(1.5rem,4vw,3.5rem);font-size:15px;
-  color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.05)}
-.mob a:last-child{color:var(--fresh);border:none}
+  color:var(--w80);border-bottom:1px solid rgba(255,255,255,.05)}
+.mob a:last-child{color:var(--lime-lt);border:none}
 
-/* ── HERO — full screen editorial ── */
-#hero{height:100vh;min-height:600px;position:relative;overflow:hidden;
-  display:flex;flex-direction:column}
+/* ── HERO ── */
+#hero{height:100vh;min-height:640px;position:relative;overflow:hidden;display:flex;flex-direction:column}
 .hero-bg{position:absolute;inset:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:center}
+.hero-bg img{width:100%;height:100%;object-fit:cover}
 .hero-overlay{position:absolute;inset:0;
-  background:linear-gradient(170deg,rgba(24,26,18,.55) 0%,rgba(24,26,18,.15) 45%,rgba(24,26,18,.45) 100%)}
+  background:linear-gradient(180deg,rgba(9,11,6,.25) 0%,rgba(9,11,6,.08) 35%,rgba(9,11,6,.72) 100%)}
 .hero-glow{position:absolute;bottom:0;left:50%;transform:translateX(-50%);
-  width:900px;height:420px;z-index:1;pointer-events:none;
-  background:radial-gradient(ellipse at center bottom,rgba(160,212,0,.28) 0%,transparent 68%);
+  width:1000px;height:400px;pointer-events:none;z-index:1;
+  background:radial-gradient(ellipse at center bottom,rgba(160,212,0,.24) 0%,transparent 65%);
   animation:glowPulse 4s ease-in-out infinite}
-@keyframes glowPulse{0%,100%{opacity:.8}50%{opacity:1}}
-.hero-top-bar{position:relative;z-index:2;display:flex;align-items:center;
-  justify-content:space-between;padding:1.4rem clamp(1.5rem,4vw,3.5rem);margin-top:70px}
-.hero-loc{font-size:11px;color:rgba(255,255,255,.6);letter-spacing:1.5px;text-transform:uppercase}
-.hero-est{font-size:11px;color:rgba(255,255,255,.6);letter-spacing:1.5px;text-transform:uppercase}
-.hero-content{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;
-  padding:0 clamp(1.5rem,4vw,3.5rem) clamp(3rem,6vw,5rem);position:relative;z-index:2;text-align:center}
-.hero-eyebrow{font-size:11px;color:var(--fresh);letter-spacing:3px;
-  text-transform:uppercase;margin-bottom:1.5rem;
-  opacity:0;animation:fadeUp .8s .2s forwards;
-  text-shadow:0 0 20px rgba(204,238,64,.6)}
-.hero-h1{font-family:'Cormorant Garamond',serif;font-weight:400;line-height:.88;
-  color:#fff;margin-bottom:1.5rem;
-  font-size:clamp(4rem,11vw,12rem);
-  opacity:0;animation:fadeUp .9s .4s forwards;
-  letter-spacing:-.02em}
-.hero-h1 em{font-style:italic;color:var(--fresh);text-shadow:0 0 60px rgba(204,238,64,.4)}
-.hero-sub{font-size:clamp(14px,1.5vw,16px);color:rgba(255,255,255,.82);
-  font-weight:300;letter-spacing:.3px;max-width:560px;line-height:1.75;
-  opacity:0;animation:fadeUp .9s .6s forwards}
-.hero-scroll{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);
-  z-index:2;display:flex;flex-direction:column;align-items:center;gap:.5rem;
-  opacity:0;animation:fadeUp .8s 1.2s forwards}
-.hero-scroll-line{width:1px;height:50px;background:linear-gradient(to bottom,transparent,var(--mid));animation:scrollLine 2s ease-in-out infinite}
-@keyframes scrollLine{0%,100%{transform:scaleY(1);opacity:.5}50%{transform:scaleY(.4);opacity:1}}
-.hero-scroll span{font-size:9px;color:rgba(255,255,255,.5);letter-spacing:2px;text-transform:uppercase}
-@keyframes fadeUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
+@keyframes glowPulse{0%,100%{opacity:.7}50%{opacity:1.0}}
 
-/* ── STATS ROW ── */
-#stats{background:linear-gradient(135deg,#A0D400 0%,#CCEE40 100%);border:none;
-  box-shadow:0 6px 40px rgba(160,212,0,.35)}
+/* Vertical slide numbers */
+.hero-nums{position:absolute;left:clamp(1.25rem,2vw,1.75rem);top:50%;transform:translateY(-60%);
+  z-index:3;display:flex;flex-direction:column;gap:1.5rem}
+.hn{font-size:10px;color:var(--w40);letter-spacing:1px;line-height:1;display:flex;align-items:center;gap:6px;transition:color .3s}
+.hn::before{content:'';width:0;height:1px;background:var(--lime);transition:width .3s;border-radius:1px}
+.hn.on{color:var(--lime)}
+.hn.on::before{width:14px}
+
+/* Hero body */
+.hero-body{flex:1;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:0 clamp(1.5rem,5vw,4rem) 130px;
+  padding-left:calc(clamp(1.25rem,2vw,1.75rem) + 52px);
+  position:relative;z-index:2}
+.hero-eyebrow{font-size:11px;color:var(--lime);letter-spacing:3.5px;text-transform:uppercase;
+  margin-bottom:1.2rem;opacity:0;animation:fadeUp .8s .2s forwards;
+  text-shadow:0 0 18px rgba(160,212,0,.5)}
+.hero-h1{font-family:'Cormorant Garamond',serif;font-weight:300;line-height:.86;
+  color:#fff;font-size:clamp(4.5rem,12.5vw,14rem);letter-spacing:-.03em;
+  opacity:0;animation:fadeUp .9s .35s forwards;margin-bottom:1.75rem}
+.hero-h1 em{font-style:italic;color:var(--lime-lt);text-shadow:0 0 60px rgba(204,238,64,.32)}
+.hero-sub{font-size:clamp(14px,1.4vw,16px);color:var(--w60);font-weight:300;
+  max-width:480px;line-height:1.8;opacity:0;animation:fadeUp .9s .5s forwards;margin-bottom:2.25rem}
+.hero-btns{display:flex;gap:.85rem;flex-wrap:wrap;opacity:0;animation:fadeUp .9s .7s forwards}
+
+/* Hero info strip */
+.hero-strip{position:absolute;bottom:0;left:0;right:0;z-index:3;
+  display:grid;grid-template-columns:repeat(4,1fr);
+  border-top:1px solid rgba(255,255,255,.07);
+  background:rgba(9,11,6,.78);backdrop-filter:blur(16px)}
+.hsi{padding:1rem clamp(.85rem,1.8vw,1.5rem);border-right:1px solid rgba(255,255,255,.06);
+  display:flex;align-items:center;gap:.65rem;transition:background .3s;cursor:default}
+.hsi:last-child{border-right:none}
+.hsi:hover{background:rgba(160,212,0,.07)}
+.hsi-icon{font-size:.95rem;flex-shrink:0;opacity:.85}
+.hsi-t{font-size:11.5px;font-weight:500;color:rgba(255,255,255,.88);line-height:1.3;display:block}
+.hsi-s{font-size:10px;color:var(--w40);margin-top:1px;display:block}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(26px)}to{opacity:1;transform:none}}
+
+/* ── STATS ── */
+#stats{background:linear-gradient(135deg,#88C400,#A0D400 40%,#CCEE40);
+  box-shadow:0 4px 36px rgba(160,212,0,.38)}
 .stats-row{display:flex;align-items:stretch}
-.stat-item{flex:1;padding:2.5rem 2rem;border-right:1px solid rgba(255,255,255,.4);
+.stat-item{flex:1;padding:2.25rem 2rem;border-right:1px solid rgba(255,255,255,.32);
   text-align:center;transition:background .3s;cursor:default}
 .stat-item:last-child{border:none}
-.stat-item:hover{background:rgba(255,255,255,.22)}
-.stat-n{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,5vw,4rem);
+.stat-item:hover{background:rgba(255,255,255,.18)}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4rem);
   font-weight:300;color:var(--ink);line-height:1;display:block}
-.stat-l{font-size:11px;color:rgba(26,44,14,.78);font-weight:500;display:block;
-  margin-top:.4rem;letter-spacing:.5px}
+.stat-l{font-size:11px;color:rgba(24,26,18,.72);font-weight:600;display:block;
+  margin-top:.35rem;letter-spacing:.5px}
 
-/* ── ABOUT — editorial split ── */
-#about{background:var(--white)}
-.about-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:620px}
-.about-img-side{position:relative;overflow:hidden;min-height:500px}
-.about-img-side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .8s}
-.about-img-side:hover img{transform:scale(1.03)}
-.about-img-overlay{position:absolute;inset:0;
-  background:linear-gradient(to right,rgba(46,46,44,.06),transparent)}
-.about-text-side{padding:clamp(3rem,8vw,6rem) clamp(2rem,5vw,4rem);
-  display:flex;flex-direction:column;justify-content:center}
-.about-eyebrow{font-size:10px;font-weight:500;letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--fresh);margin-bottom:1.5rem;display:flex;align-items:center;gap:.75rem}
-.about-eyebrow::before{content:'';width:28px;height:2px;background:linear-gradient(90deg,#A0D400,#CCEE40);border-radius:2px}
-.about-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,4rem);
-  font-weight:300;line-height:1.15;color:var(--ink);margin-bottom:1.75rem}
-.about-h em{font-style:italic;color:var(--leaf)}
-.about-p{font-size:15px;color:var(--tm);font-weight:300;line-height:1.85;margin-bottom:1rem}
-.about-checks{margin-top:2rem;display:flex;flex-direction:column;gap:.6rem}
-.ach{display:flex;align-items:flex-start;gap:.85rem;padding:.85rem 1rem;
-  border-left:2px solid transparent;transition:all .35s;cursor:default}
-.ach:hover{border-left-color:var(--fresh);padding-left:1.25rem;background:var(--mint)}
-.ach-ic{font-size:1.1rem;flex-shrink:0;margin-top:1px}
-.ach-t{font-size:13.5px;font-weight:600;color:var(--ink);margin-bottom:2px;display:block}
-.ach-s{font-size:12.5px;color:var(--tm);font-weight:300}
-.about-yr-tag{display:inline-flex;align-items:center;gap:.6rem;margin-top:2rem;
-  font-size:11px;color:var(--tl);font-weight:300;letter-spacing:.5px}
-.about-yr-tag strong{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--ink)}
+/* ── WHY CHOOSE US ── */
+#why{background:var(--d1);padding:clamp(5rem,10vw,8rem) 0}
+.why-top{text-align:center;max-width:580px;margin:0 auto 3.5rem}
+.why-top .ey{justify-content:center}
+.why-top .ey::before{display:none}
+.why-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.4rem,5vw,4.2rem);
+  font-weight:300;color:#fff;line-height:1.05;margin-bottom:.85rem}
+.why-h em{font-style:italic;color:var(--lime-lt)}
+.why-sub{font-size:14px;color:var(--w60);line-height:1.8}
+.why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.why-card{text-align:center;padding:2.5rem 2rem;
+  border:1px solid var(--w07);border-radius:16px;background:var(--d2);
+  transition:all .4s;cursor:default}
+.why-card:hover{border-color:rgba(160,212,0,.32);background:var(--d3);
+  transform:translateY(-5px);box-shadow:0 14px 44px rgba(160,212,0,.1)}
+.why-icon{width:76px;height:76px;border-radius:50%;
+  border:1.5px solid rgba(160,212,0,.32);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.5rem;font-size:1.9rem;background:rgba(160,212,0,.07);
+  transition:all .4s}
+.why-card:hover .why-icon{border-color:var(--lime);background:rgba(160,212,0,.15);
+  box-shadow:0 0 24px rgba(160,212,0,.22)}
+.why-t{font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:400;
+  color:#fff;margin-bottom:.6rem}
+.why-s{font-size:13.5px;color:var(--w60);line-height:1.78}
 
-/* ── VM — quote style ── */
+/* ── ABOUT ── */
+#about{background:var(--d0)}
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;min-height:600px}
+.about-img-side{position:relative;overflow:hidden;min-height:480px}
+.about-img-side img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .9s}
+.about-img-side:hover img{transform:scale(1.04)}
+.about-img-side::after{content:'';position:absolute;inset:0;
+  background:linear-gradient(to right,transparent 60%,rgba(9,11,6,.6))}
+.about-text{padding:clamp(3rem,7vw,5.5rem) clamp(2rem,5vw,4rem);
+  display:flex;flex-direction:column;justify-content:center;background:var(--d1)}
+.about-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,3.8rem);
+  font-weight:300;line-height:1.1;color:#fff;margin-bottom:1.5rem}
+.about-h em{font-style:italic;color:var(--lime-lt)}
+.about-p{font-size:15px;color:var(--w60);font-weight:300;line-height:1.9;margin-bottom:.9rem}
+.about-list{margin-top:1.75rem;display:flex;flex-direction:column;gap:.5rem}
+.ach{display:flex;align-items:flex-start;gap:.9rem;padding:.8rem 1rem;
+  border-left:2px solid transparent;border-radius:0 8px 8px 0;transition:all .3s;cursor:default}
+.ach:hover{border-left-color:var(--lime);background:rgba(160,212,0,.06)}
+.ach-ic{font-size:1rem;flex-shrink:0;margin-top:1px}
+.ach-t{font-size:13.5px;font-weight:600;color:#fff;margin-bottom:2px;display:block}
+.ach-s{font-size:12.5px;color:var(--w60);font-weight:300}
+.about-yr{display:inline-flex;align-items:center;gap:.6rem;margin-top:2rem;
+  font-size:11px;color:var(--w40);letter-spacing:.5px}
+.about-yr strong{font-family:'Cormorant Garamond',serif;font-size:1.55rem;font-weight:400;color:#fff}
 
-.btn-ink{display:inline-flex;align-items:center;gap:7px;padding:12px 26px;border-radius:50px;
-  background:linear-gradient(135deg,#A0D400,#CCEE40);color:var(--ink);font-size:13px;font-weight:700;transition:all .35s;border:none;
-  box-shadow:0 4px 16px rgba(160,212,0,.25)}
-.btn-ink:hover{background:linear-gradient(135deg,#78BC00,#A0D400);transform:translateY(-3px);box-shadow:0 10px 32px rgba(160,212,0,.5)}
-
-/* ── INDUSTRIES — bento editorial ── */
-#industries{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 0}
-.ind-intro{margin-bottom:2.5rem;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:2rem}
-.ind-eyebrow{display:block;font-size:10px;color:var(--fresh);letter-spacing:3px;text-transform:uppercase;font-weight:600;margin-bottom:1rem;text-shadow:0 0 16px rgba(204,238,64,.5)}
-.ind-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:300;color:#fff;line-height:.95}
-.ind-h em{font-style:italic;color:rgba(255,255,255,.55)}
-.ind-side{display:flex;flex-direction:column;align-items:flex-end;gap:1rem}
-.ind-sub{font-size:13px;color:rgba(255,255,255,.7);font-weight:300;max-width:260px;line-height:1.8;text-align:right}
-.ind-count-badge{display:flex;align-items:baseline;gap:.4rem}
-.ind-count-n{font-family:'Cormorant Garamond',serif;font-size:3.5rem;font-weight:300;color:rgba(255,255,255,.12);line-height:1}
-.ind-count-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.25)}
-.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-template-rows:460px 280px;gap:4px}
+/* ── INDUSTRIES ── */
+#industries{background:var(--d0);padding:clamp(4rem,7vw,6rem) 0 0}
+.ind-intro{margin-bottom:2.5rem;display:flex;align-items:flex-end;
+  justify-content:space-between;flex-wrap:wrap;gap:2rem;
+  padding:0 clamp(1.5rem,5vw,4rem)}
+.ind-h{font-family:'Cormorant Garamond',serif;font-size:clamp(3rem,6.5vw,6.5rem);
+  font-weight:300;color:#fff;line-height:.9;letter-spacing:-.025em}
+.ind-h em{font-style:italic;color:var(--w40)}
+.ind-side-text{font-size:13px;color:var(--w60);font-weight:300;
+  max-width:260px;line-height:1.85;text-align:right}
+.ind-grid{display:grid;grid-template-columns:repeat(4,1fr);
+  grid-template-rows:460px 280px;gap:3px}
 .ic:nth-child(1){grid-column:1/3}
 .ic:nth-child(6){grid-column:3/5}
-.ic{position:relative;overflow:hidden;cursor:pointer;background:var(--ink)}
+.ic{position:relative;overflow:hidden;cursor:pointer;background:var(--d2)}
 .ic-bg{position:absolute;inset:0}
-.ic-bg img{width:100%;height:100%;object-fit:cover;transition:transform .85s cubic-bezier(.23,1,.32,1)}
-.ic:hover .ic-bg img{transform:scale(1.07)}
-.ic-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(3,8,2,.90) 0%,rgba(8,18,4,.48) 45%,rgba(46,46,44,.05) 100%);transition:background .5s}
-.ic:hover .ic-overlay{background:linear-gradient(to top,rgba(2,6,1,.95) 0%,rgba(6,14,2,.75) 65%,rgba(46,46,44,.18) 100%)}
-.ic::before{content:attr(data-num);position:absolute;right:-.04em;top:-.1em;font-family:'Cormorant Garamond',serif;font-size:clamp(8rem,16vw,14rem);font-weight:700;color:rgba(255,255,255,.032);line-height:1;z-index:1;pointer-events:none;letter-spacing:-.02em;transition:color .6s,transform .6s}
-.ic:hover::before{color:rgba(204,238,64,.08);transform:scale(1.04) translateY(-1%)}
-.ic::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:linear-gradient(90deg,#A0D400,#CCEE40,#A0D400);transform:scaleX(0);transform-origin:left;transition:transform .65s cubic-bezier(.23,1,.32,1);z-index:3;
-  box-shadow:0 0 14px rgba(160,212,0,.7)}
+.ic-bg img{width:100%;height:100%;object-fit:cover;transition:transform .9s cubic-bezier(.23,1,.32,1)}
+.ic:hover .ic-bg img{transform:scale(1.08)}
+.ic-ov{position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(6,8,3,.94) 0%,rgba(9,12,4,.52) 38%,rgba(9,12,4,.04) 100%);
+  transition:.5s}
+.ic:hover .ic-ov{background:linear-gradient(to top,rgba(4,6,2,.97) 0%,rgba(6,10,2,.78) 55%,rgba(9,12,4,.1) 100%)}
+.ic::before{content:attr(data-num);position:absolute;right:-.04em;top:-.08em;
+  font-family:'Cormorant Garamond',serif;font-size:clamp(8rem,16vw,14rem);font-weight:700;
+  color:rgba(255,255,255,.025);line-height:1;z-index:1;pointer-events:none;
+  transition:color .6s,transform .6s}
+.ic:hover::before{color:rgba(204,238,64,.07);transform:scale(1.05) translateY(-1%)}
+.ic::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--lime),var(--lime-lt),var(--lime));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .65s cubic-bezier(.23,1,.32,1);z-index:3;
+  box-shadow:0 0 16px rgba(160,212,0,.7)}
 .ic:hover::after{transform:scaleX(1)}
-.ic-badge{position:absolute;top:1.25rem;left:1.5rem;z-index:2;font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:4px 12px;border-radius:50px}
-.ic-badge.main{background:rgba(204,238,64,.22);border:1px solid rgba(204,238,64,.5);color:var(--fresh)}
-.ic-badge.grow{background:rgba(204,238,64,.18);border:1px solid rgba(204,238,64,.42);color:var(--fresh)}
-.ic-badge.new{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:rgba(255,255,255,.82)}
+.ic-badge{position:absolute;top:1.25rem;left:1.5rem;z-index:2;
+  font-size:9px;font-weight:600;letter-spacing:1.2px;text-transform:uppercase;padding:4px 12px;border-radius:50px}
+.ic-badge.main{background:rgba(204,238,64,.2);border:1px solid rgba(204,238,64,.5);color:var(--lime-lt)}
+.ic-badge.grow{background:rgba(204,238,64,.16);border:1px solid rgba(204,238,64,.42);color:var(--lime-lt)}
+.ic-badge.new{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.15);color:var(--w80)}
+.ic-explore{position:absolute;top:1.25rem;right:1.5rem;z-index:2;
+  width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.18);color:#fff;font-size:.9rem;
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;transform:scale(.65) rotate(-45deg);transition:all .45s cubic-bezier(.23,1,.32,1)}
+.ic:hover .ic-explore{opacity:1;transform:scale(1) rotate(0deg);
+  background:var(--lime-lt);border-color:var(--lime-lt);color:var(--ink)}
 .ic-content{position:absolute;bottom:0;left:0;right:0;padding:1.75rem 1.75rem 2rem;z-index:2}
 .ic-ico{display:none}
-.ic-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,2.2vw,2rem);font-weight:400;color:#fff;line-height:1.1;margin-bottom:.15rem}
-.ic:nth-child(1) .ic-name,.ic:nth-child(6) .ic-name{font-size:clamp(1.8rem,3vw,2.7rem)}
-.ic-chem{font-size:11px;color:rgba(255,255,255,.62);font-weight:300;margin-top:.3rem;line-height:1.5;letter-spacing:.2px}
-.ic-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.85rem;opacity:0;transform:translateY(10px);transition:opacity .4s .05s,transform .4s .05s}
+.ic-name{font-family:'Cormorant Garamond',serif;font-size:clamp(1.5rem,2.2vw,2.1rem);
+  font-weight:400;color:#fff;line-height:1.1}
+.ic:nth-child(1) .ic-name,.ic:nth-child(6) .ic-name{font-size:clamp(1.8rem,2.8vw,2.8rem)}
+.ic-chem{font-size:10.5px;color:rgba(255,255,255,.52);font-weight:300;margin-top:.3rem;line-height:1.5}
+.ic-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.75rem;
+  opacity:0;transform:translateY(8px);transition:opacity .4s,transform .4s}
 .ic:hover .ic-tags{opacity:1;transform:none}
-.ic-tag{font-size:9.5px;font-weight:500;letter-spacing:.6px;text-transform:uppercase;padding:4px 10px;border-radius:50px;background:rgba(204,238,64,.16);border:1px solid rgba(204,238,64,.38);color:rgba(255,255,255,.85)}
+.ic-tag{font-size:9px;font-weight:600;letter-spacing:.6px;text-transform:uppercase;
+  padding:3px 9px;border-radius:50px;
+  background:rgba(204,238,64,.14);border:1px solid rgba(204,238,64,.35);color:var(--w80)}
 
-/* ── GALLERY — horizontal carousel ── */
-#gallery{background:var(--white)}
-.gal-intro{margin-bottom:2.5rem;display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
-.gal-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4.5vw,3.8rem);
-  font-weight:300;color:var(--ink);line-height:1.15}
-.gal-h em{font-style:italic;color:var(--leaf)}
-.gal-filter{display:flex;flex-wrap:wrap;gap:.4rem}
-.gf{padding:7px 17px;border-radius:50px;font-size:12px;font-weight:400;
-  border:1px solid var(--bdr);color:var(--tm);background:transparent;
-  transition:all .3s;cursor:pointer}
-.gf.on{background:linear-gradient(135deg,#A0D400,#CCEE40);border-color:transparent;color:var(--ink);font-weight:600}
-.gf:hover:not(.on){border-color:var(--mid);color:var(--leaf)}
-
-/* 2-row horizontal carousel */
+/* ── GALLERY ── */
+#gallery{background:var(--d1);padding:clamp(5rem,9vw,7rem) 0}
+.gal-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4.5vw,4rem);
+  font-weight:300;color:#fff;line-height:1.08}
+.gal-h em{font-style:italic;color:var(--lime-lt)}
+.gal-intro{margin-bottom:2.5rem;display:flex;align-items:flex-end;
+  justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+.gal-filter{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.85rem}
+.gf{padding:6px 16px;border-radius:50px;font-size:12px;font-weight:400;
+  border:1px solid var(--w12);color:var(--w60);background:transparent;transition:.3s;cursor:pointer}
+.gf.on{background:linear-gradient(135deg,var(--lime),var(--lime-lt));
+  border-color:transparent;color:var(--ink);font-weight:600}
+.gf:hover:not(.on){border-color:var(--lime);color:var(--lime)}
 .gal-carousel{position:relative}
 .gal-track-wrap{overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;border-radius:10px}
 .gal-track-wrap::-webkit-scrollbar{display:none}
-.gal-track{display:grid;grid-template-rows:repeat(2,210px);grid-auto-columns:290px;grid-auto-flow:column;gap:6px;width:max-content}
-.gci{overflow:hidden;cursor:pointer;position:relative;background:var(--pale);border-radius:8px}
+.gal-track{display:grid;grid-template-rows:repeat(2,210px);
+  grid-auto-columns:290px;grid-auto-flow:column;gap:5px;width:max-content}
+.gci{overflow:hidden;cursor:pointer;position:relative;background:var(--d3);border-radius:8px}
 .gci img{width:100%;height:100%;object-fit:cover;object-position:center 60%;transition:transform .55s}
 .gci:hover img{transform:scale(1.07)}
-.gci-ov{position:absolute;inset:0;background:linear-gradient(to top,rgba(46,46,44,.72) 0%,transparent 55%);opacity:0;transition:opacity .35s;display:flex;align-items:flex-end;padding:.75rem 1rem}
+.gci-ov{position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(6,8,3,.78) 0%,transparent 55%);
+  opacity:0;transition:opacity .35s;display:flex;align-items:flex-end;padding:.75rem 1rem}
 .gci:hover .gci-ov{opacity:1}
 .gci-lbl{color:#fff;font-size:11.5px;font-weight:400;letter-spacing:.3px}
 .gal-nav{display:flex;gap:.5rem}
-.gal-btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--bdr);background:var(--white);color:var(--ink);cursor:pointer;font-size:1.1rem;display:flex;align-items:center;justify-content:center;transition:.25s;line-height:1}
-.gal-btn:hover{background:linear-gradient(135deg,#A0D400,#CCEE40);color:var(--ink);border-color:transparent}
-.gal-note{text-align:center;margin-top:1.25rem;font-size:12px;color:var(--tl);font-weight:300;letter-spacing:.3px}
+.gal-btn{width:42px;height:42px;border-radius:50%;border:1px solid var(--w12);
+  background:var(--d3);color:#fff;cursor:pointer;font-size:1.1rem;
+  display:flex;align-items:center;justify-content:center;transition:.25s;line-height:1}
+.gal-btn:hover{background:linear-gradient(135deg,var(--lime),var(--lime-lt));
+  color:var(--ink);border-color:transparent}
+.gal-note{text-align:center;margin-top:1.25rem;font-size:12px;color:var(--w40);font-weight:300}
 
 /* ── PARTNERS ── */
-#partners{background:var(--mint)}
-.par-eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);
-  margin-bottom:1.2rem;display:flex;align-items:center;gap:.75rem}
-.par-eyebrow::before{content:'';width:28px;height:2px;background:linear-gradient(90deg,#A0D400,#CCEE40);border-radius:2px}
-.par-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);
-  font-weight:300;color:var(--ink);line-height:1.15;margin-bottom:1.75rem}
+#partners{background:var(--d0);padding:clamp(5rem,9vw,7rem) 0}
+.par-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.5rem);
+  font-weight:300;color:#fff;line-height:1.08;margin-bottom:1.75rem}
 .par-filters{display:flex;gap:.5rem;margin-bottom:2.5rem;flex-wrap:wrap}
 .par-btn{padding:8px 22px;border-radius:50px;font-size:12px;font-weight:500;
-  border:1.5px solid var(--bdr);color:var(--tm);background:transparent;
-  cursor:pointer;transition:all .3s;letter-spacing:.3px;font-family:inherit}
-.par-btn.active,.par-btn:hover{background:linear-gradient(135deg,#A0D400,#CCEE40);border-color:transparent;color:var(--ink);font-weight:600}
+  border:1.5px solid var(--w12);color:var(--w60);background:transparent;
+  cursor:pointer;transition:all .3s;font-family:inherit}
+.par-btn.active,.par-btn:hover{background:linear-gradient(135deg,var(--lime),var(--lime-lt));
+  border-color:transparent;color:var(--ink);font-weight:600}
 .par-logo-row{display:flex;flex-wrap:wrap;gap:.85rem;justify-content:center;align-items:stretch}
-.par-item{flex:0 0 auto;width:155px;background:var(--white);border:1px solid var(--bdr);border-radius:12px;
-  padding:1.25rem 1rem;display:flex;flex-direction:column;align-items:center;gap:.35rem;
-  text-align:center;transition:all .35s;cursor:default}
-.par-item:hover{background:var(--pale);border-color:var(--sage);transform:translateY(-3px);
-  box-shadow:0 8px 24px rgba(160,212,0,.15)}
+.par-item{flex:0 0 auto;width:155px;background:var(--d2);border:1px solid var(--w07);
+  border-radius:12px;padding:1.25rem 1rem;display:flex;flex-direction:column;
+  align-items:center;gap:.35rem;text-align:center;transition:all .35s;cursor:default}
+.par-item:hover{background:var(--d3);border-color:rgba(160,212,0,.35);
+  transform:translateY(-3px);box-shadow:0 8px 28px rgba(160,212,0,.12)}
 .par-item.hidden{display:none}
-.par-item-logo{height:44px;display:flex;align-items:center;justify-content:center;width:100%;margin-bottom:.4rem}
-.par-item-logo img{max-height:38px;max-width:120px;width:auto;object-fit:contain;filter:grayscale(25%);transition:filter .3s}
-.par-item:hover .par-item-logo img{filter:grayscale(0%)}
+.par-item-logo{height:44px;display:flex;align-items:center;justify-content:center;
+  width:100%;margin-bottom:.4rem}
+.par-item-logo img{max-height:38px;max-width:120px;width:auto;object-fit:contain;
+  filter:brightness(1.2) grayscale(30%);transition:.3s}
+.par-item:hover .par-item-logo img{filter:brightness(1) grayscale(0%)}
 .par-item-logo-fb{display:none;align-items:center;justify-content:center;
   height:38px;padding:0 12px;border-radius:8px;
-  background:linear-gradient(135deg,var(--leaf),var(--fresh));
-  font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:#fff}
-.par-item-name{font-size:11.5px;font-weight:600;color:var(--ink);display:block;line-height:1.3}
-.par-item-sub{font-size:10px;color:var(--tm);font-weight:300;display:block}
+  background:linear-gradient(135deg,var(--lime-dk),var(--lime-lt));
+  font-family:'Cormorant Garamond',serif;font-size:14px;font-weight:700;color:var(--ink)}
+.par-item-name{font-size:11.5px;font-weight:600;color:#fff;display:block;line-height:1.3}
+.par-item-sub{font-size:10px;color:var(--w40);font-weight:300;display:block}
 .par-cat-badge{font-size:9px;letter-spacing:.5px;text-transform:uppercase;
   padding:3px 8px;border-radius:50px;font-weight:500;display:inline-block;margin-top:.15rem}
-.par-cat-badge.global{background:rgba(160,212,0,.12);color:var(--leaf)}
-.par-cat-badge.local{background:rgba(160,212,0,.15);color:var(--mid)}
-.par-note{font-size:12px;color:var(--tl);font-style:italic;margin-top:1.75rem;font-weight:300;text-align:center}
+.par-cat-badge.global{background:rgba(160,212,0,.14);color:var(--lime)}
+.par-cat-badge.local{background:rgba(204,238,64,.12);color:var(--lime-lt)}
+.par-note{font-size:12px;color:var(--w40);font-style:italic;margin-top:1.75rem;text-align:center}
 
 /* ── CSR ── */
-#csr{background:var(--white)}
-.csr-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,7rem);align-items:start}
-
-.csr-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);
-  font-weight:300;color:var(--ink);line-height:1.15;margin-bottom:1.25rem}
-.csr-h em{font-style:italic;color:var(--leaf)}
-.csr-p{font-size:15px;color:var(--tm);font-weight:300;line-height:1.9;margin-bottom:1.75rem}
+#csr{background:var(--d1);padding:clamp(5rem,9vw,7rem) 0}
+.csr-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,6rem);align-items:start}
+.csr-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.4rem);
+  font-weight:300;color:#fff;line-height:1.08;margin-bottom:1.25rem}
+.csr-h em{font-style:italic;color:var(--lime-lt)}
+.csr-p{font-size:15px;color:var(--w60);font-weight:300;line-height:1.9;margin-bottom:1.75rem}
 .csr-pts{display:flex;flex-direction:column}
-.crp{display:flex;align-items:flex-start;gap:.85rem;padding:.95rem 0;
-  border-bottom:1px solid var(--bdr);transition:all .3s;cursor:default}
-.crp:first-child{border-top:1px solid var(--bdr)}
+.crp{display:flex;align-items:flex-start;gap:.85rem;padding:.9rem 0;
+  border-bottom:1px solid var(--w07);transition:all .3s;cursor:default}
+.crp:first-child{border-top:1px solid var(--w07)}
 .crp:hover{padding-left:.5rem}
 .crp-ic{font-size:1.2rem;flex-shrink:0;transition:transform .3s}
-.crp:hover .crp-ic{transform:scale(1.15)}
-.crp-t{font-size:13.5px;font-weight:600;color:var(--ink);display:block;margin-bottom:2px}
-.crp-s{font-size:12.5px;color:var(--tm);font-weight:300;line-height:1.6}
-
+.crp:hover .crp-ic{transform:scale(1.12)}
+.crp-t{font-size:13.5px;font-weight:600;color:#fff;display:block;margin-bottom:2px}
+.crp-s{font-size:12.5px;color:var(--w60);font-weight:300;line-height:1.6}
 .csr-photo-grid{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:240px 180px;gap:4px}
-.csr-ph{overflow:hidden;position:relative;border-radius:2px}
+.csr-ph{overflow:hidden;position:relative;border-radius:3px}
 .csr-ph.tall{grid-row:span 2}
 .csr-ph img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .csr-ph:hover img{transform:scale(1.05)}
-.csr-placeholder{width:100%;height:100%;min-height:180px;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;
-  background:linear-gradient(135deg,var(--pale),var(--mint));
-  border:1.5px dashed #a8cdb5;color:var(--tl);font-size:12px;font-weight:300;text-align:center}
-.csr-placeholder-ico{font-size:1.8rem;color:var(--sage);opacity:.6;margin-bottom:.25rem;display:block}
-.csr-note{font-size:11.5px;color:var(--tl);font-style:italic;text-align:center;margin-top:.75rem;font-weight:300}
 
 /* ── CTA ── */
-#cta{background:linear-gradient(135deg,#88C400 0%,#A0D400 35%,#CCEE40 100%);padding:clamp(4rem,8vw,6rem) 0;position:relative;overflow:hidden;
-  box-shadow:0 -6px 40px rgba(160,212,0,.2),0 6px 40px rgba(160,212,0,.2)}
+#cta{background:linear-gradient(135deg,#88C400,#A0D400 40%,#CCEE40);
+  padding:clamp(4rem,8vw,6rem) 0;position:relative;overflow:hidden;
+  box-shadow:0 -4px 40px rgba(160,212,0,.18),0 4px 40px rgba(160,212,0,.18)}
 #cta::before{content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 80% at 80% 50%,rgba(255,255,255,.22),transparent);
-  pointer-events:none}
+  background:radial-gradient(ellipse 70% 80% at 75% 50%,rgba(255,255,255,.2),transparent);pointer-events:none}
 .cta-inner{position:relative;z-index:1;display:flex;align-items:center;
   justify-content:space-between;gap:2.5rem;flex-wrap:wrap}
 .cta-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);
-  color:var(--ink);font-weight:300;line-height:1.15}
+  color:var(--ink);font-weight:300;line-height:1.1}
 .cta-h em{font-style:italic}
-.cta-sub{font-size:13px;color:rgba(46,46,44,.72);margin-top:.4rem;font-weight:300;letter-spacing:.3px}
+.cta-sub{font-size:13px;color:rgba(24,26,18,.62);margin-top:.4rem;font-weight:300}
 .cta-btns{display:flex;gap:.75rem;flex-wrap:wrap;flex-shrink:0}
-.btn-white{display:inline-flex;align-items:center;gap:7px;padding:13px 28px;border-radius:50px;
-  background:#fff;color:var(--ink);font-size:13px;font-weight:600;transition:all .35s}
-.btn-white:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.2)}
-.btn-ghost-w{display:inline-flex;align-items:center;gap:7px;padding:13px 28px;border-radius:50px;
-  background:rgba(255,255,255,.1);color:#fff;font-size:13px;font-weight:400;
-  border:1px solid rgba(255,255,255,.25);transition:all .35s}
-.btn-ghost-w:hover{background:rgba(255,255,255,.18);transform:translateY(-3px)}
-#cta .btn-white{background:var(--ink);color:#fff}
-#cta .btn-ghost-w{background:rgba(46,46,44,.1);color:var(--ink);border-color:rgba(46,46,44,.28)}
-#cta .btn-ghost-w:hover{background:rgba(46,46,44,.18);transform:translateY(-3px)}
+.btn-cta-dk{display:inline-flex;align-items:center;gap:7px;padding:13px 28px;border-radius:50px;
+  background:var(--ink);color:#fff;font-size:13px;font-weight:600;transition:all .35s}
+.btn-cta-dk:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.3)}
+.btn-cta-ol{display:inline-flex;align-items:center;gap:7px;padding:13px 28px;border-radius:50px;
+  background:rgba(24,26,18,.1);color:var(--ink);font-size:13px;font-weight:400;
+  border:1px solid rgba(24,26,18,.22);transition:all .35s}
+.btn-cta-ol:hover{background:rgba(24,26,18,.2);transform:translateY(-3px)}
 
 /* ── CONTACT ── */
-#contact{background:var(--white)}
-.con-wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(3rem,7vw,7rem);align-items:start}
-
-.con-eyebrow{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:var(--mid);
-  margin-bottom:1.2rem;display:flex;align-items:center;gap:.75rem}
-.con-eyebrow::before{content:'';width:28px;height:2px;background:linear-gradient(90deg,#A0D400,#CCEE40);border-radius:2px}
+#contact{background:var(--d0);padding:clamp(5rem,9vw,7rem) 0}
+.con-wrap{display:grid;grid-template-columns:1fr 1.6fr;gap:clamp(3rem,7vw,6rem);align-items:start}
 .con-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);
-  font-weight:300;color:var(--ink);line-height:1.15;margin-bottom:1.75rem}
-.con-h em{font-style:italic;color:var(--leaf)}
-.ci{display:flex;align-items:flex-start;gap:.9rem;padding:.85rem 0;border-bottom:1px solid var(--bdr)}
-.ci:first-of-type{border-top:1px solid var(--bdr)}
+  font-weight:300;color:#fff;line-height:1.1;margin-bottom:1.75rem}
+.con-h em{font-style:italic;color:var(--lime-lt)}
+.ci{display:flex;align-items:flex-start;gap:.9rem;padding:.85rem 0;border-bottom:1px solid var(--w07)}
+.ci:first-of-type{border-top:1px solid var(--w07)}
 .ci-ico{font-size:1.2rem;flex-shrink:0;margin-top:2px;transition:transform .3s}
-.ci:hover .ci-ico{transform:scale(1.15)}
+.ci:hover .ci-ico{transform:scale(1.12)}
 .ci-body strong{font-size:10px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;
-  color:var(--mid);display:block;margin-bottom:3px}
-.ci-body a,.ci-body p{font-size:14px;color:var(--tm);font-weight:300;line-height:1.7;display:block}
-.ci-body a:hover{color:var(--ink)}
+  color:var(--lime);display:block;margin-bottom:3px}
+.ci-body a,.ci-body p{font-size:14px;color:var(--w60);font-weight:300;line-height:1.7;display:block}
+.ci-body a:hover{color:#fff}
 .con-team{margin-top:1.75rem}
 .con-team-head{font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
-  color:var(--mid);margin-bottom:1rem}
+  color:var(--lime);margin-bottom:1rem}
 .tm{display:flex;align-items:center;gap:.85rem;padding:.65rem 0;
-  border-bottom:1px solid var(--bdr);cursor:default;transition:padding .3s}
+  border-bottom:1px solid var(--w07);cursor:default;transition:padding .3s}
 .tm:hover{padding-left:.4rem}
 .tm-av{width:34px;height:34px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,var(--mid),var(--fresh));
+  background:linear-gradient(135deg,var(--lime),var(--lime-lt));
   display:flex;align-items:center;justify-content:center;
-  font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:600;color:#fff}
-.tm-name{font-size:13.5px;font-weight:600;color:var(--ink)}
-.tm-role{font-size:11.5px;color:var(--tl);font-weight:300}
-/* Form */
-.fbox{background:var(--white);border:1px solid var(--bdr);border-radius:20px;padding:2.5rem;box-shadow:0 4px 24px rgba(46,46,44,.06)}
+  font-family:'Cormorant Garamond',serif;font-size:13px;font-weight:600;color:var(--ink)}
+.tm-name{font-size:13.5px;font-weight:600;color:#fff}
+.tm-role{font-size:11.5px;color:var(--w40);font-weight:300}
+.fbox{background:var(--d2);border:1px solid var(--w07);border-radius:20px;padding:2.5rem;
+  box-shadow:0 4px 32px rgba(0,0,0,.28)}
 .frow{display:grid;grid-template-columns:1fr 1fr;gap:.85rem;margin-bottom:.85rem}
 .fg{margin-bottom:.85rem}
 .fg label{display:block;font-size:10px;font-weight:700;letter-spacing:1px;
-  text-transform:uppercase;color:var(--tl);margin-bottom:.4rem}
+  text-transform:uppercase;color:var(--w40);margin-bottom:.4rem}
 .fg input,.fg select,.fg textarea{width:100%;padding:12px 14px;
-  border:1px solid var(--bdr);border-radius:8px;
+  border:1px solid rgba(255,255,255,.1);border-radius:8px;
   font-size:14px;font-family:'DM Sans',sans-serif;font-weight:300;
-  background:#fff;color:var(--ink);transition:border-color .3s,box-shadow .3s;outline:none}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--mid);box-shadow:0 0 0 3px rgba(160,212,0,.12)}
+  background:var(--d3);color:#fff;transition:border-color .3s,box-shadow .3s;outline:none}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--w40)}
+.fg select option{background:var(--d3);color:#fff}
+.fg input:focus,.fg select:focus,.fg textarea:focus{
+  border-color:var(--lime);box-shadow:0 0 0 3px rgba(160,212,0,.15);background:var(--d4)}
 .fg textarea{resize:vertical;min-height:110px}
-.fsub{width:100%;padding:14px;background:linear-gradient(135deg,#A0D400,#CCEE40);color:var(--ink);border:none;border-radius:50px;
-  font-size:14px;font-weight:700;cursor:pointer;transition:all .35s;font-family:'DM Sans',sans-serif;
-  box-shadow:0 4px 16px rgba(160,212,0,.3)}
-.fsub:hover{background:linear-gradient(135deg,#78BC00,#A0D400);transform:translateY(-2px);box-shadow:0 14px 36px rgba(160,212,0,.5)}
+.fsub{width:100%;padding:14px;
+  background:linear-gradient(135deg,var(--lime),var(--lime-lt));color:var(--ink);
+  border:none;border-radius:50px;font-size:14px;font-weight:700;cursor:pointer;
+  transition:all .35s;font-family:'DM Sans',sans-serif;
+  box-shadow:0 4px 18px rgba(160,212,0,.32)}
+.fsub:hover{background:linear-gradient(135deg,var(--lime-dk),var(--lime));
+  transform:translateY(-2px);box-shadow:0 14px 36px rgba(160,212,0,.52)}
 .f-ok{display:none;text-align:center;padding:2.5rem}
-.f-ok-ico{font-size:2.8rem;display:block;margin-bottom:.65rem;animation:popIn .5s cubic-bezier(.34,1.56,.64,1)}
+.f-ok-ico{font-size:2.8rem;display:block;margin-bottom:.65rem;
+  animation:popIn .5s cubic-bezier(.34,1.56,.64,1)}
 @keyframes popIn{from{transform:scale(0);opacity:0}to{transform:scale(1);opacity:1}}
-.f-ok p{font-size:15px;color:var(--tm);font-weight:300}
+.f-ok p{font-size:15px;color:var(--w60);font-weight:300}
 
 /* ── FOOTER ── */
-footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
+footer{background:#060806;padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
 .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;
-  padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
+  padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.06)}
 .ft-logo{display:flex;align-items:center;gap:.75rem;margin-bottom:.9rem}
 .ft-mark{width:36px;height:36px;border-radius:8px;
-  background:linear-gradient(135deg,var(--mid),var(--fresh));
+  background:linear-gradient(135deg,var(--lime),var(--lime-lt));
   display:flex;align-items:center;justify-content:center;
-  font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:#fff}
+  font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:var(--ink)}
 .ft-name{font-family:'Cormorant Garamond',serif;font-size:18px;color:#fff;font-weight:400}
-.ft-tag{font-size:13px;color:rgba(255,255,255,.62);font-weight:300;line-height:1.75;max-width:260px}
+.ft-tag{font-size:13px;color:var(--w60);font-weight:300;line-height:1.75;max-width:260px}
 .ft-col h5{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
-  color:rgba(255,255,255,.45);margin-bottom:.85rem}
+  color:var(--w40);margin-bottom:.85rem}
 .ft-col ul{list-style:none}
 .ft-col li{margin-bottom:.4rem}
-.ft-col a{font-size:13px;color:rgba(255,255,255,.68);font-weight:300;transition:color .3s}
-.ft-col a:hover{color:var(--fresh)}
+.ft-col a{font-size:13px;color:rgba(255,255,255,.58);font-weight:300;transition:color .3s}
+.ft-col a:hover{color:var(--lime-lt)}
 .ft-btm{display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:1rem;padding-top:1.75rem}
-.ft-copy{font-size:12px;color:rgba(255,255,255,.48);font-weight:300}
+.ft-copy{font-size:12px;color:var(--w40);font-weight:300}
 .ft-pills{display:flex;gap:.5rem;flex-wrap:wrap}
 .ft-pill{font-size:11px;padding:4px 10px;border-radius:50px;
-  background:rgba(255,255,255,.04);color:rgba(255,255,255,.4);
-  border:1px solid rgba(255,255,255,.07);transition:all .3s;cursor:default}
-.ft-pill:hover{border-color:rgba(204,238,64,.35);color:var(--fresh)}
+  background:rgba(255,255,255,.04);color:var(--w40);
+  border:1px solid rgba(255,255,255,.06);transition:all .3s;cursor:default}
+.ft-pill:hover{border-color:rgba(204,238,64,.35);color:var(--lime-lt)}
 
 /* ── LIGHTBOX ── */
 .lbox{display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.93);
@@ -391,9 +473,9 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
 .lb-img img{display:block;max-width:100%;max-height:72vh;width:auto;height:auto;object-fit:contain}
 .lb-cap{margin-top:.7rem;text-align:center}
 .lb-cap-t{font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:#fff;font-weight:400}
-.lb-cap-s{font-size:12px;color:rgba(255,255,255,.4);margin-top:2px;font-weight:300}
+.lb-cap-s{font-size:12px;color:var(--w40);margin-top:2px;font-weight:300}
 
-/* Confetti */
+/* ── CONFETTI ── */
 .conf{position:fixed;z-index:9998;pointer-events:none;
   animation:confFall var(--cd,2s) var(--cdl,0s) ease-out forwards}
 @keyframes confFall{
@@ -401,28 +483,19 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
   100%{transform:translate(var(--cx,20px),200px) rotate(540deg) scale(.2);opacity:0}
 }
 
-/* Reveal */
-.rv{opacity:0;transform:translateY(24px);transition:opacity .75s ease,transform .75s ease}
-.rv.fl{transform:translateX(-30px)}.rv.fr{transform:translateX(30px)}
-.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
-.rv.on{opacity:1;transform:none}
-:focus-visible{outline:2px solid var(--fresh);outline-offset:3px;border-radius:3px}
-
 /* ── INDUSTRY DETAIL PANEL ── */
-.ic-explore{position:absolute;top:1.25rem;right:1.5rem;z-index:2;width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:.9rem;display:flex;align-items:center;justify-content:center;opacity:0;transform:scale(.65) rotate(-45deg);transition:all .45s cubic-bezier(.23,1,.32,1)}
-.ic:hover .ic-explore{opacity:1;transform:scale(1) rotate(0deg);background:var(--fresh);border-color:var(--fresh)}
 .ind-backdrop{position:fixed;inset:0;z-index:849;background:rgba(0,0,0,.65);
   backdrop-filter:blur(6px);opacity:0;pointer-events:none;transition:opacity .4s}
 .ind-backdrop.open{opacity:1;pointer-events:all}
 .ind-panel{position:fixed;top:0;right:0;width:min(680px,100vw);height:100vh;
-  z-index:850;background:var(--ink);
+  z-index:850;background:var(--d1);
   transform:translateX(100%);transition:transform .55s cubic-bezier(.23,1,.32,1);
   overflow-y:auto;display:flex;flex-direction:column}
 .ind-panel.open{transform:none}
 .ind-panel-img-wrap{position:relative;height:320px;overflow:hidden;flex-shrink:0}
 .ind-panel-img-wrap img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
 .ind-panel-img-wrap::after{content:'';position:absolute;inset:0;
-  background:linear-gradient(to bottom,rgba(46,46,44,.10) 0%,rgba(20,20,18,.88) 100%)}
+  background:linear-gradient(to bottom,rgba(9,11,6,.1) 0%,rgba(14,16,9,.9) 100%)}
 .ind-panel-close{position:absolute;top:1.25rem;right:1.25rem;z-index:2;
   width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.12);
   border:1px solid rgba(255,255,255,.2);color:#fff;font-size:16px;cursor:pointer;
@@ -430,145 +503,68 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
 .ind-panel-close:hover{background:rgba(255,255,255,.25);transform:rotate(90deg)}
 .ind-panel-body{padding:2.5rem 2.25rem;flex:1}
 .ind-panel-eyebrow{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--fresh);margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
-.ind-panel-eyebrow::before{content:'';width:24px;height:1px;background:var(--fresh)}
+  color:var(--lime-lt);margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
+.ind-panel-eyebrow::before{content:'';width:24px;height:1px;background:var(--lime-lt)}
 .ind-panel-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,5vw,3.2rem);
-  font-weight:300;color:#fff;line-height:1.1;margin-bottom:1.25rem}
-.ind-panel-desc{font-size:14.5px;color:rgba(255,255,255,.75);font-weight:300;line-height:1.9;margin-bottom:2rem}
+  font-weight:300;color:#fff;line-height:1.08;margin-bottom:1.25rem}
+.ind-panel-desc{font-size:14.5px;color:var(--w60);font-weight:300;line-height:1.9;margin-bottom:2rem}
 .ind-section-lbl{font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
-  color:rgba(255,255,255,.45);margin-bottom:.85rem;display:block}
+  color:var(--w40);margin-bottom:.85rem;display:block}
 .ind-panel-chems{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:2rem}
 .ind-chem-pill{font-size:11.5px;padding:5px 14px;border-radius:50px;
-  border:1px solid rgba(204,238,64,.4);color:#b8ea50;font-weight:400;
-  background:rgba(204,238,64,.08);font-family:monospace;letter-spacing:.3px}
+  border:1px solid rgba(204,238,64,.38);color:var(--lime-lt);font-weight:400;
+  background:rgba(204,238,64,.07);font-family:monospace;letter-spacing:.3px}
 .ind-panel-uses{display:flex;flex-direction:column}
-.ind-use{display:flex;gap:1rem;padding:1.1rem 0;border-bottom:1px solid rgba(255,255,255,.07)}
-.ind-use:first-child{border-top:1px solid rgba(255,255,255,.07)}
+.ind-use{display:flex;gap:1rem;padding:1.1rem 0;border-bottom:1px solid var(--w07)}
+.ind-use:first-child{border-top:1px solid var(--w07)}
 .ind-use-ico{font-size:1.25rem;flex-shrink:0;margin-top:2px}
 .ind-use-t{font-size:13.5px;font-weight:600;color:#fff;display:block;margin-bottom:3px}
-.ind-use-s{font-size:12.5px;color:rgba(255,255,255,.65);font-weight:300;line-height:1.65}
+.ind-use-s{font-size:12.5px;color:var(--w60);font-weight:300;line-height:1.65}
 .ind-panel-cta{margin-top:2rem}
+.btn-ink{display:inline-flex;align-items:center;gap:7px;padding:12px 26px;border-radius:50px;
+  background:linear-gradient(135deg,var(--lime),var(--lime-lt));color:var(--ink);
+  font-size:13px;font-weight:700;transition:all .35s;
+  box-shadow:0 4px 16px rgba(160,212,0,.28)}
+.btn-ink:hover{transform:translateY(-2px);box-shadow:0 10px 30px rgba(160,212,0,.5)}
 
 /* ── RESPONSIVE ── */
 @media(max-width:960px){
-  .nav-left,.nav-right,.n-cta-pill{display:none}.hbg{display:flex}.mob{display:flex}
+  .nav-left,.nav-right,.n-cta{display:none}
+  .hbg{display:flex}.mob{display:flex}
   .about-wrap,.csr-wrap,.con-wrap{grid-template-columns:1fr}
   .about-img-side{min-height:380px}
-  .ind-grid{display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
+  .ind-grid{grid-template-columns:repeat(2,1fr);grid-template-rows:auto}
   .ind-grid .ic{height:320px}
   .ic:nth-child(1),.ic:nth-child(6){grid-column:auto}
   .ft-grid{grid-template-columns:1fr 1fr}
   .cta-inner{flex-direction:column;text-align:center}
   .stats-row{flex-wrap:wrap}
-  .stat-item{flex:0 0 50%;border-right:none;border-bottom:1px solid var(--bdr)}
+  .stat-item{flex:0 0 50%;border-right:none;border-bottom:1px solid rgba(255,255,255,.25)}
   .ind-panel-img-wrap{height:240px}
+  .why-grid{grid-template-columns:1fr 1fr}
+  .hero-strip{grid-template-columns:repeat(2,1fr)}
 }
 @media(max-width:600px){
-  /* Industries */
+  .hero-nums{display:none}
+  .hero-body{padding-left:clamp(1.5rem,5vw,4rem)}
+  .hero-strip{grid-template-columns:1fr 1fr}
   .ind-grid{grid-template-columns:1fr}
   .ind-grid .ic{height:280px}
-
-  /* Footer */
   .frow{grid-template-columns:1fr}
   .ft-grid{grid-template-columns:1fr}
-
-  /* Stats — keep 2×2, not 1-per-row */
   .stat-item{flex:0 0 50%}
-
-  /* Gallery — filter scrolls horizontally; intro stacks cleanly */
   .gal-intro{flex-direction:column;align-items:flex-start;gap:1rem}
-  .gal-filter{flex-wrap:nowrap;overflow-x:auto;width:100%;padding-bottom:.2rem;scrollbar-width:none}
+  .gal-filter{flex-wrap:nowrap;overflow-x:auto;width:100%;scrollbar-width:none}
   .gal-filter::-webkit-scrollbar{display:none}
   .gf{white-space:nowrap;flex-shrink:0}
   .gal-nav{margin-top:0}
-
-  /* Partners — horizontal scroll row */
-  .par-logo-row{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;
-    justify-content:flex-start;padding-bottom:.75rem;scrollbar-width:none}
+  .par-logo-row{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;padding-bottom:.75rem;scrollbar-width:none}
   .par-logo-row::-webkit-scrollbar{display:none}
   .par-item{flex:0 0 140px}
-
-  /* CSR photos — 2-col grid, shorter rows */
-  .csr-photo-grid{grid-template-columns:1fr 1fr;grid-template-rows:160px 160px}
+  .csr-photo-grid{grid-template-rows:160px 160px}
   .csr-ph.tall{grid-row:auto}
+  .why-grid{grid-template-columns:1fr}
 }
-
-/* ══ DARK THEME — full site ══ */
-body{background:#0C0E08;color:rgba(255,255,255,.8)}
-
-/* About */
-#about{background:#0F1109}
-.about-img-overlay{background:linear-gradient(to right,rgba(12,14,8,.25),transparent)}
-.about-h{color:#fff}
-.about-h em{color:var(--fresh)}
-.about-p{color:rgba(255,255,255,.68)}
-.ach{border-left-color:transparent}
-.ach:hover{border-left-color:var(--fresh);background:rgba(255,255,255,.04);padding-left:1.25rem}
-.ach-t{color:#fff}
-.ach-s{color:rgba(255,255,255,.58)}
-.about-yr-tag{color:rgba(255,255,255,.38)}
-.about-yr-tag strong{color:#fff}
-.about-eyebrow{color:var(--fresh)}
-
-/* Gallery */
-#gallery{background:#0C0E08}
-.gal-h{color:#fff}
-.gal-h em{color:var(--fresh)}
-.gf{border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.58);background:transparent}
-.gf:hover:not(.on){border-color:var(--mid);color:var(--mid)}
-.gal-btn{background:#1A1E10;border-color:rgba(255,255,255,.1);color:#fff}
-.gal-btn:hover{background:linear-gradient(135deg,#A0D400,#CCEE40);color:var(--ink);border-color:transparent}
-.gal-note{color:rgba(255,255,255,.32)}
-.gci{background:#1A1E10}
-
-/* Partners */
-#partners{background:#0F1109}
-.par-h{color:#fff}
-.par-btn{border-color:rgba(255,255,255,.12);color:rgba(255,255,255,.58);background:transparent}
-.par-btn.active,.par-btn:hover{background:linear-gradient(135deg,#A0D400,#CCEE40);border-color:transparent;color:var(--ink);font-weight:600}
-.par-note{color:rgba(255,255,255,.35);font-style:italic}
-.par-item{background:#161A0C;border-color:rgba(255,255,255,.07)}
-.par-item:hover{background:#1E240E;border-color:rgba(160,212,0,.35);transform:translateY(-3px);box-shadow:0 8px 24px rgba(160,212,0,.12)}
-.par-item-name{color:#fff}
-.par-item-sub{color:rgba(255,255,255,.48)}
-.par-item-logo img{filter:brightness(1.15) grayscale(20%)}
-.par-item:hover .par-item-logo img{filter:brightness(1) grayscale(0%)}
-.par-cat-badge.global{background:rgba(160,212,0,.14);color:var(--mid)}
-.par-cat-badge.local{background:rgba(204,238,64,.12);color:var(--fresh)}
-
-/* CSR */
-#csr{background:#0C0E08}
-.csr-h{color:#fff}
-.csr-h em{color:var(--fresh)}
-.csr-p{color:rgba(255,255,255,.68)}
-.crp{border-bottom-color:rgba(255,255,255,.07)}
-.crp:first-child{border-top-color:rgba(255,255,255,.07)}
-.crp-t{color:#fff}
-.crp-s{color:rgba(255,255,255,.58)}
-
-/* Contact */
-#contact{background:#0F1109}
-.con-h{color:#fff}
-.con-h em{color:var(--fresh)}
-.ci{border-bottom-color:rgba(255,255,255,.07)}
-.ci:first-of-type{border-top-color:rgba(255,255,255,.07)}
-.ci-body a,.ci-body p{color:rgba(255,255,255,.62)}
-.ci-body a:hover{color:#fff}
-.ci-body strong{color:var(--mid)}
-.con-team-head{color:var(--mid)}
-.tm{border-bottom-color:rgba(255,255,255,.07)}
-.tm-name{color:#fff}
-.tm-role{color:rgba(255,255,255,.42)}
-.fbox{background:#141810;border-color:rgba(255,255,255,.08);box-shadow:0 4px 32px rgba(0,0,0,.35)}
-.fg label{color:rgba(255,255,255,.42)}
-.fg input,.fg select,.fg textarea{background:#1A1E12;border-color:rgba(255,255,255,.1);color:#fff}
-.fg input::placeholder,.fg textarea::placeholder{color:rgba(255,255,255,.28)}
-.fg select option{background:#1A1E12;color:#fff}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--mid);background:#1E2416;box-shadow:0 0 0 3px rgba(160,212,0,.15)}
-
-/* Eyebrows on dark bg */
-.par-eyebrow{color:var(--mid)}
-.con-eyebrow::before,.par-eyebrow::before,.about-eyebrow::before{background:linear-gradient(90deg,#A0D400,#CCEE40)}
 </style>
 </head>
 <body>
@@ -586,17 +582,17 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
   <ul class="nav-right">
     <li><a href="#partners">Partners</a></li>
     <li><a href="#gallery">Gallery</a></li>
-    <li><a href="#contact" class="n-cta-pill">Contact Us</a></li>
+    <li><a href="#contact" class="n-cta">Contact Us</a></li>
   </ul>
   <button class="hbg" id="hbg"><span></span><span></span><span></span></button>
 </nav>
 <div class="mob" id="mob">
-  <a href="about.html"  onclick="cm()">About Us</a>
+  <a href="about.html" onclick="cm()">About Us</a>
   <a href="#industries" onclick="cm()">Industries</a>
-  <a href="#partners"   onclick="cm()">Partners</a>
-  <a href="#gallery"    onclick="cm()">Gallery</a>
-  <a href="#csr"        onclick="cm()">Social Responsibility</a>
-  <a href="#contact"    onclick="cm()">Contact Us →</a>
+  <a href="#partners" onclick="cm()">Partners</a>
+  <a href="#gallery" onclick="cm()">Gallery</a>
+  <a href="#csr" onclick="cm()">Social Responsibility</a>
+  <a href="#contact" onclick="cm()">Contact Us →</a>
 </div>
 
 <!-- ══ HERO ══ -->
@@ -606,60 +602,97 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-glow"></div>
-  <div class="hero-top-bar">
-    <span class="hero-loc">Battaramulla, Sri Lanka</span>
-    <span class="hero-est">Est. 2017 · Trusted by Industry</span>
+
+  <!-- Slide numbers -->
+  <div class="hero-nums">
+    <span class="hn on">01</span>
+    <span class="hn">02</span>
+    <span class="hn">03</span>
+    <span class="hn">04</span>
   </div>
-  <div class="hero-content">
-    <span class="hero-eyebrow">— Premium Raw Materials —</span>
+
+  <!-- Main content -->
+  <div class="hero-body">
+    <p class="hero-eyebrow">— Premium Raw Materials —</p>
     <h1 class="hero-h1">Connecting<br><em>Industries</em><br>with Quality</h1>
-    <p class="hero-sub">Enabling Sri Lanka's manufacturers to produce better products — quality chemistry, reliable supply, and partnership you can count on.</p>
-    <div style="display:flex;gap:.85rem;flex-wrap:wrap;justify-content:center;margin-top:2rem;opacity:0;animation:fadeUp .9s .8s forwards">
-      <a href="#contact" class="btn-white">Enquire Now →</a>
-      <a href="#industries" class="btn-ghost-w">View Industries</a>
+    <p class="hero-sub">Sri Lanka's trusted B2B chemical raw material importer since 2017 — quality chemistry, reliable supply, and partnerships that last.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-lime">Enquire Now →</a>
+      <a href="#industries" class="btn-ghost">View Industries</a>
     </div>
   </div>
-  <div class="hero-scroll">
-    <div class="hero-scroll-line"></div>
-    <span>Scroll</span>
+
+  <!-- Bottom info strip -->
+  <div class="hero-strip">
+    <div class="hsi">
+      <span class="hsi-icon">📍</span>
+      <div><span class="hsi-t">Battaramulla, Sri Lanka</span><span class="hsi-s">Headquarters since 2017</span></div>
+    </div>
+    <div class="hsi">
+      <span class="hsi-icon">🌍</span>
+      <div><span class="hsi-t">6+ Global Suppliers</span><span class="hsi-s">BASF · LG Chem · Vance Group</span></div>
+    </div>
+    <div class="hsi">
+      <span class="hsi-icon">⚗️</span>
+      <div><span class="hsi-t">6 Industries Served</span><span class="hsi-s">Rubber · Food · Personal Care</span></div>
+    </div>
+    <div class="hsi">
+      <span class="hsi-icon">✅</span>
+      <div><span class="hsi-t">100% Quality Assured</span><span class="hsi-s">10+ years of trust</span></div>
+    </div>
   </div>
 </section>
 
 <!-- ══ STATS ══ -->
 <div id="stats">
   <div class="stats-row">
-    <div class="stat-item">
-      <span class="stat-n" data-count="10" data-suf="+">10+</span>
-      <span class="stat-l">Years of Trust</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-n" data-count="6" data-suf="+">6+</span>
-      <span class="stat-l">Global Suppliers</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-n" data-count="6" data-suf="+">6+</span>
-      <span class="stat-l">Industries Served</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-n" data-count="100" data-suf="%">100%</span>
-      <span class="stat-l">Quality Assured</span>
-    </div>
+    <div class="stat-item"><span class="stat-n" data-count="10" data-suf="+">10+</span><span class="stat-l">Years of Trust</span></div>
+    <div class="stat-item"><span class="stat-n" data-count="6" data-suf="+">6+</span><span class="stat-l">Global Suppliers</span></div>
+    <div class="stat-item"><span class="stat-n" data-count="6" data-suf="+">6+</span><span class="stat-l">Industries Served</span></div>
+    <div class="stat-item"><span class="stat-n" data-count="100" data-suf="%">100%</span><span class="stat-l">Quality Assured</span></div>
   </div>
 </div>
+
+<!-- ══ WHY CHOOSE US ══ -->
+<section id="why">
+  <div class="W">
+    <div class="why-top rv">
+      <p class="ey">— Why Choose Us</p>
+      <h2 class="why-h">Reason For <em>Choosing Us</em></h2>
+      <p class="why-sub">Sri Lanka's most trusted chemical raw material partner for over a decade.</p>
+    </div>
+    <div class="why-grid">
+      <div class="why-card rv d1">
+        <div class="why-icon">🤝</div>
+        <h3 class="why-t">Tried and Trusted</h3>
+        <p class="why-s">Trusted by leading manufacturers for 10+ years. Consistent quality and supply you can rely on season after season.</p>
+      </div>
+      <div class="why-card rv d2">
+        <div class="why-icon">🌍</div>
+        <h3 class="why-t">Global Sourcing</h3>
+        <p class="why-s">Direct partnerships with BASF, LG Chem, Vance Group and more — bringing the world's best raw materials to Sri Lanka.</p>
+      </div>
+      <div class="why-card rv d3">
+        <div class="why-icon">⚡</div>
+        <h3 class="why-t">Reliable Supply</h3>
+        <p class="why-s">Year-round stock availability and island-wide delivery. Your production line never stops because of us.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ══ ABOUT ══ -->
 <section id="about">
   <div class="about-wrap">
     <div class="about-img-side rv fl">
       <img src="Images/All/closeup-shot-trees-greenery-maksimir-park-zagreb-croatia-springtime.jpg" alt="S.K. Chem Solutions">
-      <div class="about-img-overlay"></div>
     </div>
-    <div class="about-text-side rv fr">
-      <div class="about-eyebrow">About S.K. Chem Solutions</div>
+    <div class="about-text rv fr">
+      <div class="ey">About S.K. Chem Solutions</div>
       <h2 class="about-h">Rooted in trust.<br><em>Driven by quality.</em></h2>
       <p class="about-p">S.K. Chem Solutions was established in 2017 as a trusted importer of premium raw materials from leading manufacturers in Germany, Korea, Malaysia, and China.</p>
-      <p class="about-p">We supply the Rubber, Textile Washing, Personal Care, Home Care, Food, and Pharmaceutical industries — guided by strong ethics and a genuine commitment to social and environmental responsibility.</p>
-      <div class="about-checks">
+      <p class="about-p">We supply the Rubber, Textile, Personal Care, Home Care, Food, and Pharmaceutical industries — guided by strong ethics and a genuine commitment to community and environment.</p>
+      <div class="about-list">
         <div class="ach rv d2">
           <span class="ach-ic">🤝</span>
           <div><span class="ach-t">Strategic Partnership</span><span class="ach-s">Not just a supplier — a long-term partner for quality and continuity.</span></div>
@@ -673,7 +706,7 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
           <div><span class="ach-t">Sustainable &amp; Responsible</span><span class="ach-s">Eco-responsible operations and care for community and environment.</span></div>
         </div>
       </div>
-      <div class="about-yr-tag rv d4">
+      <div class="about-yr rv d4">
         <strong>2017</strong> — founded in Battaramulla, Sri Lanka
       </div>
     </div>
@@ -682,25 +715,17 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
 
 <!-- ══ INDUSTRIES ══ -->
 <section id="industries">
-  <div class="W">
-    <div class="ind-intro rv">
-      <div>
-        <span class="ind-eyebrow">— Our Industries</span>
-        <h2 class="ind-h">Industries<br>we <em>serve</em></h2>
-      </div>
-      <div class="ind-side">
-        <p class="ind-sub">Six industries. One mission — enabling better products through quality chemistry and reliable supply.</p>
-        <div class="ind-count-badge">
-          <span class="ind-count-n">06</span>
-          <span class="ind-count-l">Industries</span>
-        </div>
-      </div>
+  <div class="ind-intro rv">
+    <div>
+      <span style="font-size:10px;color:var(--lime);letter-spacing:3px;text-transform:uppercase;font-weight:600;display:block;margin-bottom:.85rem;text-shadow:0 0 14px rgba(160,212,0,.45)">— Our Industries</span>
+      <h2 class="ind-h">Industries<br>we <em>serve</em></h2>
     </div>
+    <p class="ind-side-text">Six industries. One mission — enabling better products through quality chemistry and reliable supply.</p>
   </div>
   <div class="ind-grid rv d1">
     <div class="ic" data-num="01" onclick="location.href='industry.html?ind=rubber'">
       <div class="ic-bg"><img src="Images/All/isuru-ranasinha-AVhFLfD_Lv8-unsplash.jpg" alt="Rubber &amp; Latex"></div>
-      <div class="ic-overlay"></div>
+      <div class="ic-ov"></div>
       <span class="ic-badge main">Biggest Sector</span>
       <span class="ic-explore">→</span>
       <div class="ic-content">
@@ -715,7 +740,7 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
     </div>
     <div class="ic" data-num="02" onclick="location.href='industry.html?ind=personal'">
       <div class="ic-bg"><img src="Images/Industries/Personal Care/look-studio-TQSPgNqeCo8-unsplash.jpg" alt="Personal Care"></div>
-      <div class="ic-overlay"></div>
+      <div class="ic-ov"></div>
       <span class="ic-explore">→</span>
       <div class="ic-content">
         <div class="ic-name">Personal Care</div>
@@ -729,7 +754,7 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
     </div>
     <div class="ic" data-num="03" onclick="location.href='industry.html?ind=home'">
       <div class="ic-bg"><img src="Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg" alt="Home Care"></div>
-      <div class="ic-overlay"></div>
+      <div class="ic-ov"></div>
       <span class="ic-explore">→</span>
       <div class="ic-content">
         <div class="ic-name">Home Care</div>
@@ -743,7 +768,7 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
     </div>
     <div class="ic" data-num="04" onclick="location.href='industry.html?ind=food'">
       <div class="ic-bg"><img src="Images/Industries/Food Industry/assortment-tasty-sugary-confectionery-products-variety-flavor-freshly-baked-buns-criossants-muffins-bars-chocolate-sweet-dessert-homemade-yummy-snack-baked-goods-flat-lay.jpg" alt="Food Industry"></div>
-      <div class="ic-overlay"></div>
+      <div class="ic-ov"></div>
       <span class="ic-badge grow">Growth Sector</span>
       <span class="ic-explore">→</span>
       <div class="ic-content">
@@ -758,7 +783,7 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
     </div>
     <div class="ic" data-num="05" onclick="location.href='industry.html?ind=pharma'">
       <div class="ic-bg"><img src="Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg" alt="Pharmaceutical"></div>
-      <div class="ic-overlay"></div>
+      <div class="ic-ov"></div>
       <span class="ic-badge new">Expanding Into</span>
       <span class="ic-explore">→</span>
       <div class="ic-content">
@@ -773,7 +798,7 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
     </div>
     <div class="ic" data-num="06" onclick="location.href='industry.html?ind=textile'">
       <div class="ic-bg"><img src="Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg" alt="Textile Washing"></div>
-      <div class="ic-overlay"></div>
+      <div class="ic-ov"></div>
       <span class="ic-explore">→</span>
       <div class="ic-content">
         <div class="ic-name">Textile Washing</div>
@@ -792,7 +817,7 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
 <section id="partners" class="sec">
   <div class="W">
     <div class="rv" style="margin-bottom:2rem">
-      <div class="par-eyebrow">Partners &amp; Clients</div>
+      <div class="ey">Partners &amp; Clients</div>
       <h2 class="par-h">Trusted by the best,<br>sourced from the world</h2>
     </div>
     <div class="par-filters rv d1">
@@ -800,90 +825,74 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
       <button class="par-btn" data-filter="local">🇱🇰 Local Clients</button>
     </div>
     <div class="par-logo-row rv d2">
-      <!-- Global Suppliers -->
       <div class="par-item" data-cat="global">
         <div class="par-item-logo"><img src="https://logo.clearbit.com/basf.com" alt="BASF" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">BASF</span></div>
-        <span class="par-item-name">BASF SE</span>
-        <span class="par-item-sub">🇩🇪 Germany</span>
+        <span class="par-item-name">BASF SE</span><span class="par-item-sub">🇩🇪 Germany</span>
         <span class="par-cat-badge global">Supplier</span>
       </div>
       <div class="par-item" data-cat="global">
         <div class="par-item-logo"><img src="https://logo.clearbit.com/basf.com" alt="BASF China" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">BASF</span></div>
-        <span class="par-item-name">BASF China</span>
-        <span class="par-item-sub">🇨🇳 China</span>
+        <span class="par-item-name">BASF China</span><span class="par-item-sub">🇨🇳 China</span>
         <span class="par-cat-badge global">Supplier</span>
       </div>
       <div class="par-item" data-cat="global">
         <div class="par-item-logo"><img src="https://logo.clearbit.com/vancebioenergy.com" alt="Vance Group" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">Vance</span></div>
-        <span class="par-item-name">Vance Group</span>
-        <span class="par-item-sub">🇲🇾 Malaysia</span>
+        <span class="par-item-name">Vance Group</span><span class="par-item-sub">🇲🇾 Malaysia</span>
         <span class="par-cat-badge global">Supplier</span>
       </div>
       <div class="par-item" data-cat="global">
         <div class="par-item-logo"><img src="https://logo.clearbit.com/sk.com" alt="SK Pickglobal" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">SK</span></div>
-        <span class="par-item-name">SK Pickglobal</span>
-        <span class="par-item-sub">🇰🇷 Korea</span>
+        <span class="par-item-name">SK Pickglobal</span><span class="par-item-sub">🇰🇷 Korea</span>
         <span class="par-cat-badge global">Supplier</span>
       </div>
       <div class="par-item" data-cat="global">
         <div class="par-item-logo"><img src="https://logo.clearbit.com/lgchem.com" alt="LG Chem" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">LG Chem</span></div>
-        <span class="par-item-name">LG Chem</span>
-        <span class="par-item-sub">🇰🇷 Korea</span>
+        <span class="par-item-name">LG Chem</span><span class="par-item-sub">🇰🇷 Korea</span>
         <span class="par-cat-badge global">Supplier</span>
       </div>
       <div class="par-item" data-cat="global">
-        <div class="par-item-logo"><img src="https://logo.clearbit.com/luxichemical.com" alt="LUXI Chemical" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">LUXI</span></div>
-        <span class="par-item-name">LUXI Chemical</span>
-        <span class="par-item-sub">🇨🇳 China</span>
+        <div class="par-item-logo"><img src="https://logo.clearbit.com/luxichemical.com" alt="LUXI" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">LUXI</span></div>
+        <span class="par-item-name">LUXI Chemical</span><span class="par-item-sub">🇨🇳 China</span>
         <span class="par-cat-badge global">Supplier</span>
       </div>
-      <!-- Local Clients -->
       <div class="par-item hidden" data-cat="local">
         <div class="par-item-logo"><img src="Images/Partners/Local/ansell_logo.ashx.png" alt="Ansell" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">Ansell</span></div>
-        <span class="par-item-name">Ansell Lanka</span>
-        <span class="par-item-sub">Rubber &amp; Latex</span>
+        <span class="par-item-name">Ansell Lanka</span><span class="par-item-sub">Rubber &amp; Latex</span>
         <span class="par-cat-badge local">Client</span>
       </div>
       <div class="par-item hidden" data-cat="local">
         <div class="par-item-logo"><img src="Images/Partners/Local/logo-2.png" alt="NBC" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">NBC</span></div>
-        <span class="par-item-name">NBC</span>
-        <span class="par-item-sub">Rubber &amp; Latex</span>
+        <span class="par-item-name">NBC</span><span class="par-item-sub">Rubber &amp; Latex</span>
         <span class="par-cat-badge local">Client</span>
       </div>
       <div class="par-item hidden" data-cat="local">
-        <div class="par-item-logo"><img src="Images/Partners/Local/bellose-logo-blk.png" alt="Bellosé" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">Bellos&#233;</span></div>
-        <span class="par-item-name">Bellosé</span>
-        <span class="par-item-sub">Personal Care</span>
+        <div class="par-item-logo"><img src="Images/Partners/Local/bellose-logo-blk.png" alt="Bellosé" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">Bellosé</span></div>
+        <span class="par-item-name">Bellosé</span><span class="par-item-sub">Personal Care</span>
         <span class="par-cat-badge local">Client</span>
       </div>
       <div class="par-item hidden" data-cat="local">
         <div class="par-item-logo"><img src="Images/Partners/Local/link-natural-logo.svg" alt="Link Natural" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">Link Natural</span></div>
-        <span class="par-item-name">Link Natural</span>
-        <span class="par-item-sub">Personal Care &amp; Pharma</span>
+        <span class="par-item-name">Link Natural</span><span class="par-item-sub">Personal Care &amp; Pharma</span>
         <span class="par-cat-badge local">Client</span>
       </div>
       <div class="par-item hidden" data-cat="local">
         <div class="par-item-logo"><img src="Images/Partners/Local/harumi-holdings-pvt-ltd-314151.jpg" alt="Dreamron" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">Dreamron</span></div>
-        <span class="par-item-name">Dreamron</span>
-        <span class="par-item-sub">Personal Care</span>
+        <span class="par-item-name">Dreamron</span><span class="par-item-sub">Personal Care</span>
         <span class="par-cat-badge local">Client</span>
       </div>
       <div class="par-item hidden" data-cat="local">
         <div class="par-item-logo"><img src="Images/Partners/Local/Janet_Logos_1_-02.png.avif" alt="Janet" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">Janet</span></div>
-        <span class="par-item-name">Janet Lanka</span>
-        <span class="par-item-sub">Personal Care</span>
+        <span class="par-item-name">Janet Lanka</span><span class="par-item-sub">Personal Care</span>
         <span class="par-cat-badge local">Client</span>
       </div>
       <div class="par-item hidden" data-cat="local">
-        <div class="par-item-logo"><img src="Images/Partners/Local/logo.webp" alt="4rever Skin Naturals" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">4rever</span></div>
-        <span class="par-item-name">4rever Skin Naturals</span>
-        <span class="par-item-sub">Personal Care</span>
+        <div class="par-item-logo"><img src="Images/Partners/Local/logo.webp" alt="4rever" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">4rever</span></div>
+        <span class="par-item-name">4rever Skin Naturals</span><span class="par-item-sub">Personal Care</span>
         <span class="par-cat-badge local">Client</span>
       </div>
       <div class="par-item hidden" data-cat="local">
         <div class="par-item-logo"><img src="Images/Partners/Local/sm-logo.png" alt="ACE" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><span class="par-item-logo-fb">ACE</span></div>
-        <span class="par-item-name">ACE</span>
-        <span class="par-item-sub">Pharmaceutical</span>
+        <span class="par-item-name">ACE</span><span class="par-item-sub">Pharmaceutical</span>
         <span class="par-cat-badge local">Client</span>
       </div>
     </div>
@@ -892,13 +901,13 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
 </section>
 
 <!-- ══ GALLERY ══ -->
-<section id="gallery" class="sec">
+<section id="gallery">
   <div class="W">
     <div class="gal-intro rv">
       <div>
-        <div class="par-eyebrow" style="margin-bottom:.6rem">Community &amp; Impact</div>
+        <div class="ey">Community &amp; Impact</div>
         <h2 class="gal-h">Our Community<br>&amp; <em>What We Do</em></h2>
-        <div class="gal-filter" style="margin-top:1.25rem">
+        <div class="gal-filter">
           <button class="gf on" data-f="all">All</button>
           <button class="gf" data-f="charity">🤝 Community</button>
           <button class="gf" data-f="products">📦 Products</button>
@@ -936,11 +945,11 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
 </section>
 
 <!-- ══ CSR ══ -->
-<section id="csr" class="sec">
+<section id="csr">
   <div class="W">
     <div class="csr-wrap">
-      <div class="csr-left rv fl">
-        <div class="par-eyebrow">Giving Back</div>
+      <div class="rv fl">
+        <div class="ey">Giving Back</div>
         <h2 class="csr-h">Social<br><em>Responsibility</em></h2>
         <p class="csr-p">We believe true success means creating value not just for our clients — but for our communities and our planet.</p>
         <div class="csr-pts">
@@ -950,11 +959,9 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
           <div class="crp"><span class="crp-ic">📚</span><div><span class="crp-t">Knowledge Sharing</span><span class="crp-s">Sharing expertise to promote safer, more sustainable operations industry-wide.</span></div></div>
         </div>
       </div>
-      <div class="csr-right rv fr">
+      <div class="rv fr">
         <div class="csr-photo-grid">
-          <div class="csr-ph tall">
-            <img src="Images/Gallery/Charity/charity-3.jpeg" alt="CSR Community Outreach">
-          </div>
+          <div class="csr-ph tall"><img src="Images/Gallery/Charity/charity-3.jpeg" alt="CSR Community Outreach"></div>
           <div style="display:flex;flex-direction:column;gap:4px">
             <div class="csr-ph"><img src="Images/Gallery/Charity/charity-7.jpeg" alt="Community Support"></div>
             <div class="csr-ph"><img src="Images/Gallery/Charity/charity-12.jpeg" alt="Welfare Drive"></div>
@@ -974,19 +981,19 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
         <p class="cta-sub">Year-round supply · Quality assured · Sri Lanka wide delivery</p>
       </div>
       <div class="cta-btns">
-        <a href="#contact" class="btn-white">Contact Us Today</a>
-        <a href="#industries" class="btn-ghost-w">View Industries</a>
+        <a href="#contact" class="btn-cta-dk">Contact Us Today</a>
+        <a href="#industries" class="btn-cta-ol">View Industries</a>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ══ CONTACT ══ -->
-<section id="contact" class="sec">
+<section id="contact">
   <div class="W">
     <div class="con-wrap">
-      <div class="con-left rv fl">
-        <div class="con-eyebrow">Get in Touch</div>
+      <div class="rv fl">
+        <div class="ey">Get in Touch</div>
         <h2 class="con-h">Start a<br><em>conversation</em></h2>
         <div class="ci"><span class="ci-ico">📍</span><div class="ci-body"><strong>Address</strong><p>No 6, Lakshapana Mawatha,<br>Jayanthipura, Battaramulla, Sri Lanka</p></div></div>
         <div class="ci"><span class="ci-ico">📞</span><div class="ci-body"><strong>Phone / WhatsApp</strong><a href="tel:+94777598284">+94 777 598 284</a><a href="tel:+94777414367">+94 777 414 367</a></div></div>
@@ -1073,7 +1080,6 @@ body{background:#0C0E08;color:rgba(255,255,255,.8)}
 </div>
 
 <script>
-
 /* Nav */
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{nav.className=scrollY>80?'scrolled':''},{passive:true});
@@ -1108,21 +1114,10 @@ if(statsEl)cntObs.observe(statsEl);
 /* Parallax hero */
 window.addEventListener('scroll',()=>{
   const bg=document.querySelector('.hero-bg img');
-  if(bg)bg.style.transform=`translateY(${scrollY*.3}px)`;
+  if(bg)bg.style.transform=`translateY(${scrollY*.28}px)`;
 },{passive:true});
 
-/* Tabs */
-document.querySelectorAll('.ptab').forEach(b=>{
-  b.addEventListener('click',()=>{
-    document.querySelectorAll('.ptab').forEach(x=>x.classList.remove('on'));
-    document.querySelectorAll('.ppanel').forEach(x=>x.classList.remove('on'));
-    b.classList.add('on');
-    const p=document.getElementById('pp-'+b.dataset.t);
-    if(p){p.classList.add('on');p.querySelectorAll('.rv').forEach(el=>{el.classList.remove('on');setTimeout(()=>obs.observe(el),50);})}
-  });
-});
-
-/* Gallery filter */
+/* Gallery */
 const galWrap=document.getElementById('gal-wrap');
 const galStep=592;
 document.getElementById('gal-prev').onclick=()=>galWrap.scrollBy({left:-galStep,behavior:'smooth'});
@@ -1143,8 +1138,7 @@ document.querySelectorAll('.gf').forEach(btn=>{
 function olb(el,t,d){
   const img=el.querySelector('img');if(!img)return;
   const lbi=document.getElementById('lbi');
-  lbi.src='';
-  lbi.src=img.getAttribute('src');
+  lbi.src='';lbi.src=img.getAttribute('src');
   document.getElementById('lbt').textContent=t||'';
   document.getElementById('lbd').textContent=d||'';
   document.getElementById('lbox').classList.add('open');
@@ -1166,72 +1160,12 @@ document.addEventListener('keydown',e=>{
 
 /* Industry Panel */
 const indData={
-  rubber:{
-    eyebrow:'Core Industry — Biggest Sector',img:'https://loremflickr.com/800/500/rubber,latex,plantation?lock=5',
-    name:'Rubber &amp; Latex',
-    desc:'Sri Lanka\'s rubber and latex industry is one of our most critical sectors. We supply high-purity coagulants and antioxidants used directly on plantations and processing facilities island-wide.',
-    chems:['Formic Acid (HCOOH)','Sodium Metabisulfite (Na₂S₂O₅)','Sodium Sulphite (Na₂SO₃)'],
-    uses:[
-      {ico:'🌿',t:'Latex Coagulation',s:'Formic acid is the primary coagulant converting rubber latex into solid rubber on plantations — reliable, fast, and cost-effective.'},
-      {ico:'🔬',t:'Latex Preservation',s:'Sodium metabisulfite preserves fresh latex and prevents premature coagulation during transport from plantation to factory.'},
-      {ico:'🏭',t:'Sheet Manufacturing',s:'Sodium sulphite acts as an antioxidant in rubber sheet and crepe rubber manufacturing processes.'}
-    ]
-  },
-  personal:{
-    eyebrow:'Growing Industry',img:'https://loremflickr.com/800/500/cosmetics,skincare,beauty?lock=6',
-    name:'Personal Care',
-    desc:'We supply cosmetic-grade and high-purity ingredients to personal care manufacturers producing shampoos, body washes, skincare, and haircare products across Sri Lanka.',
-    chems:['CAPB — Cocamidopropyl Betaine','Vitamin E Acetate (Tocopheryl)','Monopropylene Glycol (USP)','Isopropyl Alcohol (IPA)','Glycerine — Vegetable (USP/BP)'],
-    uses:[
-      {ico:'✨',t:'Surfactant Systems',s:'CAPB is a mild amphoteric surfactant providing foam, mildness and skin compatibility in shampoos and body washes.'},
-      {ico:'🌿',t:'Skin &amp; Hair Nourishment',s:'Vitamin E acetate and vegetable glycerine are key moisturising and antioxidant agents in premium skincare formulations.'},
-      {ico:'💧',t:'Solvents &amp; Humectants',s:'MPG and IPA serve as versatile solvents, preservatives, and humectants across a wide range of personal care products.'}
-    ]
-  },
-  home:{
-    eyebrow:'Established Industry',img:'https://loremflickr.com/800/500/cleaning,detergent,household?lock=7',
-    name:'Home Care',
-    desc:'From surface cleaners to laundry detergents, we supply the raw materials that power Sri Lanka\'s home care manufacturing sector with consistent quality and year-round availability.',
-    chems:['Specialty Surfactants','Chelating Agents','Industrial Solvents','Specialty Processing Chemicals'],
-    uses:[
-      {ico:'🏠',t:'Cleaning Agents',s:'Surfactants and solvents form the backbone of dishwashing liquids, floor cleaners, and multi-surface spray products.'},
-      {ico:'🧴',t:'Laundry Products',s:'Specialty ingredients for detergent powders, fabric conditioners, and stain removal formulation systems.'},
-      {ico:'🔬',t:'Industrial Cleaning',s:'Stronger chemical grades for industrial and commercial cleaning product manufacturing at scale.'}
-    ]
-  },
-  food:{
-    eyebrow:'Growth Sector',img:'https://loremflickr.com/800/500/food,processing,manufacturing?lock=8',
-    name:'Food Industry',
-    desc:'Meeting international food safety standards, we supply food-grade additives and processing aids to Sri Lanka\'s food and beverage manufacturers — quality and compliance guaranteed.',
-    chems:['Sodium Metabisulfite (Food Grade)','Monopropylene Glycol (Food Grade)','Glycerine (USP/Food Grade)','Food Grade Additives &amp; Preservatives'],
-    uses:[
-      {ico:'🌾',t:'Preservation',s:'Food-grade sodium metabisulfite is an effective antioxidant and antimicrobial preservative for food, juice, and beverage products.'},
-      {ico:'💧',t:'Humectants &amp; Solvents',s:'MPG and glycerine are widely used as humectants, carrier solvents, and sweetener agents in food formulations.'},
-      {ico:'🏭',t:'Processing Aids',s:'Various food-grade processing aids supporting Sri Lanka\'s growing food and beverage manufacturing sector.'}
-    ]
-  },
-  pharma:{
-    eyebrow:'Expanding Into',img:'Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg',
-    name:'Pharmaceutical',
-    desc:'Entering the pharmaceutical sector with USP/BP grade excipients and specialty ingredients that meet the stringent quality requirements of pharmaceutical manufacturers in Sri Lanka.',
-    chems:['Isopropyl Alcohol (USP Grade)','Monopropylene Glycol (USP Grade)','Glycerine (BP/PhEur Grade)','Pharmaceutical Excipients'],
-    uses:[
-      {ico:'💊',t:'Excipients',s:'USP/BP grade glycerine and MPG serve as excipients, solvents and humectants in tablet, capsule, and liquid formulations.'},
-      {ico:'🔬',t:'Sanitisation',s:'High-purity IPA for equipment sanitisation, hand sanitiser production, and surface disinfection in pharmaceutical facilities.'},
-      {ico:'🛡️',t:'Quality Assured',s:'All pharmaceutical-grade materials supplied with full documentation including CoA, SDS, and regulatory compliance records.'}
-    ]
-  },
-  textile:{
-    eyebrow:'Established Industry',img:'Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg',
-    name:'Textile Washing',
-    desc:'Supporting Sri Lanka\'s textile and garment washing industry with specialty solvents and processing chemicals that deliver clean, consistent results at scale.',
-    chems:['Specialty Solvents','Processing Chemicals','Industrial Grade Chemicals'],
-    uses:[
-      {ico:'🧵',t:'Fabric Processing',s:'Specialty chemicals for desizing, scouring, and finishing processes in textile washing and garment factories.'},
-      {ico:'🏭',t:'Washing Operations',s:'Industrial-grade solvents and processing chemicals for large-scale garment and fabric washing facilities.'},
-      {ico:'🌿',t:'Eco-Responsible',s:'Supporting textile processors in transitioning to more environmentally responsible chemical alternatives.'}
-    ]
-  }
+  rubber:{eyebrow:'Core Industry — Biggest Sector',img:'Images/All/isuru-ranasinha-AVhFLfD_Lv8-unsplash.jpg',name:'Rubber &amp; Latex',desc:'Sri Lanka\'s rubber and latex industry is one of our most critical sectors. We supply high-purity coagulants and antioxidants used directly on plantations and processing facilities island-wide.',chems:['Formic Acid (HCOOH)','Sodium Metabisulfite (Na₂S₂O₅)','Sodium Sulphite (Na₂SO₃)'],uses:[{ico:'🌿',t:'Latex Coagulation',s:'Formic acid is the primary coagulant converting rubber latex into solid rubber on plantations — reliable, fast, and cost-effective.'},{ico:'🔬',t:'Latex Preservation',s:'Sodium metabisulfite preserves fresh latex and prevents premature coagulation during transport from plantation to factory.'},{ico:'🏭',t:'Sheet Manufacturing',s:'Sodium sulphite acts as an antioxidant in rubber sheet and crepe rubber manufacturing processes.'}]},
+  personal:{eyebrow:'Growing Industry',img:'Images/Industries/Personal Care/look-studio-TQSPgNqeCo8-unsplash.jpg',name:'Personal Care',desc:'We supply cosmetic-grade and high-purity ingredients to personal care manufacturers producing shampoos, body washes, skincare, and haircare products across Sri Lanka.',chems:['CAPB — Cocamidopropyl Betaine','Vitamin E Acetate (Tocopheryl)','Monopropylene Glycol (USP)','Isopropyl Alcohol (IPA)','Glycerine — Vegetable (USP/BP)'],uses:[{ico:'✨',t:'Surfactant Systems',s:'CAPB is a mild amphoteric surfactant providing foam, mildness and skin compatibility in shampoos and body washes.'},{ico:'🌿',t:'Skin &amp; Hair Nourishment',s:'Vitamin E acetate and vegetable glycerine are key moisturising and antioxidant agents in premium skincare formulations.'},{ico:'💧',t:'Solvents &amp; Humectants',s:'MPG and IPA serve as versatile solvents, preservatives, and humectants across a wide range of personal care products.'}]},
+  home:{eyebrow:'Established Industry',img:'Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg',name:'Home Care',desc:'From surface cleaners to laundry detergents, we supply the raw materials that power Sri Lanka\'s home care manufacturing sector with consistent quality and year-round availability.',chems:['Specialty Surfactants','Chelating Agents','Industrial Solvents','Specialty Processing Chemicals'],uses:[{ico:'🏠',t:'Cleaning Agents',s:'Surfactants and solvents form the backbone of dishwashing liquids, floor cleaners, and multi-surface spray products.'},{ico:'🧴',t:'Laundry Products',s:'Specialty ingredients for detergent powders, fabric conditioners, and stain removal formulation systems.'},{ico:'🔬',t:'Industrial Cleaning',s:'Stronger chemical grades for industrial and commercial cleaning product manufacturing at scale.'}]},
+  food:{eyebrow:'Growth Sector',img:'Images/Industries/Food Industry/orange-coffee-cocktail-white-surface.jpg',name:'Food Industry',desc:'Meeting international food safety standards, we supply food-grade additives and processing aids to Sri Lanka\'s food and beverage manufacturers — quality and compliance guaranteed.',chems:['Sodium Metabisulfite (Food Grade)','Monopropylene Glycol (Food Grade)','Glycerine (USP/Food Grade)','Food Grade Additives &amp; Preservatives'],uses:[{ico:'🌾',t:'Preservation',s:'Food-grade sodium metabisulfite is an effective antioxidant and antimicrobial preservative for food, juice, and beverage products.'},{ico:'💧',t:'Humectants &amp; Solvents',s:'MPG and glycerine are widely used as humectants, carrier solvents, and sweetener agents in food formulations.'},{ico:'🏭',t:'Processing Aids',s:'Various food-grade processing aids supporting Sri Lanka\'s growing food and beverage manufacturing sector.'}]},
+  pharma:{eyebrow:'Expanding Into',img:'Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg',name:'Pharmaceutical',desc:'Entering the pharmaceutical sector with USP/BP grade excipients and specialty ingredients that meet the stringent quality requirements of pharmaceutical manufacturers in Sri Lanka.',chems:['Isopropyl Alcohol (USP Grade)','Monopropylene Glycol (USP Grade)','Glycerine (BP/PhEur Grade)','Pharmaceutical Excipients'],uses:[{ico:'💊',t:'Excipients',s:'USP/BP grade glycerine and MPG serve as excipients, solvents and humectants in tablet, capsule, and liquid formulations.'},{ico:'🔬',t:'Sanitisation',s:'High-purity IPA for equipment sanitisation, hand sanitiser production, and surface disinfection in pharmaceutical facilities.'},{ico:'🛡️',t:'Quality Assured',s:'All pharmaceutical-grade materials supplied with full documentation including CoA, SDS, and regulatory compliance records.'}]},
+  textile:{eyebrow:'Established Industry',img:'Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg',name:'Textile Washing',desc:'Supporting Sri Lanka\'s textile and garment washing industry with specialty solvents and processing chemicals that deliver clean, consistent results at scale.',chems:['Specialty Solvents','Processing Chemicals','Industrial Grade Chemicals'],uses:[{ico:'🧵',t:'Fabric Processing',s:'Specialty chemicals for desizing, scouring, and finishing processes in textile washing and garment factories.'},{ico:'🏭',t:'Washing Operations',s:'Industrial-grade solvents and processing chemicals for large-scale garment and fabric washing facilities.'},{ico:'🌿',t:'Eco-Responsible',s:'Supporting textile processors in transitioning to more environmentally responsible chemical alternatives.'}]}
 };
 
 function openIndPanel(key){
@@ -1254,14 +1188,11 @@ function closeIndPanel(){
 
 /* Confetti */
 function burst(){
-  const cols=['#A0D400','#CCEE40','#fff','#B8973A','#78BC00'];
+  const cols=['#A0D400','#CCEE40','#fff','#78BC00'];
   for(let i=0;i<65;i++){
     const c=document.createElement('div');c.className='conf';
     const ang=(Math.random()*360)*Math.PI/180,dist=80+Math.random()*120;
-    c.style.cssText=`left:${38+Math.random()*24}%;top:${42+Math.random()*16}%;
-      background:${cols[i%cols.length]};border-radius:${Math.random()>.5?'50%':'2px'};
-      width:${5+Math.random()*6}px;height:${5+Math.random()*6}px;
-      --cd:${1+Math.random()*1.5}s;--cdl:${Math.random()*.35}s;--cx:${Math.cos(ang)*dist}px`;
+    c.style.cssText=`left:${38+Math.random()*24}%;top:${42+Math.random()*16}%;background:${cols[i%cols.length]};border-radius:${Math.random()>.5?'50%':'2px'};width:${5+Math.random()*6}px;height:${5+Math.random()*6}px;--cd:${1+Math.random()*1.5}s;--cdl:${Math.random()*.35}s;--cx:${Math.cos(ang)*dist}px`;
     document.body.appendChild(c);setTimeout(()=>c.remove(),2500);
   }
 }
@@ -1287,13 +1218,10 @@ document.querySelectorAll('.par-btn').forEach(btn=>{
   });
 });
 
-/* Keyboard accessibility for industry cards */
+/* Keyboard accessibility */
 document.querySelectorAll('.ic').forEach(el=>{
-  el.setAttribute('role','link');
-  el.setAttribute('tabindex','0');
-  el.addEventListener('keydown',e=>{
-    if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}
-  });
+  el.setAttribute('role','link');el.setAttribute('tabindex','0');
+  el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});
 });
 </script>
 </body>
