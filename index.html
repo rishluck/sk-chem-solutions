@@ -113,9 +113,10 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 #hero{height:100vh;min-height:640px;position:relative;overflow:hidden;
   display:flex;flex-direction:column}
 
-/* Background image — girl pushed to right half */
+/* Background image — scaleX(-1) mirrors the photo so girl face lands on right */
 .hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:72% center}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:35% center;
+  transform:scaleX(-1)}
 
 /* Overlay: dark on left (text readable), fades to zero on right (face clear) */
 .hero-overlay{position:absolute;inset:0;z-index:1;
