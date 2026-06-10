@@ -390,10 +390,10 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 
 /* ════════════════════ LOGO MARQUEE — logo-cloud-3 (InfiniteSlider) ════════════════════ */
 .lm-section{background:var(--bg);padding:clamp(3.5rem,6vw,5.5rem) 0;overflow:hidden}
-.lm-head{text-align:center;margin-bottom:1.5rem}
-.lm-h{font-family:'Poppins',sans-serif;font-size:clamp(1.5rem,3vw,2.2rem);
-  font-weight:400;color:var(--muted);line-height:1.3;letter-spacing:-.01em}
-.lm-h strong{font-weight:800;color:var(--ink);display:block}
+.lm-head{text-align:center;margin-bottom:1.75rem}
+.lm-h{font-family:'Poppins',sans-serif;font-size:clamp(2rem,4vw,3.2rem);
+  font-weight:800;color:var(--ink);line-height:1.02;letter-spacing:-.01em;margin-bottom:.5rem}
+.lm-h span{color:var(--lime-dk)}
 /* Faded horizontal rule — matches the Tailwind mask-image divider */
 .lm-rule{height:1px;background:var(--border);margin:0 auto;max-width:480px;
   -webkit-mask-image:linear-gradient(to right,transparent,black 30%,black 70%,transparent);
@@ -409,8 +409,8 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 .lm-wrap:hover .lm-track{animation-duration:90s}
 @keyframes lmScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .lm-item{flex-shrink:0;display:flex;align-items:center}
-.lm-item img{height:20px;width:auto;max-width:140px;object-fit:contain;
-  filter:grayscale(20%) opacity(.7);transition:filter .3s;display:block}
+.lm-item img{height:32px;width:auto;max-width:160px;object-fit:contain;
+  filter:grayscale(20%) opacity(.75);transition:filter .3s;display:block}
 .lm-wrap:hover .lm-item img{filter:grayscale(0%) opacity(1)}
 
 /* ════════════════════ PARTNERS — LogoCloud grid ════════════════════ */
@@ -956,7 +956,8 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
 <!-- ══ LOGO MARQUEE (logo-cloud-3 / InfiniteSlider) ══ -->
 <section class="lm-section">
   <div class="lm-head rv">
-    <p class="lm-h">Trusted by experts.<br><strong>Used by the leaders.</strong></p>
+    <div class="ey" style="justify-content:center">Trusted Partners</div>
+    <h2 class="lm-h">Trusted by the best,<br><span>sourced from the world</span></h2>
   </div>
   <div class="lm-rule rv d1"></div>
 
