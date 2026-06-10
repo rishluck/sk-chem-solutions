@@ -402,15 +402,22 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 .lm-wrap{overflow:hidden;padding:1.5rem 0;position:relative;
   -webkit-mask-image:linear-gradient(to right,transparent 0%,black 12%,black 88%,transparent 100%);
   mask-image:linear-gradient(to right,transparent 0%,black 12%,black 88%,transparent 100%)}
-/* Scrolling track — duplicated items for seamless loop */
-.lm-track{display:flex;align-items:center;width:max-content;gap:5rem;
-  animation:lmScroll 35s linear infinite}
-/* Slow down on hover (matches speedOnHover:25 vs speed:80 ratio) */
-.lm-wrap:hover .lm-track{animation-duration:90s}
+/* Filter tabs */
+.lm-tabs{display:flex;justify-content:center;gap:.5rem;margin-bottom:1.75rem}
+.lm-tab{padding:8px 22px;border-radius:50px;font-size:12.5px;font-weight:700;
+  border:1.5px solid var(--border);color:var(--muted);background:transparent;
+  cursor:pointer;transition:all .28s;font-family:'Poppins',sans-serif;letter-spacing:.2px}
+.lm-tab.active,.lm-tab:hover{background:linear-gradient(135deg,var(--lime-dk),var(--lime));
+  border-color:transparent;color:var(--ink)}
+/* Scrolling track */
+.lm-track{display:flex;align-items:center;width:max-content;gap:4.5rem;
+  animation:lmScroll 28s linear infinite}
+.lm-wrap:hover .lm-track{animation-duration:80s}
 @keyframes lmScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .lm-item{flex-shrink:0;display:flex;align-items:center}
-.lm-item img{height:64px;width:auto;max-width:200px;object-fit:contain;
-  filter:grayscale(15%) opacity(.8);transition:filter .3s;display:block}
+/* Match the reference: h-4 md:h-5 = 16px / 20px */
+.lm-item img{height:18px;width:auto;max-width:140px;object-fit:contain;
+  filter:grayscale(20%) opacity(.65);transition:filter .3s;display:block}
 .lm-wrap:hover .lm-item img{filter:grayscale(0%) opacity(1)}
 
 /* ════════════════════ CSR ════════════════════ */
@@ -897,42 +904,58 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
     <div class="ey" style="justify-content:center">Trusted Partners</div>
     <h2 class="lm-h">Trusted by the best,<br><span>sourced from the world</span></h2>
   </div>
-  <div class="lm-rule rv d1"></div>
 
-  <div class="lm-wrap">
+  <!-- Filter tabs -->
+  <div class="lm-tabs rv d1">
+    <button class="lm-tab active" data-lm="global">🌍 Global Suppliers</button>
+    <button class="lm-tab" data-lm="local">🇱🇰 Local Clients</button>
+  </div>
+
+  <div class="lm-rule rv d2"></div>
+
+  <!-- Global Suppliers marquee -->
+  <div class="lm-wrap" id="lm-global">
     <div class="lm-track">
-      <!-- Set 1 -->
-      <div class="lm-item"><img src="https://logo.clearbit.com/basf.com" alt="BASF" onerror="this.style.opacity='.4'"></div>
-      <div class="lm-item"><img src="Images/Partners/Local/ansell_logo.ashx.png" alt="Ansell Lanka"></div>
-      <div class="lm-item"><img src="https://logo.clearbit.com/lgchem.com" alt="LG Chem" onerror="this.style.opacity='.4'"></div>
-      <div class="lm-item"><img src="Images/Partners/Local/bellose-logo-blk.png" alt="Bellosé"></div>
+      <div class="lm-item"><img src="https://logo.clearbit.com/basf.com" alt="BASF SE" onerror="this.style.opacity='.4'"></div>
+      <div class="lm-item"><img src="https://logo.clearbit.com/basf.com" alt="BASF China" onerror="this.style.opacity='.4'"></div>
       <div class="lm-item"><img src="https://logo.clearbit.com/vancebioenergy.com" alt="Vance Group" onerror="this.style.opacity='.4'"></div>
-      <div class="lm-item"><img src="Images/Partners/Local/link-natural-logo.svg" alt="Link Natural"></div>
       <div class="lm-item"><img src="https://logo.clearbit.com/sk.com" alt="SK Pickglobal" onerror="this.style.opacity='.4'"></div>
+      <div class="lm-item"><img src="https://logo.clearbit.com/lgchem.com" alt="LG Chem" onerror="this.style.opacity='.4'"></div>
+      <div class="lm-item"><img src="https://logo.clearbit.com/luxichemical.com" alt="LUXI Chemical" onerror="this.style.opacity='.4'"></div>
+      <!-- duplicate for seamless loop -->
+      <div class="lm-item"><img src="https://logo.clearbit.com/basf.com" alt="BASF SE" onerror="this.style.opacity='.4'"></div>
+      <div class="lm-item"><img src="https://logo.clearbit.com/basf.com" alt="BASF China" onerror="this.style.opacity='.4'"></div>
+      <div class="lm-item"><img src="https://logo.clearbit.com/vancebioenergy.com" alt="Vance Group" onerror="this.style.opacity='.4'"></div>
+      <div class="lm-item"><img src="https://logo.clearbit.com/sk.com" alt="SK Pickglobal" onerror="this.style.opacity='.4'"></div>
+      <div class="lm-item"><img src="https://logo.clearbit.com/lgchem.com" alt="LG Chem" onerror="this.style.opacity='.4'"></div>
+      <div class="lm-item"><img src="https://logo.clearbit.com/luxichemical.com" alt="LUXI Chemical" onerror="this.style.opacity='.4'"></div>
+    </div>
+  </div>
+
+  <!-- Local Clients marquee (hidden by default) -->
+  <div class="lm-wrap" id="lm-local" style="display:none">
+    <div class="lm-track">
+      <div class="lm-item"><img src="Images/Partners/Local/ansell_logo.ashx.png" alt="Ansell Lanka"></div>
+      <div class="lm-item"><img src="Images/Partners/Local/logo-2.png" alt="NBC"></div>
+      <div class="lm-item"><img src="Images/Partners/Local/bellose-logo-blk.png" alt="Bellosé"></div>
+      <div class="lm-item"><img src="Images/Partners/Local/link-natural-logo.svg" alt="Link Natural"></div>
       <div class="lm-item"><img src="Images/Partners/Local/harumi-holdings-pvt-ltd-314151.jpg" alt="Dreamron"></div>
       <div class="lm-item"><img src="Images/Partners/Local/Janet_Logos_1_-02.png.avif" alt="Janet Lanka"></div>
-      <div class="lm-item"><img src="https://logo.clearbit.com/luxichemical.com" alt="LUXI Chemical" onerror="this.style.opacity='.4'"></div>
       <div class="lm-item"><img src="Images/Partners/Local/logo.webp" alt="4rever Skin Naturals"></div>
-      <div class="lm-item"><img src="Images/Partners/Local/logo-2.png" alt="NBC"></div>
       <div class="lm-item"><img src="Images/Partners/Local/sm-logo.png" alt="ACE"></div>
-      <!-- Set 2 — exact duplicate for seamless infinite loop -->
-      <div class="lm-item"><img src="https://logo.clearbit.com/basf.com" alt="BASF" onerror="this.style.opacity='.4'"></div>
+      <!-- duplicate -->
       <div class="lm-item"><img src="Images/Partners/Local/ansell_logo.ashx.png" alt="Ansell Lanka"></div>
-      <div class="lm-item"><img src="https://logo.clearbit.com/lgchem.com" alt="LG Chem" onerror="this.style.opacity='.4'"></div>
+      <div class="lm-item"><img src="Images/Partners/Local/logo-2.png" alt="NBC"></div>
       <div class="lm-item"><img src="Images/Partners/Local/bellose-logo-blk.png" alt="Bellosé"></div>
-      <div class="lm-item"><img src="https://logo.clearbit.com/vancebioenergy.com" alt="Vance Group" onerror="this.style.opacity='.4'"></div>
       <div class="lm-item"><img src="Images/Partners/Local/link-natural-logo.svg" alt="Link Natural"></div>
-      <div class="lm-item"><img src="https://logo.clearbit.com/sk.com" alt="SK Pickglobal" onerror="this.style.opacity='.4'"></div>
       <div class="lm-item"><img src="Images/Partners/Local/harumi-holdings-pvt-ltd-314151.jpg" alt="Dreamron"></div>
       <div class="lm-item"><img src="Images/Partners/Local/Janet_Logos_1_-02.png.avif" alt="Janet Lanka"></div>
-      <div class="lm-item"><img src="https://logo.clearbit.com/luxichemical.com" alt="LUXI Chemical" onerror="this.style.opacity='.4'"></div>
       <div class="lm-item"><img src="Images/Partners/Local/logo.webp" alt="4rever Skin Naturals"></div>
-      <div class="lm-item"><img src="Images/Partners/Local/logo-2.png" alt="NBC"></div>
       <div class="lm-item"><img src="Images/Partners/Local/sm-logo.png" alt="ACE"></div>
     </div>
   </div>
 
-  <div class="lm-rule rv d2" style="margin-top:.25rem"></div>
+  <div class="lm-rule" style="margin-top:.25rem"></div>
 </section>
 
 <!-- ══ GALLERY ══ -->
@@ -1122,6 +1145,8 @@ const galWrap=document.getElementById('gal-wrap');
 document.getElementById('gal-prev').onclick=()=>galWrap.scrollBy({left:-592,behavior:'smooth'});
 document.getElementById('gal-next').onclick=()=>galWrap.scrollBy({left:592,behavior:'smooth'});
 document.querySelectorAll('.gf').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.gf').forEach(b=>b.classList.remove('on'));btn.classList.add('on');const f=btn.dataset.f;document.querySelectorAll('.gci').forEach(gi=>{gi.style.display=(f==='all'||(gi.dataset.cat||'').includes(f))?'':'none';});galWrap.scrollTo({left:0,behavior:'smooth'});});});
+/* Partner marquee tabs */
+document.querySelectorAll('.lm-tab').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.lm-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const t=btn.dataset.lm;document.getElementById('lm-global').style.display=t==='global'?'':'none';document.getElementById('lm-local').style.display=t==='local'?'':'none';});});
 function olb(el,t,d){const img=el.querySelector('img');if(!img)return;const lbi=document.getElementById('lbi');lbi.src='';lbi.src=img.getAttribute('src');document.getElementById('lbt').textContent=t||'';document.getElementById('lbd').textContent=d||'';document.getElementById('lbox').classList.add('open');document.body.style.overflow='hidden';}
 function clb(e){if(!e||e.target===document.getElementById('lbox')||e.currentTarget.classList.contains('lb-x')){document.getElementById('lbox').classList.remove('open');document.body.style.overflow='';}}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('lbox').classList.remove('open');document.body.style.overflow='';closeIndPanel();}});
