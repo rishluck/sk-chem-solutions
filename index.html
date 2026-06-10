@@ -113,12 +113,18 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 #hero{height:100vh;min-height:640px;position:relative;overflow:hidden;
   display:flex;flex-direction:column}
 
-/* Background image */
+/* Background image — girl pushed to right half */
 .hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:50% 20%}
+.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:72% center}
 
-/* Dark overlay — matches the reference exactly */
-.hero-overlay{position:absolute;inset:0;z-index:1;background:rgba(0,0,0,.58)}
+/* Overlay: dark on left (text readable), fades to zero on right (face clear) */
+.hero-overlay{position:absolute;inset:0;z-index:1;
+  background:linear-gradient(to right,
+    rgba(0,0,0,.72) 0%,
+    rgba(0,0,0,.68) 35%,
+    rgba(0,0,0,.32) 58%,
+    rgba(0,0,0,.06) 78%,
+    transparent 100%)}
 
 /* Slide numbers */
 .hero-nums{position:absolute;left:clamp(1.5rem,2.5vw,2.5rem);top:50%;
@@ -129,11 +135,11 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 .hn::before{content:'';width:0;height:1px;background:var(--lime);transition:width .3s;border-radius:1px}
 .hn.on{color:rgba(255,255,255,.9)}.hn.on::before{width:16px}
 
-/* Main content */
+/* Main content — constrained to left half */
 .hero-body{flex:1;display:flex;flex-direction:column;justify-content:center;
-  padding:72px clamp(2rem,7vw,7rem) clamp(2rem,4vw,4rem);
+  padding:72px clamp(2rem,5vw,5rem) clamp(2rem,4vw,4rem);
   padding-left:calc(clamp(1.5rem,2.5vw,2.5rem) + 50px);
-  position:relative;z-index:2;max-width:960px}
+  position:relative;z-index:2;max-width:52%}
 
 /* Badge */
 .hero-badge{display:inline-flex;align-items:center;gap:.55rem;
