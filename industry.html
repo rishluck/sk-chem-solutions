@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Industry — S.K. Chem Solutions</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500;600&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -15,9 +15,9 @@ a{text-decoration:none;color:inherit}
 button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:none}
 
 :root{
-  --ink:#181A12;--leaf:#78BC00;--mid:#A0D400;--sage:#B8DE20;--fresh:#CCEE40;
-  --pale:#DCF472;--mint:#EAF9B2;--cream:#F2FBD8;--white:#fff;--bdr:#B4D840;
-  --tm:#263A10;--tl:#486618;
+  --ink:#111111;--leaf:#01BF47;--mid:#89FA58;--sage:#D3FF87;--fresh:#01BF47;
+  --pale:#E8FAF0;--mint:#F2FAF6;--cream:#F8FBF9;--white:#fff;--bdr:#c8e8d4;
+  --tm:#0a2e18;--tl:#1a4a2a;
 }
 .W{max-width:1300px;margin:0 auto;padding:0 clamp(1.5rem,5vw,4rem)}
 .sec{padding:clamp(4rem,8vw,7rem) 0}
@@ -27,31 +27,37 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
   background:var(--fresh);transform-origin:left;transform:scaleX(0);pointer-events:none}
 
 /* NAV */
-#nav{position:fixed;top:0;left:0;right:0;z-index:900;
-  padding:0 clamp(1.5rem,4vw,3.5rem);height:70px;
+#nav{position:fixed;top:0;left:0;right:0;z-index:900;height:72px;
   display:flex;align-items:center;justify-content:space-between;
-  background:rgba(46,46,44,.96);backdrop-filter:blur(20px)}
-.nav-left,.nav-right{display:flex;gap:2rem;list-style:none;flex:1}
+  padding:0 clamp(1.5rem,4vw,4rem);
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border-bottom:1px solid rgba(0,0,0,.07);
+  transition:background .4s,box-shadow .4s}
+#nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 2px 24px rgba(0,0,0,.08)}
+.nav-left,.nav-right{display:flex;gap:2rem;list-style:none;flex:1;align-items:center}
 .nav-right{justify-content:flex-end}
-.nav-left a,.nav-right a{font-size:12px;font-weight:400;color:rgba(255,255,255,.75);
-  letter-spacing:.8px;text-transform:uppercase;transition:color .3s}
-.nav-left a:hover,.nav-right a:hover{color:#fff}
-.nav-brand{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;
-  color:#fff;letter-spacing:.5px;text-align:center;white-space:nowrap}
-.nav-brand span{display:block;font-size:8px;font-weight:300;letter-spacing:2px;
-  color:rgba(255,255,255,.5);text-transform:uppercase;margin-top:1px}
-.n-cta-pill{padding:8px 20px;border:1px solid rgba(255,255,255,.3);border-radius:50px;
-  font-size:11px;font-weight:500;color:#fff;letter-spacing:.8px;text-transform:uppercase;transition:all .3s}
-.n-cta-pill:hover{background:linear-gradient(135deg,#A0D400,#CCEE40);border-color:transparent;color:var(--ink)}
+.nav-left a,.nav-right a{font-size:12.5px;font-weight:600;color:rgba(28,56,41,.65);
+  letter-spacing:.5px;text-transform:uppercase;transition:color .25s}
+.nav-left a:hover,.nav-right a:hover{color:#111}
+.nav-brand{font-family:'Poppins',sans-serif;font-size:19px;font-weight:800;
+  color:#111;letter-spacing:.2px;text-align:center;flex-shrink:0;
+  display:flex;flex-direction:column;align-items:center;line-height:1.1}
+.nav-brand span{display:block;font-size:8.5px;font-weight:400;letter-spacing:3px;
+  color:rgba(28,56,41,.45);text-transform:uppercase;margin-top:2px}
+.n-cta-pill{padding:9px 22px;border:none;border-radius:8px;
+  background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  font-size:12.5px;font-weight:700;color:#0a2e18;letter-spacing:.4px;text-transform:uppercase;transition:all .3s}
+.n-cta-pill:hover{opacity:.88;transform:translateY(-2px);box-shadow:0 6px 20px rgba(1,191,71,.35)}
 .hbg{display:none;flex-direction:column;gap:5px;padding:4px}
-.hbg span{width:22px;height:1px;background:#fff;display:block}
-.mob{display:none;position:fixed;top:70px;left:0;right:0;z-index:899;
-  background:rgba(46,46,44,.97);backdrop-filter:blur(20px);
+.hbg span{width:22px;height:1.5px;background:#111;display:block;transition:all .3s;border-radius:2px}
+.mob{display:none;position:fixed;top:72px;left:0;right:0;z-index:899;
+  background:rgba(255,255,255,.97);backdrop-filter:blur(20px);
   flex-direction:column;transform:translateY(-110%);opacity:0;pointer-events:none;transition:all .35s}
 .mob.open{transform:none;opacity:1;pointer-events:all}
-.mob a{display:block;padding:14px clamp(1.5rem,4vw,3.5rem);font-size:15px;
-  color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.05)}
-.mob a:last-child{color:var(--fresh);border:none}
+.mob a{display:block;padding:14px clamp(1.5rem,4vw,3.5rem);font-size:15px;font-weight:600;
+  color:rgba(28,56,41,.8);border-bottom:1px solid rgba(0,0,0,.06)}
+.mob a:last-child{color:var(--leaf);border:none}
 
 /* HERO */
 #ih{height:75vh;min-height:540px;position:relative;overflow:hidden;
@@ -66,52 +72,55 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .ih-breadcrumb a{color:rgba(255,255,255,.4);transition:color .3s}
 .ih-breadcrumb a:hover{color:var(--fresh)}
 .ih-breadcrumb .sep{color:rgba(255,255,255,.2)}
-.ih-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:10px;font-weight:600;
-  letter-spacing:2px;text-transform:uppercase;color:var(--fresh);
+.ih-badge{display:inline-flex;align-items:center;gap:.5rem;font-size:10px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;color:#0a2e18;
   margin-bottom:1.1rem;padding:5px 14px;border-radius:50px;
-  border:1px solid rgba(204,238,64,.42);background:rgba(204,238,64,.1);width:fit-content}
-.ih-h1{font-family:'Cormorant Garamond',serif;font-size:clamp(3.2rem,8vw,7rem);
-  font-weight:300;color:#fff;line-height:.92;margin-bottom:1.25rem}
-.ih-h1 em{font-style:italic;color:rgba(255,255,255,.8)}
-.ih-tagline{font-size:clamp(13px,1.4vw,15px);color:rgba(255,255,255,.5);
-  font-weight:300;max-width:500px;line-height:1.8}
+  background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);border:none;width:fit-content}
+.ih-h1{font-family:'Poppins',sans-serif;font-size:clamp(2.8rem,7vw,6rem);
+  font-weight:900;color:#fff;line-height:.96;margin-bottom:1.25rem;letter-spacing:-.02em}
+.ih-h1 em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ih-tagline{font-size:clamp(13px,1.4vw,15px);color:rgba(255,255,255,.55);
+  font-weight:400;max-width:500px;line-height:1.8}
 
 /* OVERVIEW */
 #ind-ov{background:var(--cream)}
 .ov-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,7rem);align-items:start}
-.ov-eyebrow{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
-  color:var(--mid);margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
-.ov-eyebrow::before{content:'';width:28px;height:2px;background:linear-gradient(90deg,#A0D400,#CCEE40);border-radius:2px}
-.ov-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3.5vw,3rem);
-  font-weight:300;color:var(--ink);line-height:1.15;margin-bottom:1.5rem}
-.ov-h em{font-style:italic;color:var(--leaf)}
-.ov-p{font-size:15px;color:var(--tm);font-weight:300;line-height:1.95;margin-bottom:1rem}
+.ov-eyebrow{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
+  color:var(--leaf);margin-bottom:1rem;display:flex;align-items:center;gap:.75rem}
+.ov-eyebrow::before{content:'';width:28px;height:2.5px;background:linear-gradient(90deg,#01BF47,#89FA58);border-radius:2px}
+.ov-h{font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,3vw,2.6rem);
+  font-weight:800;color:var(--ink);line-height:1.05;margin-bottom:1.5rem}
+.ov-h em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.ov-p{font-size:15px;color:var(--tm);font-weight:400;line-height:1.95;margin-bottom:1rem}
 .ov-stats{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-top:1.75rem}
 .ov-stat{padding:1.1rem 1rem;background:var(--white);border:1px solid var(--bdr);
   border-radius:10px;text-align:center;transition:all .3s}
 .ov-stat:hover{border-color:var(--fresh);background:var(--mint)}
-.ov-stat-n{font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300;
+.ov-stat-n{font-family:'Poppins',sans-serif;font-size:2rem;font-weight:800;
   color:var(--ink);display:block;line-height:1}
-.ov-stat-l{font-size:11px;color:var(--tl);font-weight:300;display:block;margin-top:.3rem}
+.ov-stat-l{font-size:11px;color:var(--tl);font-weight:500;display:block;margin-top:.3rem}
 .ov-quick{background:var(--ink);border-radius:16px;padding:2.25rem 2rem}
-.ov-quick-h{font-family:'Cormorant Garamond',serif;font-size:1.4rem;font-weight:400;
-  color:#fff;margin-bottom:1.5rem;font-style:italic}
+.ov-quick-h{font-family:'Poppins',sans-serif;font-size:1.15rem;font-weight:700;
+  color:#fff;margin-bottom:1.5rem}
 .ov-q-item{display:flex;align-items:flex-start;gap:.85rem;padding:.85rem 0;
   border-bottom:1px solid rgba(255,255,255,.07)}
 .ov-q-item:last-child{border:none}
 .ov-q-ico{font-size:1.15rem;flex-shrink:0;margin-top:2px}
 .ov-q-t{font-size:13.5px;font-weight:600;color:#fff;display:block;margin-bottom:3px}
-.ov-q-s{font-size:12px;color:rgba(255,255,255,.48);font-weight:300;line-height:1.65}
+.ov-q-s{font-size:12px;color:rgba(255,255,255,.48);font-weight:400;line-height:1.65}
 
 /* CHEMICALS */
 #ind-chem{background:var(--white)}
 .chem-head{text-align:center;padding:clamp(3rem,6vw,5rem) 0 0;margin-bottom:3rem}
 .chem-eyebrow{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;
   color:var(--mid);margin-bottom:1rem;display:inline-flex;align-items:center;gap:.75rem}
-.chem-eyebrow::before,.chem-eyebrow::after{content:'';width:28px;height:2px;background:linear-gradient(90deg,#A0D400,#CCEE40);border-radius:2px}
-.chem-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);
-  font-weight:300;color:var(--ink);line-height:1.15}
-.chem-h em{font-style:italic;color:var(--leaf)}
+.chem-eyebrow::before,.chem-eyebrow::after{content:'';width:28px;height:2px;background:linear-gradient(90deg,#01BF47,#89FA58);border-radius:2px}
+.chem-h{font-family:'Poppins',sans-serif;font-size:clamp(1.9rem,3.5vw,3rem);
+  font-weight:800;color:var(--ink);line-height:1.05}
+.chem-h em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .chem-row{display:grid;grid-template-columns:1fr 1fr;min-height:500px;margin-bottom:3px}
 .chem-row.rev .chem-img{order:2}.chem-row.rev .chem-txt{order:1}
 .chem-img{position:relative;overflow:hidden;min-height:420px}
@@ -125,10 +134,11 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
   font-family:monospace;font-size:11px;color:var(--fresh);
   background:var(--ink);border:none;border-radius:6px;
   padding:6px 14px;margin-bottom:1.75rem;width:fit-content;letter-spacing:.8px;font-weight:600}
-.chem-name{font-family:'Cormorant Garamond',serif;font-size:clamp(2.2rem,4vw,3.2rem);
-  font-weight:300;color:var(--ink);line-height:1.05;margin-bottom:1.25rem}
-.chem-name em{font-style:italic;color:var(--leaf)}
-.chem-desc{font-size:14.5px;color:var(--tm);font-weight:300;line-height:1.95;margin-bottom:1.75rem}
+.chem-name{font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,3.2vw,2.6rem);
+  font-weight:800;color:var(--ink);line-height:1.05;margin-bottom:1.25rem}
+.chem-name em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.chem-desc{font-size:14.5px;color:var(--tm);font-weight:400;line-height:1.9;margin-bottom:1.75rem}
 .chem-use-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem}
 .chem-use-tag{font-size:11px;padding:5px 14px;border-radius:50px;
   background:transparent;color:var(--leaf);border:1.5px solid var(--sage);font-weight:500;letter-spacing:.1px}
@@ -142,46 +152,49 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
   padding:.85rem 1.25rem;background:var(--ink);border-radius:10px}
 .chem-sup-flag{font-size:1.4rem}
 .chem-sup-txt strong{font-size:13.5px;font-weight:600;color:#fff;display:block}
-.chem-sup-txt span{font-size:11.5px;color:rgba(255,255,255,.45);font-weight:300}
+.chem-sup-txt span{font-size:11.5px;color:rgba(255,255,255,.45);font-weight:400}
 
 /* APPLICATIONS */
 #ind-apps{background:var(--ink)}
 .apps-head{text-align:center;margin-bottom:3.5rem}
 .apps-eyebrow{display:block;font-size:10px;font-weight:600;letter-spacing:2.5px;
   text-transform:uppercase;color:var(--fresh);margin-bottom:1rem}
-.apps-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.2rem);
-  font-weight:300;color:#fff;line-height:1.15}
-.apps-h em{font-style:italic;color:rgba(255,255,255,.65)}
+.apps-h{font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);
+  font-weight:800;color:#fff;line-height:1.05}
+.apps-h em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .apps-grid{display:grid;grid-template-columns:repeat(3,1fr);
   gap:1px;background:rgba(255,255,255,.06)}
 .app-card{padding:2.25rem 2rem;background:var(--ink);transition:background .35s;cursor:default}
 .app-card:hover{background:rgba(255,255,255,.04)}
 .app-ico{font-size:2rem;display:block;margin-bottom:1.1rem}
-.app-t{font-family:'Cormorant Garamond',serif;font-size:1.45rem;font-weight:400;
+.app-t{font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;
   color:#fff;margin-bottom:.65rem;line-height:1.2}
-.app-s{font-size:13px;color:rgba(255,255,255,.48);font-weight:300;line-height:1.8}
+.app-s{font-size:13px;color:rgba(255,255,255,.48);font-weight:400;line-height:1.8}
 
 /* CTA */
-#ind-cta{background:linear-gradient(135deg,#A0D400 0%,#CCEE40 100%);padding:clamp(4rem,8vw,6rem) 0;position:relative;overflow:hidden}
+#ind-cta{background:var(--ink);padding:clamp(4rem,8vw,6rem) 0;position:relative;overflow:hidden}
 #ind-cta::before{content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 70% 80% at 80% 50%,rgba(255,255,255,.18),transparent);
+  background:radial-gradient(ellipse 70% 80% at 80% 50%,rgba(1,191,71,.08),transparent);
   pointer-events:none}
 .cta-in{position:relative;z-index:1;text-align:center;max-width:700px;margin:0 auto}
-.cta-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,4vw,3.5rem);
-  color:var(--ink);font-weight:300;line-height:1.2;margin-bottom:1rem}
-.cta-h em{font-style:italic}
-.cta-p{font-size:14px;color:rgba(46,46,44,.70);font-weight:300;margin-bottom:2rem;line-height:1.8}
+.cta-h{font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,3.5vw,3rem);
+  color:#fff;font-weight:800;line-height:1.05;margin-bottom:1rem}
+.cta-h em{font-style:italic;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cta-p{font-size:14px;color:rgba(255,255,255,.5);font-weight:400;margin-bottom:2rem;line-height:1.8}
 .cta-btns{display:flex;gap:.75rem;justify-content:center;flex-wrap:wrap}
-.btn-white{display:inline-flex;align-items:center;gap:7px;padding:14px 30px;border-radius:50px;
-  background:#fff;color:var(--ink);font-size:13px;font-weight:600;transition:all .35s}
-.btn-white:hover{transform:translateY(-3px);box-shadow:0 14px 36px rgba(0,0,0,.2)}
-.btn-ghost-w{display:inline-flex;align-items:center;gap:7px;padding:14px 30px;border-radius:50px;
-  background:rgba(255,255,255,.1);color:#fff;font-size:13px;font-weight:400;
-  border:1px solid rgba(255,255,255,.25);transition:all .35s}
-.btn-ghost-w:hover{background:rgba(255,255,255,.18);transform:translateY(-3px)}
-#ind-cta .btn-white{background:var(--ink);color:#fff}
-#ind-cta .btn-ghost-w{background:rgba(46,46,44,.1);color:var(--ink);border-color:rgba(46,46,44,.28)}
-#ind-cta .btn-ghost-w:hover{background:rgba(46,46,44,.18);transform:translateY(-3px)}
+.btn-white{display:inline-flex;align-items:center;gap:7px;padding:14px 30px;border-radius:8px;
+  background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);color:#0a2e18;
+  font-size:13px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;transition:all .35s;border:none}
+.btn-white:hover{opacity:.9;transform:translateY(-3px);box-shadow:0 8px 28px rgba(1,191,71,.35)}
+.btn-ghost-w{display:inline-flex;align-items:center;gap:7px;padding:13px 28px;border-radius:8px;
+  background:transparent;color:#fff;font-size:13px;font-weight:600;letter-spacing:.3px;
+  text-transform:uppercase;border:2px solid rgba(255,255,255,.25);transition:all .35s}
+.btn-ghost-w:hover{border-color:rgba(255,255,255,.6);transform:translateY(-3px)}
+#ind-cta .btn-white{background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);color:#0a2e18}
+#ind-cta .btn-ghost-w{background:transparent;color:#fff;border-color:rgba(255,255,255,.25)}
+#ind-cta .btn-ghost-w:hover{border-color:rgba(255,255,255,.6);transform:translateY(-3px)}
 
 /* FOOTER */
 footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
@@ -191,17 +204,17 @@ footer{background:var(--ink);padding:clamp(3.5rem,7vw,5.5rem) 0 2rem}
 .ft-mark{width:36px;height:36px;border-radius:8px;
   background:linear-gradient(135deg,var(--mid),var(--fresh));
   display:flex;align-items:center;justify-content:center;
-  font-family:'Cormorant Garamond',serif;font-size:15px;font-weight:700;color:#fff}
-.ft-name{font-family:'Cormorant Garamond',serif;font-size:18px;color:#fff;font-weight:400}
-.ft-tag{font-size:13px;color:rgba(255,255,255,.4);font-weight:300;line-height:1.75;max-width:260px}
+  font-family:'Poppins',sans-serif;font-size:14px;font-weight:800;color:#fff}
+.ft-name{font-family:'Poppins',sans-serif;font-size:17px;color:#fff;font-weight:800}
+.ft-tag{font-size:13px;color:rgba(255,255,255,.4);font-weight:400;line-height:1.75;max-width:260px}
 .ft-col h5{font-size:10px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
   color:rgba(255,255,255,.25);margin-bottom:.85rem}
 .ft-col ul{list-style:none}.ft-col li{margin-bottom:.4rem}
-.ft-col a{font-size:13px;color:rgba(255,255,255,.45);font-weight:300;transition:color .3s}
+.ft-col a{font-size:13px;color:rgba(255,255,255,.45);font-weight:400;transition:color .3s}
 .ft-col a:hover{color:var(--fresh)}
 .ft-btm{display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:1rem;padding-top:1.75rem}
-.ft-copy{font-size:12px;color:rgba(255,255,255,.25);font-weight:300}
+.ft-copy{font-size:12px;color:rgba(255,255,255,.25);font-weight:400}
 .ft-pills{display:flex;gap:.5rem;flex-wrap:wrap}
 .ft-pill{font-size:11px;padding:4px 10px;border-radius:50px;
   background:rgba(255,255,255,.04);color:rgba(255,255,255,.4);
@@ -311,7 +324,6 @@ body{animation:fadeIn .5s ease both}
 <nav id="nav">
   <ul class="nav-left">
     <li><a href="index.html#about">About</a></li>
-    <li><a href="index.html#flagship">Products</a></li>
     <li><a href="index.html#industries">Industries</a></li>
   </ul>
   <a href="index.html" class="nav-brand">S.K. Chem Solutions<span>Battaramulla · Est. 2017</span></a>
@@ -324,7 +336,6 @@ body{animation:fadeIn .5s ease both}
 </nav>
 <div class="mob" id="mob">
   <a href="index.html#about" onclick="cm()">About</a>
-  <a href="index.html#flagship" onclick="cm()">Products</a>
   <a href="index.html#industries" onclick="cm()">Industries</a>
   <a href="index.html#partners" onclick="cm()">Partners</a>
   <a href="index.html#gallery" onclick="cm()">Gallery</a>
@@ -575,36 +586,36 @@ const IND={
     img:'Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg',
     tagline:'Enabling Sri Lankan manufacturers to produce powerful, reliable household cleaning and detergent products.',
     ovH:'The chemistry behind<br><em>a cleaner home</em>',
-    ovP1:'Sri Lanka\'s home care manufacturing sector produces a wide range of cleaning products for both household and industrial use. S.K. Chem Solutions enables local manufacturers to produce consistently effective, market-ready products.',
-    ovP2:'Our home care range covers surfactants and chelating agents — core ingredients that provide the cleaning power, foam performance, and formulation stability required in modern household product manufacturing.',
-    stats:[{n:'Year-round',l:'Supply'},{n:'100%',l:'Quality Assured'},{n:'Multi-use',l:'Ingredients'},{n:'B2B',l:'Supply Only'}],
+    ovP1:'Sri Lanka\'s home care sector is a major pillar of the FMCG industry. S.K. Chem Solutions supplies the surfactants and chelating agents that enable local manufacturers to produce dishwashing liquids, laundry detergents, and surface cleaners that meet the expectations of today\'s consumer.',
+    ovP2:'From CAPB for gentle, effective foam to chelating agents that ensure hard-water stability — our home care range provides manufacturers with the core ingredients to produce consistent, shelf-stable products at competitive cost, batch after batch.',
+    stats:[{n:'Year-round',l:'Supply'},{n:'200 kg',l:'Drum Packaging'},{n:'Industrial',l:'Grade'},{n:'B2B',l:'Supply Only'}],
     quickH:'Services at a Glance',
     quick:[
-      {ico:'🧼',t:'Powerful Cleaning (Surfactants)',s:'Core cleaning and foaming agents for dishwashing and surface cleaner manufacturing.'},
-      {ico:'💧',t:'Hard Water Solutions (Chelating)',s:'Water softening and stability agents for detergent manufacturing.'},
-      {ico:'🌿',t:'Eco-Responsible Options',s:'Environmentally responsible alternatives available on request.'}
+      {ico:'🧼',t:'Dishwashing Power (CAPB)',s:'Mild amphoteric surfactant for effective foam and cleaning. 200 kg drums.'},
+      {ico:'💧',t:'Hard Water Stability (Chelating)',s:'Chelating agents for consistent detergent performance across water types.'},
+      {ico:'🌿',t:'Eco-Responsible Alternatives',s:'Naturally derived and biodegradable surfactant options available on request.'}
     ],
     chems:[
-      {service:'High-Performance Dishwashing & Surface Cleaning',serviceEm:'High-Performance Dishwashing &amp; <em>Surface Cleaning</em>',chemical:'Specialty Surfactants · Anionic & Non-ionic',
+      {service:'Dishwashing & Surface Cleaning',serviceEm:'Dishwashing &amp; <em>Surface Cleaning</em>',chemical:'CAPB · Cocamidopropyl Betaine',
        img:'Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg',
-       desc:'Manufacture dishwashing liquids and surface cleaners that consumers trust to cut through grease and grime. Our surfactants deliver the cleaning power, foam density, and rinse-clean performance that make household cleaning products effective and satisfying to use.',
-       outcomes:['Superior grease-cutting power','Rich, lasting foam','Rinse-clean performance','Versatile for all surfaces'],
-       specs:[{l:'Grade',v:'Industrial'},{l:'Type',v:'Anionic / Non-ionic'},{l:'Packaging',v:'Drums / IBC tanks'},{l:'Supply',v:'Year-round'}],
-       supplier:'Global Manufacturers',flag:'🌍'},
-      {service:'Stable Detergent Formulation in Hard Water',serviceEm:'Stable Detergent <em>Formulation in Hard Water</em>',chemical:'Chelating Agents · EDTA & Alternatives',
+       desc:'Build dishwashing liquids and surface cleaners that cut through grease without harming hands. Our cosmetic-grade CAPB delivers mild, effective foam and rinse-clean performance — the same ingredient trusted by leading personal care brands, now enabling your household cleaning formulations to perform at the same standard.',
+       outcomes:['Effective grease-cutting foam','Gentle on hands & skin','Rinse-clean performance','Natural, coconut-derived origin'],
+       specs:[{l:'Active Content',v:'30% ±2%'},{l:'Grade',v:'Cosmetic / Industrial'},{l:'Packaging',v:'200 kg drums'},{l:'Docs',v:'CoA & SDS'}],
+       supplier:'Vance Group, Malaysia',flag:'🇲🇾'},
+      {service:'Detergent Stability in Hard Water',serviceEm:'Detergent <em>Stability in Hard Water</em>',chemical:'Chelating Agents · EDTA & Alternatives',
        img:'Images/Industries/Home Care/puroclean-of-fort-worth--dc38HdQR1M-unsplash.jpg',
-       desc:'Make sure your laundry and cleaning products perform reliably even in Sri Lanka\'s hard water conditions. Our chelating agents bind calcium and magnesium ions — ensuring your formulations stay stable, effective, and ready to use right out of the bottle.',
-       outcomes:['Hard water compatibility','Long-term formula stability','Consistent consumer performance','Extended shelf life'],
-       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid / Powder'},{l:'Packaging',v:'25 kg bags / drums'},{l:'Supply',v:'Year-round'}],
-       supplier:'Global Manufacturers',flag:'🌍'}
+       desc:'Ensure your laundry and cleaning products perform reliably across Sri Lanka\'s varying water conditions. Our chelating agents bind calcium and magnesium ions — preventing scale build-up, maintaining formula stability, and delivering the consistent wash performance that consumers trust from first use to last.',
+       outcomes:['Hard water compatibility','Prevents scale & residue','Long-term formula stability','Consistent wash performance'],
+       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid / Powder'},{l:'Packaging',v:'25 kg bags / drums'},{l:'Docs',v:'CoA & SDS'}],
+       supplier:'Selected Global Partners',flag:'🌍'}
     ],
     apps:[
-      {ico:'🍽️',t:'Dishwashing Products',s:'Surfactants and chelating agents combine to deliver effective, rinse-clean dishwashing liquids for household and commercial use.'},
-      {ico:'🧺',t:'Laundry Detergents',s:'Specialty ingredients for powder and liquid laundry products that work in Sri Lanka\'s hard water conditions.'},
-      {ico:'🏠',t:'Surface Care',s:'Grease-cutting surfactants for kitchen, bathroom, and multi-surface cleaning sprays that consumers rely on daily.'},
-      {ico:'🏭',t:'Industrial Cleaning',s:'Higher-concentration grades for industrial and commercial cleaning product manufacturing at scale.'},
-      {ico:'✅',t:'Stable Formulations',s:'Chelating agents help formulators achieve consistent, shelf-stable products that perform reliably from first use to last.'},
-      {ico:'📦',t:'Bulk Supply',s:'Home care ingredients supplied in drums and IBC tanks for manufacturing convenience and cost efficiency.'}
+      {ico:'🍽️',t:'Dishwashing Liquids',s:'CAPB provides effective foam, grease-cutting power, and skin mildness in household and commercial dishwashing formulations.'},
+      {ico:'🧺',t:'Laundry Detergents',s:'Surfactants and chelating agents work together in powder and liquid laundry products for reliable performance in Sri Lanka\'s hard water.'},
+      {ico:'🏠',t:'Surface Cleaners',s:'Multi-surface, bathroom, and kitchen cleaners that cut through grease and grime — built on mild, effective surfactant chemistry.'},
+      {ico:'🏭',t:'Industrial Cleaning',s:'Higher-concentration grades for industrial and commercial cleaning product manufacturing and institutional cleaning operations.'},
+      {ico:'✅',t:'Stable Formulations',s:'Chelating agents give formulators the water-conditioning performance needed for consistent, shelf-stable products across all water types.'},
+      {ico:'📦',t:'Drum & Bulk Supply',s:'Home care ingredients supplied in 200 kg drums and IBC tanks — convenient for manufacturers of all sizes.'}
     ]
   },
 
@@ -613,9 +624,9 @@ const IND={
     img:'Images/Industries/Food Industry/orange-coffee-cocktail-white-surface.jpg',
     tagline:'Enabling Sri Lankan food manufacturers to produce safer, fresher, and longer-lasting products.',
     ovH:'Food-grade quality<br><em>you can trust</em>',
-    ovP1:'Sri Lanka\'s food and beverage manufacturing sector continues to grow, with increasing demand for high-quality food-grade ingredients. S.K. Chem Solutions enables local manufacturers to produce safe, market-ready food products that meet international standards.',
-    ovP2:'Our food-grade range includes preservatives, humectants, and food-safe solvents that comply with international food safety standards — helping manufacturers extend shelf life, improve product quality, and achieve regulatory compliance.',
-    stats:[{n:'Food Safe',l:'Grade Certified'},{n:'International',l:'Standards Met'},{n:'Year-round',l:'Supply'},{n:'Full Docs',l:'CoA & SDS'}],
+    ovP1:'S.K. Chem Solutions supplies internationally certified food-grade ingredients — sourced directly from BASF Germany, SK Pickglobal Korea, and Vance Group Malaysia — to Sri Lanka\'s food and beverage manufacturers who need compliant, documented raw materials they can trust.',
+    ovP2:'Our food-grade range covers E223-certified sodium metabisulfite for preservation, GRAS-approved MPG as a humectant and solvent, and USP/Halal vegetable glycerine for sweetening and moisture control — all supplied with full CoA, SDS, and Halal certification as standard.',
+    stats:[{n:'E223',l:'Certified Grade'},{n:'Halal',l:'& USP Certified'},{n:'Year-round',l:'Supply'},{n:'Full Docs',l:'CoA & SDS'}],
     quickH:'Services at a Glance',
     quick:[
       {ico:'🥤',t:'Beverage Preservation (E223)',s:'Food-grade antioxidant preservative for juices and beverages. 25 kg bags.'},
@@ -701,36 +712,36 @@ const IND={
     img:'Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg',
     tagline:'Enabling Sri Lankan garment and textile manufacturers to achieve premium washing and finishing results.',
     ovH:'The right chemistry<br>for <em>clean textiles</em>',
-    ovP1:'Sri Lanka\'s textile and garment sector is a major contributor to the national economy. Washing plants and garment factories need reliable, high-performance chemicals to meet the exacting standards of international buyers.',
-    ovP2:'S.K. Chem Solutions supplies specialty solvents and processing chemicals that enable consistent, premium wash results — from garment finishing to pre-dyeing fabric preparation — helping manufacturers meet buyer specifications every time.',
-    stats:[{n:'B2B',l:'Supply Only'},{n:'Year-round',l:'Availability'},{n:'Industrial',l:'Grade'},{n:'Bulk',l:'Quantities'}],
+    ovP1:'Sri Lanka\'s textile and garment sector is a cornerstone of the national export economy. Washing plants and garment factories supplying international brands require chemicals that deliver consistent, premium results — with reliable supply and full quality documentation.',
+    ovP2:'S.K. Chem Solutions supplies high-purity solvents and processing chemicals that enable consistent wash quality, effective pre-treatment, and premium finishing — so manufacturers can meet international buyer specifications every time, with zero compromise on quality.',
+    stats:[{n:'≥99.7%',l:'Purity Grade'},{n:'Year-round',l:'Availability'},{n:'160 kg',l:'Drum Packaging'},{n:'Bulk',l:'Industrial Supply'}],
     quickH:'Services at a Glance',
     quick:[
-      {ico:'👔',t:'Garment Washing & Finishing',s:'Specialty solvents for premium wash effects on denim and garments. Drums / IBC tanks.'},
-      {ico:'🧵',t:'Fabric Scouring & Pre-Treatment',s:'Processing chemicals for pre-dyeing fabric preparation.'},
-      {ico:'🌿',t:'Eco-Responsible Options',s:'Environmentally responsible alternatives available on request.'}
+      {ico:'👔',t:'Garment Washing (IPA Solvent)',s:'High-purity IPA solvent for consistent wash effects on denim and garments. 160 kg drums.'},
+      {ico:'🧵',t:'Fabric Scouring & Pre-Treatment',s:'Processing chemicals for effective pre-dyeing fabric preparation.'},
+      {ico:'🌿',t:'Eco-Responsible Alternatives',s:'Environmentally responsible processing chemical options available on request.'}
     ],
     chems:[
-      {service:'Garment Washing & Denim Finishing',serviceEm:'Garment Washing &amp; Denim <em>Finishing</em>',chemical:'Specialty Solvents · Industrial Grade',
+      {service:'Garment Washing & Denim Finishing',serviceEm:'Garment Washing &amp; <em>Denim Finishing</em>',chemical:'Isopropyl Alcohol · C₃H₈O (IPA)',
        img:'Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg',
-       desc:'Deliver the premium wash effects that international buyers expect. Our industrial-grade specialty solvents enable consistent stone wash, enzyme wash, and garment finishing — so your garments arrive at buyers with the right look, feel, and quality, on time, every time.',
-       outcomes:['Consistent wash effects','Premium finish quality','Compatible with all machinery','Bulk industrial supply'],
-       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid'},{l:'Packaging',v:'Drums / IBC tanks'},{l:'Supply',v:'Year-round'}],
-       supplier:'Global Manufacturers',flag:'🌍'},
+       desc:'Achieve the consistent, premium wash effects that international buyers demand. Our high-purity IPA from LG Chem Korea is an industrial-grade solvent that enables reliable stone wash, enzyme wash, and denim finishing — ensuring garments leave your facility with the right look, feel, and quality, every batch.',
+       outcomes:['Consistent wash effects','Premium denim finishing','Compatible with all machinery','Full purity documentation'],
+       specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'Industrial / High Purity'},{l:'Packaging',v:'160 kg drums'},{l:'Docs',v:'CoA & SDS'}],
+       supplier:'LG Chem, Korea',flag:'🇰🇷'},
       {service:'Fabric Scouring & Pre-Treatment',serviceEm:'Fabric Scouring &amp; <em>Pre-Treatment</em>',chemical:'Processing Chemicals · Specialty Blend',
        img:'Images/Industries/Textile Washing/engin-akyurt-8g__j-nqWXc-unsplash.jpg',
-       desc:'Prepare your grey fabric for dyeing with thorough, efficient scouring and pre-treatment. Our processing chemicals remove sizing agents, natural waxes, and impurities — ensuring even dye uptake, superior colour consistency, and a high-quality finish that your buyers can see.',
-       outcomes:['Even dye uptake','Superior colour quality','Impurity-free fabric','Faster processing cycles'],
-       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid / Powder'},{l:'Packaging',v:'As per requirement'},{l:'Supply',v:'Year-round'}],
-       supplier:'Global Manufacturers',flag:'🌍'}
+       desc:'Prepare grey fabric for dyeing with thorough, efficient scouring that removes sizing agents, natural waxes, and impurities. Our processing chemicals ensure even dye uptake, superior colour consistency, and a high-quality finish — so every batch meets the standards your buyers expect.',
+       outcomes:['Even dye uptake','Superior colour consistency','Impurity-free fabric surface','Faster processing cycles'],
+       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid / Powder'},{l:'Packaging',v:'As per requirement'},{l:'Docs',v:'CoA & SDS'}],
+       supplier:'Selected Global Partners',flag:'🌍'}
     ],
     apps:[
-      {ico:'🧵',t:'Fabric Desizing',s:'Removing sizing agents from grey fabric prior to dyeing — ensuring uniform dye uptake and superior finish quality for every batch.'},
-      {ico:'🏭',t:'Scouring & Pre-treatment',s:'Removing natural impurities, waxes, and oils from raw fabric to prepare it perfectly for dyeing and finishing.'},
-      {ico:'👔',t:'Garment Washing',s:'Specialty solvents and surfactants for denim washing, stone wash, enzyme wash, and premium garment finishing effects.'},
-      {ico:'✅',t:'Quality Finishing',s:'Finishing chemicals that impart the right hand-feel, appearance, and durability to the final fabric or garment.'},
-      {ico:'🌿',t:'Eco-Responsible Options',s:'Supporting the industry\'s transition toward more sustainable and environmentally responsible processing chemicals.'},
-      {ico:'📦',t:'Bulk Industrial Supply',s:'Available in drums and IBC tanks to support continuous, high-volume textile manufacturing operations island-wide.'}
+      {ico:'🧵',t:'Fabric Desizing',s:'Removing sizing agents from grey fabric prior to dyeing — ensuring uniform dye uptake and consistent finish quality for every production batch.'},
+      {ico:'🏭',t:'Scouring & Pre-Treatment',s:'Removing natural impurities, waxes, and oils from raw fabric to prepare it perfectly for dyeing and premium finishing.'},
+      {ico:'👔',t:'Garment & Denim Washing',s:'High-purity IPA for denim washing, stone wash, and enzyme wash — delivering consistent premium wash effects for export-quality garments.'},
+      {ico:'✅',t:'Quality Finishing',s:'Chemical finishing that imparts the right hand-feel, appearance, and durability to the final fabric or garment, meeting international buyer specs.'},
+      {ico:'🌿',t:'Eco-Responsible Options',s:'Supporting the industry\'s transition toward more sustainable and environmentally responsible processing chemical alternatives.'},
+      {ico:'📦',t:'Bulk Industrial Supply',s:'Available in 160 kg drums and bulk quantities to support continuous, high-volume textile and garment manufacturing operations island-wide.'}
     ]
   }
 };
@@ -832,5 +843,6 @@ setTimeout(()=>{
   if(grid) appObs.observe(grid);
 },100);
 </script>
+<script src="feedback.js"></script>
 </body>
 </html>

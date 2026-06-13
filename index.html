@@ -13,11 +13,11 @@
 html{scroll-behavior:smooth}
 
 :root{
-  --lime:#A8D400;
-  --lime-lt:#C2EC00;
-  --lime-dk:#86AB00;
-  --lime-pale:#F2FBCC;
-  --lime-soft:#F7FDE5;
+  --lime:#89FA58;
+  --lime-lt:#D3FF87;
+  --lime-dk:#01BF47;
+  --lime-pale:#E8FAF0;
+  --lime-soft:#F2FAF6;
   --ink:#111111;
   --ink2:#2E2E2E;
   --muted:#646464;
@@ -40,23 +40,24 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 .sec{padding:clamp(4rem,7vw,6.5rem) 0}
 
 /* ── BUTTONS ── */
-.btn-lime{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:50px;
-  background:linear-gradient(135deg,var(--lime-dk),var(--lime),var(--lime-lt));
-  color:var(--ink);font-size:14px;font-weight:700;letter-spacing:.2px;
-  transition:all .28s;box-shadow:0 4px 20px rgba(168,212,0,.38),0 1px 0 rgba(255,255,255,.4) inset}
-.btn-lime:hover{transform:translateY(-3px);box-shadow:0 10px 32px rgba(168,212,0,.55)}
-.btn-dark{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:50px;
-  background:var(--ink);color:#fff;font-size:14px;font-weight:600;
-  transition:all .28s;box-shadow:0 4px 16px rgba(0,0,0,.2)}
-.btn-dark:hover{background:#222;transform:translateY(-3px);box-shadow:0 10px 28px rgba(0,0,0,.3)}
-.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:50px;
-  background:transparent;color:var(--ink);font-size:14px;font-weight:600;
-  border:2px solid var(--ink);transition:all .28s}
-.btn-outline:hover{background:var(--ink);color:#fff;transform:translateY(-2px)}
-.btn-outline-lime{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:50px;
-  background:transparent;color:var(--lime-dk);font-size:14px;font-weight:700;
-  border:2px solid var(--lime);transition:all .28s}
-.btn-outline-lime:hover{background:var(--lime);color:var(--ink);transform:translateY(-2px)}
+.btn-lime{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:8px;
+  background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  color:#0a2e18;font-size:14px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;
+  border:none;transition:all .28s}
+.btn-lime:hover{opacity:.88;transform:translateY(-3px);box-shadow:0 8px 28px rgba(1,191,71,.4)}
+.btn-dark{display:inline-flex;align-items:center;gap:8px;padding:13px 30px;border-radius:8px;
+  background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  color:#0a2e18;font-size:14px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;
+  border:none;transition:all .28s}
+.btn-dark:hover{opacity:.88;transform:translateY(-3px);box-shadow:0 8px 28px rgba(1,191,71,.4)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:8px;
+  background:transparent;color:var(--ink);font-size:14px;font-weight:600;letter-spacing:.3px;
+  text-transform:uppercase;border:2px solid rgba(28,56,41,.3);transition:all .28s}
+.btn-outline:hover{border-color:var(--ink);transform:translateY(-2px)}
+.btn-outline-lime{display:inline-flex;align-items:center;gap:8px;padding:12px 28px;border-radius:8px;
+  background:transparent;color:#0a2e18;font-size:14px;font-weight:700;letter-spacing:.3px;
+  text-transform:uppercase;border:2px solid rgba(1,191,71,.5);transition:all .28s}
+.btn-outline-lime:hover{border-color:#01BF47;transform:translateY(-2px)}
 
 /* ── EYEBROW ── */
 .ey{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;
@@ -74,50 +75,56 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
 @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.6)}}
 
-/* ════════════════════ NAV — transparent over hero ════════════════════ */
+/* ════════════════════ NAV — frosted glass, always visible ════════════════════ */
 #nav{position:fixed;top:0;left:0;right:0;z-index:900;height:72px;
   display:flex;align-items:center;justify-content:space-between;
   padding:0 clamp(1.5rem,4vw,4rem);
-  transition:all .4s}
-#nav.scrolled{background:rgba(12,12,8,.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+  background:rgba(255,255,255,.82);
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border-bottom:1px solid rgba(0,0,0,.07);
+  transition:background .4s,box-shadow .4s}
+#nav.scrolled{background:rgba(255,255,255,.96);
+  box-shadow:0 2px 24px rgba(0,0,0,.08)}
 .nav-left,.nav-right{display:flex;gap:2rem;list-style:none;flex:1;align-items:center}
 .nav-right{justify-content:flex-end}
-.nav-left a,.nav-right a{font-size:12.5px;font-weight:500;color:rgba(255,255,255,.75);
+.nav-left a,.nav-right a{font-size:12.5px;font-weight:600;color:rgba(28,56,41,.65);
   letter-spacing:.5px;text-transform:uppercase;transition:color .25s}
-.nav-left a:hover,.nav-right a:hover{color:#fff}
+.nav-left a:hover,.nav-right a:hover{color:var(--ink)}
 .nav-brand{font-family:'Poppins',sans-serif;font-size:19px;font-weight:800;
-  color:#fff;letter-spacing:.2px;text-align:center;flex-shrink:0;
+  color:var(--ink);letter-spacing:.2px;text-align:center;flex-shrink:0;
   display:flex;flex-direction:column;align-items:center;line-height:1.1}
 .nav-brand span{font-size:8.5px;font-weight:400;letter-spacing:3px;
-  color:rgba(255,255,255,.5);text-transform:uppercase;margin-top:2px}
-/* Light green glass nav CTA */
+  color:rgba(28,56,41,.45);text-transform:uppercase;margin-top:2px}
+/* Gradient lime nav CTA */
 .n-cta{padding:9px 22px;
-  background:rgba(168,212,0,.15);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  border:1.5px solid rgba(168,212,0,.55);
-  color:#fff !important;border-radius:8px;
-  font-size:12.5px !important;font-weight:600 !important;letter-spacing:.4px;
+  background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  border:none;
+  color:#0a2e18 !important;border-radius:8px;
+  font-size:12.5px !important;font-weight:700 !important;letter-spacing:.4px;
   transition:all .28s !important}
-.n-cta:hover{background:rgba(168,212,0,.28) !important;border-color:rgba(168,212,0,.9) !important;
-  transform:translateY(-2px) !important}
+.n-cta:hover{opacity:.88;transform:translateY(-2px) !important;
+  box-shadow:0 6px 20px rgba(1,191,71,.35) !important}
 .hbg{display:none;flex-direction:column;gap:5px;padding:4px}
-.hbg span{width:22px;height:1.5px;background:#fff;display:block;transition:all .3s;border-radius:2px}
+.hbg span{width:22px;height:1.5px;background:var(--ink);display:block;transition:all .3s;border-radius:2px}
 .mob{display:none;position:fixed;top:72px;left:0;right:0;z-index:899;
-  background:rgba(12,12,8,.96);backdrop-filter:blur(20px);
+  background:rgba(255,255,255,.97);backdrop-filter:blur(20px);
   flex-direction:column;transform:translateY(-110%);opacity:0;pointer-events:none;transition:all .35s}
 .mob.open{transform:none;opacity:1;pointer-events:all}
 .mob a{display:block;padding:14px clamp(1.5rem,4vw,3.5rem);font-size:15px;font-weight:600;
-  color:rgba(255,255,255,.8);border-bottom:1px solid rgba(255,255,255,.07)}
-.mob a:last-child{color:var(--lime-lt);border:none}
+  color:rgba(28,56,41,.8);border-bottom:1px solid rgba(0,0,0,.06)}
+.mob a:last-child{color:var(--leaf);border:none}
 
 /* ════════════════════ HERO — full-screen dark overlay ════════════════════ */
 #hero{height:100vh;min-height:640px;position:relative;overflow:hidden;
   display:flex;flex-direction:column}
 
-/* Background image — scaleX(-1) mirrors the photo so girl face lands on right */
 .hero-bg{position:absolute;inset:0;z-index:0}
-.hero-bg img{width:100%;height:100%;object-fit:cover;object-position:35% center;
-  transform:scaleX(-1)}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.2s ease}
+.hero-slide.active{opacity:1}
+.hero-slide img{width:100%;height:100%;object-fit:cover;object-position:70% center;
+  transform-origin:center;animation:none}
+.hero-slide.active img{animation:kbZoom 7s ease-out forwards}
+@keyframes kbZoom{from{transform:scale(1)}to{transform:scale(1.07)}}
 
 /* Overlay: dark on left (text readable), fades to zero on right (face clear) */
 .hero-overlay{position:absolute;inset:0;z-index:1;
@@ -133,7 +140,8 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
   transform:translateY(-50%);z-index:3;
   display:flex;flex-direction:column;gap:1.4rem}
 .hn{font-size:10px;color:rgba(255,255,255,.3);letter-spacing:1px;
-  display:flex;align-items:center;gap:6px;transition:color .3s;font-weight:600}
+  display:flex;align-items:center;gap:6px;transition:color .3s;font-weight:600;
+  cursor:pointer;user-select:none}
 .hn::before{content:'';width:0;height:1px;background:var(--lime);transition:width .3s;border-radius:1px}
 .hn.on{color:rgba(255,255,255,.9)}.hn.on::before{width:16px}
 
@@ -156,31 +164,39 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
   animation:pulse 2s ease-in-out infinite;flex-shrink:0;
   box-shadow:0 0 8px rgba(168,212,0,.8)}
 
-/* Title — matching the reference weight and size */
-.hero-h1{font-family:'Poppins',sans-serif;font-weight:800;line-height:1.02;
-  color:#fff;font-size:clamp(3rem,7.5vw,7rem);letter-spacing:-.025em;
-  margin-bottom:1.5rem;
+/* Title — all-caps, very bold */
+.hero-h1{font-family:'Poppins',sans-serif;font-weight:900;line-height:1.0;
+  color:#fff;font-size:clamp(2.4rem,4.2vw,5rem);letter-spacing:-.02em;
+  text-transform:uppercase;margin-bottom:1.5rem;
   opacity:0;animation:fadeUp .85s .3s forwards}
 .hero-h1 em{font-style:normal;display:inline}
 
-.hero-sub{font-size:clamp(15px,1.3vw,18px);color:rgba(255,255,255,.72);
-  font-weight:400;line-height:1.85;max-width:560px;margin-bottom:2.5rem;
+.hero-sub{font-size:clamp(13px,1.1vw,16px);color:rgba(255,255,255,.68);
+  font-weight:400;line-height:1.85;max-width:520px;margin-bottom:2.5rem;
+  text-transform:uppercase;letter-spacing:.4px;
   opacity:0;animation:fadeUp .85s .48s forwards}
 
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap;
   opacity:0;animation:fadeUp .85s .64s forwards}
 
-/* Light green glass buttons — exactly as requested */
-.btn-glass-lime{display:inline-flex;align-items:center;gap:8px;
-  padding:14px 32px;border-radius:8px;
-  background:rgba(168,212,0,.14);
-  backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
-  border:1.5px solid rgba(168,212,0,.52);
-  color:#fff;font-size:15px;font-weight:600;letter-spacing:.2px;
-  transition:all .28s}
-.btn-glass-lime:hover{background:rgba(168,212,0,.26);
-  border-color:rgba(168,212,0,.9);transform:translateY(-3px);
-  box-shadow:0 8px 28px rgba(168,212,0,.22)}
+/* Hero primary — gradient */
+.btn-hero-primary{display:inline-flex;align-items:center;gap:8px;
+  padding:14px 34px;border-radius:8px;
+  background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  border:none;
+  color:#0a2e18;font-size:14px;font-weight:700;letter-spacing:.3px;
+  text-transform:uppercase;transition:all .28s}
+.btn-hero-primary:hover{opacity:.88;
+  transform:translateY(-3px);box-shadow:0 8px 28px rgba(1,191,71,.4)}
+
+/* Hero secondary — ghost white */
+.btn-hero-ghost{display:inline-flex;align-items:center;gap:8px;
+  padding:14px 34px;border-radius:8px;
+  background:transparent;border:2px solid rgba(255,255,255,.55);
+  color:#fff;font-size:14px;font-weight:600;letter-spacing:.3px;
+  text-transform:uppercase;transition:all .28s}
+.btn-hero-ghost:hover{background:rgba(255,255,255,.12);border-color:#fff;
+  transform:translateY(-3px)}
 
 .hero-scroll{margin-top:3rem;display:flex;align-items:center;gap:.85rem;
   opacity:0;animation:fadeUp .7s 1s forwards}
@@ -230,7 +246,8 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 .why-top .ey{justify-content:center}.why-top .ey::before{display:none}
 .why-h{font-family:'Poppins',sans-serif;font-size:clamp(2.4rem,5vw,4rem);
   font-weight:800;color:var(--ink);line-height:1;letter-spacing:-.01em;margin-bottom:.9rem}
-.why-h em{font-style:normal;color:var(--lime-dk)}
+.why-h em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .why-sub{font-size:15px;color:var(--muted);line-height:1.8;font-weight:400}
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .why-card{padding:2.5rem 2rem 2rem;border-radius:16px;background:var(--bg);
@@ -262,7 +279,8 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
   display:flex;flex-direction:column;justify-content:center;background:var(--bg)}
 .about-h{font-family:'Poppins',sans-serif;font-size:clamp(2.2rem,4.5vw,3.6rem);
   font-weight:800;line-height:1.02;color:var(--ink);margin-bottom:1.4rem;letter-spacing:-.01em}
-.about-h em{font-style:normal;color:var(--lime-dk)}
+.about-h em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .about-p{font-size:15px;color:var(--muted);font-weight:400;line-height:1.88;margin-bottom:.9rem}
 .about-list{margin-top:1.75rem;display:flex;flex-direction:column;gap:.4rem}
 .ach{display:flex;align-items:flex-start;gap:.9rem;padding:.85rem 1rem;
@@ -279,114 +297,115 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
   font-weight:800;color:var(--lime-dk)}
 
 /* ════════════════════ INDUSTRIES ════════════════════ */
-#industries{background:var(--bg);padding:clamp(4rem,7vw,6rem) 0 0}
-.ind-intro{margin-bottom:2.5rem;display:flex;align-items:flex-end;
-  justify-content:space-between;flex-wrap:wrap;gap:2rem;
-  padding:0 clamp(1.5rem,5vw,4rem)}
-.ind-h{font-family:'Poppins',sans-serif;font-size:clamp(3rem,6.5vw,6.5rem);
-  font-weight:900;color:var(--ink);line-height:.9;letter-spacing:-.02em}
-.ind-h em{font-style:normal;color:var(--lime-dk)}
-.ind-side-text{font-size:14px;color:var(--muted);font-weight:400;
-  max-width:280px;line-height:1.85;text-align:right}
-
-/* ── INDUSTRY CARD GRID ── */
-/* Cards: image on top (FULL BRIGHTNESS), info panel below — NO overlays */
-.ind-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;
-  background:var(--border-lt)}
-.ic{background:var(--bg);display:flex;flex-direction:column;
-  cursor:pointer;overflow:hidden;transition:transform .3s,box-shadow .3s;
-  position:relative}
-.ic:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);z-index:2}
-
-/* Image container — FULL BRIGHTNESS, zero dark shade */
-.ic-img{position:relative;overflow:hidden;height:220px;flex-shrink:0}
-.ic:nth-child(1) .ic-img,
-.ic:nth-child(6) .ic-img{height:300px}
-.ic-img img{width:100%;height:100%;object-fit:cover;
-  transition:transform .7s cubic-bezier(.23,1,.32,1);
-  filter:none}  /* crystal clear — NO filter, NO overlay */
-.ic:hover .ic-img img{transform:scale(1.07)}
-
-/* Lime bar that slides in from left on hover — replaces dark overlay */
-.ic-img::after{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;
-  background:linear-gradient(90deg,var(--lime-dk),var(--lime),var(--lime-lt));
-  transform:scaleX(0);transform-origin:left;
-  transition:transform .5s cubic-bezier(.23,1,.32,1);z-index:2;
-  box-shadow:0 0 12px rgba(168,212,0,.6)}
-.ic:hover .ic-img::after{transform:scaleX(1)}
-
-/* Badge on image — top-left only, small and light */
+#industries{background:var(--bg);padding:clamp(4rem,7vw,6rem) 0 clamp(3rem,5vw,5rem);overflow:hidden}
+.ind-intro{margin-bottom:2.5rem;padding:0 clamp(1.5rem,5vw,4rem);
+  display:flex;align-items:flex-end;justify-content:space-between;gap:1.5rem}
+.ind-intro-left{display:flex;flex-direction:column;gap:.5rem}
+.ind-h-row{display:flex;align-items:center;gap:1.5rem}
+.ind-h{font-family:'Poppins',sans-serif;font-size:clamp(2rem,3.2vw,3.2rem);
+  font-weight:800;color:var(--ink);line-height:1.05;letter-spacing:-.02em;margin:0}
+.ind-h em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+/* Nav buttons */
+.ind-nav{display:flex;gap:.5rem;align-items:center;flex-shrink:0}
+.ind-nav-btn{width:42px;height:42px;border-radius:50%;border:1.5px solid var(--border);
+  background:var(--bg);color:var(--ink);cursor:pointer;
+  display:flex;align-items:center;justify-content:center;
+  transition:all .25s;line-height:1;font-size:1rem}
+.ind-nav-btn:hover{background:var(--ink);border-color:var(--ink);color:#fff}
+.ind-nav-btn:disabled{opacity:.3;pointer-events:none}
+/* Carousel */
+.ind-carousel{display:flex;gap:1rem;overflow-x:auto;scroll-behavior:smooth;
+  scrollbar-width:none;-ms-overflow-style:none;
+  padding-left:clamp(1.5rem,5vw,4rem);
+  padding-right:2rem;padding-bottom:2.5rem}
+.ind-carousel::-webkit-scrollbar{display:none}
+/* Cards */
+.ind-card{flex:0 0 380px;max-width:82vw;cursor:pointer;
+  display:flex;flex-direction:column;transition:transform .3s}
+.ind-card:hover{transform:translateY(-6px)}
+.ind-card-img{position:relative;aspect-ratio:3/2;overflow:hidden;
+  border-radius:14px;background:var(--pale)}
+.ind-card-img img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .4s ease;transform-origin:bottom}
+.ind-card:hover .ind-card-img img{transform:scale(1.05)}
+.ind-card-body{padding:1.1rem 0 0;display:flex;flex-direction:column;flex:1}
+.ind-card-title{font-family:'Poppins',sans-serif;font-size:1.25rem;font-weight:700;
+  color:var(--ink);margin-bottom:.45rem;line-height:1.2}
+.ind-card-sum{font-size:13px;color:var(--muted);line-height:1.75;
+  margin-bottom:.75rem;
+  display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ind-card-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-bottom:1rem}
+.ind-card-link{display:flex;align-items:center;gap:.45rem;font-size:13px;
+  font-weight:600;color:var(--ink);margin-top:auto}
+.ind-card-link span{transition:transform .25s;display:inline-block}
+.ind-card:hover .ind-card-link span{transform:translateX(5px)}
+/* Badge */
 .ic-badge{position:absolute;top:12px;left:14px;z-index:3;
   font-size:9px;font-weight:700;letter-spacing:1px;text-transform:uppercase;
   padding:5px 12px;border-radius:50px;
-  background:rgba(168,212,0,.9);color:var(--ink);
-  box-shadow:0 2px 10px rgba(168,212,0,.4)}
-.ic-badge.main{background:linear-gradient(135deg,var(--lime-dk),var(--lime))}
-.ic-badge.grow{background:linear-gradient(135deg,var(--lime),var(--lime-lt))}
-
-/* Explore arrow — top right of image */
-.ic-explore{position:absolute;top:12px;right:14px;z-index:3;
-  width:34px;height:34px;border-radius:50%;
-  background:rgba(255,255,255,.9);border:1px solid var(--border);
-  color:var(--ink);font-size:.85rem;
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;transform:scale(.6) rotate(-45deg);
-  transition:all .38s cubic-bezier(.23,1,.32,1);
-  box-shadow:var(--sh-sm)}
-.ic:hover .ic-explore{opacity:1;transform:scale(1) rotate(0deg)}
-
-/* Info panel — white, below image */
-.ic-info{padding:1.25rem 1.5rem 1.6rem;background:var(--bg);
-  flex:1;display:flex;flex-direction:column;gap:.5rem;
-  border-top:1px solid var(--border-lt);transition:background .25s}
-.ic:hover .ic-info{background:var(--lime-soft)}
-.ic-name{font-family:'Poppins',sans-serif;
-  font-size:clamp(1.2rem,1.6vw,1.55rem);font-weight:800;
-  color:var(--ink);line-height:1.05;letter-spacing:-.01em}
-.ic-chem{font-size:11px;color:var(--muted);font-weight:400;line-height:1.5}
-.ic-tags{display:flex;flex-wrap:wrap;gap:.3rem;margin-top:.2rem}
+  background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);color:#0a2e18;
+  box-shadow:0 2px 10px rgba(1,191,71,.35)}
+.ic-badge.main{background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87)}
+.ic-badge.grow{background:linear-gradient(135deg,#89FA58,#D3FF87)}
 .ic-tag{font-size:9.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;
-  padding:4px 10px;border-radius:50px;
+  padding:3px 10px;border-radius:50px;
   background:var(--lime-pale);border:1px solid var(--border);color:var(--lime-dk)}
-.ic:hover .ic-tag{background:linear-gradient(135deg,var(--lime-dk),var(--lime));
-  color:var(--ink);border-color:transparent}
 
 /* ════════════════════ GALLERY ════════════════════ */
 #gallery{background:var(--bg-alt);padding:clamp(4rem,7vw,6.5rem) 0}
 .gal-h{font-family:'Poppins',sans-serif;font-size:clamp(2.2rem,4.5vw,3.8rem);
   font-weight:800;color:var(--ink);line-height:1.02;letter-spacing:-.01em}
-.gal-h em{font-style:normal;color:var(--lime-dk)}
+.gal-h em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .gal-intro{margin-bottom:2.5rem;display:flex;align-items:flex-end;
   justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
 .gal-filter{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}
 .gf{padding:7px 17px;border-radius:50px;font-size:12.5px;font-weight:600;
   border:1.5px solid var(--border);color:var(--muted);background:var(--bg);
   transition:.25s;cursor:pointer}
-.gf.on{background:linear-gradient(135deg,var(--lime-dk),var(--lime));
-  border-color:transparent;color:var(--ink)}
+.gf.on{background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  border-color:transparent;color:#0a2e18}
 .gf:hover:not(.on){border-color:var(--lime);color:var(--lime-dk)}
-.gal-track-wrap{overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none;border-radius:12px}
-.gal-track-wrap::-webkit-scrollbar{display:none}
-.gal-track{display:grid;grid-template-rows:repeat(2,210px);
-  grid-auto-columns:290px;grid-auto-flow:column;gap:6px;width:max-content}
-.gci{overflow:hidden;cursor:pointer;position:relative;background:var(--border-lt);border-radius:10px}
-/* Gallery images — FULL BRIGHTNESS, no dark overlay by default */
-.gci img{width:100%;height:100%;object-fit:cover;object-position:center 60%;
-  transition:transform .5s;filter:none}
-.gci:hover img{transform:scale(1.07)}
-/* Overlay only appears on hover for label readability */
-.gci-ov{position:absolute;inset:0;
-  background:linear-gradient(to top,rgba(17,17,17,.65) 0%,transparent 50%);
-  opacity:0;transition:opacity .3s;display:flex;align-items:flex-end;padding:.75rem 1rem}
-.gci:hover .gci-ov{opacity:1}
-.gci-lbl{color:#fff;font-size:12px;font-weight:700;letter-spacing:.2px}
-.gal-nav{display:flex;gap:.5rem}
-.gal-btn{width:42px;height:42px;border-radius:50%;
-  border:1.5px solid var(--border);background:var(--bg);
-  color:var(--ink2);cursor:pointer;font-size:1.1rem;
-  display:flex;align-items:center;justify-content:center;transition:.25s;line-height:1}
-.gal-btn:hover{background:linear-gradient(135deg,var(--lime-dk),var(--lime));
-  border-color:transparent;color:var(--ink)}
+/* ── Bento Grid ── */
+.bento-grid{display:grid;grid-template-columns:repeat(4,1fr);
+  grid-auto-rows:80px;gap:6px;grid-auto-flow:dense}
+.bento-item{position:relative;overflow:hidden;border-radius:12px;
+  cursor:pointer;background:var(--border-lt)}
+.bi-r2{grid-row:span 2}
+.bi-r3{grid-row:span 3}
+.bi-c2{grid-column:span 2}
+.bento-item img{width:100%;height:100%;object-fit:cover;display:block;
+  transition:transform .5s ease}
+.bento-item:hover img{transform:scale(1.06)}
+.bento-ov{position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(17,17,17,.78) 0%,transparent 55%);
+  opacity:0;transition:opacity .3s;display:flex;flex-direction:column;
+  justify-content:flex-end;padding:.75rem 1rem;pointer-events:none}
+.bento-item:hover .bento-ov{opacity:1}
+.bento-ov-t{color:#fff;font-size:12.5px;font-weight:700;
+  overflow:hidden;white-space:nowrap;text-overflow:ellipsis}
+.bento-ov-s{color:rgba(255,255,255,.68);font-size:11px;margin-top:2px}
+/* ── Lightbox dock ── */
+.lb-dock{display:flex;justify-content:center;margin-top:1.2rem;
+  padding:10px 18px;background:rgba(120,170,255,.15);
+  backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);
+  border:1px solid rgba(100,155,255,.25);border-radius:14px;
+  overflow-x:auto;scrollbar-width:none;max-width:94vw}
+.lb-dock::-webkit-scrollbar{display:none}
+.lb-dock-inner{display:flex;align-items:flex-end;gap:3px;padding:4px 2px}
+.lb-dk{width:36px;height:36px;border-radius:8px;overflow:hidden;
+  flex-shrink:0;cursor:pointer;position:relative;
+  transition:transform .22s cubic-bezier(.34,1.56,.64,1),
+             box-shadow .22s,opacity .22s;
+  transform:rotate(var(--tilt,0deg));opacity:.7}
+.lb-dk img{width:100%;height:100%;object-fit:cover;display:block}
+.lb-dk:hover{transform:rotate(0deg) scale(1.35) translateY(-9px) !important;
+  opacity:1;z-index:10;box-shadow:0 8px 24px rgba(0,0,0,.55)}
+.lb-dk.active{transform:rotate(0deg) scale(1.22) translateY(-7px) !important;
+  opacity:1;z-index:9;box-shadow:0 0 0 2px rgba(255,255,255,.55),
+  0 6px 20px rgba(0,0,0,.45)}
+#lbi{transition:opacity .15s ease}
 .gal-note{text-align:center;margin-top:1.25rem;font-size:12.5px;color:var(--muted);font-weight:400}
 
 /* ════════════════════ LOGO MARQUEE — logo-cloud-3 (InfiniteSlider) ════════════════════ */
@@ -408,8 +427,8 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 .lm-tab{padding:8px 22px;border-radius:50px;font-size:12.5px;font-weight:700;
   border:1.5px solid var(--border);color:var(--muted);background:transparent;
   cursor:pointer;transition:all .28s;font-family:'Poppins',sans-serif;letter-spacing:.2px}
-.lm-tab.active,.lm-tab:hover{background:linear-gradient(135deg,var(--lime-dk),var(--lime));
-  border-color:transparent;color:var(--ink)}
+.lm-tab.active,.lm-tab:hover{background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  border-color:transparent;color:#0a2e18}
 /* Scrolling track */
 .lm-track{display:flex;align-items:center;width:max-content;gap:4.5rem;
   animation:lmScroll 28s linear infinite}
@@ -423,61 +442,64 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 
 /* ════════════════════ CSR ════════════════════ */
 #csr{background:var(--bg-alt);padding:clamp(4rem,7vw,6.5rem) 0}
-.csr-wrap{display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,7vw,6rem);align-items:start}
-.csr-h{font-family:'Poppins',sans-serif;font-size:clamp(2rem,4vw,3.2rem);
-  font-weight:800;color:var(--ink);line-height:1.02;margin-bottom:1.25rem;letter-spacing:-.01em}
-.csr-h em{font-style:normal;color:var(--lime-dk)}
-.csr-p{font-size:15px;color:var(--muted);font-weight:400;line-height:1.88;margin-bottom:1.75rem}
-.csr-pts{display:flex;flex-direction:column}
-.crp{display:flex;align-items:flex-start;gap:.9rem;padding:.9rem 0;
-  border-bottom:1px solid var(--border-lt);transition:all .28s;cursor:default}
-.crp:first-child{border-top:1px solid var(--border-lt)}
-.crp:hover{padding-left:.5rem}
-.crp-ic{width:38px;height:38px;border-radius:10px;
-  background:var(--lime-pale);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-.crp-t{font-size:14px;font-weight:700;color:var(--ink);display:block;margin-bottom:2px}
-.crp-s{font-size:13px;color:var(--muted);font-weight:400;line-height:1.65}
-/* CSR photos — FULL BRIGHTNESS, no overlay */
-.csr-photo-grid{display:grid;grid-template-columns:1fr 1fr;
-  grid-template-rows:250px 190px;gap:6px;border-radius:16px;overflow:hidden}
-.csr-ph{overflow:hidden;position:relative}
-.csr-ph.tall{grid-row:span 2}
-.csr-ph img{width:100%;height:100%;object-fit:cover;
-  transition:transform .6s;filter:none}  /* crystal clear */
-.csr-ph:hover img{transform:scale(1.05)}
+.csr-card{border:1px solid var(--border);border-radius:16px;padding:clamp(2rem,4vw,3.5rem);
+  display:grid;grid-template-columns:1fr 1fr;gap:clamp(2.5rem,5vw,4rem);align-items:center}
+.csr-badge{display:inline-flex;align-items:center;border-radius:999px;padding:.25rem .9rem;
+  font-size:12px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;
+  margin-bottom:1.25rem;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  color:#0a2e18}
+.csr-h{font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,3.5vw,3rem);
+  font-weight:800;color:var(--ink);line-height:1.05;letter-spacing:-.02em;margin-bottom:.75rem}
+.csr-h em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.csr-p{font-size:15px;color:var(--muted);line-height:1.8;margin-bottom:2rem}
+.csr-pts{display:flex;flex-direction:column;gap:1.25rem}
+.crp{display:flex;align-items:flex-start;gap:1rem}
+.crp-check{width:20px;height:20px;border-radius:50%;flex-shrink:0;margin-top:2px;
+  background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  display:flex;align-items:center;justify-content:center}
+.crp-check svg{width:10px;height:10px;stroke:#0a2e18;stroke-width:2.5;fill:none}
+.crp-t{font-size:14px;font-weight:700;color:var(--ink);display:block;margin-bottom:3px}
+.crp-s{font-size:13px;color:var(--muted);line-height:1.65}
+.csr-img{aspect-ratio:1/1;border-radius:12px;overflow:hidden}
+.csr-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.csr-img:hover img{transform:scale(1.04)}
+@media(max-width:860px){.csr-card{grid-template-columns:1fr}
+  .csr-img{aspect-ratio:16/9}}
 
 /* ════════════════════ CTA ════════════════════ */
-#cta{background:linear-gradient(135deg,#86AB00,#A8D400 45%,#C2EC00);
-  padding:clamp(4rem,7.5vw,6rem) 0;position:relative;overflow:hidden}
+#cta{background:var(--ink);padding:clamp(4rem,7.5vw,6rem) 0;position:relative;overflow:hidden}
 #cta::before{content:'';position:absolute;inset:0;
-  background:radial-gradient(ellipse 65% 90% at 78% 50%,rgba(255,255,255,.25),transparent);
+  background:radial-gradient(ellipse 65% 90% at 78% 50%,rgba(1,191,71,.08),transparent);
   pointer-events:none}
 #cta::after{content:'';position:absolute;top:-60px;right:-60px;
   width:320px;height:320px;border-radius:50%;
-  background:rgba(255,255,255,.08);pointer-events:none}
+  background:rgba(1,191,71,.05);pointer-events:none}
 .cta-inner{position:relative;z-index:1;display:flex;align-items:center;
   justify-content:space-between;gap:2.5rem;flex-wrap:wrap}
 .cta-h{font-family:'Poppins',sans-serif;font-size:clamp(2rem,4.5vw,3.6rem);
-  color:var(--ink);font-weight:900;line-height:1.02;letter-spacing:-.01em}
-.cta-h em{font-style:normal;opacity:.7}
-.cta-sub{font-size:14px;color:rgba(17,17,17,.6);margin-top:.4rem;font-weight:500}
+  color:#fff;font-weight:900;line-height:1.02;letter-spacing:-.01em}
+.cta-h em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cta-sub{font-size:14px;color:rgba(255,255,255,.5);margin-top:.4rem;font-weight:400}
 .cta-btns{display:flex;gap:.75rem;flex-wrap:wrap;flex-shrink:0}
-.btn-cta-dk{display:inline-flex;align-items:center;gap:7px;padding:13px 30px;border-radius:50px;
-  background:var(--ink);color:#fff;font-size:14px;font-weight:700;transition:all .28s;
-  box-shadow:0 4px 18px rgba(0,0,0,.22)}
-.btn-cta-dk:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(0,0,0,.3)}
-.btn-cta-ol{display:inline-flex;align-items:center;gap:7px;padding:12px 28px;border-radius:50px;
-  background:rgba(255,255,255,.25);color:var(--ink);font-size:14px;font-weight:600;
-  border:2px solid rgba(17,17,17,.2);transition:all .28s}
-.btn-cta-ol:hover{background:rgba(255,255,255,.4);transform:translateY(-3px)}
+.btn-cta-dk{display:inline-flex;align-items:center;gap:7px;padding:13px 30px;border-radius:8px;
+  background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  color:#0a2e18;font-size:14px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;
+  border:none;transition:all .28s}
+.btn-cta-dk:hover{opacity:.9;transform:translateY(-3px);box-shadow:0 8px 28px rgba(1,191,71,.35)}
+.btn-cta-ol{display:inline-flex;align-items:center;gap:7px;padding:12px 28px;border-radius:8px;
+  background:transparent;color:#fff;font-size:14px;font-weight:600;letter-spacing:.3px;
+  text-transform:uppercase;border:2px solid rgba(255,255,255,.25);transition:all .28s}
+.btn-cta-ol:hover{border-color:rgba(255,255,255,.6);transform:translateY(-3px)}
 
 /* ════════════════════ CONTACT ════════════════════ */
 #contact{background:var(--bg);padding:clamp(4rem,7vw,6.5rem) 0}
 .con-wrap{display:grid;grid-template-columns:1fr 1.65fr;gap:clamp(3rem,7vw,6rem);align-items:start}
 .con-h{font-family:'Poppins',sans-serif;font-size:clamp(2rem,4vw,3.2rem);
   font-weight:800;color:var(--ink);line-height:1.02;margin-bottom:1.75rem;letter-spacing:-.01em}
-.con-h em{font-style:normal;color:var(--lime-dk)}
+.con-h em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .ci{display:flex;align-items:flex-start;gap:.9rem;padding:.9rem 0;
   border-bottom:1px solid var(--border-lt)}
 .ci:first-of-type{border-top:1px solid var(--border-lt)}
@@ -515,11 +537,10 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
   border-color:var(--lime);box-shadow:0 0 0 3px rgba(168,212,0,.15)}
 .fg textarea{resize:vertical;min-height:110px}
 .fsub{width:100%;padding:14px;
-  background:linear-gradient(135deg,var(--lime-dk),var(--lime),var(--lime-lt));color:var(--ink);
-  border:none;border-radius:50px;font-size:14px;font-weight:800;cursor:pointer;
-  transition:all .28s;font-family:'Poppins',sans-serif;
-  box-shadow:0 4px 18px rgba(168,212,0,.38);letter-spacing:.2px}
-.fsub:hover{transform:translateY(-2px);box-shadow:0 12px 32px rgba(168,212,0,.55)}
+  background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);color:#0a2e18;
+  border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;
+  transition:all .28s;font-family:'Poppins',sans-serif;letter-spacing:.3px;text-transform:uppercase}
+.fsub:hover{opacity:.88;transform:translateY(-2px);box-shadow:0 8px 28px rgba(1,191,71,.4)}
 .f-ok{display:none;text-align:center;padding:2.5rem}
 .f-ok-ico{font-size:2.8rem;display:block;margin-bottom:.65rem;
   animation:popIn .5s cubic-bezier(.34,1.56,.64,1)}
@@ -555,10 +576,10 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
 /* ════════════════════ LIGHTBOX ════════════════════ */
 .lbox{display:none;position:fixed;inset:0;z-index:9999;
   background:rgba(17,17,17,.92);backdrop-filter:blur(14px);
-  align-items:center;justify-content:center}
+  align-items:center;justify-content:center;flex-direction:column}
 .lbox.open{display:flex;animation:lbIn .3s ease}
 @keyframes lbIn{from{opacity:0}to{opacity:1}}
-.lb-panel{position:relative;max-width:900px;width:94%;max-height:90vh;
+.lb-panel{position:relative;max-width:900px;width:94%;
   animation:lbPop .35s cubic-bezier(.34,1.56,.64,1)}
 @keyframes lbPop{from{transform:scale(.88);opacity:0}to{transform:scale(1);opacity:1}}
 .lb-x{position:absolute;top:-44px;right:0;background:none;border:none;
@@ -566,7 +587,7 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
   transition:opacity .25s,transform .25s}
 .lb-x:hover{opacity:1;transform:rotate(90deg)}
 .lb-img{border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.lb-img img{display:block;max-width:100%;max-height:72vh;width:auto;height:auto;object-fit:contain}
+.lb-img img{display:block;max-width:100%;max-height:60vh;width:auto;height:auto;object-fit:contain}
 .lb-cap{margin-top:.7rem;text-align:center}
 .lb-cap-t{font-family:'Poppins',sans-serif;font-size:1.15rem;
   color:#fff;font-weight:700;letter-spacing:-.01em}
@@ -623,11 +644,11 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
 .ind-use-t{font-size:14px;font-weight:700;color:var(--ink);display:block;margin-bottom:3px}
 .ind-use-s{font-size:13px;color:var(--muted);font-weight:400;line-height:1.65}
 .ind-panel-cta{margin-top:2rem}
-.btn-ink{display:inline-flex;align-items:center;gap:7px;padding:12px 28px;border-radius:50px;
-  background:linear-gradient(135deg,var(--lime-dk),var(--lime));color:var(--ink);
-  font-size:14px;font-weight:800;transition:all .28s;
-  box-shadow:0 4px 16px rgba(168,212,0,.38)}
-.btn-ink:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(168,212,0,.55)}
+.btn-ink{display:inline-flex;align-items:center;gap:7px;padding:12px 28px;border-radius:8px;
+  background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  color:#0a2e18;font-size:14px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;
+  border:none;transition:all .28s}
+.btn-ink:hover{opacity:.88;transform:translateY(-2px);box-shadow:0 8px 28px rgba(1,191,71,.4)}
 
 /* ════════════════════ RESPONSIVE ════════════════════ */
 @media(max-width:960px){
@@ -638,7 +659,7 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
   .hero-h1{font-size:clamp(2.8rem,9vw,4.5rem)}
   .about-wrap,.csr-wrap,.con-wrap{grid-template-columns:1fr}
   .about-img-side{min-height:360px}
-  .ind-grid{grid-template-columns:repeat(2,1fr)}
+  .ind-card{flex:0 0 320px}
   .ic:nth-child(1) .ic-img,.ic:nth-child(6) .ic-img{height:220px}
   .ft-grid{grid-template-columns:1fr 1fr}
   .cta-inner{flex-direction:column;text-align:center}
@@ -647,6 +668,7 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
   .ind-panel-img-wrap{height:220px}
   .why-grid{grid-template-columns:1fr 1fr}
   .hero-strip{grid-template-columns:repeat(2,1fr)}
+  .bento-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:100px}
 }
 @media(max-width:600px){
   .hero-nums{display:none}
@@ -660,7 +682,9 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
   .gal-filter{flex-wrap:nowrap;overflow-x:auto;width:100%;scrollbar-width:none}
   .gal-filter::-webkit-scrollbar{display:none}
   .gf{white-space:nowrap;flex-shrink:0}
-  .gal-nav{margin-top:0}
+  .bento-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:110px}
+  .bi-r3{grid-row:span 2}
+  .bi-c2{grid-column:span 1}
   .par-logo-row{flex-wrap:nowrap;overflow-x:auto;justify-content:flex-start;
     padding-bottom:.75rem;scrollbar-width:none}
   .par-logo-row::-webkit-scrollbar{display:none}
@@ -676,6 +700,7 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
 <!-- ══ NAV ══ -->
 <nav id="nav">
   <ul class="nav-left">
+    <li><a href="#hero">Home</a></li>
     <li><a href="about.html">About Us</a></li>
     <li><a href="#industries">Industries</a></li>
   </ul>
@@ -702,7 +727,18 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
 <!-- ══ HERO ══ -->
 <section id="hero">
   <div class="hero-bg">
-    <img src="Images/Industries/Personal Care/look-studio-TQSPgNqeCo8-unsplash.jpg" alt="S.K. Chem Solutions">
+    <div class="hero-slide active">
+      <img src="Images/All/close-up-skin-regeneration-products.jpg" alt="Personal Care" style="object-position:70% center">
+    </div>
+    <div class="hero-slide">
+      <img src="Images/All/hero.jpg" alt="Natural Raw Materials" style="object-position:center center">
+    </div>
+    <div class="hero-slide">
+      <img src="Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg" alt="Pharmaceutical" style="object-position:center center">
+    </div>
+    <div class="hero-slide">
+      <img src="Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg" alt="Textile" style="object-position:center center">
+    </div>
   </div>
   <div class="hero-overlay"></div>
 
@@ -723,8 +759,8 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
     <h1 class="hero-h1">Connecting<br>Industries<br>with Quality</h1>
     <p class="hero-sub">Sri Lanka's trusted B2B chemical raw material importer since 2017 — quality chemistry, reliable supply, and partnerships that last.</p>
     <div class="hero-btns">
-      <a href="#contact" class="btn-glass-lime">Enquire Now →</a>
-      <a href="#industries" class="btn-glass-lime">View Industries</a>
+      <a href="#contact" class="btn-hero-primary">Enquire Now →</a>
+      <a href="#industries" class="btn-hero-ghost">View Industries</a>
     </div>
     <div class="hero-scroll">
       <div class="hero-scroll-line"></div>
@@ -756,7 +792,7 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
   <div class="W">
     <div class="why-top rv">
       <p class="ey">Why Choose Us</p>
-      <h2 class="why-h">Reason For <em>Choosing Us</em></h2>
+      <h2 class="why-h">Why <em>Choose Us</em></h2>
       <p class="why-sub">Sri Lanka's most trusted chemical raw material partner for over a decade.</p>
     </div>
     <div class="why-grid">
@@ -804,94 +840,90 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
 <!-- ══ INDUSTRIES ══ -->
 <section id="industries">
   <div class="ind-intro rv">
-    <div>
+    <div class="ind-intro-left">
       <div class="ey">Our Industries</div>
       <h2 class="ind-h">Industries<br>we <em>serve</em></h2>
     </div>
-    <p class="ind-side-text">Six industries. One mission — enabling better products through quality chemistry and reliable supply.</p>
+    <div class="ind-nav">
+      <button class="ind-nav-btn" id="ind-prev" disabled>&#8592;</button>
+      <button class="ind-nav-btn" id="ind-next">&#8594;</button>
+    </div>
   </div>
 
-  <!-- NEW CARD GRID: image on top (full brightness) + white info panel below -->
-  <div class="ind-grid rv d1">
+  <div class="ind-carousel rv d1" id="ind-carousel">
 
-    <!-- Card 1: Rubber & Latex (spans 2 columns) -->
-    <div class="ic" onclick="location.href='industry.html?ind=rubber'">
-      <div class="ic-img">
-        <img src="Images/All/isuru-ranasinha-AVhFLfD_Lv8-unsplash.jpg" alt="Rubber &amp; Latex">
+    <div class="ind-card" onclick="location.href='industry.html?ind=rubber'">
+      <div class="ind-card-img">
+        <img src="Images/All/isuru-ranasinha-AVhFLfD_Lv8-unsplash.jpg" alt="Rubber &amp; Latex" loading="lazy">
         <span class="ic-badge main">Biggest Sector</span>
-        <span class="ic-explore">→</span>
       </div>
-      <div class="ic-info">
-        <div class="ic-name">Rubber &amp; Latex</div>
-        <div class="ic-chem">Formic Acid · Sodium Metabisulfite · Sodium Sulphite</div>
-        <div class="ic-tags"><span class="ic-tag">Latex Coagulation</span><span class="ic-tag">Sheet Preservation</span><span class="ic-tag">Export Protection</span></div>
-      </div>
-    </div>
-
-    <!-- Card 2: Personal Care -->
-    <div class="ic" onclick="location.href='industry.html?ind=personal'">
-      <div class="ic-img">
-        <img src="Images/Industries/Personal Care/look-studio-TQSPgNqeCo8-unsplash.jpg" alt="Personal Care">
-        <span class="ic-explore">→</span>
-      </div>
-      <div class="ic-info">
-        <div class="ic-name">Personal Care</div>
-        <div class="ic-chem">CAPB · Glycerine · Vitamin E Acetate</div>
-        <div class="ic-tags"><span class="ic-tag">Shampoo Formulation</span><span class="ic-tag">Skincare Enrichment</span><span class="ic-tag">Natural Hydration</span></div>
+      <div class="ind-card-body">
+        <div class="ind-card-title">Rubber &amp; Latex</div>
+        <p class="ind-card-sum">High-purity coagulants and antioxidants for rubber plantations and processing facilities across Sri Lanka.</p>
+        <div class="ind-card-tags"><span class="ic-tag">Latex Coagulation</span><span class="ic-tag">Sheet Preservation</span><span class="ic-tag">Export Protection</span></div>
+        <div class="ind-card-link">Explore Industry <span>→</span></div>
       </div>
     </div>
 
-    <!-- Card 3: Home Care -->
-    <div class="ic" onclick="location.href='industry.html?ind=home'">
-      <div class="ic-img">
-        <img src="Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg" alt="Home Care">
-        <span class="ic-explore">→</span>
+    <div class="ind-card" onclick="location.href='industry.html?ind=personal'">
+      <div class="ind-card-img">
+        <img src="Images/Industries/Personal Care/look-studio-TQSPgNqeCo8-unsplash.jpg" alt="Personal Care" loading="lazy">
       </div>
-      <div class="ic-info">
-        <div class="ic-name">Home Care</div>
-        <div class="ic-chem">CAPB · Sodium Lauryl Sulphate</div>
-        <div class="ic-tags"><span class="ic-tag">Dishwashing Power</span><span class="ic-tag">Detergent Stability</span><span class="ic-tag">Surface Care</span></div>
+      <div class="ind-card-body">
+        <div class="ind-card-title">Personal Care</div>
+        <p class="ind-card-sum">Cosmetic-grade CAPB, Vitamin E Acetate, and glycerine for shampoos, skincare, and haircare manufacturers.</p>
+        <div class="ind-card-tags"><span class="ic-tag">Shampoo Formulation</span><span class="ic-tag">Skincare Enrichment</span><span class="ic-tag">Natural Hydration</span></div>
+        <div class="ind-card-link">Explore Industry <span>→</span></div>
       </div>
     </div>
 
-    <!-- Card 4: Food Industry -->
-    <div class="ic" onclick="location.href='industry.html?ind=food'">
-      <div class="ic-img">
-        <img src="Images/Industries/Food Industry/assortment-tasty-sugary-confectionery-products-variety-flavor-freshly-baked-buns-criossants-muffins-bars-chocolate-sweet-dessert-homemade-yummy-snack-baked-goods-flat-lay.jpg" alt="Food Industry">
+    <div class="ind-card" onclick="location.href='industry.html?ind=home'">
+      <div class="ind-card-img">
+        <img src="Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg" alt="Home Care" loading="lazy">
+      </div>
+      <div class="ind-card-body">
+        <div class="ind-card-title">Home Care</div>
+        <p class="ind-card-sum">Surfactants and specialty chemicals powering Sri Lanka's dishwashing, detergent, and surface care manufacturing.</p>
+        <div class="ind-card-tags"><span class="ic-tag">Dishwashing Power</span><span class="ic-tag">Detergent Stability</span><span class="ic-tag">Surface Care</span></div>
+        <div class="ind-card-link">Explore Industry <span>→</span></div>
+      </div>
+    </div>
+
+    <div class="ind-card" onclick="location.href='industry.html?ind=food'">
+      <div class="ind-card-img">
+        <img src="Images/Industries/Food Industry/assortment-tasty-sugary-confectionery-products-variety-flavor-freshly-baked-buns-criossants-muffins-bars-chocolate-sweet-dessert-homemade-yummy-snack-baked-goods-flat-lay.jpg" alt="Food Industry" loading="lazy">
         <span class="ic-badge grow">Growth Sector</span>
-        <span class="ic-explore">→</span>
       </div>
-      <div class="ic-info">
-        <div class="ic-name">Food Industry</div>
-        <div class="ic-chem">Sodium Metabisulfite · Monopropylene Glycol</div>
-        <div class="ic-tags"><span class="ic-tag">Beverage Preservation</span><span class="ic-tag">Bakery Freshness</span><span class="ic-tag">Natural Sweetening</span></div>
+      <div class="ind-card-body">
+        <div class="ind-card-title">Food Industry</div>
+        <p class="ind-card-sum">Food-grade sodium metabisulfite, MPG, and glycerine for beverage preservation, bakery freshness, and sweetening.</p>
+        <div class="ind-card-tags"><span class="ic-tag">Beverage Preservation</span><span class="ic-tag">Bakery Freshness</span><span class="ic-tag">Natural Sweetening</span></div>
+        <div class="ind-card-link">Explore Industry <span>→</span></div>
       </div>
     </div>
 
-    <!-- Card 5: Pharmaceutical -->
-    <div class="ic" onclick="location.href='industry.html?ind=pharma'">
-      <div class="ic-img">
-        <img src="Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg" alt="Pharmaceutical">
+    <div class="ind-card" onclick="location.href='industry.html?ind=pharma'">
+      <div class="ind-card-img">
+        <img src="Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg" alt="Pharmaceutical" loading="lazy">
         <span class="ic-badge">Expanding Into</span>
-        <span class="ic-explore">→</span>
       </div>
-      <div class="ic-info">
-        <div class="ic-name">Pharmaceutical</div>
-        <div class="ic-chem">IPA · Glycerine · Sodium Sulphite</div>
-        <div class="ic-tags"><span class="ic-tag">GMP Facility Hygiene</span><span class="ic-tag">Oral Formulation</span><span class="ic-tag">Solid Dosage</span></div>
+      <div class="ind-card-body">
+        <div class="ind-card-title">Pharmaceutical</div>
+        <p class="ind-card-sum">USP/BP grade IPA, glycerine, and excipients for pharmaceutical manufacturers — fully documented with CoA and SDS.</p>
+        <div class="ind-card-tags"><span class="ic-tag">GMP Hygiene</span><span class="ic-tag">Oral Formulation</span><span class="ic-tag">Solid Dosage</span></div>
+        <div class="ind-card-link">Explore Industry <span>→</span></div>
       </div>
     </div>
 
-    <!-- Card 6: Textile (spans 2 columns) -->
-    <div class="ic" onclick="location.href='industry.html?ind=textile'">
-      <div class="ic-img">
-        <img src="Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg" alt="Textile Washing">
-        <span class="ic-explore">→</span>
+    <div class="ind-card" onclick="location.href='industry.html?ind=textile'">
+      <div class="ind-card-img">
+        <img src="Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg" alt="Textile Washing" loading="lazy">
       </div>
-      <div class="ic-info">
-        <div class="ic-name">Textile Washing</div>
-        <div class="ic-chem">Formic Acid · Sodium Sulphite</div>
-        <div class="ic-tags"><span class="ic-tag">Garment Washing</span><span class="ic-tag">Fabric Scouring</span><span class="ic-tag">Premium Finishing</span></div>
+      <div class="ind-card-body">
+        <div class="ind-card-title">Textile Washing</div>
+        <p class="ind-card-sum">Specialty solvents and processing chemicals for garment washing, fabric scouring, and premium finishing operations.</p>
+        <div class="ind-card-tags"><span class="ic-tag">Garment Washing</span><span class="ic-tag">Fabric Scouring</span><span class="ic-tag">Premium Finishing</span></div>
+        <div class="ind-card-link">Explore Industry <span>→</span></div>
       </div>
     </div>
 
@@ -908,14 +940,14 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
 
   <!-- Filter tabs -->
   <div class="lm-tabs rv d1">
-    <button class="lm-tab active" data-lm="global">🌍 Global Suppliers</button>
-    <button class="lm-tab" data-lm="local">🇱🇰 Local Clients</button>
+    <button class="lm-tab active" data-lm="local">🇱🇰 Local Clients</button>
+    <button class="lm-tab" data-lm="global">🌍 Global Suppliers</button>
   </div>
 
   <div class="lm-rule rv d2"></div>
 
   <!-- Global Suppliers marquee -->
-  <div class="lm-wrap" id="lm-global">
+  <div class="lm-wrap" id="lm-global" style="display:none">
     <div class="lm-track">
       <div class="lm-item"><img src="https://logo.clearbit.com/basf.com" alt="BASF SE" onerror="this.style.opacity='.4'"></div>
       <div class="lm-item"><img src="https://logo.clearbit.com/basf.com" alt="BASF China" onerror="this.style.opacity='.4'"></div>
@@ -933,8 +965,8 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
     </div>
   </div>
 
-  <!-- Local Clients marquee (hidden by default) -->
-  <div class="lm-wrap" id="lm-local" style="display:none">
+  <!-- Local Clients marquee -->
+  <div class="lm-wrap" id="lm-local">
     <div class="lm-track">
       <div class="lm-item"><img src="Images/Partners/Local/ansell_logo.ashx.png" alt="Ansell Lanka"></div>
       <div class="lm-item"><img src="Images/Partners/Local/logo-2.png" alt="NBC"></div>
@@ -974,30 +1006,22 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
           <button class="gf" data-f="operations">⚙️ Operations</button>
         </div>
       </div>
-      <div class="gal-nav">
-        <button class="gal-btn" id="gal-prev">&#8592;</button>
-        <button class="gal-btn" id="gal-next">&#8594;</button>
-      </div>
     </div>
-    <div class="gal-carousel rv d1">
-      <div class="gal-track-wrap" id="gal-wrap">
-        <div class="gal-track">
-          <div class="gci" data-cat="charity" onclick="olb(this,'Community Outreach','S.K. Chem Solutions giving back')"><img src="Images/Gallery/Charity/charity-1.jpeg" alt="Community Outreach"><div class="gci-ov"><span class="gci-lbl">Community Outreach</span></div></div>
-          <div class="gci" data-cat="charity" onclick="olb(this,'Planting Initiative','Supporting sustainable communities')"><img src="Images/Gallery/Charity/charity-2.jpeg" alt=""><div class="gci-ov"><span class="gci-lbl">Planting Initiative</span></div></div>
-          <div class="gci" data-cat="charity" onclick="olb(this,'Giving Back','Community welfare programme')"><img src="Images/Gallery/Charity/charity-3.jpeg" alt=""><div class="gci-ov"><span class="gci-lbl">Giving Back</span></div></div>
-          <div class="gci" data-cat="charity" onclick="olb(this,'CSR Activity','Supporting rural communities')"><img src="Images/Gallery/Charity/charity-4.jpeg" alt=""><div class="gci-ov"><span class="gci-lbl">CSR Activity</span></div></div>
-          <div class="gci" data-cat="charity" onclick="olb(this,'Community Support','Creating impact beyond business')"><img src="Images/Gallery/Charity/charity-5.jpeg" alt=""><div class="gci-ov"><span class="gci-lbl">Community Support</span></div></div>
-          <div class="gci" data-cat="charity" onclick="olb(this,'Outreach Programme','Empowering local communities')"><img src="Images/Gallery/Charity/charity-6.jpeg" alt=""><div class="gci-ov"><span class="gci-lbl">Outreach Programme</span></div></div>
-          <div class="gci" data-cat="charity" onclick="olb(this,'Social Initiative','S.K. Chem team in action')"><img src="Images/Gallery/Charity/charity-7.jpeg" alt=""><div class="gci-ov"><span class="gci-lbl">Social Initiative</span></div></div>
-          <div class="gci" data-cat="charity" onclick="olb(this,'Green Gifting','Nurturing growth in communities')"><img src="Images/Gallery/Charity/charity-8.jpeg" alt=""><div class="gci-ov"><span class="gci-lbl">Green Gifting</span></div></div>
-          <div class="gci" data-cat="charity" onclick="olb(this,'Team Effort','Together for a better tomorrow')"><img src="Images/Gallery/Charity/charity-9.jpeg" alt=""><div class="gci-ov"><span class="gci-lbl">Team Effort</span></div></div>
-          <div class="gci" data-cat="charity" onclick="olb(this,'Rural Support','Reaching those who need it most')"><img src="Images/Gallery/Charity/charity-10.jpeg" alt=""><div class="gci-ov"><span class="gci-lbl">Rural Support</span></div></div>
-          <div class="gci" data-cat="charity" onclick="olb(this,'Community Care','Putting people first')"><img src="Images/Gallery/Charity/charity-11.jpeg" alt=""><div class="gci-ov"><span class="gci-lbl">Community Care</span></div></div>
-          <div class="gci" data-cat="charity" onclick="olb(this,'Welfare Drive','Driven by purpose, not just profit')"><img src="Images/Gallery/Charity/charity-12.jpeg" alt=""><div class="gci-ov"><span class="gci-lbl">Welfare Drive</span></div></div>
-          <div class="gci" data-cat="charity" onclick="olb(this,'Local Roots','Built on community values')"><img src="Images/Gallery/Charity/charity-13.jpeg" alt=""><div class="gci-ov"><span class="gci-lbl">Local Roots</span></div></div>
-          <div class="gci" data-cat="charity" onclick="olb(this,'Growing Together','A shared future for all')"><img src="Images/Gallery/Charity/charity-14.jpeg" alt=""><div class="gci-ov"><span class="gci-lbl">Growing Together</span></div></div>
-        </div>
-      </div>
+    <div class="bento-grid rv d1" id="bento-grid">
+      <div class="bento-item bi-r3" data-cat="charity" data-title="Community Outreach" data-desc="S.K. Chem Solutions giving back"><img src="Images/Gallery/Charity/charity-1.jpeg" alt="Community Outreach" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Community Outreach</div><div class="bento-ov-s">S.K. Chem Solutions giving back</div></div></div>
+      <div class="bento-item bi-c2 bi-r2" data-cat="charity" data-title="Planting Initiative" data-desc="Supporting sustainable communities"><img src="Images/Gallery/Charity/charity-2.jpeg" alt="Planting Initiative" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Planting Initiative</div><div class="bento-ov-s">Supporting sustainable communities</div></div></div>
+      <div class="bento-item bi-r3" data-cat="charity" data-title="Giving Back" data-desc="Community welfare programme"><img src="Images/Gallery/Charity/charity-3.jpeg" alt="Giving Back" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Giving Back</div><div class="bento-ov-s">Community welfare programme</div></div></div>
+      <div class="bento-item bi-c2 bi-r2" data-cat="charity" data-title="CSR Activity" data-desc="Supporting rural communities"><img src="Images/Gallery/Charity/charity-4.jpeg" alt="CSR Activity" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">CSR Activity</div><div class="bento-ov-s">Supporting rural communities</div></div></div>
+      <div class="bento-item bi-r3" data-cat="charity" data-title="Community Support" data-desc="Creating impact beyond business"><img src="Images/Gallery/Charity/charity-5.jpeg" alt="Community Support" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Community Support</div><div class="bento-ov-s">Creating impact beyond business</div></div></div>
+      <div class="bento-item bi-c2 bi-r2" data-cat="charity" data-title="Outreach Programme" data-desc="Empowering local communities"><img src="Images/Gallery/Charity/charity-6.jpeg" alt="Outreach Programme" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Outreach Programme</div><div class="bento-ov-s">Empowering local communities</div></div></div>
+      <div class="bento-item bi-r3" data-cat="charity" data-title="Social Initiative" data-desc="S.K. Chem team in action"><img src="Images/Gallery/Charity/charity-7.jpeg" alt="Social Initiative" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Social Initiative</div><div class="bento-ov-s">S.K. Chem team in action</div></div></div>
+      <div class="bento-item bi-c2 bi-r2" data-cat="charity" data-title="Green Gifting" data-desc="Nurturing growth in communities"><img src="Images/Gallery/Charity/charity-8.jpeg" alt="Green Gifting" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Green Gifting</div><div class="bento-ov-s">Nurturing growth in communities</div></div></div>
+      <div class="bento-item bi-r2" data-cat="charity" data-title="Team Effort" data-desc="Together for a better tomorrow"><img src="Images/Gallery/Charity/charity-9.jpeg" alt="Team Effort" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Team Effort</div><div class="bento-ov-s">Together for a better tomorrow</div></div></div>
+      <div class="bento-item bi-r2" data-cat="charity" data-title="Rural Support" data-desc="Reaching those who need it most"><img src="Images/Gallery/Charity/charity-10.jpeg" alt="Rural Support" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Rural Support</div><div class="bento-ov-s">Reaching those who need it most</div></div></div>
+      <div class="bento-item bi-r2" data-cat="charity" data-title="Community Care" data-desc="Putting people first"><img src="Images/Gallery/Charity/charity-11.jpeg" alt="Community Care" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Community Care</div><div class="bento-ov-s">Putting people first</div></div></div>
+      <div class="bento-item bi-r2" data-cat="charity" data-title="Welfare Drive" data-desc="Driven by purpose, not just profit"><img src="Images/Gallery/Charity/charity-12.jpeg" alt="Welfare Drive" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Welfare Drive</div><div class="bento-ov-s">Driven by purpose, not just profit</div></div></div>
+      <div class="bento-item bi-c2 bi-r2" data-cat="charity" data-title="Local Roots" data-desc="Built on community values"><img src="Images/Gallery/Charity/charity-13.jpeg" alt="Local Roots" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Local Roots</div><div class="bento-ov-s">Built on community values</div></div></div>
+      <div class="bento-item bi-c2 bi-r2" data-cat="charity" data-title="Growing Together" data-desc="A shared future for all"><img src="Images/Gallery/Charity/charity-14.jpeg" alt="Growing Together" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Growing Together</div><div class="bento-ov-s">A shared future for all</div></div></div>
     </div>
     <p class="gal-note rv">More photos — products, warehouse &amp; events — coming soon.</p>
   </div>
@@ -1006,27 +1030,30 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
 <!-- ══ CSR ══ -->
 <section id="csr">
   <div class="W">
-    <div class="csr-wrap">
-      <div class="rv fl">
-        <div class="ey">Giving Back</div>
-        <h2 class="csr-h">Social<br><em>Responsibility</em></h2>
+    <div class="csr-card rv">
+      <!-- Left: text -->
+      <div>
+        <div class="csr-badge">Giving Back</div>
+        <h2 class="csr-h">Social<br><em>Responsibility.</em></h2>
         <p class="csr-p">We believe true success means creating value not just for our clients — but for our communities and our planet.</p>
         <div class="csr-pts">
-          <div class="crp"><div class="crp-ic">🌱</div><div><span class="crp-t">Environmental Care</span><span class="crp-s">Promoting sustainable sourcing and environmentally responsible practices.</span></div></div>
-          <div class="crp"><div class="crp-ic">🤝</div><div><span class="crp-t">Community Support</span><span class="crp-s">Supporting needy people through local initiatives and social welfare programmes.</span></div></div>
-          <div class="crp"><div class="crp-ic">🛡️</div><div><span class="crp-t">Safety &amp; Quality</span><span class="crp-s">Every product meets strict safety standards — protecting consumers and workers.</span></div></div>
-          <div class="crp"><div class="crp-ic">📚</div><div><span class="crp-t">Knowledge Sharing</span><span class="crp-s">Sharing expertise to promote safer, more sustainable operations industry-wide.</span></div></div>
-        </div>
-      </div>
-      <div class="rv fr">
-        <!-- Full-brightness CSR photos — zero dark shade -->
-        <div class="csr-photo-grid">
-          <div class="csr-ph tall"><img src="Images/Gallery/Charity/charity-3.jpeg" alt="CSR"></div>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <div class="csr-ph"><img src="Images/Gallery/Charity/charity-7.jpeg" alt=""></div>
-            <div class="csr-ph"><img src="Images/Gallery/Charity/charity-12.jpeg" alt=""></div>
+          <div class="crp">
+            <div class="crp-check"><svg viewBox="0 0 12 12"><polyline points="1.5,6 4.5,9 10.5,3"/></svg></div>
+            <div><span class="crp-t">Environmental Care</span><span class="crp-s">Promoting sustainable sourcing and environmentally responsible practices.</span></div>
+          </div>
+          <div class="crp">
+            <div class="crp-check"><svg viewBox="0 0 12 12"><polyline points="1.5,6 4.5,9 10.5,3"/></svg></div>
+            <div><span class="crp-t">Community Support</span><span class="crp-s">Supporting needy people through local initiatives and social welfare programmes.</span></div>
+          </div>
+          <div class="crp">
+            <div class="crp-check"><svg viewBox="0 0 12 12"><polyline points="1.5,6 4.5,9 10.5,3"/></svg></div>
+            <div><span class="crp-t">Safety &amp; Quality</span><span class="crp-s">Every product meets strict safety standards — protecting consumers and workers.</span></div>
           </div>
         </div>
+      </div>
+      <!-- Right: square photo -->
+      <div class="csr-img rv fr">
+        <img src="Images/Gallery/Charity/charity-3.jpeg" alt="Community CSR">
       </div>
     </div>
   </div>
@@ -1129,6 +1156,9 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
     <div class="lb-img"><img id="lbi" src="" alt=""></div>
     <div class="lb-cap"><div class="lb-cap-t" id="lbt"></div><div class="lb-cap-s" id="lbd"></div></div>
   </div>
+  <div class="lb-dock" onclick="event.stopPropagation()">
+    <div class="lb-dock-inner" id="lb-dock-inner"></div>
+  </div>
 </div>
 
 <script>
@@ -1142,13 +1172,47 @@ document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 function animCount(el,val,suf,dur){const s=performance.now();(function tick(now){const p=Math.min((now-s)/dur,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(val*e)+(p<1?'':suf);p<1?requestAnimationFrame(tick):el.textContent=val+suf;})(s);}
 const cntObs=new IntersectionObserver(es=>{if(es[0].isIntersecting){document.querySelectorAll('[data-count]').forEach(el=>animCount(el,+el.dataset.count,el.dataset.suf||'',1600));cntObs.disconnect();}},{threshold:.6});
 const statsEl=document.getElementById('stats');if(statsEl)cntObs.observe(statsEl);
-const galWrap=document.getElementById('gal-wrap');
-document.getElementById('gal-prev').onclick=()=>galWrap.scrollBy({left:-592,behavior:'smooth'});
-document.getElementById('gal-next').onclick=()=>galWrap.scrollBy({left:592,behavior:'smooth'});
-document.querySelectorAll('.gf').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.gf').forEach(b=>b.classList.remove('on'));btn.classList.add('on');const f=btn.dataset.f;document.querySelectorAll('.gci').forEach(gi=>{gi.style.display=(f==='all'||(gi.dataset.cat||'').includes(f))?'':'none';});galWrap.scrollTo({left:0,behavior:'smooth'});});});
+/* ── Industries carousel ── */
+(function(){
+  const car=document.getElementById('ind-carousel');
+  const prev=document.getElementById('ind-prev');
+  const next=document.getElementById('ind-next');
+  const W=396;
+  function upd(){prev.disabled=car.scrollLeft<=2;next.disabled=car.scrollLeft+car.clientWidth>=car.scrollWidth-2;}
+  prev.onclick=()=>{car.scrollBy({left:-W,behavior:'smooth'});setTimeout(upd,400);};
+  next.onclick=()=>{car.scrollBy({left:W,behavior:'smooth'});setTimeout(upd,400);};
+  car.addEventListener('scroll',upd,{passive:true});
+  upd();
+})();
+/* ── Hero slider ── */
+(function(){
+  const slides=document.querySelectorAll('.hero-slide');
+  const nums=document.querySelectorAll('.hn');
+  let cur=0,timer;
+  function goTo(n){
+    slides[cur].classList.remove('active');
+    nums[cur].classList.remove('on');
+    cur=(n+slides.length)%slides.length;
+    slides[cur].classList.add('active');
+    nums[cur].classList.add('on');
+    /* restart ken-burns */
+    const img=slides[cur].querySelector('img');
+    img.style.animation='none';
+    img.offsetWidth;
+    img.style.animation='';
+  }
+  nums.forEach((n,i)=>n.addEventListener('click',()=>{clearInterval(timer);goTo(i);timer=setInterval(()=>goTo(cur+1),5000);}));
+  timer=setInterval(()=>goTo(cur+1),5000);
+})();
+/* ── Bento gallery filter ── */
+document.querySelectorAll('.gf').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.gf').forEach(b=>b.classList.remove('on'));btn.classList.add('on');const f=btn.dataset.f;document.querySelectorAll('.bento-item').forEach(gi=>{gi.style.display=(f==='all'||(gi.dataset.cat||'').includes(f))?'':'none';});});});
+/* ── Bento item click ── */
+const TILTS=[-13,12,-10,15,-12,9,-15,13,-11,14,-8,12,-10,16];
+document.querySelectorAll('.bento-item').forEach(el=>{el.addEventListener('click',()=>{olb(el,el.dataset.title||'',el.dataset.desc||'');});});
+function olb(el,t,d){const img=el.querySelector('img');if(!img)return;const lbi=document.getElementById('lbi');lbi.style.opacity='0';setTimeout(()=>{lbi.src=img.getAttribute('src');lbi.style.opacity='1';},80);lbi.src='';document.getElementById('lbt').textContent=t;document.getElementById('lbd').textContent=d;const visItems=Array.from(document.querySelectorAll('.bento-item')).filter(i=>i.style.display!=='none');buildDock(visItems,visItems.indexOf(el));document.getElementById('lbox').classList.add('open');document.body.style.overflow='hidden';}
+function buildDock(items,activeIdx){const dock=document.getElementById('lb-dock-inner');dock.innerHTML='';items.forEach((item,i)=>{const img=item.querySelector('img');if(!img)return;const th=document.createElement('div');th.className='lb-dk'+(i===activeIdx?' active':'');th.style.setProperty('--tilt',TILTS[i%TILTS.length]+'deg');const ti=document.createElement('img');ti.src=img.getAttribute('src');ti.alt='';th.appendChild(ti);th.addEventListener('click',e=>{e.stopPropagation();const lbi=document.getElementById('lbi');lbi.style.opacity='0';setTimeout(()=>{lbi.src=img.getAttribute('src');lbi.style.opacity='1';},80);document.getElementById('lbt').textContent=item.dataset.title||'';document.getElementById('lbd').textContent=item.dataset.desc||'';buildDock(items,i);});dock.appendChild(th);});}
 /* Partner marquee tabs */
 document.querySelectorAll('.lm-tab').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.lm-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const t=btn.dataset.lm;document.getElementById('lm-global').style.display=t==='global'?'':'none';document.getElementById('lm-local').style.display=t==='local'?'':'none';});});
-function olb(el,t,d){const img=el.querySelector('img');if(!img)return;const lbi=document.getElementById('lbi');lbi.src='';lbi.src=img.getAttribute('src');document.getElementById('lbt').textContent=t||'';document.getElementById('lbd').textContent=d||'';document.getElementById('lbox').classList.add('open');document.body.style.overflow='hidden';}
 function clb(e){if(!e||e.target===document.getElementById('lbox')||e.currentTarget.classList.contains('lb-x')){document.getElementById('lbox').classList.remove('open');document.body.style.overflow='';}}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'){document.getElementById('lbox').classList.remove('open');document.body.style.overflow='';closeIndPanel();}});
 const indData={rubber:{eyebrow:'Core Industry — Biggest Sector',img:'Images/All/isuru-ranasinha-AVhFLfD_Lv8-unsplash.jpg',name:'Rubber &amp; Latex',desc:'Sri Lanka\'s rubber and latex industry is one of our most critical sectors. We supply high-purity coagulants and antioxidants used directly on plantations and processing facilities island-wide.',chems:['Formic Acid (HCOOH)','Sodium Metabisulfite (Na₂S₂O₅)','Sodium Sulphite (Na₂SO₃)'],uses:[{ico:'🌿',t:'Latex Coagulation',s:'Formic acid is the primary coagulant converting rubber latex into solid rubber on plantations — reliable, fast, and cost-effective.'},{ico:'🔬',t:'Latex Preservation',s:'Sodium metabisulfite preserves fresh latex and prevents premature coagulation during transport from plantation to factory.'},{ico:'🏭',t:'Sheet Manufacturing',s:'Sodium sulphite acts as an antioxidant in rubber sheet and crepe rubber manufacturing processes.'}]},personal:{eyebrow:'Growing Industry',img:'Images/Industries/Personal Care/look-studio-TQSPgNqeCo8-unsplash.jpg',name:'Personal Care',desc:'We supply cosmetic-grade and high-purity ingredients to personal care manufacturers producing shampoos, body washes, skincare, and haircare products across Sri Lanka.',chems:['CAPB — Cocamidopropyl Betaine','Vitamin E Acetate (Tocopheryl)','Monopropylene Glycol (USP)','Isopropyl Alcohol (IPA)','Glycerine — Vegetable (USP/BP)'],uses:[{ico:'✨',t:'Surfactant Systems',s:'CAPB is a mild amphoteric surfactant providing foam, mildness and skin compatibility in shampoos and body washes.'},{ico:'🌿',t:'Skin &amp; Hair Nourishment',s:'Vitamin E acetate and vegetable glycerine are key moisturising and antioxidant agents in premium skincare formulations.'},{ico:'💧',t:'Solvents &amp; Humectants',s:'MPG and IPA serve as versatile solvents, preservatives, and humectants across a wide range of personal care products.'}]},home:{eyebrow:'Established Industry',img:'Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg',name:'Home Care',desc:'From surface cleaners to laundry detergents, we supply the raw materials that power Sri Lanka\'s home care manufacturing sector.',chems:['Specialty Surfactants','Chelating Agents','Industrial Solvents','Specialty Processing Chemicals'],uses:[{ico:'🏠',t:'Cleaning Agents',s:'Surfactants and solvents form the backbone of dishwashing liquids, floor cleaners, and multi-surface spray products.'},{ico:'🧴',t:'Laundry Products',s:'Specialty ingredients for detergent powders, fabric conditioners, and stain removal formulation systems.'},{ico:'🔬',t:'Industrial Cleaning',s:'Stronger chemical grades for industrial and commercial cleaning product manufacturing at scale.'}]},food:{eyebrow:'Growth Sector',img:'Images/Industries/Food Industry/orange-coffee-cocktail-white-surface.jpg',name:'Food Industry',desc:'Meeting international food safety standards, we supply food-grade additives and processing aids to Sri Lanka\'s food and beverage manufacturers.',chems:['Sodium Metabisulfite (Food Grade)','Monopropylene Glycol (Food Grade)','Glycerine (USP/Food Grade)','Food Grade Additives &amp; Preservatives'],uses:[{ico:'🌾',t:'Preservation',s:'Food-grade sodium metabisulfite is an effective antioxidant and antimicrobial preservative for food, juice, and beverage products.'},{ico:'💧',t:'Humectants &amp; Solvents',s:'MPG and glycerine are widely used as humectants, carrier solvents, and sweetener agents in food formulations.'},{ico:'🏭',t:'Processing Aids',s:'Various food-grade processing aids supporting Sri Lanka\'s growing food and beverage manufacturing sector.'}]},pharma:{eyebrow:'Expanding Into',img:'Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg',name:'Pharmaceutical',desc:'Entering the pharmaceutical sector with USP/BP grade excipients and specialty ingredients for pharmaceutical manufacturers in Sri Lanka.',chems:['Isopropyl Alcohol (USP Grade)','Monopropylene Glycol (USP Grade)','Glycerine (BP/PhEur Grade)','Pharmaceutical Excipients'],uses:[{ico:'💊',t:'Excipients',s:'USP/BP grade glycerine and MPG serve as excipients, solvents and humectants in tablet, capsule, and liquid formulations.'},{ico:'🔬',t:'Sanitisation',s:'High-purity IPA for equipment sanitisation, hand sanitiser production, and surface disinfection in pharmaceutical facilities.'},{ico:'🛡️',t:'Quality Assured',s:'All pharmaceutical-grade materials supplied with full documentation including CoA, SDS, and regulatory compliance records.'}]},textile:{eyebrow:'Established Industry',img:'Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg',name:'Textile Washing',desc:'Supporting Sri Lanka\'s textile and garment washing industry with specialty solvents and processing chemicals.',chems:['Specialty Solvents','Processing Chemicals','Industrial Grade Chemicals'],uses:[{ico:'🧵',t:'Fabric Processing',s:'Specialty chemicals for desizing, scouring, and finishing processes in textile washing and garment factories.'},{ico:'🏭',t:'Washing Operations',s:'Industrial-grade solvents and processing chemicals for large-scale garment and fabric washing facilities.'},{ico:'🌿',t:'Eco-Responsible',s:'Supporting textile processors in transitioning to more environmentally responsible chemical alternatives.'}]}};
@@ -1158,5 +1222,6 @@ function burst(){const cols=['#A8D400','#C2EC00','#fff','#86AB00','#F2FBCC'];for
 function sf(){if(!document.getElementById('fn').value.trim()||!document.getElementById('fe').value.trim()||!document.getElementById('fm').value.trim()){alert('Please fill in your name, email and message.');return;}burst();setTimeout(()=>{document.getElementById('fw').style.display='none';document.getElementById('fok').style.display='block';},300);}
 document.querySelectorAll('.ic').forEach(el=>{el.setAttribute('role','link');el.setAttribute('tabindex','0');el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});});
 </script>
+<script src="feedback.js"></script>
 </body>
 </html>
