@@ -32,8 +32,8 @@ html{scroll-behavior:smooth}
   --sh-lg:0 16px 48px rgba(0,0,0,.12);
 }
 
-html{overflow-x:hidden}
-body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
+html,body{overflow-x:clip}
+body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
 img{display:block;width:100%;height:100%;object-fit:cover}
 a{text-decoration:none;color:inherit}
 button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:none}
@@ -684,7 +684,7 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
   .frow{grid-template-columns:1fr}
   .ft-grid{grid-template-columns:1fr}
   .stat-item{flex:0 0 50%}
-  .gal-intro{flex-direction:column;align-items:flex-start;gap:1rem}
+  .gal-intro{flex-direction:column;align-items:stretch;gap:1rem}
   .gal-filter-wrap::after{display:block}
   .gal-filter{flex-wrap:nowrap;overflow-x:auto;width:100%;scrollbar-width:none;padding-right:40px}
   .gal-filter::-webkit-scrollbar{display:none}
