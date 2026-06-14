@@ -367,6 +367,12 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 .gf.on{background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
   border-color:transparent;color:#0a2e18}
 .gf:hover:not(.on){border-color:var(--lime);color:var(--lime-dk)}
+.gal-select{display:none;margin-top:.9rem;width:100%;padding:10px 16px;
+  border-radius:10px;border:1.5px solid var(--border);background:var(--bg);
+  font-size:14px;font-weight:600;color:var(--ink);font-family:'Poppins',sans-serif;
+  -webkit-appearance:none;appearance:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23646464' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat:no-repeat;background-position:right 14px center;padding-right:36px}
 /* ── Bento Grid ── */
 .bento-grid{display:grid;grid-template-columns:repeat(4,1fr);
   grid-auto-rows:80px;gap:6px;grid-auto-flow:dense}
@@ -681,11 +687,8 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
   .ft-grid{grid-template-columns:1fr}
   .stat-item{flex:0 0 50%}
   .gal-intro{flex-direction:column;align-items:stretch;gap:1rem}
-  .gal-filter{flex-wrap:nowrap;overflow-x:scroll;-webkit-overflow-scrolling:touch;
-    touch-action:pan-x;scrollbar-width:none;width:100%;padding-bottom:2px}
-  .gal-filter::-webkit-scrollbar{display:none}
-  .gf{flex-shrink:0;white-space:nowrap}
-  .gf{white-space:nowrap;flex-shrink:0}
+  .gal-filter{display:none}
+  .gal-select{display:block}
   .bento-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:110px}
   .bi-r3{grid-row:span 2}
   .bi-c2{grid-column:span 1}
@@ -1016,6 +1019,13 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
           <button class="gf" data-f="warehouse">🏭 Warehouse</button>
           <button class="gf" data-f="operations">⚙️ Operations</button>
         </div>
+        <select class="gal-select" id="gal-select">
+          <option value="all">All Photos</option>
+          <option value="charity">🤝 Community</option>
+          <option value="products">📦 Products</option>
+          <option value="warehouse">🏭 Warehouse</option>
+          <option value="operations">⚙️ Operations</option>
+        </select>
       </div>
     </div>
     <div class="bento-grid rv d1" id="bento-grid">
@@ -1216,7 +1226,9 @@ const statsEl=document.getElementById('stats');if(statsEl)cntObs.observe(statsEl
   timer=setInterval(()=>goTo(cur+1),5000);
 })();
 /* ── Bento gallery filter ── */
-document.querySelectorAll('.gf').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.gf').forEach(b=>b.classList.remove('on'));btn.classList.add('on');const f=btn.dataset.f;document.querySelectorAll('.bento-item').forEach(gi=>{gi.style.display=(f==='all'||(gi.dataset.cat||'').includes(f))?'':'none';});});});
+function applyGalFilter(f){document.querySelectorAll('.bento-item').forEach(gi=>{gi.style.display=(f==='all'||(gi.dataset.cat||'').includes(f))?'':'none';});}
+document.querySelectorAll('.gf').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.gf').forEach(b=>b.classList.remove('on'));btn.classList.add('on');applyGalFilter(btn.dataset.f);});});
+const galSel=document.getElementById('gal-select');if(galSel)galSel.addEventListener('change',()=>applyGalFilter(galSel.value));
 /* ── Bento item click ── */
 const TILTS=[-13,12,-10,15,-12,9,-15,13,-11,14,-8,12,-10,16];
 document.querySelectorAll('.bento-item').forEach(el=>{el.addEventListener('click',()=>{olb(el,el.dataset.title||'',el.dataset.desc||'');});});
