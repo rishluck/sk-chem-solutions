@@ -32,6 +32,7 @@ html{scroll-behavior:smooth}
   --sh-lg:0 16px 48px rgba(0,0,0,.12);
 }
 
+html{overflow-x:hidden}
 body{font-family:'Poppins',sans-serif;background:var(--bg);color:var(--ink);overflow-x:hidden;-webkit-font-smoothing:antialiased}
 img{display:block;width:100%;height:100%;object-fit:cover}
 a{text-decoration:none;color:inherit}
@@ -409,7 +410,7 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 .gal-note{text-align:center;margin-top:1.25rem;font-size:12.5px;color:var(--muted);font-weight:400}
 
 /* ════════════════════ LOGO MARQUEE — logo-cloud-3 (InfiniteSlider) ════════════════════ */
-.lm-section{background:var(--bg);padding:clamp(3.5rem,6vw,5.5rem) 0;overflow:hidden}
+.lm-section{background:var(--bg);padding:clamp(3.5rem,6vw,5.5rem) 0;overflow:hidden;transform:translateZ(0)}
 .lm-head{text-align:center;margin-bottom:1.75rem}
 .lm-h{font-family:'Poppins',sans-serif;font-size:clamp(2rem,4vw,3.2rem);
   font-weight:800;color:var(--ink);line-height:1.02;letter-spacing:-.01em;margin-bottom:.5rem}
@@ -654,9 +655,11 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
 @media(max-width:960px){
   .nav-left,.nav-right,.n-cta{display:none}
   .hbg{display:flex}.mob{display:flex}
-  .hero-body{padding:72px 2rem 3rem;padding-left:2rem}
+  .hero-body{padding:72px 2rem 3rem;padding-left:2rem;max-width:100%}
   .hero-nums{display:none}
-  .hero-h1{font-size:clamp(2.8rem,9vw,4.5rem)}
+  .hero-h1{font-size:clamp(2.4rem,8vw,4rem)}
+  .hero-btns{flex-direction:column;align-items:flex-start}
+  .btn-hero-primary,.btn-hero-ghost{width:100%;justify-content:center}
   .about-wrap,.csr-wrap,.con-wrap{grid-template-columns:1fr}
   .about-img-side{min-height:360px}
   .ind-card{flex:0 0 320px}
