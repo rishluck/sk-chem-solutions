@@ -64,6 +64,9 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
   display:flex;flex-direction:column;justify-content:flex-end;padding-top:70px}
 .ih-bg{position:absolute;inset:0}
 .ih-bg img{width:100%;height:100%;object-fit:cover}
+.ih-tile{position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#0a2e18,#01BF47 55%,#89FA58)}
+.ih-tile span{font-size:9rem;line-height:1;opacity:.9;filter:drop-shadow(0 8px 30px rgba(0,0,0,.25))}
 .ih-overlay{position:absolute;inset:0;
   background:linear-gradient(160deg,rgba(46,46,44,.38) 0%,rgba(46,46,44,.18) 50%,rgba(46,46,44,.28) 100%)}
 .ih-content{position:relative;z-index:2;padding:0 clamp(1.5rem,5vw,4rem) clamp(3rem,5vw,4.5rem)}
@@ -171,6 +174,25 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .app-t{font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;
   color:#fff;margin-bottom:.65rem;line-height:1.2}
 .app-s{font-size:13px;color:rgba(255,255,255,.48);font-weight:400;line-height:1.8}
+
+.cat-groups-head{margin-top:3.5rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.07);
+  margin-bottom:2rem}
+.cat-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.cat-groups.g1{grid-template-columns:1fr}
+.cat-groups.g2{grid-template-columns:repeat(2,1fr)}
+.cat-card{border-radius:14px;overflow:hidden;background:var(--ink);
+  border:1px solid rgba(255,255,255,.08);transition:border-color .35s,transform .35s}
+.cat-card:hover{border-color:rgba(1,191,71,.4);transform:translateY(-4px)}
+.cat-card-img{aspect-ratio:16/10;overflow:hidden}
+.cat-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.cat-card:hover .cat-card-img img{transform:scale(1.06)}
+.cat-card-body{padding:1.4rem 1.5rem 1.6rem}
+.cat-card-h{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;
+  color:#fff;margin-bottom:.6rem;line-height:1.2}
+.cat-card-list{font-size:12.5px;line-height:1.85;color:rgba(255,255,255,.5);font-weight:400}
+.cat-card-img.tile{aspect-ratio:auto;height:180px;display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#0a2e18,#01BF47 55%,#89FA58)}
+.cat-card-img.tile span{font-size:4.5rem;line-height:1;filter:drop-shadow(0 6px 20px rgba(0,0,0,.25))}
 
 /* CTA */
 #ind-cta{background:var(--ink);padding:clamp(4rem,8vw,6rem) 0;position:relative;overflow:hidden}
@@ -307,11 +329,12 @@ body{animation:fadeIn .5s ease both}
   .ov-grid,.chem-row{grid-template-columns:1fr}
   .chem-row.rev .chem-img,.chem-row.rev .chem-txt{order:unset}
   .apps-grid{grid-template-columns:1fr 1fr}
+  .cat-groups,.cat-groups.g1,.cat-groups.g2{grid-template-columns:1fr 1fr}
   .ft-grid{grid-template-columns:1fr 1fr}
   .ih-h1{font-size:3.5rem}
 }
 @media(max-width:600px){
-  .apps-grid,.ft-grid{grid-template-columns:1fr}
+  .apps-grid,.ft-grid,.cat-groups,.cat-groups.g1,.cat-groups.g2{grid-template-columns:1fr}
   .chem-specs-grid{grid-template-columns:1fr}
   .ov-stats{grid-template-columns:1fr 1fr}
   /* Heading size overrides for small mobile */
@@ -351,7 +374,7 @@ body{animation:fadeIn .5s ease both}
 
 <!-- HERO -->
 <section id="ih">
-  <div class="ih-bg"><img id="ih-img" src="" alt=""></div>
+  <div class="ih-bg"><img id="ih-img" src="" alt=""><div class="ih-tile" id="ih-tile"><span id="ih-tile-ico"></span></div></div>
   <div class="ih-overlay"></div>
   <div class="ih-orb ih-orb-1"></div>
   <div class="ih-orb ih-orb-2"></div>
@@ -395,7 +418,7 @@ body{animation:fadeIn .5s ease both}
 
 <!-- CHEMICALS -->
 <section id="ind-chem">
-  <div class="chem-head W rv">
+  <div class="chem-head W rv" id="chem-head">
     <div class="chem-eyebrow">What We Enable</div>
     <h2 class="chem-h">Services that <em>power your</em> production</h2>
   </div>
@@ -410,6 +433,10 @@ body{animation:fadeIn .5s ease both}
       <h2 class="apps-h">How our chemicals<br>are <em>put to work</em></h2>
     </div>
     <div class="apps-grid rv d1" id="apps-grid"></div>
+    <div class="cat-groups-head rv d2" id="cat-groups-head" style="display:none">
+      <span class="apps-eyebrow">Product Categories</span>
+    </div>
+    <div class="cat-groups rv d3" id="cat-groups"></div>
   </div>
 </section>
 
@@ -449,11 +476,13 @@ body{animation:fadeIn .5s ease both}
       </ul></div>
       <div class="ft-col"><h5>Industries</h5><ul>
         <li><a href="industry.html?ind=rubber">Rubber &amp; Latex</a></li>
-        <li><a href="industry.html?ind=personal">Personal Care</a></li>
-        <li><a href="industry.html?ind=home">Home Care</a></li>
-        <li><a href="industry.html?ind=food">Food Industry</a></li>
+        <li><a href="industry.html?ind=personal">Household &amp; Personal Care</a></li>
+        <li><a href="industry.html?ind=food">Food &amp; Beverage Industry</a></li>
         <li><a href="industry.html?ind=pharma">Pharmaceutical</a></li>
-        <li><a href="industry.html?ind=textile">Textile Washing</a></li>
+        <li><a href="industry.html?ind=estate">Estate &amp; Plantation Chemicals</a></li>
+        <li><a href="industry.html?ind=coatings">Coatings &amp; Printing Inks</a></li>
+        <li><a href="industry.html?ind=engineering">Industrial &amp; Engineering Solutions</a></li>
+        <li><a href="industry.html?ind=assorted">Specialty &amp; Miscellaneous Products</a></li>
       </ul></div>
     </div>
     <div class="ft-btm">
@@ -527,24 +556,29 @@ const IND={
       {ico:'📋',t:'Quality Assurance',s:'Consistent purity levels and full documentation ensure reproducible results and traceable supply for every batch.'},
       {ico:'🤝',t:'Reliable Year-Round Supply',s:'Guaranteed through our established supply chain with BASF Germany and BASF China — no seasonal shortfalls.'},
       {ico:'📦',t:'Plantation-Ready Packaging',s:'Formic acid in 35 kg carboys, sulphites in 25 kg bags — convenient formats for daily plantation and factory use.'}
+    ],
+    catGroups:[
+      {h:'Dry Rubber',img:'Images/Industries/Rubber/alex-shuper-D5LVMChT3PU-unsplash.jpg',tags:['Accelerators','Activators','Antioxidants & Antiozonants','Fillers','Processing Aids','Pigments','Carbon Black']},
+      {h:'Latex',img:'Images/Industries/Rubber/divazus-fabric-store-7BziR1wr8X8-unsplash.jpg',tags:['Wetting Agents & Dispersions','Surface Modifiers','Antioxidants','Performance Additives','Defoamers','Waxes','Pigments & Titanium Dioxide']}
     ]
   },
 
   personal:{
-    name:'Personal Care',nameRaw:'Personal Care',badge:'✨ Growing Sector',
+    name:'Household &amp; Personal Care',nameRaw:'Household & Personal Care',badge:'✨ Growing Sector',
     img:'Images/Industries/Personal Care/look-studio-TQSPgNqeCo8-unsplash.jpg',
-    tagline:'Enabling Sri Lankan manufacturers to produce gentle, effective, and premium personal care products.',
-    ovH:'Premium ingredients<br>for <em>everyday beauty</em>',
-    ovP1:'Sri Lanka\'s personal care manufacturing sector is growing rapidly, with increasing demand for high-quality cosmetic products. S.K. Chem Solutions enables local manufacturers to compete — by providing cosmetic-grade ingredients sourced from Europe, Korea, and Malaysia.',
-    ovP2:'From mild surfactants for gentle shampoos to antioxidants for premium skincare, our personal care range gives formulators the building blocks to produce products that consumers love and trust.',
-    stats:[{n:'5+',l:'Services Enabled'},{n:'USP/BP',l:'Grade Available'},{n:'Germany',l:'& Korea Sourced'},{n:'Cosmetic',l:'Grade Certified'}],
+    tagline:'Enabling Sri Lankan manufacturers to produce gentle personal care, powerful household cleaning, and premium fabric care products.',
+    ovH:'Premium ingredients<br>for <em>everyday living</em>',
+    ovP1:'Sri Lanka\'s personal care and home care manufacturing sectors are growing rapidly, with increasing demand for high-quality cosmetic and household products. S.K. Chem Solutions enables local manufacturers to compete — by providing cosmetic and industrial-grade ingredients sourced from Europe, Korea, and Malaysia.',
+    ovP2:'From mild surfactants for gentle shampoos and dishwashing liquids, to chelating agents for hard-water detergent stability, to high-purity solvents for garment and denim washing — our range gives formulators and washing plants the building blocks to produce products that consumers and international buyers trust.',
+    stats:[{n:'9+',l:'Services Enabled'},{n:'USP/BP',l:'Grade Available'},{n:'Germany, Korea',l:'& Malaysia Sourced'},{n:'Cosmetic &amp; Industrial',l:'Grade Certified'}],
     quickH:'Services at a Glance',
     quick:[
       {ico:'✨',t:'Gentle Cleansing (CAPB)',s:'Mild surfactant enabling shampoos, body washes & baby care. 200 kg drums.'},
       {ico:'🌿',t:'Skincare Enrichment (Vit. E)',s:'Antioxidant for premium anti-aging products. 5 kg containers.'},
-      {ico:'💧',t:'Moisture Formulation (MPG)',s:'Humectant for moisturisers & hair care. 215 kg drums.'},
-      {ico:'🧴',t:'Sanitiser Production (IPA)',s:'High-purity alcohol for sanitisers & antiseptics. 160 kg drums.'},
-      {ico:'🌻',t:'Natural Hydration (Glycerine)',s:'Plant-derived moisture for natural beauty lines. 250 kg drums.'}
+      {ico:'🧼',t:'Dishwashing Power (CAPB)',s:'Mild amphoteric surfactant for effective foam and cleaning. 200 kg drums.'},
+      {ico:'💧',t:'Hard Water Stability (Chelating)',s:'Chelating agents for consistent detergent performance across water types.'},
+      {ico:'👔',t:'Garment Washing (IPA Solvent)',s:'High-purity IPA solvent for consistent wash effects on denim and garments. 160 kg drums.'},
+      {ico:'🧵',t:'Fabric Scouring & Pre-Treatment',s:'Processing chemicals for effective pre-dyeing fabric preparation.'}
     ],
     chems:[
       {service:'Shampoo & Body Wash Formulation',serviceEm:'Shampoo &amp; Body Wash <em>Formulation</em>',chemical:'CAPB · Cocamidopropyl Betaine',
@@ -576,33 +610,7 @@ const IND={
        desc:'Tap into the growing demand for natural, plant-derived personal care. Our USP/BP vegetable glycerine keeps skin deeply moisturised, hair nourished, and oral care products effective — a clean, naturally-sourced ingredient your eco-conscious customers can trust.',
        outcomes:['Natural origin, plant-derived','Deep skin hydration','Suitable for natural product claims','USP/BP & Halal certified'],
        specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'USP / BP / Food'},{l:'Packaging',v:'250 kg drums'},{l:'Docs',v:'CoA & Halal Cert'}],
-       supplier:'Vance Group, Malaysia',flag:'🇲🇾'}
-    ],
-    apps:[
-      {ico:'🧴',t:'Shampoos & Body Washes',s:'CAPB and glycerine enable gentle, effective haircare and body wash formulations that are kind to skin and loved by consumers.'},
-      {ico:'✨',t:'Skincare & Moisturisers',s:'Vitamin E, glycerine, and MPG deliver moisture-binding, antioxidant, and premium sensory properties to skincare formulations.'},
-      {ico:'🌿',t:'Natural & Organic Products',s:'Vegetable-derived ingredients supporting the growing market for natural and sustainably sourced personal care products.'},
-      {ico:'💧',t:'Hand Sanitisers',s:'High-purity IPA and glycerine are the two key ingredients in effective, skin-friendly sanitiser formulations.'},
-      {ico:'👶',t:'Baby Care Products',s:'Mild, cosmetic-grade CAPB and glycerine are safe and gentle for baby shampoos and body washes.'},
-      {ico:'🔬',t:'Flexible Formulation',s:'Surfactants, antioxidants, humectants, and solvents — a complete toolkit for personal care formulators.'}
-    ]
-  },
-
-  home:{
-    name:'Home Care',nameRaw:'Home Care',badge:'🏠 Established Sector',
-    img:'Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg',
-    tagline:'Enabling Sri Lankan manufacturers to produce powerful, reliable household cleaning and detergent products.',
-    ovH:'The chemistry behind<br><em>a cleaner home</em>',
-    ovP1:'Sri Lanka\'s home care sector is a major pillar of the FMCG industry. S.K. Chem Solutions supplies the surfactants and chelating agents that enable local manufacturers to produce dishwashing liquids, laundry detergents, and surface cleaners that meet the expectations of today\'s consumer.',
-    ovP2:'From CAPB for gentle, effective foam to chelating agents that ensure hard-water stability — our home care range provides manufacturers with the core ingredients to produce consistent, shelf-stable products at competitive cost, batch after batch.',
-    stats:[{n:'Year-round',l:'Supply'},{n:'200 kg',l:'Drum Packaging'},{n:'Industrial',l:'Grade'},{n:'B2B',l:'Supply Only'}],
-    quickH:'Services at a Glance',
-    quick:[
-      {ico:'🧼',t:'Dishwashing Power (CAPB)',s:'Mild amphoteric surfactant for effective foam and cleaning. 200 kg drums.'},
-      {ico:'💧',t:'Hard Water Stability (Chelating)',s:'Chelating agents for consistent detergent performance across water types.'},
-      {ico:'🌿',t:'Eco-Responsible Alternatives',s:'Naturally derived and biodegradable surfactant options available on request.'}
-    ],
-    chems:[
+       supplier:'Vance Group, Malaysia',flag:'🇲🇾'},
       {service:'Dishwashing & Surface Cleaning',serviceEm:'Dishwashing &amp; <em>Surface Cleaning</em>',chemical:'CAPB · Cocamidopropyl Betaine',
        img:'Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg',
        desc:'Build dishwashing liquids and surface cleaners that cut through grease without harming hands. Our cosmetic-grade CAPB delivers mild, effective foam and rinse-clean performance — the same ingredient trusted by leading personal care brands, now enabling your household cleaning formulations to perform at the same standard.',
@@ -614,20 +622,37 @@ const IND={
        desc:'Ensure your laundry and cleaning products perform reliably across Sri Lanka\'s varying water conditions. Our chelating agents bind calcium and magnesium ions — preventing scale build-up, maintaining formula stability, and delivering the consistent wash performance that consumers trust from first use to last.',
        outcomes:['Hard water compatibility','Prevents scale & residue','Long-term formula stability','Consistent wash performance'],
        specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid / Powder'},{l:'Packaging',v:'25 kg bags / drums'},{l:'Docs',v:'CoA & SDS'}],
+       supplier:'Selected Global Partners',flag:'🌍'},
+      {service:'Garment Washing & Denim Finishing',serviceEm:'Garment Washing &amp; <em>Denim Finishing</em>',chemical:'Isopropyl Alcohol · C₃H₈O (IPA)',
+       img:'Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg',
+       desc:'Achieve the consistent, premium wash effects that international buyers demand. Our high-purity IPA from LG Chem Korea is an industrial-grade solvent that enables reliable stone wash, enzyme wash, and denim finishing — ensuring garments leave your facility with the right look, feel, and quality, every batch.',
+       outcomes:['Consistent wash effects','Premium denim finishing','Compatible with all machinery','Full purity documentation'],
+       specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'Industrial / High Purity'},{l:'Packaging',v:'160 kg drums'},{l:'Docs',v:'CoA & SDS'}],
+       supplier:'LG Chem, Korea',flag:'🇰🇷'},
+      {service:'Fabric Scouring & Pre-Treatment',serviceEm:'Fabric Scouring &amp; <em>Pre-Treatment</em>',chemical:'Processing Chemicals · Specialty Blend',
+       img:'Images/Industries/Textile Washing/engin-akyurt-8g__j-nqWXc-unsplash.jpg',
+       desc:'Prepare grey fabric for dyeing with thorough, efficient scouring that removes sizing agents, natural waxes, and impurities. Our processing chemicals ensure even dye uptake, superior colour consistency, and a high-quality finish — so every batch meets the standards your buyers expect.',
+       outcomes:['Even dye uptake','Superior colour consistency','Impurity-free fabric surface','Faster processing cycles'],
+       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid / Powder'},{l:'Packaging',v:'As per requirement'},{l:'Docs',v:'CoA & SDS'}],
        supplier:'Selected Global Partners',flag:'🌍'}
     ],
     apps:[
+      {ico:'🧴',t:'Shampoos & Body Washes',s:'CAPB and glycerine enable gentle, effective haircare and body wash formulations that are kind to skin and loved by consumers.'},
+      {ico:'✨',t:'Skincare & Moisturisers',s:'Vitamin E, glycerine, and MPG deliver moisture-binding, antioxidant, and premium sensory properties to skincare formulations.'},
       {ico:'🍽️',t:'Dishwashing Liquids',s:'CAPB provides effective foam, grease-cutting power, and skin mildness in household and commercial dishwashing formulations.'},
       {ico:'🧺',t:'Laundry Detergents',s:'Surfactants and chelating agents work together in powder and liquid laundry products for reliable performance in Sri Lanka\'s hard water.'},
-      {ico:'🏠',t:'Surface Cleaners',s:'Multi-surface, bathroom, and kitchen cleaners that cut through grease and grime — built on mild, effective surfactant chemistry.'},
-      {ico:'🏭',t:'Industrial Cleaning',s:'Higher-concentration grades for industrial and commercial cleaning product manufacturing and institutional cleaning operations.'},
-      {ico:'✅',t:'Stable Formulations',s:'Chelating agents give formulators the water-conditioning performance needed for consistent, shelf-stable products across all water types.'},
-      {ico:'📦',t:'Drum & Bulk Supply',s:'Home care ingredients supplied in 200 kg drums and IBC tanks — convenient for manufacturers of all sizes.'}
+      {ico:'👔',t:'Garment & Denim Washing',s:'High-purity IPA for denim washing, stone wash, and enzyme wash — delivering consistent premium wash effects for export-quality garments.'},
+      {ico:'🧵',t:'Scouring & Pre-Treatment',s:'Removing natural impurities, waxes, and oils from raw fabric to prepare it perfectly for dyeing and premium finishing.'}
+    ],
+    catGroups:[
+      {h:'Personal Care',img:'Images/Industries/Personal Care/front-view-blonde-lady-posing-with-her-lipstick-mini-mirror.jpg',tags:['Skin Care','Body Care','Hair Care','Oral Care','Baby Care','Sun Care','Nail Care','Natural & Organic Specialties','Fragrance Ingredients']},
+      {h:'Home Care',img:'Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg',tags:['Fabric Softener','Home & Toiletry Cleaning','Commodity Surfactants','Hand Hygiene','Laundry Care','Air Care']},
+      {h:'Fabric & Garment Care',img:'Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg',tags:['Fabric Desizing','Scouring & Pre-Treatment','Garment & Denim Washing','Quality Finishing','Eco-Responsible Processing']}
     ]
   },
 
   food:{
-    name:'Food Industry',nameRaw:'Food Industry',badge:'🌾 Growth Sector',
+    name:'Food &amp; Beverage Industry',nameRaw:'Food & Beverage Industry',badge:'🌾 Growth Sector',
     img:'Images/Industries/Food Industry/orange-coffee-cocktail-white-surface.jpg',
     tagline:'Enabling Sri Lankan food manufacturers to produce safer, fresher, and longer-lasting products.',
     ovH:'Food-grade quality<br><em>you can trust</em>',
@@ -667,6 +692,9 @@ const IND={
       {ico:'🌿',t:'Natural Preservation',s:'Antioxidant preservatives help reduce artificial additives while maintaining product quality and safety for health-conscious consumers.'},
       {ico:'✅',t:'Compliance & Documentation',s:'All food-grade materials supplied with full CoA, SDS, Halal certification, and food safety compliance records.'},
       {ico:'📦',t:'Industrial-Scale Supply',s:'Available in bulk to support Sri Lanka\'s growing food manufacturing sector with year-round availability and consistent quality.'}
+    ],
+    catGroups:[
+      {h:'Food &amp; Beverage',img:'Images/Industries/Food Industry/andy-li-RndRFJ1v1kk-unsplash.jpg',tags:['Dairy Ingredients','Cocoa & Confectionery Ingredients','Hydrocolloids & Starches']}
     ]
   },
 
@@ -714,44 +742,104 @@ const IND={
     ]
   },
 
-  textile:{
-    name:'Textile Washing',nameRaw:'Textile Washing',badge:'🧵 Established Sector',
-    img:'Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg',
-    tagline:'Enabling Sri Lankan garment and textile manufacturers to achieve premium washing and finishing results.',
-    ovH:'The right chemistry<br>for <em>clean textiles</em>',
-    ovP1:'Sri Lanka\'s textile and garment sector is a cornerstone of the national export economy. Washing plants and garment factories supplying international brands require chemicals that deliver consistent, premium results — with reliable supply and full quality documentation.',
-    ovP2:'S.K. Chem Solutions supplies high-purity solvents and processing chemicals that enable consistent wash quality, effective pre-treatment, and premium finishing — so manufacturers can meet international buyer specifications every time, with zero compromise on quality.',
-    stats:[{n:'≥99.7%',l:'Purity Grade'},{n:'Year-round',l:'Availability'},{n:'160 kg',l:'Drum Packaging'},{n:'Bulk',l:'Industrial Supply'}],
+  estate:{
+    name:'Estate &amp; Plantation Chemicals',nameRaw:'Estate & Plantation Chemicals',badge:'🌱 Expanding Into',icon:'🌱',
+    tagline:'Building our sourcing network to serve Sri Lankan rubber and tea estates with plantation-level chemical supply.',
+    ovH:'Supporting the<br><em>plantation economy</em>',
+    ovP1:'Beyond factory processing, Sri Lanka\'s rubber and tea estates need chemicals at the plantation level — for coagulation, sanitation, and crop treatment. S.K. Chem Solutions is expanding its sourcing network to serve estate operators directly, as a general B2B import partner, alongside our established Rubber & Latex processing supply.',
+    ovP2:'This is a growing area of our business rather than an established product line — we are actively building supplier relationships and welcome enquiries from estate operators looking for a reliable import partner.',
+    stats:[{n:'Expanding',l:'Sector'},{n:'B2B',l:'Import Partner'},{n:'Full Docs',l:'On Request'},{n:'Sri Lanka',l:'Wide Delivery'}],
     quickH:'Services at a Glance',
     quick:[
-      {ico:'👔',t:'Garment Washing (IPA Solvent)',s:'High-purity IPA solvent for consistent wash effects on denim and garments. 160 kg drums.'},
-      {ico:'🧵',t:'Fabric Scouring & Pre-Treatment',s:'Processing chemicals for effective pre-dyeing fabric preparation.'},
-      {ico:'🌿',t:'Eco-Responsible Alternatives',s:'Environmentally responsible processing chemical options available on request.'}
+      {ico:'🌍',t:'Global Sourcing Network',s:'Access to our established international supplier relationships for plantation-level chemical requirements.'},
+      {ico:'📋',t:'Custom Import Arrangement',s:'Tailored import arrangements for estate operators with specific volume or grade requirements.'},
+      {ico:'📄',t:'Full Documentation',s:'CoA and SDS documentation arranged on request for every shipment.'}
     ],
-    chems:[
-      {service:'Garment Washing & Denim Finishing',serviceEm:'Garment Washing &amp; <em>Denim Finishing</em>',chemical:'Isopropyl Alcohol · C₃H₈O (IPA)',
-       img:'Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg',
-       desc:'Achieve the consistent, premium wash effects that international buyers demand. Our high-purity IPA from LG Chem Korea is an industrial-grade solvent that enables reliable stone wash, enzyme wash, and denim finishing — ensuring garments leave your facility with the right look, feel, and quality, every batch.',
-       outcomes:['Consistent wash effects','Premium denim finishing','Compatible with all machinery','Full purity documentation'],
-       specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'Industrial / High Purity'},{l:'Packaging',v:'160 kg drums'},{l:'Docs',v:'CoA & SDS'}],
-       supplier:'LG Chem, Korea',flag:'🇰🇷'},
-      {service:'Fabric Scouring & Pre-Treatment',serviceEm:'Fabric Scouring &amp; <em>Pre-Treatment</em>',chemical:'Processing Chemicals · Specialty Blend',
-       img:'Images/Industries/Textile Washing/engin-akyurt-8g__j-nqWXc-unsplash.jpg',
-       desc:'Prepare grey fabric for dyeing with thorough, efficient scouring that removes sizing agents, natural waxes, and impurities. Our processing chemicals ensure even dye uptake, superior colour consistency, and a high-quality finish — so every batch meets the standards your buyers expect.',
-       outcomes:['Even dye uptake','Superior colour consistency','Impurity-free fabric surface','Faster processing cycles'],
-       specs:[{l:'Grade',v:'Industrial'},{l:'Form',v:'Liquid / Powder'},{l:'Packaging',v:'As per requirement'},{l:'Docs',v:'CoA & SDS'}],
-       supplier:'Selected Global Partners',flag:'🌍'}
-    ],
+    chems:[],
     apps:[
-      {ico:'🧵',t:'Fabric Desizing',s:'Removing sizing agents from grey fabric prior to dyeing — ensuring uniform dye uptake and consistent finish quality for every production batch.'},
-      {ico:'🏭',t:'Scouring & Pre-Treatment',s:'Removing natural impurities, waxes, and oils from raw fabric to prepare it perfectly for dyeing and premium finishing.'},
-      {ico:'👔',t:'Garment & Denim Washing',s:'High-purity IPA for denim washing, stone wash, and enzyme wash — delivering consistent premium wash effects for export-quality garments.'},
-      {ico:'✅',t:'Quality Finishing',s:'Chemical finishing that imparts the right hand-feel, appearance, and durability to the final fabric or garment, meeting international buyer specs.'},
-      {ico:'🌿',t:'Eco-Responsible Options',s:'Supporting the industry\'s transition toward more sustainable and environmentally responsible processing chemical alternatives.'},
-      {ico:'📦',t:'Bulk Industrial Supply',s:'Available in 160 kg drums and bulk quantities to support continuous, high-volume textile and garment manufacturing operations island-wide.'}
+      {ico:'🌍',t:'Global Sourcing Network',s:'Leveraging our existing supplier relationships across Europe and Asia to source plantation-level chemicals for estate operators.'},
+      {ico:'📋',t:'Custom Import Arrangement',s:'Working directly with estates to arrange import volumes, packaging, and delivery schedules that fit their operations.'},
+      {ico:'📄',t:'Full Import Documentation',s:'CoA, SDS, and compliance paperwork arranged on request as this sourcing capability is built out.'}
+    ],
+    catGroups:[
+      {h:'Estate & Plantation Chemicals',icon:'🌱',tags:['Plantation Agrochemicals','Estate Sanitation','Soil & Crop Treatment Aids']}
+    ]
+  },
+
+  coatings:{
+    name:'Coatings &amp; Printing Inks',nameRaw:'Coatings & Printing Inks',badge:'🎨 Expanding Into',icon:'🎨',
+    tagline:'Building our sourcing network to supply colour pigments and additives for Sri Lanka\'s paint and ink industries.',
+    ovH:'Colour chemistry<br><em>on the horizon</em>',
+    ovP1:'Sri Lanka\'s paint, coatings, and printing ink manufacturers rely on a steady supply of pigments, resins, and additives. S.K. Chem Solutions is expanding its sourcing network into this space, as a general B2B import partner to local manufacturers.',
+    ovP2:'This is a growing area of our business rather than an established product line — we are actively building supplier relationships and welcome enquiries from coatings and ink manufacturers looking for a reliable import partner.',
+    stats:[{n:'Expanding',l:'Sector'},{n:'B2B',l:'Import Partner'},{n:'Full Docs',l:'On Request'},{n:'Sri Lanka',l:'Wide Delivery'}],
+    quickH:'Services at a Glance',
+    quick:[
+      {ico:'🌍',t:'Global Sourcing Network',s:'Access to our established international supplier relationships for coatings and ink raw materials.'},
+      {ico:'📋',t:'Custom Import Arrangement',s:'Tailored import arrangements for manufacturers with specific volume or grade requirements.'},
+      {ico:'📄',t:'Full Documentation',s:'CoA and SDS documentation arranged on request for every shipment.'}
+    ],
+    chems:[],
+    apps:[
+      {ico:'🌍',t:'Global Sourcing Network',s:'Leveraging our existing supplier relationships across Europe and Asia to source coatings and ink raw materials.'},
+      {ico:'📋',t:'Custom Import Arrangement',s:'Working directly with manufacturers to arrange import volumes, packaging, and delivery schedules that fit their operations.'},
+      {ico:'📄',t:'Full Import Documentation',s:'CoA, SDS, and compliance paperwork arranged on request as this sourcing capability is built out.'}
+    ],
+    catGroups:[
+      {h:'Coatings & Printing Inks',icon:'🎨',tags:['Decorative & Architectural Coatings','Industrial Printing Inks','Resins & Binders','Solvents & Thinners']}
+    ]
+  },
+
+  engineering:{
+    name:'Industrial &amp; Engineering Solutions',nameRaw:'Industrial & Engineering Solutions',badge:'⚙️ Expanding Into',icon:'⚙️',
+    tagline:'Building our sourcing network to support Sri Lankan industrial and engineering operations with process chemicals.',
+    ovH:'Process chemistry<br><em>for industry</em>',
+    ovP1:'Industrial plants and engineering operations across Sri Lanka need reliable process chemicals — from cleaning agents to water treatment. S.K. Chem Solutions is expanding its sourcing network into this space, as a general B2B import partner to local operators.',
+    ovP2:'This is a growing area of our business rather than an established product line — we are actively building supplier relationships and welcome enquiries from industrial and engineering operators looking for a reliable import partner.',
+    stats:[{n:'Expanding',l:'Sector'},{n:'B2B',l:'Import Partner'},{n:'Full Docs',l:'On Request'},{n:'Sri Lanka',l:'Wide Delivery'}],
+    quickH:'Services at a Glance',
+    quick:[
+      {ico:'🌍',t:'Global Sourcing Network',s:'Access to our established international supplier relationships for industrial process chemicals.'},
+      {ico:'📋',t:'Custom Import Arrangement',s:'Tailored import arrangements for operators with specific volume or grade requirements.'},
+      {ico:'📄',t:'Full Documentation',s:'CoA and SDS documentation arranged on request for every shipment.'}
+    ],
+    chems:[],
+    apps:[
+      {ico:'🌍',t:'Global Sourcing Network',s:'Leveraging our existing supplier relationships across Europe and Asia to source industrial process chemicals.'},
+      {ico:'📋',t:'Custom Import Arrangement',s:'Working directly with industrial operators to arrange import volumes, packaging, and delivery schedules that fit their operations.'},
+      {ico:'📄',t:'Full Import Documentation',s:'CoA, SDS, and compliance paperwork arranged on request as this sourcing capability is built out.'}
+    ],
+    catGroups:[
+      {h:'Industrial & Engineering Solutions',icon:'⚙️',tags:['Industrial Cleaning Chemicals','Water Treatment Chemicals','Lubricants & Process Aids']}
+    ]
+  },
+
+  assorted:{
+    name:'Specialty &amp; Miscellaneous Products',nameRaw:'Specialty & Miscellaneous Products',badge:'📦 Expanding Into',icon:'📦',
+    tagline:'Building our sourcing network for specialty chemical products across varied industrial and commercial uses.',
+    ovH:'Specialty solutions<br><em>on request</em>',
+    ovP1:'Some manufacturers need a specific specialty chemical that falls outside a standard industry category. S.K. Chem Solutions is expanding its sourcing network to cover these varied requirements, as a general B2B import partner to Sri Lankan businesses.',
+    ovP2:'This is a growing area of our business rather than an established product line — we are actively building supplier relationships and welcome enquiries for specialty or custom-sourced chemical requirements.',
+    stats:[{n:'Expanding',l:'Sector'},{n:'B2B',l:'Import Partner'},{n:'Full Docs',l:'On Request'},{n:'Sri Lanka',l:'Wide Delivery'}],
+    quickH:'Services at a Glance',
+    quick:[
+      {ico:'🌍',t:'Global Sourcing Network',s:'Access to our established international supplier relationships for specialty and custom chemical requirements.'},
+      {ico:'📋',t:'Custom Import Arrangement',s:'Tailored import arrangements for businesses with specific volume or grade requirements.'},
+      {ico:'📄',t:'Full Documentation',s:'CoA and SDS documentation arranged on request for every shipment.'}
+    ],
+    chems:[],
+    apps:[
+      {ico:'🌍',t:'Global Sourcing Network',s:'Leveraging our existing supplier relationships across Europe and Asia to source specialty chemical requirements.'},
+      {ico:'📋',t:'Custom Import Arrangement',s:'Working directly with businesses to arrange import volumes, packaging, and delivery schedules that fit their needs.'},
+      {ico:'📄',t:'Full Import Documentation',s:'CoA, SDS, and compliance paperwork arranged on request as this sourcing capability is built out.'}
+    ],
+    catGroups:[
+      {h:'Specialty & Miscellaneous Products',icon:'📦',tags:['Specialty Additives','Custom-Sourced Chemicals','General Industrial Supplies']}
     ]
   }
 };
+IND.home=IND.personal;
+IND.textile=IND.personal;
 
 /* ── BUILD PAGE ── */
 const p=new URLSearchParams(window.location.search);
@@ -759,7 +847,15 @@ const key=p.get('ind')||'rubber';
 const d=IND[key]||IND.rubber;
 
 document.title=`${d.nameRaw} — S.K. Chem Solutions`;
-document.getElementById('ih-img').src=d.img;
+if(d.img){
+  document.getElementById('ih-img').src=d.img;
+  document.getElementById('ih-img').style.display='block';
+  document.getElementById('ih-tile').style.display='none';
+}else{
+  document.getElementById('ih-img').style.display='none';
+  document.getElementById('ih-tile-ico').textContent=d.icon||'✦';
+  document.getElementById('ih-tile').style.display='flex';
+}
 document.getElementById('ih-bc').textContent=d.nameRaw;
 document.getElementById('ih-badge').textContent=d.badge;
 document.getElementById('ih-h1').innerHTML=d.name;
@@ -771,6 +867,7 @@ document.getElementById('ov-stats').innerHTML=d.stats.map(s=>`<div class="ov-sta
 document.getElementById('ov-quick-h').textContent=d.quickH;
 document.getElementById('ov-q-list').innerHTML=d.quick.map(q=>`<div class="ov-q-item"><span class="ov-q-ico">${q.ico}</span><div><span class="ov-q-t">${q.t}</span><span class="ov-q-s">${q.s}</span></div></div>`).join('');
 
+document.getElementById('chem-head').style.display=d.chems.length?'block':'none';
 document.getElementById('chem-list').innerHTML=d.chems.map((c,i)=>`
 <div class="chem-row${i%2===1?' rev':''}">
   <div class="chem-img">
@@ -795,6 +892,19 @@ document.getElementById('apps-grid').innerHTML=d.apps.map(a=>`
   <span class="app-ico">${a.ico}</span>
   <div class="app-t">${a.t}</div>
   <p class="app-s">${a.s}</p>
+</div>`).join('');
+
+const catGroups=d.catGroups||[];
+const catGroupsEl=document.getElementById('cat-groups');
+document.getElementById('cat-groups-head').style.display=catGroups.length?'block':'none';
+catGroupsEl.className='cat-groups rv d3'+(catGroups.length<3?' g'+catGroups.length:'');
+catGroupsEl.innerHTML=catGroups.map(g=>`
+<div class="cat-card">
+  ${g.img?`<div class="cat-card-img"><img src="${g.img}" alt="${g.h}" loading="lazy"></div>`:`<div class="cat-card-img tile"><span>${g.icon||'✦'}</span></div>`}
+  <div class="cat-card-body">
+    <div class="cat-card-h">${g.h}</div>
+    <p class="cat-card-list">${g.tags.join(' · ')}</p>
+  </div>
 </div>`).join('');
 
 /* ── MOTION: hero text staggered entrance ── */
@@ -850,6 +960,5 @@ setTimeout(()=>{
   if(grid) appObs.observe(grid);
 },100);
 </script>
-<script src="feedback.js"></script>
 </body>
 </html>

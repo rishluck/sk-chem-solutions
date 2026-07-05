@@ -329,6 +329,10 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 .ind-card-img img{width:100%;height:100%;object-fit:cover;display:block;
   transition:transform .4s ease;transform-origin:bottom}
 .ind-card:hover .ind-card-img img{transform:scale(1.05)}
+.ind-card-img.tile{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#0a2e18,#01BF47 55%,#89FA58);transition:transform .4s ease}
+.ind-tile-ico{font-size:4rem;line-height:1;transition:transform .4s ease}
+.ind-card:hover .ind-tile-ico{transform:scale(1.08)}
 .ind-card-body{padding:1.1rem 0 0;display:flex;flex-direction:column;flex:1}
 .ind-card-title{font-family:'Poppins',sans-serif;font-size:1.25rem;font-weight:700;
   color:var(--ink);margin-bottom:.45rem;line-height:1.2}
@@ -787,7 +791,7 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
 <div class="hero-strip">
   <div class="hsi"><div class="hsi-icon">📍</div><div><span class="hsi-t">Battaramulla, Sri Lanka</span><span class="hsi-s">Headquarters since 2017</span></div></div>
   <div class="hsi"><div class="hsi-icon">🌍</div><div><span class="hsi-t">6+ Global Suppliers</span><span class="hsi-s">BASF · LG Chem · Vance Group</span></div></div>
-  <div class="hsi"><div class="hsi-icon">⚗️</div><div><span class="hsi-t">6 Industries Served</span><span class="hsi-s">Rubber · Food · Personal Care</span></div></div>
+  <div class="hsi"><div class="hsi-icon">⚗️</div><div><span class="hsi-t">8 Industries Served</span><span class="hsi-s">Rubber · Food · Personal Care</span></div></div>
   <div class="hsi"><div class="hsi-icon">✅</div><div><span class="hsi-t">100% Quality Assured</span><span class="hsi-s">10+ years of trust</span></div></div>
 </div>
 
@@ -796,7 +800,7 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
   <div class="stats-row">
     <div class="stat-item"><span class="stat-n" data-count="10" data-suf="+">10+</span><span class="stat-l">Years of Trust</span></div>
     <div class="stat-item"><span class="stat-n" data-count="6" data-suf="+">6+</span><span class="stat-l">Global Suppliers</span></div>
-    <div class="stat-item"><span class="stat-n" data-count="6" data-suf="+">6+</span><span class="stat-l">Industries Served</span></div>
+    <div class="stat-item"><span class="stat-n" data-count="8" data-suf="+">8+</span><span class="stat-l">Industries Served</span></div>
     <div class="stat-item"><span class="stat-n" data-count="100" data-suf="%">100%</span><span class="stat-l">Quality Assured</span></div>
   </div>
 </div>
@@ -840,7 +844,7 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
       <div class="ey">About S.K. Chem Solutions</div>
       <h2 class="about-h">Rooted in trust.<br><em>Driven by quality.</em></h2>
       <p class="about-p">S.K. Chem Solutions was established in 2017 as a trusted importer of premium raw materials from leading manufacturers in Germany, Korea, Malaysia, and China.</p>
-      <p class="about-p">We supply the Rubber, Textile, Personal Care, Home Care, Food, and Pharmaceutical industries — guided by strong ethics and a genuine commitment to community and environment.</p>
+      <p class="about-p">We supply the Rubber &amp; Latex, Household &amp; Personal Care, Food &amp; Beverage, Pharmaceutical, Estate &amp; Plantation, Coatings &amp; Printing Ink, Industrial &amp; Engineering, and Specialty Chemical industries — guided by strong ethics and a genuine commitment to community and environment.</p>
       <div class="about-list">
         <div class="ach rv d2"><span class="ach-ic">🤝</span><div><span class="ach-t">Strategic Partnership</span><span class="ach-s">Not just a supplier — a long-term partner for quality and continuity.</span></div></div>
         <div class="ach rv d3"><span class="ach-ic">🌍</span><div><span class="ach-t">Global Sourcing</span><span class="ach-s">BASF, Vance, LG Chem, SK Pickglobal &amp; LUXI — the world's best.</span></div></div>
@@ -881,35 +885,23 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
 
     <div class="ind-card" onclick="location.href='industry.html?ind=personal'">
       <div class="ind-card-img">
-        <img src="Images/Industries/Personal Care/look-studio-TQSPgNqeCo8-unsplash.jpg" alt="Personal Care" loading="lazy">
+        <img src="Images/Industries/Personal Care/look-studio-TQSPgNqeCo8-unsplash.jpg" alt="Household & Personal Care" loading="lazy">
       </div>
       <div class="ind-card-body">
-        <div class="ind-card-title">Personal Care</div>
-        <p class="ind-card-sum">Cosmetic-grade CAPB, Vitamin E Acetate, and glycerine for shampoos, skincare, and haircare manufacturers.</p>
-        <div class="ind-card-tags"><span class="ic-tag">Shampoo Formulation</span><span class="ic-tag">Skincare Enrichment</span><span class="ic-tag">Natural Hydration</span></div>
-        <div class="ind-card-link">Explore Industry <span>→</span></div>
-      </div>
-    </div>
-
-    <div class="ind-card" onclick="location.href='industry.html?ind=home'">
-      <div class="ind-card-img">
-        <img src="Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg" alt="Home Care" loading="lazy">
-      </div>
-      <div class="ind-card-body">
-        <div class="ind-card-title">Home Care</div>
-        <p class="ind-card-sum">Surfactants and specialty chemicals powering Sri Lanka's dishwashing, detergent, and surface care manufacturing.</p>
-        <div class="ind-card-tags"><span class="ic-tag">Dishwashing Power</span><span class="ic-tag">Detergent Stability</span><span class="ic-tag">Surface Care</span></div>
+        <div class="ind-card-title">Household &amp; Personal Care</div>
+        <p class="ind-card-sum">Cosmetic-grade CAPB, chelating agents, and high-purity solvents for shampoo, dishwashing, and fabric/garment care manufacturers.</p>
+        <div class="ind-card-tags"><span class="ic-tag">Shampoo Formulation</span><span class="ic-tag">Detergent Stability</span><span class="ic-tag">Fabric &amp; Garment Care</span></div>
         <div class="ind-card-link">Explore Industry <span>→</span></div>
       </div>
     </div>
 
     <div class="ind-card" onclick="location.href='industry.html?ind=food'">
       <div class="ind-card-img">
-        <img src="Images/Industries/Food Industry/assortment-tasty-sugary-confectionery-products-variety-flavor-freshly-baked-buns-criossants-muffins-bars-chocolate-sweet-dessert-homemade-yummy-snack-baked-goods-flat-lay.jpg" alt="Food Industry" loading="lazy">
+        <img src="Images/Industries/Food Industry/assortment-tasty-sugary-confectionery-products-variety-flavor-freshly-baked-buns-criossants-muffins-bars-chocolate-sweet-dessert-homemade-yummy-snack-baked-goods-flat-lay.jpg" alt="Food & Beverage Industry" loading="lazy">
         <span class="ic-badge grow">Growth Sector</span>
       </div>
       <div class="ind-card-body">
-        <div class="ind-card-title">Food Industry</div>
+        <div class="ind-card-title">Food &amp; Beverage Industry</div>
         <p class="ind-card-sum">Food-grade sodium metabisulfite, MPG, and glycerine for beverage preservation, bakery freshness, and sweetening.</p>
         <div class="ind-card-tags"><span class="ic-tag">Beverage Preservation</span><span class="ic-tag">Bakery Freshness</span><span class="ic-tag">Natural Sweetening</span></div>
         <div class="ind-card-link">Explore Industry <span>→</span></div>
@@ -929,14 +921,50 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
       </div>
     </div>
 
-    <div class="ind-card" onclick="location.href='industry.html?ind=textile'">
-      <div class="ind-card-img">
-        <img src="Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg" alt="Textile Washing" loading="lazy">
+    <div class="ind-card" onclick="location.href='industry.html?ind=estate'">
+      <div class="ind-card-img tile"><span class="ind-tile-ico">🌱</span>
+        <span class="ic-badge">Expanding Into</span>
       </div>
       <div class="ind-card-body">
-        <div class="ind-card-title">Textile Washing</div>
-        <p class="ind-card-sum">Specialty solvents and processing chemicals for garment washing, fabric scouring, and premium finishing operations.</p>
-        <div class="ind-card-tags"><span class="ic-tag">Garment Washing</span><span class="ic-tag">Fabric Scouring</span><span class="ic-tag">Premium Finishing</span></div>
+        <div class="ind-card-title">Estate &amp; Plantation Chemicals</div>
+        <p class="ind-card-sum">Building our sourcing network to serve Sri Lankan rubber and tea estates with plantation-level chemical supply.</p>
+        <div class="ind-card-tags"><span class="ic-tag">Plantation Agrochemicals</span><span class="ic-tag">Estate Sanitation</span><span class="ic-tag">Crop Treatment Aids</span></div>
+        <div class="ind-card-link">Explore Industry <span>→</span></div>
+      </div>
+    </div>
+
+    <div class="ind-card" onclick="location.href='industry.html?ind=coatings'">
+      <div class="ind-card-img tile"><span class="ind-tile-ico">🎨</span>
+        <span class="ic-badge">Expanding Into</span>
+      </div>
+      <div class="ind-card-body">
+        <div class="ind-card-title">Coatings &amp; Printing Inks</div>
+        <p class="ind-card-sum">Building our sourcing network to supply colour pigments and additives for Sri Lanka's paint and ink industries.</p>
+        <div class="ind-card-tags"><span class="ic-tag">Coatings</span><span class="ic-tag">Printing Inks</span><span class="ic-tag">Resins &amp; Binders</span></div>
+        <div class="ind-card-link">Explore Industry <span>→</span></div>
+      </div>
+    </div>
+
+    <div class="ind-card" onclick="location.href='industry.html?ind=engineering'">
+      <div class="ind-card-img tile"><span class="ind-tile-ico">⚙️</span>
+        <span class="ic-badge">Expanding Into</span>
+      </div>
+      <div class="ind-card-body">
+        <div class="ind-card-title">Industrial &amp; Engineering Solutions</div>
+        <p class="ind-card-sum">Building our sourcing network to support Sri Lankan industrial and engineering operations with process chemicals.</p>
+        <div class="ind-card-tags"><span class="ic-tag">Industrial Cleaning</span><span class="ic-tag">Water Treatment</span><span class="ic-tag">Process Aids</span></div>
+        <div class="ind-card-link">Explore Industry <span>→</span></div>
+      </div>
+    </div>
+
+    <div class="ind-card" onclick="location.href='industry.html?ind=assorted'">
+      <div class="ind-card-img tile"><span class="ind-tile-ico">📦</span>
+        <span class="ic-badge">Expanding Into</span>
+      </div>
+      <div class="ind-card-body">
+        <div class="ind-card-title">Specialty &amp; Miscellaneous Products</div>
+        <p class="ind-card-sum">Building our sourcing network for specialty chemical products across varied industrial and commercial uses.</p>
+        <div class="ind-card-tags"><span class="ic-tag">Specialty Additives</span><span class="ic-tag">Custom-Sourced Chemicals</span><span class="ic-tag">General Supplies</span></div>
         <div class="ind-card-link">Explore Industry <span>→</span></div>
       </div>
     </div>
@@ -1124,7 +1152,7 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
               <div class="fg"><label>Email</label><input type="email" id="fe" placeholder="you@company.lk" required></div>
               <div class="fg"><label>Phone / WhatsApp</label><input type="tel" id="fp2" placeholder="+94 77 XXX XXXX"></div>
             </div>
-            <div class="fg"><label>Industry</label><select id="fi"><option value="">Select your industry</option><option>Rubber &amp; Latex</option><option>Personal Care</option><option>Home Care</option><option>Food &amp; Beverage</option><option>Pharmaceutical</option><option>Textile</option><option>Other</option></select></div>
+            <div class="fg"><label>Industry</label><select id="fi"><option value="">Select your industry</option><option>Rubber &amp; Latex</option><option>Household &amp; Personal Care</option><option>Food &amp; Beverage Industry</option><option>Pharmaceutical</option><option>Estate &amp; Plantation Chemicals</option><option>Coatings &amp; Printing Inks</option><option>Industrial &amp; Engineering Solutions</option><option>Specialty &amp; Miscellaneous Products</option><option>Other</option></select></div>
             <div class="fg"><label>Your Requirements</label><textarea id="fm" rows="4" placeholder="Tell us about your raw material requirements..." required></textarea></div>
             <button class="fsub" onclick="sf()">Send Enquiry →</button>
           </div>
@@ -1144,7 +1172,7 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
         <p class="ft-tag">Connecting Industries with Quality Solutions since 2017. Your trusted partner for premium raw materials — delivered with consistency and care for the environment.</p>
       </div>
       <div class="ft-col"><h5>Company</h5><ul><li><a href="#about">About Us</a></li><li><a href="about.html#vm">Vision &amp; Mission</a></li><li><a href="about.html#sustain">Sustainability</a></li><li><a href="#csr">Social Responsibility</a></li><li><a href="#contact">Contact</a></li></ul></div>
-      <div class="ft-col"><h5>Industries</h5><ul><li><a href="industry.html?ind=rubber">Rubber &amp; Latex</a></li><li><a href="industry.html?ind=personal">Personal Care</a></li><li><a href="industry.html?ind=home">Home Care</a></li><li><a href="industry.html?ind=food">Food Industry</a></li><li><a href="industry.html?ind=pharma">Pharmaceutical</a></li></ul></div>
+      <div class="ft-col"><h5>Industries</h5><ul><li><a href="industry.html?ind=rubber">Rubber &amp; Latex</a></li><li><a href="industry.html?ind=personal">Household &amp; Personal Care</a></li><li><a href="industry.html?ind=food">Food &amp; Beverage Industry</a></li><li><a href="industry.html?ind=pharma">Pharmaceutical</a></li><li><a href="industry.html?ind=estate">Estate &amp; Plantation Chemicals</a></li><li><a href="industry.html?ind=coatings">Coatings &amp; Printing Inks</a></li><li><a href="industry.html?ind=engineering">Industrial &amp; Engineering Solutions</a></li><li><a href="industry.html?ind=assorted">Specialty &amp; Miscellaneous Products</a></li></ul></div>
       <div class="ft-col"><h5>Contact</h5><ul><li><a href="#contact">Send Enquiry</a></li><li><a href="tel:+94777598284">+94 777 598 284</a></li><li><a href="tel:+94777414367">+94 777 414 367</a></li><li><a href="mailto:gimith@skchemsolutions.lk">Email Us</a></li><li><a href="#partners">Our Partners</a></li></ul></div>
     </div>
     <div class="ft-btm">
@@ -1245,6 +1273,5 @@ function burst(){const cols=['#A8D400','#C2EC00','#fff','#86AB00','#F2FBCC'];for
 function sf(){if(!document.getElementById('fn').value.trim()||!document.getElementById('fe').value.trim()||!document.getElementById('fm').value.trim()){alert('Please fill in your name, email and message.');return;}burst();setTimeout(()=>{document.getElementById('fw').style.display='none';document.getElementById('fok').style.display='block';},300);}
 document.querySelectorAll('.ic').forEach(el=>{el.setAttribute('role','link');el.setAttribute('tabindex','0');el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});});
 </script>
-<script src="feedback.js"></script>
 </body>
 </html>
