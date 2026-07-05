@@ -145,17 +145,6 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .chem-use-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem}
 .chem-use-tag{font-size:11px;padding:5px 14px;border-radius:50px;
   background:transparent;color:var(--leaf);border:1.5px solid var(--sage);font-weight:500;letter-spacing:.1px}
-.chem-specs-grid{display:grid;grid-template-columns:1fr 1fr;gap:.6rem;margin-bottom:1.75rem}
-.chem-spec{background:var(--white);border:1px solid var(--bdr);
-  border-left:3px solid var(--mid);border-radius:4px;padding:.85rem 1rem}
-.chem-spec strong{display:block;font-size:9px;font-weight:700;letter-spacing:1.5px;
-  text-transform:uppercase;color:var(--tm);margin-bottom:4px}
-.chem-spec span{font-size:14px;color:var(--ink);font-weight:400}
-.chem-supplier{display:inline-flex;align-items:center;gap:.75rem;
-  padding:.85rem 1.25rem;background:var(--ink);border-radius:10px}
-.chem-sup-flag{font-size:1.4rem}
-.chem-sup-txt strong{font-size:13.5px;font-weight:600;color:#fff;display:block}
-.chem-sup-txt span{font-size:11.5px;color:rgba(255,255,255,.45);font-weight:400}
 
 /* APPLICATIONS */
 #ind-apps{background:var(--ink)}
@@ -346,7 +335,6 @@ body{animation:fadeIn .5s ease both}
 }
 @media(max-width:600px){
   .apps-grid,.ft-grid,.cat-groups,.cat-groups.g1,.cat-groups.g2{grid-template-columns:1fr}
-  .chem-specs-grid{grid-template-columns:1fr}
   .ov-stats{grid-template-columns:1fr 1fr}
   /* Heading size overrides for small mobile */
   .ih-h1{font-size:2.4rem}
@@ -870,11 +858,6 @@ document.getElementById('chem-list').innerHTML=d.chems.map((c,i)=>`
     <div class="chem-name">${c.serviceEm}</div>
     <p class="chem-desc">${c.desc}</p>
     <div class="chem-use-tags">${c.outcomes.map(u=>`<span class="chem-use-tag">${u}</span>`).join('')}</div>
-    <div class="chem-specs-grid">${c.specs.map(s=>`<div class="chem-spec"><strong>${s.l}</strong><span>${s.v}</span></div>`).join('')}</div>
-    <div class="chem-supplier">
-      <span class="chem-sup-flag">${c.flag}</span>
-      <div class="chem-sup-txt"><strong>${c.supplier}</strong><span>Authorised Supplier</span></div>
-    </div>
   </div>
 </div>`).join('');
 
