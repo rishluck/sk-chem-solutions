@@ -176,20 +176,31 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .app-s{font-size:13px;color:rgba(255,255,255,.48);font-weight:400;line-height:1.8}
 
 .cat-groups-head{margin-top:3.5rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.07);
-  margin-bottom:2rem}
+  margin-bottom:2.5rem;text-align:center}
+.cat-groups-head .apps-eyebrow{margin-bottom:.85rem}
+.cat-groups-h{font-family:'Poppins',sans-serif;font-size:clamp(1.5rem,2.8vw,2.2rem);
+  font-weight:800;color:#fff;line-height:1.15}
+.cat-groups-h em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .cat-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
 .cat-groups.g1{grid-template-columns:1fr}
 .cat-groups.g2{grid-template-columns:repeat(2,1fr)}
 .cat-card{border-radius:14px;overflow:hidden;background:var(--ink);
-  border:1px solid rgba(255,255,255,.08);transition:border-color .35s,transform .35s}
-.cat-card:hover{border-color:rgba(1,191,71,.4);transform:translateY(-4px)}
+  border:1.5px solid rgba(1,191,71,.28);transition:border-color .35s,transform .35s,box-shadow .35s}
+.cat-card:hover{border-color:rgba(1,191,71,.65);transform:translateY(-4px);box-shadow:0 12px 32px rgba(1,191,71,.12)}
 .cat-card-img{aspect-ratio:16/10;overflow:hidden}
 .cat-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
 .cat-card:hover .cat-card-img img{transform:scale(1.06)}
-.cat-card-body{padding:1.4rem 1.5rem 1.6rem}
-.cat-card-h{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.05rem;
-  color:#fff;margin-bottom:.6rem;line-height:1.2}
-.cat-card-list{font-size:12.5px;line-height:1.85;color:rgba(255,255,255,.5);font-weight:400}
+.cat-card-body{padding:1.5rem 1.6rem 1.7rem}
+.cat-card-h{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.15rem;
+  color:#fff;margin-bottom:.9rem;line-height:1.2;padding-bottom:.75rem;
+  border-bottom:1px solid rgba(255,255,255,.1)}
+.cat-card-list{list-style:none;font-size:13px;line-height:1.6;font-weight:500}
+.cat-card-list li{position:relative;padding-left:1.1rem;margin-bottom:.6rem;color:rgba(255,255,255,.82)}
+.cat-card-list li:last-child{margin-bottom:0}
+.cat-card-list li::before{content:'';position:absolute;left:0;top:.5em;width:6px;height:6px;
+  border-radius:50%;background:linear-gradient(135deg,#01BF47,#89FA58)}
+.cat-card-list li strong{color:var(--fresh);font-weight:700}
 .cat-card-img.tile{aspect-ratio:auto;height:180px;display:flex;align-items:center;justify-content:center;
   background:linear-gradient(135deg,#0a2e18,#01BF47 55%,#89FA58)}
 .cat-card-img.tile span{font-size:4.5rem;line-height:1;filter:drop-shadow(0 6px 20px rgba(0,0,0,.25))}
@@ -435,6 +446,7 @@ body{animation:fadeIn .5s ease both}
     <div class="apps-grid rv d1" id="apps-grid"></div>
     <div class="cat-groups-head rv d2" id="cat-groups-head" style="display:none">
       <span class="apps-eyebrow">Product Categories</span>
+      <h2 class="cat-groups-h">The full <em>range</em> we cover</h2>
     </div>
     <div class="cat-groups rv d3" id="cat-groups"></div>
   </div>
@@ -905,7 +917,10 @@ catGroupsEl.innerHTML=catGroups.map(g=>`
   ${g.img?`<div class="cat-card-img"><img src="${g.img}" alt="${g.h}" loading="lazy"></div>`:`<div class="cat-card-img tile"><span>${g.icon||'✦'}</span></div>`}
   <div class="cat-card-body">
     <div class="cat-card-h">${g.h}</div>
-    <p class="cat-card-list">${g.tags.join(' · ')}</p>
+    <ul class="cat-card-list">${g.tags.map(t=>{
+      const parts=t.split(' — ');
+      return `<li>${parts.length===2?`<strong>${parts[0]}</strong> — ${parts[1]}`:t}</li>`;
+    }).join('')}</ul>
   </div>
 </div>`).join('');
 
