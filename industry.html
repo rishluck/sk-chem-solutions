@@ -131,6 +131,9 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .chem-img:hover img{transform:scale(1.05)}
 .chem-img-ov{position:absolute;inset:0;
   background:linear-gradient(135deg,rgba(46,46,44,.08),transparent)}
+.chem-img.tile{display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,#0a2e18,#01BF47 55%,#89FA58)}
+.chem-img.tile span{font-size:6rem;line-height:1;filter:drop-shadow(0 8px 26px rgba(0,0,0,.25))}
 .chem-txt{padding:clamp(2.5rem,6vw,4.5rem) clamp(2rem,5vw,4rem);
   display:flex;flex-direction:column;justify-content:center;background:var(--white)}
 .chem-formula-badge{display:inline-flex;align-items:center;
@@ -755,7 +758,16 @@ const IND={
       {ico:'📋',t:'Custom Import Arrangement',s:'Tailored import arrangements for manufacturers with specific volume or grade requirements.'},
       {ico:'📄',t:'Full Documentation',s:'CoA and SDS documentation arranged on request for every shipment.'}
     ],
-    chems:[],
+    chems:[
+      {service:'Pigment & Colour Formulation Sourcing',serviceEm:'Pigment &amp; Colour <em>Formulation Sourcing</em>',chemical:'Organic, Inorganic & Effect Pigments',
+       img:'Images/Industries/Casting and printing ink/drops-colorful-paint.jpg',
+       desc:'As we build out this sourcing line, our focus is the full pigment spectrum — organic and inorganic colorants, effect and pearlescent pigments, titanium dioxide, and iron oxides — for architectural, industrial, and decorative coatings as well as specialty inks.',
+       outcomes:['Wide pigment & colorant range','Sourced to order','Import documentation on request','Dedicated account support']},
+      {service:'Performance Additive Sourcing',serviceEm:'Performance <em>Additive Sourcing</em>',chemical:'Rheology, UV & Anti-Foam Additives',
+       img:'Images/Industries/Casting and printing ink/colored-splash-black-background-ai-generated.jpg',
+       desc:'Alongside pigments, we\'re building supplier relationships for the performance additives that finish a coating or ink — rheology modifiers, UV stabilisers, anti-foaming and wetting agents, and nano-scale performance additives.',
+       outcomes:['Formulation-ready additives','Sourced to order','Import documentation on request','Dedicated account support']}
+    ],
     apps:[
       {ico:'🌍',t:'Global Sourcing Network',s:'Leveraging our existing supplier relationships across Europe and Asia to source coatings and ink raw materials.'},
       {ico:'📋',t:'Custom Import Arrangement',s:'Working directly with manufacturers to arrange import volumes, packaging, and delivery schedules that fit their operations.'},
@@ -780,7 +792,14 @@ const IND={
       {ico:'📋',t:'Custom Import Arrangement',s:'Tailored import arrangements for businesses with specific volume or grade requirements.'},
       {ico:'📄',t:'Full Documentation',s:'CoA and SDS documentation arranged on request for every shipment.'}
     ],
-    chems:[],
+    chems:[
+      {service:'Industrial Mineral Sourcing',serviceEm:'Industrial Mineral <em>Sourcing</em>',chemical:'Borax & Boric Acid',icon:'🧂',
+       desc:'As we build out this sourcing line, borax and boric acid are two of the multi-purpose minerals we\'re establishing supply for — used across packaging adhesives, agricultural micronutrients, household applications, and wood preservation and treatment.',
+       outcomes:['Multi-purpose applications','Sourced to order','Import documentation on request','Dedicated account support']},
+      {service:'Agricultural & Poultry Disinfectant Sourcing',serviceEm:'Agricultural &amp; Poultry <em>Disinfectant Sourcing</em>',chemical:'Disinfectant Actives',icon:'🧴',
+       desc:'We\'re also building sourcing capability for disinfectant solutions used in agricultural and poultry biosecurity — supporting farms and hatcheries that need reliable cleaning and disinfection products.',
+       outcomes:['Biosecurity-focused formulations','Sourced to order','Import documentation on request','Dedicated account support']}
+    ],
     apps:[
       {ico:'🌍',t:'Global Sourcing Network',s:'Leveraging our existing supplier relationships across Europe and Asia to source specialty chemical requirements.'},
       {ico:'📋',t:'Custom Import Arrangement',s:'Working directly with businesses to arrange import volumes, packaging, and delivery schedules that fit their needs.'},
@@ -821,13 +840,9 @@ document.getElementById('ov-stats').innerHTML=d.stats.map(s=>`<div class="ov-sta
 document.getElementById('ov-quick-h').textContent=d.quickH;
 document.getElementById('ov-q-list').innerHTML=d.quick.map(q=>`<div class="ov-q-item"><span class="ov-q-ico">${q.ico}</span><div><span class="ov-q-t">${q.t}</span><span class="ov-q-s">${q.s}</span></div></div>`).join('');
 
-document.getElementById('chem-head').style.display=d.chems.length?'block':'none';
 document.getElementById('chem-list').innerHTML=d.chems.map((c,i)=>`
 <div class="chem-row${i%2===1?' rev':''}">
-  <div class="chem-img">
-    <img src="${c.img}" alt="${c.service}">
-    <div class="chem-img-ov"></div>
-  </div>
+  ${c.img?`<div class="chem-img"><img src="${c.img}" alt="${c.service}"><div class="chem-img-ov"></div></div>`:`<div class="chem-img tile"><span>${c.icon||'✦'}</span></div>`}
   <div class="chem-txt">
     <div class="chem-formula-badge">✦ ${c.chemical}</div>
     <div class="chem-name">${c.serviceEm}</div>
