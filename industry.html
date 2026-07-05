@@ -491,7 +491,6 @@ body{animation:fadeIn .5s ease both}
         <li><a href="industry.html?ind=personal">Household &amp; Personal Care</a></li>
         <li><a href="industry.html?ind=food">Food &amp; Beverage Industry</a></li>
         <li><a href="industry.html?ind=pharma">Pharmaceutical</a></li>
-        <li><a href="industry.html?ind=estate">Estate &amp; Plantation Chemicals</a></li>
         <li><a href="industry.html?ind=coatings">Coatings &amp; Printing Inks</a></li>
         <li><a href="industry.html?ind=engineering">Industrial &amp; Engineering Solutions</a></li>
         <li><a href="industry.html?ind=assorted">Specialty &amp; Miscellaneous Products</a></li>
@@ -571,7 +570,8 @@ const IND={
     ],
     catGroups:[
       {h:'Dry Rubber',img:'Images/Industries/Rubber/alex-shuper-D5LVMChT3PU-unsplash.jpg',tags:['Accelerators','Activators','Antioxidants & Antiozonants','Fillers','Processing Aids','Pigments','Carbon Black']},
-      {h:'Latex',img:'Images/Industries/Rubber/divazus-fabric-store-7BziR1wr8X8-unsplash.jpg',tags:['Wetting Agents & Dispersions','Surface Modifiers','Antioxidants','Performance Additives','Defoamers','Waxes','Pigments & Titanium Dioxide']}
+      {h:'Latex',img:'Images/Industries/Rubber/divazus-fabric-store-7BziR1wr8X8-unsplash.jpg',tags:['Wetting Agents & Dispersions','Surface Modifiers','Antioxidants','Performance Additives','Defoamers','Waxes','Pigments & Titanium Dioxide']},
+      {h:'Estate & Plantation Care',img:'Images/Industries/Rubber/divazus-fabric-store-FG5697_i5VE-unsplash.jpg',tags:['Plantation Agrochemicals','Estate Sanitation','Soil & Crop Treatment Aids']}
     ]
   },
 
@@ -754,30 +754,6 @@ const IND={
     ]
   },
 
-  estate:{
-    name:'Estate &amp; Plantation Chemicals',nameRaw:'Estate & Plantation Chemicals',badge:'🌱 Expanding Into',icon:'🌱',
-    tagline:'Building our sourcing network to serve Sri Lankan rubber and tea estates with plantation-level chemical supply.',
-    ovH:'Supporting the<br><em>plantation economy</em>',
-    ovP1:'Beyond factory processing, Sri Lanka\'s rubber and tea estates need chemicals at the plantation level — for coagulation, sanitation, and crop treatment. S.K. Chem Solutions is expanding its sourcing network to serve estate operators directly, as a general B2B import partner, alongside our established Rubber & Latex processing supply.',
-    ovP2:'This is a growing area of our business rather than an established product line — we are actively building supplier relationships and welcome enquiries from estate operators looking for a reliable import partner.',
-    stats:[{n:'Expanding',l:'Sector'},{n:'B2B',l:'Import Partner'},{n:'Full Docs',l:'On Request'},{n:'Sri Lanka',l:'Wide Delivery'}],
-    quickH:'Services at a Glance',
-    quick:[
-      {ico:'🌍',t:'Global Sourcing Network',s:'Access to our established international supplier relationships for plantation-level chemical requirements.'},
-      {ico:'📋',t:'Custom Import Arrangement',s:'Tailored import arrangements for estate operators with specific volume or grade requirements.'},
-      {ico:'📄',t:'Full Documentation',s:'CoA and SDS documentation arranged on request for every shipment.'}
-    ],
-    chems:[],
-    apps:[
-      {ico:'🌍',t:'Global Sourcing Network',s:'Leveraging our existing supplier relationships across Europe and Asia to source plantation-level chemicals for estate operators.'},
-      {ico:'📋',t:'Custom Import Arrangement',s:'Working directly with estates to arrange import volumes, packaging, and delivery schedules that fit their operations.'},
-      {ico:'📄',t:'Full Import Documentation',s:'CoA, SDS, and compliance paperwork arranged on request as this sourcing capability is built out.'}
-    ],
-    catGroups:[
-      {h:'Estate & Plantation Chemicals',icon:'🌱',tags:['Plantation Agrochemicals','Estate Sanitation','Soil & Crop Treatment Aids']}
-    ]
-  },
-
   coatings:{
     name:'Coatings &amp; Printing Inks',nameRaw:'Coatings & Printing Inks',badge:'🎨 Expanding Into',icon:'🎨',
     img:'Images/Industries/Casting and printing ink/beautiful-still-life-with-water.jpg',
@@ -854,6 +830,7 @@ const IND={
 };
 IND.home=IND.personal;
 IND.textile=IND.personal;
+IND.estate=IND.rubber;
 
 /* ── BUILD PAGE ── */
 const p=new URLSearchParams(window.location.search);
