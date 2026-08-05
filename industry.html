@@ -479,11 +479,9 @@ body{animation:fadeIn .5s ease both}
       </ul></div>
       <div class="ft-col"><h5>Industries</h5><ul>
         <li><a href="industry.html?ind=rubber">Rubber &amp; Latex</a></li>
-        <li><a href="industry.html?ind=personal">Household &amp; Personal Care</a></li>
+        <li><a href="industry.html?ind=personal">Home &amp; Personal Care</a></li>
         <li><a href="industry.html?ind=food">Food &amp; Beverage Industry</a></li>
         <li><a href="industry.html?ind=pharma">Pharmaceutical</a></li>
-        <li><a href="industry.html?ind=coatings">Coatings &amp; Printing Inks</a></li>
-        <li><a href="industry.html?ind=assorted">Specialty &amp; Miscellaneous Products</a></li>
       </ul></div>
     </div>
     <div class="ft-btm">
@@ -519,7 +517,7 @@ const IND={
   rubber:{
     name:'Rubber &amp; Latex',nameRaw:'Rubber & Latex',badge:'🌿 Core Sector',
     img:'Images/All/isuru-ranasinha-AVhFLfD_Lv8-unsplash.jpg',
-    tagline:'Enabling Sri Lanka\'s rubber plantations and processors to coagulate, preserve, and ship quality rubber — reliably, year-round.',
+    tagline:'High-quality Formic Acid, Sodium Sulphite, and Sodium Metabisulfite for making quality sheet and crepe rubber.',
     ovH:'The backbone of<br><em>Sri Lankan industry</em>',
     ovP1:'Sri Lanka has a long and proud history in natural rubber production. S.K. Chem Solutions has been a trusted supply partner to rubber plantations and processing facilities since 2017 — providing the chemicals that enable every stage of rubber manufacturing.',
     ovP2:'From latex coagulation on the plantation to sheet antioxidation and transport preservation, we enable consistent, quality output from field to export — with year-round supply and full technical documentation.',
@@ -566,7 +564,7 @@ const IND={
   },
 
   personal:{
-    name:'Household &amp; Personal Care',nameRaw:'Household & Personal Care',badge:'✨ Growing Sector',
+    name:'Home &amp; Personal Care',nameRaw:'Home & Personal Care',badge:'✨ Growing Sector',
     img:'Images/Industries/Personal Care/look-studio-TQSPgNqeCo8-unsplash.jpg',
     tagline:'Enabling Sri Lankan manufacturers to produce gentle personal care, powerful household cleaning, and premium fabric care products.',
     ovH:'Premium ingredients<br>for <em>everyday living</em>',
@@ -631,6 +629,12 @@ const IND={
        outcomes:['Consistent wash effects','Premium denim finishing','Compatible with all machinery','Full purity documentation'],
        specs:[{l:'Purity',v:'≥99.7%'},{l:'Grade',v:'Industrial / High Purity'},{l:'Packaging',v:'160 kg drums'},{l:'Docs',v:'CoA & SDS'}],
        supplier:'LG Chem, Korea',flag:'🇰🇷'},
+      {service:'Denim Fading & Finishing Treatment',serviceEm:'Denim Fading &amp; <em>Finishing Treatment</em>',chemical:'Sodium Metabisulfite · Na₂S₂O₅',
+       img:'Images/Industries/Textile Washing/dan-gold-aJN-jjFLyCU-unsplash.jpg',
+       desc:'Give your denim the fashion-forward fade buyers ask for, without compromising the fabric. Our sodium metabisulfite triggers a controlled oxidation-reduction reaction with indigo dye — lightening the surface colour for a consistent, on-trend fade — while its reaction with denim\'s cellulose fibres softens hand-feel, builds cross-linked wrinkle resistance, and leaves garments with natural antibacterial protection.',
+       outcomes:['Consistent, on-trend fading','Softer fabric hand-feel','Cross-linked wrinkle resistance','Antibacterial, hygienic finish'],
+       specs:[{l:'Purity',v:'≥96%'},{l:'Grade',v:'Industrial'},{l:'Packaging',v:'25 kg bags'},{l:'Docs',v:'CoA & SDS'}],
+       supplier:'BASF Germany',flag:'🇩🇪'},
       {service:'Fabric Scouring & Pre-Treatment',serviceEm:'Fabric Scouring &amp; <em>Pre-Treatment</em>',chemical:'Processing Chemicals · Specialty Blend',
        img:'Images/Industries/Textile Washing/engin-akyurt-8g__j-nqWXc-unsplash.jpg',
        desc:'Prepare grey fabric for dyeing with thorough, efficient scouring that removes sizing agents, natural waxes, and impurities. Our processing chemicals ensure even dye uptake, superior colour consistency, and a high-quality finish — so every batch meets the standards your buyers expect.',
@@ -741,72 +745,6 @@ const IND={
       {ico:'💉',t:'Topical & Parenteral',s:'Pharmaceutical-grade excipients suitable for topical, transdermal, and selected injectable formulations.'},
       {ico:'📋',t:'Full Documentation Package',s:'CoA, SDS, and pharmacopoeia compliance records supplied with every batch for your regulatory submissions and audits.'},
       {ico:'🌍',t:'Internationally Sourced',s:'All pharmaceutical-grade materials from LG Chem (Korea) and Vance Group (Malaysia) — globally recognised, trusted manufacturers.'}
-    ]
-  },
-
-  coatings:{
-    name:'Coatings &amp; Printing Inks',nameRaw:'Coatings & Printing Inks',badge:'🎨 Expanding Into',icon:'🎨',
-    img:'Images/Industries/Casting and printing ink/beautiful-still-life-with-water.jpg',
-    tagline:'Building our sourcing network to supply colour pigments and performance additives for Sri Lanka\'s paint and ink industries.',
-    ovH:'Colour chemistry<br><em>on the horizon</em>',
-    ovP1:'Sri Lanka\'s paint, coatings, and printing ink manufacturers need a wide spectrum of pigments, colorants, and performance additives — from architectural, road-marking, automotive, floor, industrial, and wood coatings to offset, gravure, flexographic, screen, and decorative metal printing inks. S.K. Chem Solutions is expanding its sourcing network into this space, as a general B2B import partner to local manufacturers.',
-    ovP2:'This is a growing area of our business rather than an established product line — we are actively building supplier relationships across pigment and additive categories, and welcome enquiries from coatings and ink manufacturers looking for a reliable import partner.',
-    stats:[{n:'Expanding',l:'Sector'},{n:'B2B',l:'Import Partner'},{n:'Full Docs',l:'On Request'},{n:'Sri Lanka',l:'Wide Delivery'}],
-    quickH:'Services at a Glance',
-    quick:[
-      {ico:'🌍',t:'Global Sourcing Network',s:'Access to our established international supplier relationships for coatings and ink raw materials.'},
-      {ico:'📋',t:'Custom Import Arrangement',s:'Tailored import arrangements for manufacturers with specific volume or grade requirements.'},
-      {ico:'📄',t:'Full Documentation',s:'CoA and SDS documentation arranged on request for every shipment.'}
-    ],
-    chems:[
-      {service:'Pigment & Colour Formulation Sourcing',serviceEm:'Pigment &amp; Colour <em>Formulation Sourcing</em>',chemical:'Organic, Inorganic & Effect Pigments',
-       img:'Images/Industries/Casting and printing ink/drops-colorful-paint.jpg',
-       desc:'As we build out this sourcing line, our focus is the full pigment spectrum — organic and inorganic colorants, effect and pearlescent pigments, titanium dioxide, and iron oxides — for architectural, industrial, and decorative coatings as well as specialty inks.',
-       outcomes:['Wide pigment & colorant range','Sourced to order','Import documentation on request','Dedicated account support']},
-      {service:'Performance Additive Sourcing',serviceEm:'Performance <em>Additive Sourcing</em>',chemical:'Rheology, UV & Anti-Foam Additives',
-       img:'Images/Industries/Casting and printing ink/colored-splash-black-background-ai-generated.jpg',
-       desc:'Alongside pigments, we\'re building supplier relationships for the performance additives that finish a coating or ink — rheology modifiers, UV stabilisers, anti-foaming and wetting agents, and nano-scale performance additives.',
-       outcomes:['Formulation-ready additives','Sourced to order','Import documentation on request','Dedicated account support']}
-    ],
-    apps:[
-      {ico:'🌍',t:'Global Sourcing Network',s:'Leveraging our existing supplier relationships across Europe and Asia to source coatings and ink raw materials.'},
-      {ico:'📋',t:'Custom Import Arrangement',s:'Working directly with manufacturers to arrange import volumes, packaging, and delivery schedules that fit their operations.'},
-      {ico:'📄',t:'Full Import Documentation',s:'CoA, SDS, and compliance paperwork arranged on request as this sourcing capability is built out.'}
-    ],
-    catGroups:[
-      {h:'Pigments & Colorants',img:'Images/Industries/Casting and printing ink/drops-colorful-paint.jpg',tags:['Organic Pigments — Azo, Anthanthrone, Benzimidazolone, DPP, Indanthrone, Isoindoline, Phthalocyanine & Quinacridone','Inorganic Pigments — Blacks, Browns, Chromes, Yellows, Spinel Blues, Greens, Nickel & Bismuth Vanadate','Effect & Pearlescent Pigments','Pigment Preparations for Coatings & Specialty Inks','Dyes for Solvent & Water-Based Systems','Corrosion-Protective Pigments — Modified Orthophosphates, Polyphosphates, Organic Inhibitors & Zinc-Free Options','Titanium Dioxide','Iron Oxides — Natural & Synthetic Grades']},
-      {h:'Performance Additives',img:'Images/Industries/Casting and printing ink/colored-splash-black-background-ai-generated.jpg',tags:['Rheology Modifiers & Thickeners','UV Stabilisers & Antioxidants','Anti-Foaming & Wetting Agents','Nano-Scale Performance Additives']}
-    ]
-  },
-
-  assorted:{
-    name:'Specialty &amp; Miscellaneous Products',nameRaw:'Specialty & Miscellaneous Products',badge:'📦 Expanding Into',icon:'📦',
-    tagline:'Building our sourcing network for specialty chemical products across varied industrial and commercial uses.',
-    ovH:'Specialty solutions<br><em>on request</em>',
-    ovP1:'Some manufacturers need a specific specialty chemical that falls outside a standard industry category — multi-purpose industrial minerals like borax and boric acid, or disinfectant solutions for agricultural and poultry biosecurity. S.K. Chem Solutions is expanding its sourcing network to cover these varied requirements, as a general B2B import partner to Sri Lankan businesses.',
-    ovP2:'This is a growing area of our business rather than an established product line — we are actively building supplier relationships and welcome enquiries for specialty or custom-sourced chemical requirements.',
-    stats:[{n:'Expanding',l:'Sector'},{n:'B2B',l:'Import Partner'},{n:'Full Docs',l:'On Request'},{n:'Sri Lanka',l:'Wide Delivery'}],
-    quickH:'Services at a Glance',
-    quick:[
-      {ico:'🌍',t:'Global Sourcing Network',s:'Access to our established international supplier relationships for specialty and custom chemical requirements.'},
-      {ico:'📋',t:'Custom Import Arrangement',s:'Tailored import arrangements for businesses with specific volume or grade requirements.'},
-      {ico:'📄',t:'Full Documentation',s:'CoA and SDS documentation arranged on request for every shipment.'}
-    ],
-    chems:[
-      {service:'Industrial Mineral Sourcing',serviceEm:'Industrial Mineral <em>Sourcing</em>',chemical:'Borax & Boric Acid',icon:'🧂',
-       desc:'As we build out this sourcing line, borax and boric acid are two of the multi-purpose minerals we\'re establishing supply for — used across packaging adhesives, agricultural micronutrients, household applications, and wood preservation and treatment.',
-       outcomes:['Multi-purpose applications','Sourced to order','Import documentation on request','Dedicated account support']},
-      {service:'Agricultural & Poultry Disinfectant Sourcing',serviceEm:'Agricultural &amp; Poultry <em>Disinfectant Sourcing</em>',chemical:'Disinfectant Actives',icon:'🧴',
-       desc:'We\'re also building sourcing capability for disinfectant solutions used in agricultural and poultry biosecurity — supporting farms and hatcheries that need reliable cleaning and disinfection products.',
-       outcomes:['Biosecurity-focused formulations','Sourced to order','Import documentation on request','Dedicated account support']}
-    ],
-    apps:[
-      {ico:'🌍',t:'Global Sourcing Network',s:'Leveraging our existing supplier relationships across Europe and Asia to source specialty chemical requirements.'},
-      {ico:'📋',t:'Custom Import Arrangement',s:'Working directly with businesses to arrange import volumes, packaging, and delivery schedules that fit their needs.'},
-      {ico:'📄',t:'Full Import Documentation',s:'CoA, SDS, and compliance paperwork arranged on request as this sourcing capability is built out.'}
-    ],
-    catGroups:[
-      {h:'Specialty & Miscellaneous Products',icon:'📦',tags:['Borax — Packaging Adhesives, Agricultural Micronutrient & Household Use','Boric Acid — Wood Preservation & Treatment','Poultry & Agricultural Disinfectants','Custom-Sourced Specialty Chemicals']}
     ]
   }
 };

@@ -91,14 +91,16 @@ All images are now local — zero loremflickr usage remaining.
 This applies to: industry cards on homepage, flagship cards, product tabs, industry.html sections.
 
 ## Industries & Services
-| Industry | Key Services |
-|----------|-------------|
-| Rubber & Latex | Latex Coagulation · Sheet Preservation · Export Protection |
-| Personal Care | Shampoo Formulation · Skincare Enrichment · Natural Hydration |
-| Home Care | Dishwashing Power · Detergent Stability · Surface Care |
-| Food Industry | Beverage Preservation · Bakery Freshness · Natural Sweetening |
-| Pharmaceutical | GMP Facility Hygiene · Oral Formulation · Solid Dosage |
-| Textile Washing | Garment Washing · Fabric Scouring · Premium Finishing |
+Only 4 industries are shown site-wide (homepage cards, footer, contact form, industry.html nav): Rubber & Latex, Home & Personal Care, Food & Beverage Industry, Pharmaceutical. Coatings & Printing Inks and Specialty & Miscellaneous Products were removed as industries.
+
+| Industry | `?ind=` key | Key Services |
+|----------|-------------|-------------|
+| Rubber & Latex | `rubber` | Latex Coagulation · Sheet Preservation · Export Protection |
+| Home & Personal Care | `personal` | Shampoo Formulation · Skincare Enrichment · Detergent Stability · Garment/Fabric Washing |
+| Food & Beverage Industry | `food` | Beverage Preservation · Bakery Freshness · Natural Sweetening |
+| Pharmaceutical | `pharma` | GMP Facility Hygiene · Oral Formulation · Solid Dosage |
+
+Home Care and Textile Washing content live inside the `personal` industry entry (merged, not separate cards). `IND.home`, `IND.textile`, and `IND.estate` are legacy URL aliases pointing at `personal`/`rubber` for old links — keep them even though no card links to `?ind=home`/`?ind=textile` directly.
 
 ## Key Suppliers (Partners section)
 - BASF Germany 🇩🇪 — Sodium Metabisulfite, Sodium Sulphite, Vitamin E Acetate
@@ -110,7 +112,7 @@ This applies to: industry cards on homepage, flagship cards, product tabs, indus
 Global supplier logos use Clearbit API: `https://logo.clearbit.com/{domain}` with `onerror` fallback.
 
 ## industry.html Structure
-- Single file serves all 6 industries via URL param `?ind=rubber`
+- Single file serves all 4 industries via URL param `?ind=rubber`
 - JS data object `IND` contains all industry content
 - Each `chems` entry uses: `service`, `serviceEm`, `chemical`, `img`, `desc`, `outcomes`, `specs`, `supplier`, `flag`
 - Template renders: `✦ ${c.chemical}` as badge → `${c.serviceEm}` as headline
