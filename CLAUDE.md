@@ -32,8 +32,8 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/All/young-woman-smelling-leaf-forest.jpg` | Personal Care chems[2] Moisturiser row |
 | `Images/Industries/Rubber/rubber-sheets-preservation.png` | Rubber chems[1] Sheet Preservation, Dry Rubber category group |
 | `Images/Industries/Rubber/zuniar-ayu-DwyeIjDscCc-unsplash.jpg` | Rubber chems[2] Latex Transport |
-| `Images/Industries/Rubber/divazus-fabric-store-7BziR1wr8X8-unsplash.jpg` | (in repo, unused) |
-| `Images/Industries/Rubber/divazus-fabric-store-FG5697_i5VE-unsplash.jpg` | (in repo, unused) |
+| `Images/Industries/Rubber/latex-wax-sheet.png` | Rubber catGroups Latex category tile |
+| `Images/Industries/Rubber/estate-plantation-chemicals.png` | Rubber catGroups Estate & Plantation Care category tile |
 | `Images/Industries/Personal Care/look-studio-TQSPgNqeCo8-unsplash.jpg` | Personal Care card (homepage), personal industry.html hero |
 | `Images/Industries/Personal Care/robbie-4xlQ0LrcilQ-unsplash.jpg` | Personal chems[0] Shampoo row |
 | `Images/Industries/Personal Care/laura-jaeger-7LAbLSKbkaQ-unsplash.jpg` | Personal chems[1] Skincare row |
