@@ -47,8 +47,8 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg` | Pharma card (homepage), pharma industry.html hero, pharma chems[0] GMP |
 | `Images/Industries/Pharmaceutical/thaismara-figueredo-MTMn2VDnLGM-unsplash.jpg` | Pharma chems[1] Syrup row |
 | `Images/Industries/Pharmaceutical/crystalweed-cannabis-XYGuytPoYHI-unsplash.jpg` | Personal chems[3] Sanitiser row, Pharma chems[2] Solid Dosage |
-| `Images/Industries/Textile Washing/second-breakfast-I2WQQaXSy-k-unsplash.jpg` | Textile card (homepage), textile industry.html hero, textile chems[1] Denim Fading row, Fabric & Garment Care category group |
-| `Images/Industries/Textile Washing/levis-denim-washing.jpg` | Textile chems[0] Garment Washing & Denim Finishing row |
+| `Images/Industries/Textile Washing/second-breakfast-I2WQQaXSy-k-unsplash.jpg` | textile industry.html hero, textile chems[1] Denim Fading row, Fabric & Garment Care category group |
+| `Images/Industries/Textile Washing/levis-denim-washing.jpg` | Textile card (homepage), textile chems[0] Garment Washing & Denim Finishing row |
 | `Images/Industries/Textile Washing/engin-akyurt-8g__j-nqWXc-unsplash.jpg` | Textile chems[1] Scouring row |
 | `Images/Gallery/Charity/charity-1.jpeg … charity-14.jpeg` | Gallery section (Community filter), CSR section photos |
 
