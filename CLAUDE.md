@@ -41,10 +41,9 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/Industries/Personal Care/hand-sanitiser-production-line.png` | Personal chems[3] Hand Sanitiser row |
 | `Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg` | Home Care card, home industry.html hero, home chems[0] Dishwashing, Home Care category group tile |
 | `Images/Industries/Home Care/puroclean-of-fort-worth--dc38HdQR1M-unsplash.jpg` | Home chems[1] Detergent Stability |
-| `Images/Industries/Food Industry/orange-coffee-cocktail-white-surface.jpg` | Food card (flagship card 2), food industry.html hero, food chems[0] Beverage |
+| `Images/Industries/Food Industry/fresh-fruit-juices-beverages.png` | Food industry card (homepage), food industry.html hero, food chems[0] Beverage & Fruit Juice Preservation |
 | `Images/Industries/Food Industry/bakery-bread-pastries-assortment.png` | Food chems[1] Bakery row, Food & Beverage category group tile |
 | `Images/Industries/Food Industry/honey-dates-natural-sweeteners.png` | Food chems[2] Natural Sweetening |
-| `Images/Industries/Food Industry/fresh-fruit-juices-beverages.png` | Food industry card (homepage) |
 | `Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg` | Pharma card (homepage), pharma industry.html hero, pharma chems[0] GMP |
 | `Images/Industries/Pharmaceutical/thaismara-figueredo-MTMn2VDnLGM-unsplash.jpg` | Pharma chems[1] Syrup row |
 | `Images/Industries/Pharmaceutical/crystalweed-cannabis-XYGuytPoYHI-unsplash.jpg` | Pharma chems[2] Solid Dosage |
