@@ -37,8 +37,8 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/Industries/Personal Care/skincare-cream-serum-formulation.png` | Personal chems[1] Premium Skincare & Anti-Aging row |
 | `Images/Industries/Personal Care/natural-beauty-jasmine-spa.png` | Personal chems[4] Natural Beauty row |
 | `Images/Industries/Personal Care/hand-sanitiser-production-line.png` | Personal chems[3] Hand Sanitiser row |
-| `Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg` | Home Care card, home industry.html hero, home chems[0] Dishwashing |
-| `Images/Industries/Home Care/puroclean-of-fort-worth--dc38HdQR1M-unsplash.jpg` | Home chems[1] Detergent Stability |
+| `Images/Industries/Personal Care/dishwashing-surface-cleaning.png` | Personal chems[5] Dishwashing & Surface Cleaning row |
+| `Images/Industries/Home Care/puroclean-of-fort-worth--dc38HdQR1M-unsplash.jpg` | Personal chems[6] Detergent Stability row |
 | `Images/Industries/Food Industry/fresh-fruit-juices-beverages.png` | Food industry card (homepage), food industry.html hero, food chems[0] Beverage & Fruit Juice Preservation |
 | `Images/Industries/Food Industry/bakery-bread-pastries-assortment.png` | Food chems[1] Bakery row |
 | `Images/Industries/Food Industry/honey-dates-natural-sweeteners.png` | Food chems[2] Natural Sweetening |
