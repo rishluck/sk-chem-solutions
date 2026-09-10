@@ -45,9 +45,9 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg` | Pharma card (homepage), pharma industry.html hero, pharma chems[0] GMP |
 | `Images/Industries/Pharmaceutical/thaismara-figueredo-MTMn2VDnLGM-unsplash.jpg` | Pharma chems[1] Syrup row |
 | `Images/Industries/Pharmaceutical/crystalweed-cannabis-XYGuytPoYHI-unsplash.jpg` | Pharma chems[2] Solid Dosage |
-| `Images/Industries/Textile Washing/second-breakfast-I2WQQaXSy-k-unsplash.jpg` | textile industry.html hero, textile chems[1] Denim Fading row |
-| `Images/Industries/Textile Washing/levis-denim-washing.jpg` | Textile card (homepage), textile chems[0] Garment Washing & Denim Finishing row |
-| `Images/Industries/Textile Washing/engin-akyurt-8g__j-nqWXc-unsplash.jpg` | Textile chems[1] Scouring row |
+| `Images/Industries/Textile Washing/levis-denim-washing.jpg` | textile industry.html hero + textile chems[0] Garment Washing & Denim Finishing row, homepage hero decoration |
+| `Images/Industries/Textile Washing/second-breakfast-I2WQQaXSy-k-unsplash.jpg` | textile chems[1] Denim Fading row |
+| `Images/Industries/Textile Washing/engin-akyurt-8g__j-nqWXc-unsplash.jpg` | textile chems[2] Fabric Scouring row |
 | `Images/Gallery/Charity/charity-1.jpeg … charity-14.jpeg` | Gallery section (Community filter), CSR section photos |
 
 ## Local Client Logos (`Images/Partners/Local/`)
@@ -95,11 +95,12 @@ Only 4 industries are shown site-wide (homepage cards, footer, contact form, ind
 | Industry | `?ind=` key | Key Services |
 |----------|-------------|-------------|
 | Rubber & Latex | `rubber` | Latex Coagulation · Sheet Preservation · Export Protection |
-| Home & Personal Care | `personal` | Shampoo Formulation · Skincare Enrichment · Detergent Stability · Garment/Fabric Washing |
+| Home & Personal Care | `personal` | Shampoo Formulation · Skincare Enrichment · Detergent Stability · Hand Sanitiser Production |
 | Food & Beverage Industry | `food` | Beverage Preservation · Bakery Freshness · Natural Sweetening |
 | Pharmaceutical | `pharma` | GMP Facility Hygiene · Oral Formulation · Solid Dosage |
+| Textile Washing & Treatment | `textile` | Garment Washing & Denim Finishing · Denim Fading · Fabric Scouring — **URL-only page, no homepage card** |
 
-Home Care and Textile Washing content live inside the `personal` industry entry (merged, not separate cards). `IND.home`, `IND.textile`, and `IND.estate` are legacy URL aliases pointing at `personal`/`rubber` for old links — keep them even though no card links to `?ind=home`/`?ind=textile` directly.
+Home Care content lives inside the `personal` industry entry (merged). Textile Washing is its own standalone `textile` entry — a real `industry.html?ind=textile` page reachable by URL only, deliberately NOT added as a homepage card, nav link, footer link, or contact-form option (homepage still shows 4 industries). `IND.home` and `IND.estate` remain legacy URL aliases pointing at `personal`/`rubber` for old links.
 
 ## Key Suppliers (Partners section)
 - BASF Germany 🇩🇪 — Sodium Metabisulfite, Sodium Sulphite, Vitamin E Acetate
