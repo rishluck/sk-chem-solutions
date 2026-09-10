@@ -30,24 +30,22 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/All/closeup-shot-trees-greenery-...jpg` | About section image |
 | `Images/All/green-plant-leaves-with-blue-sky-background.jpg` | Sustainability section background |
 | `Images/All/young-woman-smelling-leaf-forest.jpg` | Personal Care chems[2] Moisturiser row |
-| `Images/Industries/Rubber/rubber-sheets-preservation.png` | Rubber chems[1] Sheet Preservation, Dry Rubber category group |
+| `Images/Industries/Rubber/rubber-sheets-preservation.png` | Rubber chems[1] Crepe Rubber Preservation |
 | `Images/Industries/Rubber/zuniar-ayu-DwyeIjDscCc-unsplash.jpg` | Rubber chems[2] Latex Transport |
-| `Images/Industries/Rubber/latex-wax-sheet.png` | Rubber catGroups Latex category tile |
-| `Images/Industries/Rubber/estate-plantation-chemicals.png` | Rubber catGroups Estate & Plantation Care category tile |
-| `Images/Industries/Personal Care/personal-care-vanity-flatlay.png` | Personal Care card (homepage), personal industry.html hero, Personal Care category group tile |
+| `Images/Industries/Personal Care/personal-care-vanity-flatlay.png` | Personal Care card (homepage), personal industry.html hero |
 | `Images/Industries/Personal Care/shampoo-body-wash-shower.png` | Personal chems[0] Shampoo & Body Wash row |
 | `Images/Industries/Personal Care/skincare-cream-serum-formulation.png` | Personal chems[1] Premium Skincare & Anti-Aging row |
 | `Images/Industries/Personal Care/natural-beauty-jasmine-spa.png` | Personal chems[4] Natural Beauty row |
 | `Images/Industries/Personal Care/hand-sanitiser-production-line.png` | Personal chems[3] Hand Sanitiser row |
-| `Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg` | Home Care card, home industry.html hero, home chems[0] Dishwashing, Home Care category group tile |
+| `Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg` | Home Care card, home industry.html hero, home chems[0] Dishwashing |
 | `Images/Industries/Home Care/puroclean-of-fort-worth--dc38HdQR1M-unsplash.jpg` | Home chems[1] Detergent Stability |
 | `Images/Industries/Food Industry/fresh-fruit-juices-beverages.png` | Food industry card (homepage), food industry.html hero, food chems[0] Beverage & Fruit Juice Preservation |
-| `Images/Industries/Food Industry/bakery-bread-pastries-assortment.png` | Food chems[1] Bakery row, Food & Beverage category group tile |
+| `Images/Industries/Food Industry/bakery-bread-pastries-assortment.png` | Food chems[1] Bakery row |
 | `Images/Industries/Food Industry/honey-dates-natural-sweeteners.png` | Food chems[2] Natural Sweetening |
 | `Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg` | Pharma card (homepage), pharma industry.html hero, pharma chems[0] GMP |
 | `Images/Industries/Pharmaceutical/thaismara-figueredo-MTMn2VDnLGM-unsplash.jpg` | Pharma chems[1] Syrup row |
 | `Images/Industries/Pharmaceutical/crystalweed-cannabis-XYGuytPoYHI-unsplash.jpg` | Pharma chems[2] Solid Dosage |
-| `Images/Industries/Textile Washing/second-breakfast-I2WQQaXSy-k-unsplash.jpg` | textile industry.html hero, textile chems[1] Denim Fading row, Fabric & Garment Care category group |
+| `Images/Industries/Textile Washing/second-breakfast-I2WQQaXSy-k-unsplash.jpg` | textile industry.html hero, textile chems[1] Denim Fading row |
 | `Images/Industries/Textile Washing/levis-denim-washing.jpg` | Textile card (homepage), textile chems[0] Garment Washing & Denim Finishing row |
 | `Images/Industries/Textile Washing/engin-akyurt-8g__j-nqWXc-unsplash.jpg` | Textile chems[1] Scouring row |
 | `Images/Gallery/Charity/charity-1.jpeg … charity-14.jpeg` | Gallery section (Community filter), CSR section photos |

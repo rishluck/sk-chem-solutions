@@ -167,36 +167,6 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
   color:#fff;margin-bottom:.65rem;line-height:1.2}
 .app-s{font-size:13px;color:rgba(255,255,255,.48);font-weight:400;line-height:1.8}
 
-.cat-groups-head{margin-top:3.5rem;padding-top:3rem;border-top:1px solid rgba(255,255,255,.07);
-  margin-bottom:2.5rem;text-align:center}
-.cat-groups-head .apps-eyebrow{margin-bottom:.85rem}
-.cat-groups-h{font-family:'Poppins',sans-serif;font-size:clamp(1.5rem,2.8vw,2.2rem);
-  font-weight:800;color:#fff;line-height:1.15}
-.cat-groups-h em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
-  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.cat-groups{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
-.cat-groups.g1{grid-template-columns:1fr}
-.cat-groups.g2{grid-template-columns:repeat(2,1fr)}
-.cat-card{border-radius:14px;overflow:hidden;background:var(--ink);
-  border:1.5px solid rgba(1,191,71,.28);transition:border-color .35s,transform .35s,box-shadow .35s}
-.cat-card:hover{border-color:rgba(1,191,71,.65);transform:translateY(-4px);box-shadow:0 12px 32px rgba(1,191,71,.12)}
-.cat-card-img{aspect-ratio:16/10;overflow:hidden}
-.cat-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
-.cat-card:hover .cat-card-img img{transform:scale(1.06)}
-.cat-card-body{padding:1.5rem 1.6rem 1.7rem}
-.cat-card-h{font-family:'Poppins',sans-serif;font-weight:700;font-size:1.15rem;
-  color:#fff;margin-bottom:.9rem;line-height:1.2;padding-bottom:.75rem;
-  border-bottom:1px solid rgba(255,255,255,.1)}
-.cat-card-list{list-style:none;font-size:13px;line-height:1.6;font-weight:500}
-.cat-card-list li{position:relative;padding-left:1.1rem;margin-bottom:.6rem;color:rgba(255,255,255,.82)}
-.cat-card-list li:last-child{margin-bottom:0}
-.cat-card-list li::before{content:'';position:absolute;left:0;top:.5em;width:6px;height:6px;
-  border-radius:50%;background:linear-gradient(135deg,#01BF47,#89FA58)}
-.cat-card-list li strong{color:var(--fresh);font-weight:700}
-.cat-card-img.tile{aspect-ratio:auto;height:180px;display:flex;align-items:center;justify-content:center;
-  background:linear-gradient(135deg,#0a2e18,#01BF47 55%,#89FA58)}
-.cat-card-img.tile span{font-size:4.5rem;line-height:1;filter:drop-shadow(0 6px 20px rgba(0,0,0,.25))}
-
 /* CTA */
 #ind-cta{background:var(--ink);padding:clamp(4rem,8vw,6rem) 0;position:relative;overflow:hidden}
 #ind-cta::before{content:'';position:absolute;inset:0;
@@ -332,12 +302,11 @@ body{animation:fadeIn .5s ease both}
   .ov-grid,.chem-row{grid-template-columns:1fr}
   .chem-row.rev .chem-img,.chem-row.rev .chem-txt{order:unset}
   .apps-grid{grid-template-columns:1fr 1fr}
-  .cat-groups,.cat-groups.g1,.cat-groups.g2{grid-template-columns:1fr 1fr}
   .ft-grid{grid-template-columns:1fr 1fr}
   .ih-h1{font-size:3.5rem}
 }
 @media(max-width:600px){
-  .apps-grid,.ft-grid,.cat-groups,.cat-groups.g1,.cat-groups.g2{grid-template-columns:1fr}
+  .apps-grid,.ft-grid{grid-template-columns:1fr}
   .ov-stats{grid-template-columns:1fr 1fr}
   /* Heading size overrides for small mobile */
   .ih-h1{font-size:2.4rem}
@@ -435,11 +404,6 @@ body{animation:fadeIn .5s ease both}
       <h2 class="apps-h">How our chemicals<br>are <em>put to work</em></h2>
     </div>
     <div class="apps-grid rv d1" id="apps-grid"></div>
-    <div class="cat-groups-head rv d2" id="cat-groups-head" style="display:none">
-      <span class="apps-eyebrow">Product Categories</span>
-      <h2 class="cat-groups-h">The full <em>range</em> we cover</h2>
-    </div>
-    <div class="cat-groups rv d3" id="cat-groups"></div>
   </div>
 </section>
 
@@ -555,11 +519,6 @@ const IND={
       {ico:'📋',t:'Quality Assurance',s:'Consistent purity levels and full documentation ensure reproducible results and traceable supply for every batch.'},
       {ico:'🤝',t:'Reliable Year-Round Supply',s:'Guaranteed through our established supply chain with BASF Germany and BASF China — no seasonal shortfalls.'},
       {ico:'📦',t:'Plantation-Ready Packaging',s:'Formic acid in 35 kg carboys, sulphites in 25 kg bags — convenient formats for daily plantation and factory use.'}
-    ],
-    catGroups:[
-      {h:'Dry Rubber',img:'Images/Industries/Rubber/rubber-sheets-preservation.png',tags:['Accelerators','Activators','Antioxidants & Antiozonants','Fillers','Processing Aids','Pigments','Carbon Black']},
-      {h:'Latex',img:'Images/Industries/Rubber/latex-wax-sheet.png',tags:['Wetting Agents & Dispersions','Surface Modifiers','Antioxidants','Performance Additives','Defoamers','Waxes','Pigments & Titanium Dioxide']},
-      {h:'Estate & Plantation Care',img:'Images/Industries/Rubber/estate-plantation-chemicals.png',tags:['Plantation Agrochemicals','Estate Sanitation','Soil & Crop Treatment Aids']}
     ]
   },
 
@@ -649,11 +608,6 @@ const IND={
       {ico:'🧺',t:'Laundry Detergents',s:'Surfactants and chelating agents work together in powder and liquid laundry products for reliable performance in Sri Lanka\'s hard water.'},
       {ico:'👔',t:'Garment & Denim Washing',s:'High-purity IPA for denim washing, stone wash, and enzyme wash — delivering consistent premium wash effects for export-quality garments.'},
       {ico:'🧵',t:'Scouring & Pre-Treatment',s:'Removing natural impurities, waxes, and oils from raw fabric to prepare it perfectly for dyeing and premium finishing.'}
-    ],
-    catGroups:[
-      {h:'Personal Care',img:'Images/Industries/Personal Care/personal-care-vanity-flatlay.png',tags:['Skin Care','Body Care','Hair Care','Oral Care','Baby Care','Sun Care','Nail Care','Natural & Organic Specialties','Fragrance Ingredients']},
-      {h:'Home Care',img:'Images/Industries/Home Care/cleaning-products-arrangement-high-angle.jpg',tags:['Fabric Softener','Home & Toiletry Cleaning','Commodity Surfactants','Hand Hygiene','Laundry Care','Air Care']},
-      {h:'Fabric & Garment Care',img:'Images/Industries/Textile Washing/second-breakfast-I2WQQaXSy-k-unsplash.jpg',tags:['Fabric Desizing','Scouring & Pre-Treatment','Garment & Denim Washing','Quality Finishing','Eco-Responsible Processing']}
     ]
   },
 
@@ -698,9 +652,6 @@ const IND={
       {ico:'🌿',t:'Natural Preservation',s:'Antioxidant preservatives help reduce artificial additives while maintaining product quality and safety for health-conscious consumers.'},
       {ico:'✅',t:'Compliance & Documentation',s:'All food-grade materials supplied with full CoA, SDS, Halal certification, and food safety compliance records.'},
       {ico:'📦',t:'Industrial-Scale Supply',s:'Available in bulk to support Sri Lanka\'s growing food manufacturing sector with year-round availability and consistent quality.'}
-    ],
-    catGroups:[
-      {h:'Food &amp; Beverage',img:'Images/Industries/Food Industry/bakery-bread-pastries-assortment.png',tags:['Dairy Ingredients','Cocoa & Confectionery Ingredients','Hydrocolloids & Starches']}
     ]
   },
 
@@ -794,22 +745,6 @@ document.getElementById('apps-grid').innerHTML=d.apps.map(a=>`
   <span class="app-ico">${a.ico}</span>
   <div class="app-t">${a.t}</div>
   <p class="app-s">${a.s}</p>
-</div>`).join('');
-
-const catGroups=d.catGroups||[];
-const catGroupsEl=document.getElementById('cat-groups');
-document.getElementById('cat-groups-head').style.display=catGroups.length?'block':'none';
-catGroupsEl.className='cat-groups rv d3'+(catGroups.length<3?' g'+catGroups.length:'');
-catGroupsEl.innerHTML=catGroups.map(g=>`
-<div class="cat-card">
-  ${g.img?`<div class="cat-card-img"><img src="${g.img}" alt="${g.h}" loading="lazy"></div>`:`<div class="cat-card-img tile"><span>${g.icon||'✦'}</span></div>`}
-  <div class="cat-card-body">
-    <div class="cat-card-h">${g.h}</div>
-    <ul class="cat-card-list">${g.tags.map(t=>{
-      const parts=t.split(' — ');
-      return `<li>${parts.length===2?`<strong>${parts[0]}</strong> — ${parts[1]}`:t}</li>`;
-    }).join('')}</ul>
-  </div>
 </div>`).join('');
 
 /* ── MOTION: hero text staggered entrance ── */
