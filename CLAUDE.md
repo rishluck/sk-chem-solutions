@@ -90,7 +90,7 @@ All images are now local — zero loremflickr usage remaining.
 This applies to: industry cards on homepage, flagship cards, product tabs, industry.html sections.
 
 ## Industries & Services
-Only 4 industries are shown site-wide (homepage cards, footer, contact form, industry.html nav): Rubber & Latex, Home & Personal Care, Food & Beverage Industry, Pharmaceutical. Coatings & Printing Inks and Specialty & Miscellaneous Products were removed as industries.
+5 industries are shown site-wide (homepage cards, footer, contact form): Rubber & Latex, Home & Personal Care, Food & Beverage Industry, Pharmaceutical, Textile Washing & Treatment. Coatings & Printing Inks and Specialty & Miscellaneous Products were removed as industries.
 
 | Industry | `?ind=` key | Key Services |
 |----------|-------------|-------------|
@@ -98,9 +98,9 @@ Only 4 industries are shown site-wide (homepage cards, footer, contact form, ind
 | Home & Personal Care | `personal` | Shampoo Formulation · Skincare Enrichment · Detergent Stability · Hand Sanitiser Production |
 | Food & Beverage Industry | `food` | Beverage Preservation · Bakery Freshness · Natural Sweetening |
 | Pharmaceutical | `pharma` | GMP Facility Hygiene · Oral Formulation · Solid Dosage |
-| Textile Washing & Treatment | `textile` | Garment Washing & Denim Finishing · Denim Fading · Fabric Scouring — **URL-only page, no homepage card** |
+| Textile Washing & Treatment | `textile` | Garment Washing & Denim Finishing · Denim Fading · Fabric Scouring |
 
-Home Care content lives inside the `personal` industry entry (merged). Textile Washing is its own standalone `textile` entry — a real `industry.html?ind=textile` page reachable by URL only, deliberately NOT added as a homepage card, nav link, footer link, or contact-form option (homepage still shows 4 industries). `IND.home` and `IND.estate` remain legacy URL aliases pointing at `personal`/`rubber` for old links.
+Home Care content lives inside the `personal` industry entry (merged). Textile Washing & Treatment is its own full `textile` industry entry — homepage card (5th, "Export-Focused" badge), footer links (index + industry.html), and contact-form option, plus the `industry.html?ind=textile` page. `IND.home` and `IND.estate` remain legacy URL aliases pointing at `personal`/`rubber` for old links.
 
 ## Key Suppliers (Partners section)
 - BASF Germany 🇩🇪 — Sodium Metabisulfite, Sodium Sulphite, Vitamin E Acetate
@@ -112,7 +112,7 @@ Home Care content lives inside the `personal` industry entry (merged). Textile W
 Global supplier logos use Clearbit API: `https://logo.clearbit.com/{domain}` with `onerror` fallback.
 
 ## industry.html Structure
-- Single file serves all 4 industries via URL param `?ind=rubber`
+- Single file serves all 5 industries via URL param `?ind=rubber`
 - JS data object `IND` contains all industry content
 - Each `chems` entry uses: `service`, `serviceEm`, `chemical`, `img`, `desc`, `outcomes`, `specs`, `supplier`, `flag`
 - Template renders: `✦ ${c.chemical}` as badge → `${c.serviceEm}` as headline
