@@ -596,8 +596,9 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
   color:#fff;font-size:20px;cursor:pointer;opacity:.5;padding:6px;line-height:1;
   transition:opacity .25s,transform .25s}
 .lb-x:hover{opacity:1;transform:rotate(90deg)}
-.lb-img{border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center}
-.lb-img img{display:block;max-width:100%;max-height:60vh;width:auto;height:auto;object-fit:contain}
+.lb-img{position:relative;width:100%;height:60vh;display:flex;align-items:center;justify-content:center;
+  transform:translateZ(0);isolation:isolate}
+.lb-img img{display:block;max-width:100%;max-height:100%;width:auto;height:auto;border-radius:12px}
 .lb-cap{margin-top:.7rem;text-align:center}
 .lb-cap-t{font-family:'Poppins',sans-serif;font-size:1.15rem;
   color:#fff;font-weight:700;letter-spacing:-.01em}
@@ -1215,7 +1216,7 @@ const galSel=document.getElementById('gal-select');if(galSel)galSel.addEventList
 /* ── Bento item click ── */
 const TILTS=[-13,12,-10,15,-12,9,-15,13,-11,14,-8,12,-10,16];
 document.querySelectorAll('.bento-item').forEach(el=>{el.addEventListener('click',()=>{olb(el,el.dataset.title||'',el.dataset.desc||'');});});
-function olb(el,t,d){const img=el.querySelector('img');if(!img)return;const lbi=document.getElementById('lbi');lbi.style.opacity='0';setTimeout(()=>{lbi.src=img.getAttribute('src');lbi.style.opacity='1';},80);lbi.src='';document.getElementById('lbt').textContent=t;document.getElementById('lbd').textContent=d;const visItems=Array.from(document.querySelectorAll('.bento-item')).filter(i=>i.style.display!=='none');buildDock(visItems,visItems.indexOf(el));document.getElementById('lbox').classList.add('open');document.body.style.overflow='hidden';}
+function olb(el,t,d){const img=el.querySelector('img');if(!img)return;const lbi=document.getElementById('lbi');lbi.style.opacity='0';setTimeout(()=>{lbi.src=img.getAttribute('src');lbi.style.opacity='1';},80);document.getElementById('lbt').textContent=t;document.getElementById('lbd').textContent=d;const visItems=Array.from(document.querySelectorAll('.bento-item')).filter(i=>i.style.display!=='none');buildDock(visItems,visItems.indexOf(el));document.getElementById('lbox').classList.add('open');document.body.style.overflow='hidden';}
 function buildDock(items,activeIdx){const dock=document.getElementById('lb-dock-inner');dock.innerHTML='';items.forEach((item,i)=>{const img=item.querySelector('img');if(!img)return;const th=document.createElement('div');th.className='lb-dk'+(i===activeIdx?' active':'');th.style.setProperty('--tilt',TILTS[i%TILTS.length]+'deg');const ti=document.createElement('img');ti.src=img.getAttribute('src');ti.alt='';th.appendChild(ti);th.addEventListener('click',e=>{e.stopPropagation();const lbi=document.getElementById('lbi');lbi.style.opacity='0';setTimeout(()=>{lbi.src=img.getAttribute('src');lbi.style.opacity='1';},80);document.getElementById('lbt').textContent=item.dataset.title||'';document.getElementById('lbd').textContent=item.dataset.desc||'';buildDock(items,i);});dock.appendChild(th);});}
 /* Partner marquee tabs */
 document.querySelectorAll('.lm-tab').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.lm-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const t=btn.dataset.lm;document.getElementById('lm-global').style.display=t==='global'?'':'none';document.getElementById('lm-local').style.display=t==='local'?'':'none';});});
