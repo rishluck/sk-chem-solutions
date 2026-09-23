@@ -91,6 +91,8 @@ All images are now local — zero loremflickr usage remaining.
 
 This applies to: industry cards on homepage, flagship cards, product tabs, industry.html sections.
 
+**Exception (client request, Sep 2026):** on industry.html chem rows the chemical badge (`✦ Formic Acid · HCOOH`) is now visually emphasised — large Poppins bold badge — with the service title smaller beneath it. Order/layout unchanged.
+
 ## Industries & Services
 5 industries are shown site-wide (homepage cards, footer, contact form): Rubber & Latex, Home & Personal Care, Food & Beverage Industry, Pharmaceutical, Textile Washing & Treatment. Coatings & Printing Inks and Specialty & Miscellaneous Products were removed as industries.
 
