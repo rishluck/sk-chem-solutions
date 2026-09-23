@@ -131,6 +131,16 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .chem-img:hover img{transform:scale(1.05)}
 .chem-img-ov{position:absolute;inset:0;
   background:linear-gradient(135deg,rgba(46,46,44,.08),transparent)}
+.chem-img.sl img{opacity:0;transition:opacity .7s,transform .9s}
+.chem-img.sl img.on{opacity:1}
+.sl-btn{position:absolute;top:50%;transform:translateY(-50%);z-index:2;width:42px;height:42px;border-radius:50%;
+  border:1px solid rgba(255,255,255,.45);background:rgba(28,56,41,.45);color:#fff;font-size:1.3rem;line-height:1;
+  cursor:pointer;backdrop-filter:blur(4px);transition:background .3s}
+.sl-btn:hover{background:rgba(28,56,41,.8)}
+.sl-prev{left:16px}.sl-next{right:16px}
+.sl-dots{position:absolute;left:0;right:0;bottom:18px;z-index:2;display:flex;justify-content:center;gap:8px}
+.sl-dot{width:9px;height:9px;border-radius:50%;border:1px solid #fff;background:transparent;padding:0;cursor:pointer;transition:background .3s,transform .3s}
+.sl-dot.on{background:#fff;transform:scale(1.2)}
 .chem-img.tile{display:flex;align-items:center;justify-content:center;
   background:linear-gradient(135deg,#0a2e18,#01BF47 55%,#89FA58)}
 .chem-img.tile span{font-size:6rem;line-height:1;filter:drop-shadow(0 8px 26px rgba(0,0,0,.25))}
@@ -495,6 +505,7 @@ const IND={
     chems:[
       {service:'Latex Coagulation',serviceEm:'Latex <em>Coagulation</em>',chemical:'Formic Acid · HCOOH',
        img:'Images/All/isuru-ranasinha-3JdlP4prtjg-unsplash.jpg',
+       imgs:['Images/All/isuru-ranasinha-3JdlP4prtjg-unsplash.jpg','Images/Industries/Rubber/formic-acid-carboys-warehouse.png'],
        desc:'Give your plantation the fast, clean coagulation it needs. We supply industrial-grade formic acid that turns fresh field latex into firm, uniform rubber slabs — enabling efficient sheet production and consistent throughput from field to factory.',
        outcomes:['Rapid, clean coagulation','Consistent quality output','Plantation-ready packaging','Year-round supply'],
        specs:[{l:'Purity',v:'≥85%'},{l:'Packaging',v:'35 kg carboys'},{l:'Supply',v:'Year-round'},{l:'Docs',v:'CoA & SDS'}],
@@ -752,7 +763,10 @@ document.getElementById('ov-q-list').innerHTML=d.quick.map(q=>`<div class="ov-q-
 
 document.getElementById('chem-list').innerHTML=d.chems.map((c,i)=>`
 <div class="chem-row${i%2===1?' rev':''}">
-  ${c.img?`<div class="chem-img"><img src="${c.img}" alt="${c.service}"><div class="chem-img-ov"></div></div>`:`<div class="chem-img tile"><span>${c.icon||'✦'}</span></div>`}
+  ${c.imgs&&c.imgs.length>1?`<div class="chem-img sl">${c.imgs.map((src,k)=>`<img src="${src}" alt="${c.service}"${k?' loading="lazy"':' class="on"'}>`).join('')}<div class="chem-img-ov"></div>
+    <button class="sl-btn sl-prev" aria-label="Previous image">‹</button><button class="sl-btn sl-next" aria-label="Next image">›</button>
+    <div class="sl-dots">${c.imgs.map((_,k)=>`<button class="sl-dot${k?'':' on'}" aria-label="Image ${k+1}"></button>`).join('')}</div></div>`
+  :c.img?`<div class="chem-img"><img src="${c.img}" alt="${c.service}"><div class="chem-img-ov"></div></div>`:`<div class="chem-img tile"><span>${c.icon||'✦'}</span></div>`}
   <div class="chem-txt">
     <div class="chem-formula-badge">✦ ${c.chemical}</div>
     <div class="chem-name">${c.serviceEm}</div>
@@ -796,6 +810,20 @@ const statObs=new IntersectionObserver(es=>{
 },{threshold:.4});
 const ovEl=document.getElementById('ind-ov');
 if(ovEl) statObs.observe(ovEl);
+
+/* ── IMAGE SLIDERS (chem rows with multiple images) ── */
+document.querySelectorAll('.chem-img.sl').forEach(box=>{
+  const imgs=box.querySelectorAll('img'),dots=box.querySelectorAll('.sl-dot');
+  let cur=0;
+  const go=n=>{
+    cur=(n+imgs.length)%imgs.length;
+    imgs.forEach((im,k)=>im.classList.toggle('on',k===cur));
+    dots.forEach((d,k)=>d.classList.toggle('on',k===cur));
+  };
+  box.querySelector('.sl-prev').addEventListener('click',()=>go(cur-1));
+  box.querySelector('.sl-next').addEventListener('click',()=>go(cur+1));
+  dots.forEach((d,k)=>d.addEventListener('click',()=>go(k)));
+});
 
 /* ── MOTION: chemical rows slide in ── */
 const chemObs=new IntersectionObserver(es=>{

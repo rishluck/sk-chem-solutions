@@ -30,6 +30,7 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/All/closeup-shot-trees-greenery-...jpg` | About section image |
 | `Images/All/green-plant-leaves-with-blue-sky-background.jpg` | Sustainability section background |
 | `Images/All/young-woman-smelling-leaf-forest.jpg` | Personal Care chems[2] Moisturiser row |
+| `Images/Industries/Rubber/formic-acid-carboys-warehouse.png` | Rubber chems[0] Latex Coagulation — 2nd slide (image slider via `imgs` array) |
 | `Images/Industries/Rubber/rubber-sheets-preservation.png` | Rubber chems[1] Crepe Rubber Preservation |
 | `Images/Industries/Rubber/zuniar-ayu-DwyeIjDscCc-unsplash.jpg` | Rubber chems[2] Latex Transport |
 | `Images/Industries/Personal Care/personal-care-vanity-flatlay.png` | Personal Care card (homepage), personal industry.html hero |
@@ -114,7 +115,7 @@ Global supplier logos use Clearbit API: `https://logo.clearbit.com/{domain}` wit
 ## industry.html Structure
 - Single file serves all 5 industries via URL param `?ind=rubber`
 - JS data object `IND` contains all industry content
-- Each `chems` entry uses: `service`, `serviceEm`, `chemical`, `img`, `desc`, `outcomes`, `specs`, `supplier`, `flag`
+- Each `chems` entry uses: `service`, `serviceEm`, `chemical`, `img`, optional `imgs` (array → prev/next + dots slider), `desc`, `outcomes`, `specs`, `supplier`, `flag`
 - Template renders: `✦ ${c.chemical}` as badge → `${c.serviceEm}` as headline
 - Motion graphics: orbFloat, shimLine, spinSlow, fadeUp keyframe animations
 - Scroll-triggered reveals via IntersectionObserver
