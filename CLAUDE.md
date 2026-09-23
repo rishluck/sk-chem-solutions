@@ -94,7 +94,7 @@ This applies to: industry cards on homepage, flagship cards, product tabs, indus
 
 | Industry | `?ind=` key | Key Services |
 |----------|-------------|-------------|
-| Rubber & Latex | `rubber` | Latex Coagulation · Sheet Preservation · Export Protection |
+| Rubber & Latex | `rubber` | Latex Coagulation · Crepe Rubber Preservation · Export Protection |
 | Home & Personal Care | `personal` | Shampoo Formulation · Skincare Enrichment · Detergent Stability · Hand Sanitiser Production |
 | Food & Beverage Industry | `food` | Beverage Preservation · Bakery Freshness · Natural Sweetening |
 | Pharmaceutical | `pharma` | GMP Facility Hygiene · Oral Formulation · Solid Dosage |
