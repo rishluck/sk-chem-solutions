@@ -31,6 +31,7 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/All/green-plant-leaves-with-blue-sky-background.jpg` | Sustainability section background |
 | `Images/All/young-woman-smelling-leaf-forest.jpg` | Personal Care chems[2] Moisturiser row |
 | `Images/Industries/Rubber/formic-acid-carboys-warehouse.png` | Rubber chems[0] Latex Coagulation — 2nd slide (image slider via `imgs` array) |
+| `Images/Industries/Rubber/basf-sodium-metabisulphite-bag.png` | Rubber chems[1] Crepe Rubber Preservation — 2nd slide |
 | `Images/Industries/Rubber/rubber-sheets-preservation.png` | Rubber chems[1] Crepe Rubber Preservation |
 | `Images/Industries/Rubber/zuniar-ayu-DwyeIjDscCc-unsplash.jpg` | Rubber chems[2] Latex Transport |
 | `Images/Industries/Personal Care/personal-care-vanity-flatlay.png` | Personal Care card (homepage), personal industry.html hero |

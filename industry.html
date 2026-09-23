@@ -139,8 +139,8 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
 .sl-btn:hover{background:rgba(28,56,41,.8)}
 .sl-prev{left:16px}.sl-next{right:16px}
 .sl-dots{position:absolute;left:0;right:0;bottom:18px;z-index:2;display:flex;justify-content:center;gap:8px}
-.sl-dot{width:9px;height:9px;border-radius:50%;border:1px solid #fff;background:transparent;padding:0;cursor:pointer;transition:background .3s,transform .3s}
-.sl-dot.on{background:#fff;transform:scale(1.2)}
+.sl-dot{width:9px;height:9px;border-radius:50%;border:1px solid #fff;background:rgba(28,56,41,.35);box-shadow:0 0 0 1px rgba(28,56,41,.35);padding:0;cursor:pointer;transition:background .3s,transform .3s}
+.sl-dot.on{background:#2A5E40;transform:scale(1.3)}
 .chem-img.tile{display:flex;align-items:center;justify-content:center;
   background:linear-gradient(135deg,#0a2e18,#01BF47 55%,#89FA58)}
 .chem-img.tile span{font-size:6rem;line-height:1;filter:drop-shadow(0 8px 26px rgba(0,0,0,.25))}
@@ -512,6 +512,7 @@ const IND={
        supplier:'BASF China',flag:'🇨🇳'},
       {service:'Crepe Rubber Preservation',serviceEm:'Crepe Rubber <em>Preservation</em>',chemical:'Sodium Metabisulfite · Na₂S₂O₅',
        img:'Images/Industries/Rubber/rubber-sheets-preservation.png',
+       imgs:['Images/Industries/Rubber/rubber-sheets-preservation.png','Images/Industries/Rubber/basf-sodium-metabisulphite-bag.png'],
        desc:'Protect your processed crepe rubber from yellowing, oxidation, and quality degradation — during processing, storage, and export. Our sodium metabisulfite ensures your crepe rubber reaches buyers in peak condition, protecting your reputation and margins.',
        outcomes:['Oxidation prevention','Colour & grade protection','Extended storage life','Export-ready quality'],
        specs:[{l:'Purity',v:'≥96%'},{l:'Packaging',v:'25 kg bags'},{l:'Grade',v:'Food & Industrial'},{l:'Docs',v:'CoA & SDS'}],
