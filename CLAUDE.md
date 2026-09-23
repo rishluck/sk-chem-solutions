@@ -13,6 +13,8 @@ Static website for **S.K. Chem Solutions** — a Sri Lankan B2B chemical raw mat
 - `Images/Industries/Food Industry/` — Bakery, beverages
 - `Images/Industries/Pharmaceutical/` — Cleanroom, medicine
 - `Images/Industries/Textile Washing/` — Garments, dye
+- `Images/Gallery/gallery-1.jpg … gallery-6.jpg` — retouched, web-optimised homepage gallery photos (latex tray & rubber roller donation)
+- `Images/Gallery/New-Retouch/` — full-size retouched PNG masters (not committed, local only)
 - `Images/Gallery/Charity/` — 14 CSR/community event photos (charity-1.jpeg … charity-14.jpeg)
 - `Images/Partners/Local/` — 8 local client logos
 - `Images/Partners/Global/` — Global supplier logos (TBD)
@@ -50,7 +52,8 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/Industries/Textile Washing/levis-denim-washing.jpg` | textile industry.html hero + textile chems[0] Garment & Denim Washing row, homepage hero decoration |
 | `Images/Industries/Textile Washing/second-breakfast-I2WQQaXSy-k-unsplash.jpg` | textile chems[1] Denim Fading row |
 | `Images/Industries/Textile Washing/engin-akyurt-8g__j-nqWXc-unsplash.jpg` | textile chems[2] Fabric Scouring row |
-| `Images/Gallery/Charity/charity-1.jpeg … charity-14.jpeg` | Gallery section (Community filter), CSR section photos |
+| `Images/Gallery/gallery-1.jpg … gallery-6.jpg` | Homepage gallery bento, slots 1–6 |
+| `Images/Gallery/Charity/charity-*.jpeg` | CSR section photos |
 
 ## Local Client Logos (`Images/Partners/Local/`)
 | File | Company | Sector |
@@ -125,7 +128,8 @@ Global supplier logos use Clearbit API: `https://logo.clearbit.com/{domain}` wit
 
 ## Gallery Section
 - Filter buttons: All, Community (charity), Products, Warehouse, Operations
-- 14 real charity photos in `data-cat="charity"` items
+- 6 photos (`gallery-1…6.jpg`, `data-cat="charity"`) in a 4-col bento: row 1 = 1 · 2 (wide) · 3, row 2 = 4 · 5 (wide) · 6 — every tile `bi-r3`, wide ones also `bi-c2`, so the grid fills with no gaps
+- Wide tiles 2 and 5 use inline `object-position` (36% / 28%) to keep faces in frame — retune if photos change
 - Products/Warehouse/Operations filters ready for when real photos are added
 - CSR section (separate from gallery) shows charity-3, charity-7, charity-12
 
