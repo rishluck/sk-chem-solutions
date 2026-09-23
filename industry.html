@@ -485,7 +485,6 @@ const IND={
     tagline:'High-quality Formic Acid, Sodium Sulphite, and Sodium Metabisulfite for making quality sheet and crepe rubber.',
     ovH:'The driving force of<br><em>Sri Lankan exports</em>',
     ovP1:'Sri Lanka has a long and proud history in natural rubber production. S.K. Chem Solutions has been a trusted supply partner to rubber plantations and processing facilities since 2017 — providing the chemicals that enable every stage of rubber manufacturing.',
-    ovP2:'From latex coagulation on the plantation to sheet antioxidation and transport preservation, we enable consistent, quality output from field to export — with year-round supply and full technical documentation.',
     stats:[{n:'#1',l:'Sector We Serve'},{n:'3+',l:'Core Services'},{n:'BASF',l:'Sourced'},{n:'Year-round',l:'Supply'}],
     quickH:'Services at a Glance',
     quick:[
@@ -746,7 +745,7 @@ document.getElementById('ih-h1').innerHTML=d.name;
 document.getElementById('ih-tagline').textContent=d.tagline;
 document.getElementById('ov-h').innerHTML=d.ovH;
 document.getElementById('ov-p1').textContent=d.ovP1;
-document.getElementById('ov-p2').textContent=d.ovP2;
+{const p2=document.getElementById('ov-p2');p2.textContent=d.ovP2||'';p2.hidden=!d.ovP2;}
 document.getElementById('ov-stats').innerHTML=d.stats.map(s=>`<div class="ov-stat"><span class="ov-stat-n">${s.n}</span><span class="ov-stat-l">${s.l}</span></div>`).join('');
 document.getElementById('ov-quick-h').textContent=d.quickH;
 document.getElementById('ov-q-list').innerHTML=d.quick.map(q=>`<div class="ov-q-item"><span class="ov-q-ico">${q.ico}</span><div><span class="ov-q-t">${q.t}</span><span class="ov-q-s">${q.s}</span></div></div>`).join('');
