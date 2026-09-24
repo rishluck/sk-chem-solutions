@@ -96,6 +96,10 @@ nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 2px 24px rgba(0,0,0,.
 .srv-desc{font-size:13px;color:var(--tm);font-weight:400;line-height:1.75;position:relative}
 .srv-pills{display:flex;flex-wrap:wrap;gap:.35rem;margin-top:.85rem;position:relative}
 .srv-pill{font-size:10.5px;background:var(--mint);border:1px solid var(--bdr);border-radius:50px;padding:3px 10px;color:var(--tm);font-weight:400}
+.srv-card{display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.srv-more{margin-top:auto;padding-top:1.1rem;font-size:12.5px;font-weight:600;color:var(--leaf);position:relative;transition:color .3s}
+.srv-card:hover .srv-more{color:var(--fresh)}
+.srv-card-cta{background:var(--mint)}
 
 /* ── WHY US ── */
 .why-wrap{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
@@ -277,48 +281,53 @@ nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 2px 24px rgba(0,0,0,.
     <h2 class="srv-h">Products &amp; <em>Services</em></h2>
     <p class="srv-sub">Key chemical raw materials we supply — sourced from world-class manufacturers, delivered with full documentation.</p>
     <div class="srv-grid">
-      <div class="srv-card">
+      <a class="srv-card" href="industry.html?ind=rubber">
         <span class="srv-ico">🌿</span>
         <div class="srv-ind">Rubber &amp; Latex</div>
-        <div class="srv-name">Latex Coagulation</div>
-        <p class="srv-desc">Fast, clean coagulation from field to factory using industrial-grade Formic Acid from BASF China.</p>
-        <div class="srv-pills"><span class="srv-pill">Formic Acid</span><span class="srv-pill">BASF China</span><span class="srv-pill">35 kg carboys</span></div>
-      </div>
-      <div class="srv-card">
-        <span class="srv-ico">📦</span>
-        <div class="srv-ind">Rubber &amp; Food</div>
-        <div class="srv-name">Sheet Preservation &amp; Food Freshness</div>
-        <p class="srv-desc">Prevents oxidation in rubber sheets and extends shelf life in food products with Sodium Metabisulfite.</p>
-        <div class="srv-pills"><span class="srv-pill">Sodium Metabisulfite</span><span class="srv-pill">BASF Germany</span></div>
-      </div>
-      <div class="srv-card">
+        <div class="srv-name">Latex Coagulation · Crepe Rubber Preservation · Latex Transport</div>
+        <p class="srv-desc">Fast, clean coagulation on the plantation, protection against yellowing and oxidation, and latex quality maintained in transit — sourced from BASF.</p>
+        <div class="srv-pills"><span class="srv-pill">Formic Acid</span><span class="srv-pill">Sodium Metabisulfite</span><span class="srv-pill">Sodium Sulphite</span></div>
+        <span class="srv-more">Explore industry →</span>
+      </a>
+      <a class="srv-card" href="industry.html?ind=personal">
         <span class="srv-ico">✨</span>
-        <div class="srv-ind">Personal Care</div>
-        <div class="srv-name">Shampoo &amp; Skincare Formulation</div>
-        <p class="srv-desc">Cosmetic-grade CAPB, Vitamin E Acetate, Glycerine, MPG, and IPA for gentle, effective personal care products.</p>
-        <div class="srv-pills"><span class="srv-pill">CAPB</span><span class="srv-pill">Vitamin E</span><span class="srv-pill">Glycerine</span><span class="srv-pill">IPA</span></div>
-      </div>
-      <div class="srv-card">
-        <span class="srv-ico">🏠</span>
-        <div class="srv-ind">Home Care</div>
-        <div class="srv-name">Cleaning &amp; Detergent Power</div>
-        <p class="srv-desc">Specialty surfactants and chelating agents for high-performance dishwashing and laundry products.</p>
-        <div class="srv-pills"><span class="srv-pill">Surfactants</span><span class="srv-pill">Chelating Agents</span></div>
-      </div>
-      <div class="srv-card">
+        <div class="srv-ind">Home &amp; Personal Care</div>
+        <div class="srv-name">Shampoo · Skincare · Sanitiser · Dishwashing &amp; Detergents</div>
+        <p class="srv-desc">Ingredients for gentle shampoos and body washes, moisturising skincare, hand sanitisers, and grease-cutting dishwashing and laundry products.</p>
+        <div class="srv-pills"><span class="srv-pill">CAPB</span><span class="srv-pill">Vitamin E Acetate</span><span class="srv-pill">Refined Glycerine USP</span><span class="srv-pill">IPA</span><span class="srv-pill">SLES</span><span class="srv-pill">Chelating Agents</span></div>
+        <span class="srv-more">Explore industry →</span>
+      </a>
+      <a class="srv-card" href="industry.html?ind=food">
         <span class="srv-ico">🌾</span>
-        <div class="srv-ind">Food Industry</div>
-        <div class="srv-name">Bakery Freshness &amp; Preservation</div>
-        <p class="srv-desc">Food-grade MPG and Glycerine keep baked goods moist and beverages fresh — GRAS and Halal certified.</p>
-        <div class="srv-pills"><span class="srv-pill">MPG</span><span class="srv-pill">Glycerine</span><span class="srv-pill">Food Grade</span></div>
-      </div>
-      <div class="srv-card">
+        <div class="srv-ind">Food &amp; Beverage</div>
+        <div class="srv-name">Beverage Preservation · Bakery Freshness · Natural Sweetening</div>
+        <p class="srv-desc">Food-grade preservatives, humectants and sweeteners that keep juices fresh, baked goods moist, and products shelf-stable — with Halal and GRAS documentation.</p>
+        <div class="srv-pills"><span class="srv-pill">Sodium Metabisulfite (E223)</span><span class="srv-pill">MPG (GRAS)</span><span class="srv-pill">Vegetable Glycerine</span></div>
+        <span class="srv-more">Explore industry →</span>
+      </a>
+      <a class="srv-card" href="industry.html?ind=pharma">
         <span class="srv-ico">💊</span>
         <div class="srv-ind">Pharmaceutical</div>
-        <div class="srv-name">GMP &amp; Excipient Supply</div>
-        <p class="srv-desc">USP/BP-grade IPA, MPG, and Glycerine for facility sanitation, oral formulations, and solid dosage.</p>
-        <div class="srv-pills"><span class="srv-pill">USP Grade</span><span class="srv-pill">BP / PhEur</span><span class="srv-pill">Full Docs</span></div>
-      </div>
+        <div class="srv-name">GMP Sanitisation · Oral Liquids &amp; Syrups · Solid Dosage</div>
+        <p class="srv-desc">USP / BP / PhEur-grade materials for facility hygiene, syrup formulation and tablet or topical products — every batch with CoA, SDS and compliance records.</p>
+        <div class="srv-pills"><span class="srv-pill">IPA (USP)</span><span class="srv-pill">MPG (USP/PhEur)</span><span class="srv-pill">Glycerine (BP/PhEur)</span></div>
+        <span class="srv-more">Explore industry →</span>
+      </a>
+      <a class="srv-card" href="industry.html?ind=textile">
+        <span class="srv-ico">🧵</span>
+        <div class="srv-ind">Textile Washing &amp; Treatment</div>
+        <div class="srv-name">Garment &amp; Denim Washing · Denim Fading · Fabric Scouring</div>
+        <p class="srv-desc">Consistent bleach neutralisation, controlled indigo fading and clean pre-treatment for export garment washing plants, batch after batch.</p>
+        <div class="srv-pills"><span class="srv-pill">Sodium Metabisulfite</span><span class="srv-pill">Processing Chemicals</span></div>
+        <span class="srv-more">Explore industry →</span>
+      </a>
+      <a class="srv-card srv-card-cta" href="index.html#contact">
+        <span class="srv-ico">💬</span>
+        <div class="srv-ind">Something Else?</div>
+        <div class="srv-name">Need a specific material?</div>
+        <p class="srv-desc">Tell us your application and required grade — we source from world-class manufacturers and deliver year-round with full documentation.</p>
+        <span class="srv-more">Talk to us →</span>
+      </a>
     </div>
   </div>
 </section>
