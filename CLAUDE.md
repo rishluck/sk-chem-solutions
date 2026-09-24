@@ -128,7 +128,8 @@ Global supplier logos use Clearbit API: `https://logo.clearbit.com/{domain}` wit
 ## Gallery Section
 - Filter buttons: All, Community (charity), Products, Warehouse, Operations
 - 6 photos (`gallery-1…6.jpg`, `data-cat="charity"`) in a 4-col bento: row 1 = 1 · 2 (wide) · 3, row 2 = 4 · 5 (wide) · 6 — every tile `bi-r3`, wide ones also `bi-c2`, so the grid fills with no gaps
-- Wide tiles 2 and 5 use inline `object-position` (36% / 28%) to keep faces in frame — retune if photos change
+- Bottom row items use `bi-r5` (taller row on desktop, reset to row-1 height in tablet/mobile media queries) so wide tile 5 shows both faces and the roller received
+- Wide tiles 2 and 5 use inline `object-position` (36% / 45%) to keep faces in frame — retune if photos change
 - Products/Warehouse/Operations filters ready for when real photos are added
 - CSR / Social Responsibility section (separate from gallery) shows `Images/Gallery/gallery-3.jpg` (swapped with gallery slot 3)
 
