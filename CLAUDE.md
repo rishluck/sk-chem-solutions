@@ -51,7 +51,6 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/Industries/Pharmaceutical/crystalweed-cannabis-XYGuytPoYHI-unsplash.jpg` | Pharma chems[2] Solid Dosage |
 | `Images/Industries/Textile Washing/levis-denim-washing.jpg` | textile industry.html hero + textile chems[0] Garment & Denim Washing row, homepage hero decoration |
 | `Images/Industries/Textile Washing/second-breakfast-I2WQQaXSy-k-unsplash.jpg` | textile chems[1] Denim Fading row |
-| `Images/Industries/Textile Washing/engin-akyurt-8g__j-nqWXc-unsplash.jpg` | textile chems[2] Fabric Scouring row |
 | `Images/Gallery/gallery-1.jpg … gallery-6.jpg` | Homepage gallery bento, slots 1–6 |
 | `Images/Gallery/social-responsibility.jpg` | Social Responsibility (CSR) section photo |
 
@@ -105,7 +104,7 @@ This applies to: industry cards on homepage, flagship cards, product tabs, indus
 | Home & Personal Care | `personal` | Shampoo Formulation · Skincare Enrichment · Detergent Stability · Hand Sanitiser Production |
 | Food & Beverage Industry | `food` | Beverage Preservation · Bakery Freshness · Natural Sweetening |
 | Pharmaceutical | `pharma` | GMP Facility Hygiene · Oral Formulation · Solid Dosage |
-| Textile Washing & Treatment | `textile` | Garment & Denim Washing · Denim Fading · Fabric Scouring |
+| Textile Washing & Treatment | `textile` | Garment & Denim Washing · Denim Fading |
 
 Home Care content lives inside the `personal` industry entry (merged). Textile Washing & Treatment is its own full `textile` industry entry — homepage card (5th, "Export-Focused" badge), footer links (index + industry.html), and contact-form option, plus the `industry.html?ind=textile` page. `IND.home` and `IND.estate` remain legacy URL aliases pointing at `personal`/`rubber` for old links.
 
