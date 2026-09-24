@@ -51,8 +51,8 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/Industries/Pharmaceutical/crystalweed-cannabis-XYGuytPoYHI-unsplash.jpg` | Pharma chems[2] Solid Dosage |
 | `Images/Industries/Textile Washing/levis-denim-washing.jpg` | textile industry.html hero + textile chems[0] Garment & Denim Washing row, homepage hero decoration |
 | `Images/Industries/Textile Washing/second-breakfast-I2WQQaXSy-k-unsplash.jpg` | textile chems[1] Denim Fading row |
-| `Images/Gallery/gallery-1.jpg … gallery-6.jpg` | Homepage gallery bento, slots 1–6 |
-| `Images/Gallery/social-responsibility.jpg` | Social Responsibility (CSR) section photo |
+| `Images/Gallery/gallery-1…6.jpg` | Homepage gallery bento slots 1,2,4,5,6 (gallery-3 is used in the CSR section; slot 3 shows social-responsibility.jpg) |
+| `Images/Gallery/social-responsibility.jpg` | Gallery bento slot 3 |
 
 ## Local Client Logos (`Images/Partners/Local/`)
 | File | Company | Sector |
@@ -130,7 +130,7 @@ Global supplier logos use Clearbit API: `https://logo.clearbit.com/{domain}` wit
 - 6 photos (`gallery-1…6.jpg`, `data-cat="charity"`) in a 4-col bento: row 1 = 1 · 2 (wide) · 3, row 2 = 4 · 5 (wide) · 6 — every tile `bi-r3`, wide ones also `bi-c2`, so the grid fills with no gaps
 - Wide tiles 2 and 5 use inline `object-position` (36% / 28%) to keep faces in frame — retune if photos change
 - Products/Warehouse/Operations filters ready for when real photos are added
-- CSR / Social Responsibility section (separate from gallery) shows `Images/Gallery/social-responsibility.jpg` (square, retouched)
+- CSR / Social Responsibility section (separate from gallery) shows `Images/Gallery/gallery-3.jpg` (swapped with gallery slot 3)
 
 ## Navigation
 - Logo click → `index.html` (from industry.html) or `#hero` (from homepage)
