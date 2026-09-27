@@ -36,6 +36,7 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/Industries/Rubber/rubber-sheets-preservation.png` | Rubber chems[1] Crepe Rubber Preservation |
 | `Images/Industries/Rubber/zuniar-ayu-DwyeIjDscCc-unsplash.jpg` | Rubber chems[2] Latex Transport |
 | `Images/Industries/Personal Care/personal-care-vanity-flatlay.png` | Personal Care card (homepage), personal industry.html hero |
+| `Images/Industries/Personal Care/foam-bath-rich-lather.jpg` | Personal chems[2] CDE Foam Boosting row |
 | `Images/Industries/Personal Care/shampoo-body-wash-shower.png` | Personal chems[0] Shampoo & Body Wash row |
 | `Images/Industries/Personal Care/skincare-cream-serum-formulation.png` | Personal chems[1] Premium Skincare & Anti-Aging row |
 | `Images/Industries/Personal Care/natural-beauty-jasmine-spa.png` | Personal chems[4] Natural Beauty row |
