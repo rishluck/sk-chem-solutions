@@ -31,7 +31,6 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/All/isuru-ranasinha-3JdlP4prtjg-unsplash.jpg` | Flagship card 1, rubber chems[0] Latex Coagulation |
 | `Images/All/closeup-shot-trees-greenery-...jpg` | About section image |
 | `Images/All/green-plant-leaves-with-blue-sky-background.jpg` | Sustainability section background |
-| `Images/All/young-woman-smelling-leaf-forest.jpg` | Personal Care chems[2] Moisturiser row |
 | `Images/Industries/Rubber/formic-acid-carboys-warehouse.png` | Rubber chems[0] Latex Coagulation — 2nd slide (image slider via `imgs` array) |
 | `Images/Industries/Rubber/basf-sodium-metabisulphite-bag.png` | Rubber chems[1] Crepe Rubber Preservation — 2nd slide |
 | `Images/Industries/Rubber/rubber-sheets-preservation.png` | Rubber chems[1] Crepe Rubber Preservation |
