@@ -17,7 +17,7 @@ Static website for **S.K. Chem Solutions** — a Sri Lankan B2B chemical raw mat
 - `Images/Gallery/New-Retouch/` — full-size retouched PNG masters (not committed, local only)
 - `Images/Gallery/Charity/` — 14 CSR/community event photos (charity-1.jpeg … charity-14.jpeg)
 - `Images/Partners/Local/` — 8 local client logos
-- `Images/Partners/Global/` — Global supplier logos (TBD)
+- `Images/Partners/Global/` — Global supplier logos (BASF, Vance Group, SK Pickglobal, LG Chem)
 - `Images/Products/` — Product photos (TBD)
 
 ## Logo (`Logo/`)
@@ -122,7 +122,7 @@ Home Care content lives inside the `personal` industry entry (merged). Textile W
 - SK Pickglobal 🇰🇷 — Monopropylene Glycol
 - LG Chem 🇰🇷 — Isopropyl Alcohol
 
-Global supplier logos use Clearbit API: `https://logo.clearbit.com/{domain}` with `onerror` fallback.
+Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, `vance-group.png`, `sk-pickglobal.png` (SK butterfly mark cropped from an SK telecom SVG — replace with an official SK Pickglobal logo if supplied), `lg-chem.svg`. Clearbit is no longer used (service shut down). LUXI Chemical has no logo yet.
 
 ## industry.html Structure
 - Single file serves all 5 industries via URL param `?ind=rubber`
