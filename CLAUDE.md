@@ -45,7 +45,8 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/Industries/Home Care/puroclean-of-fort-worth--dc38HdQR1M-unsplash.jpg` | Personal chems[6] Detergent Stability row |
 | `Images/Industries/Food Industry/fresh-fruit-juices-beverages.png` | Food industry card (homepage), food industry.html hero, food chems[0] Beverage & Fruit Juice Preservation |
 | `Images/Industries/Food Industry/bakery-bread-pastries-assortment.png` | Food chems[1] Bakery row |
-| `Images/Industries/Food Industry/honey-dates-natural-sweeteners.png` | Food chems[3] Natural Sweetening (chems[2] = Liquid Shellac, icon tile — needs photo) |
+| `Images/Industries/Food Industry/confectionery-candies-glazed.jpg` | Food chems[2] Confectionery Glazing (Liquid Shellac) |
+| `Images/Industries/Food Industry/honey-dates-natural-sweeteners.png` | Food chems[3] Natural Sweetening  |
 | `Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg` | Pharma card (homepage), pharma industry.html hero, pharma chems[0] GMP |
 | `Images/Industries/Pharmaceutical/thaismara-figueredo-MTMn2VDnLGM-unsplash.jpg` | Pharma chems[1] Syrup row |
 | `Images/Industries/Pharmaceutical/crystalweed-cannabis-XYGuytPoYHI-unsplash.jpg` | Pharma chems[2] Solid Dosage |
