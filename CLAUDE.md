@@ -20,6 +20,12 @@ Static website for **S.K. Chem Solutions** — a Sri Lankan B2B chemical raw mat
 - `Images/Partners/Global/` — Global supplier logos (TBD)
 - `Images/Products/` — Product photos (TBD)
 
+## Logo (`Logo/`)
+- `sk-chem-logo.png` — full logo (SK mark + "Chem Solutions"), transparent PNG, used in the nav on all pages (`.nav-logo`, 44px tall)
+- `sk-chem-mark.png` — SK mark only, used in the footer (`.ft-mark-img`)
+- `favicon.png` / `apple-touch-icon.png` — browser tab / home-screen icons, linked in every page `<head>`
+- Source: `CamScanner 25-09-2026 14.41.pdf` (local only; logo image extracted from it)
+
 ## No External Image Dependencies
 All images are now local — zero loremflickr usage remaining.
 
