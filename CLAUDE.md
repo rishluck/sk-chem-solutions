@@ -100,6 +100,8 @@ All images are now local — zero loremflickr usage remaining.
 
 This applies to: industry cards on homepage, flagship cards, product tabs, industry.html sections.
 
+**Copy style:** never use em dashes (—) in visible site text. Use commas, full stops, colons or "·" instead (client request, Sep 2026). Page titles use " | " as the separator.
+
 **Exception (client request, Sep 2026):** on industry.html chem rows the chemical badge (`✦ Formic Acid · HCOOH`) is now visually emphasised — large Poppins bold badge — with the service title smaller beneath it. Order/layout unchanged.
 
 ## Industries & Services
