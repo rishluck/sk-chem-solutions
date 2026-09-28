@@ -496,7 +496,9 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 .cta-h em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .cta-sub{font-size:14px;color:rgba(255,255,255,.5);margin-top:.4rem;font-weight:400}
-.cta-btns{display:flex;gap:.75rem;flex-wrap:wrap;flex-shrink:0}
+.cta-btns{display:flex;gap:1rem;flex-wrap:wrap;flex-shrink:0}
+@media(max-width:480px){.cta-btns{flex-direction:column;align-items:stretch;width:100%;max-width:280px;margin:0 auto}
+  .cta-btns a{justify-content:center}}
 .btn-cta-dk{display:inline-flex;align-items:center;gap:7px;padding:13px 30px;border-radius:8px;
   background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
   color:#0a2e18;font-size:14px;font-weight:700;letter-spacing:.3px;text-transform:uppercase;
@@ -682,6 +684,7 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
   .ic:nth-child(1) .ic-img,.ic:nth-child(6) .ic-img{height:220px}
   .ft-grid{grid-template-columns:1fr 1fr}
   .cta-inner{flex-direction:column;text-align:center}
+  .cta-btns{justify-content:center}
   .stats-row{flex-wrap:wrap}
   .stat-item{flex:0 0 50%;border-right:none;border-bottom:1px solid var(--border)}
   .ind-panel-img-wrap{height:220px}
