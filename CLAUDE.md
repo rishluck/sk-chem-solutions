@@ -140,7 +140,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - Bottom row items use `bi-r5` (taller row on desktop, reset to row-1 height in tablet/mobile media queries) so wide tile 5 shows both faces and the roller received
 - Wide tiles 2 and 5 use inline `object-position` (36% / 45%) to keep faces in frame — retune if photos change
 - Products/Warehouse/Operations filters ready for when real photos are added
-- CSR / Social Responsibility section (separate from gallery) shows `Images/Gallery/gallery-3.jpg` (swapped with gallery slot 3)
+- CSR / Social Responsibility section (separate from gallery) crossfades every 5s between `Images/Gallery/gallery-3.jpg` and `Images/Gallery/social-responsibility-2.jpg` (community donation collage, object-position 15% so the left handover stays in frame)
 
 ## Navigation
 - Logo click → `index.html` (from industry.html) or `#hero` (from homepage)

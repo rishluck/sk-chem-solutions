@@ -475,8 +475,10 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 .crp-check svg{width:10px;height:10px;stroke:#0a2e18;stroke-width:2.5;fill:none}
 .crp-t{font-size:14px;font-weight:700;color:var(--ink);display:block;margin-bottom:3px}
 .crp-s{font-size:13px;color:var(--muted);line-height:1.65}
-.csr-img{aspect-ratio:1/1;border-radius:12px;overflow:hidden}
-.csr-img img{width:100%;height:100%;object-fit:cover;object-position:center 22%;transition:transform .6s}
+.csr-img{aspect-ratio:1/1;border-radius:12px;overflow:hidden;position:relative}
+.csr-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 22%;
+  opacity:0;transition:opacity 1.2s ease,transform .6s}
+.csr-img img.on{opacity:1}
 .csr-img:hover img{transform:scale(1.04)}
 @media(max-width:860px){.csr-card{grid-template-columns:1fr}
   .csr-img{aspect-ratio:16/9}}
@@ -1072,7 +1074,8 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
       </div>
       <!-- Right: square photo -->
       <div class="csr-img rv fr">
-        <img src="Images/Gallery/gallery-3.jpg" alt="S.K. Chem Solutions team handing latex trays to rubber smallholders">
+        <img class="on" src="Images/Gallery/gallery-3.jpg" alt="S.K. Chem Solutions team handing latex trays to rubber smallholders">
+        <img src="Images/Gallery/social-responsibility-2.jpg" alt="S.K. Chem Solutions distributing essential goods to families at a community event" loading="lazy" style="object-position:15% center">
       </div>
     </div>
   </div>
@@ -1221,6 +1224,13 @@ const statsEl=document.getElementById('stats');if(statsEl)cntObs.observe(statsEl
   }
   nums.forEach((n,i)=>n.addEventListener('click',()=>{clearInterval(timer);goTo(i);timer=setInterval(()=>goTo(cur+1),5000);}));
   timer=setInterval(()=>goTo(cur+1),5000);
+})();
+/* ── CSR photo crossfade ── */
+(function(){
+  const imgs=document.querySelectorAll('.csr-img img');
+  if(imgs.length<2)return;
+  let cur=0;
+  setInterval(()=>{imgs[cur].classList.remove('on');cur=(cur+1)%imgs.length;imgs[cur].classList.add('on');},5000);
 })();
 /* ── Bento gallery filter ── */
 function applyGalFilter(f){document.querySelectorAll('.bento-item').forEach(gi=>{gi.style.display=(f==='all'||(gi.dataset.cat||'').includes(f))?'':'none';});}
