@@ -134,6 +134,10 @@ nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 2px 24px rgba(0,0,0,.
 .btn-ghost{display:inline-flex;align-items:center;gap:.5rem;background:transparent;color:#fff;
   font-size:13.5px;font-weight:600;letter-spacing:.3px;text-transform:uppercase;
   padding:12px 26px;border-radius:8px;border:2px solid rgba(255,255,255,.25);transition:all .3s;margin-left:.75rem}
+.about-cta-btns{display:flex;flex-wrap:wrap;justify-content:center;gap:1rem}
+.about-cta-btns .btn-ghost{margin-left:0}
+@media(max-width:480px){.about-cta-btns{flex-direction:column;align-items:stretch;max-width:280px;margin:0 auto}
+  .about-cta-btns a{justify-content:center}}
 .btn-ghost:hover{border-color:rgba(255,255,255,.6);transform:translateY(-2px)}
 
 /* ── FOOTER ── */
@@ -410,8 +414,10 @@ nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 2px 24px rgba(0,0,0,.
     <div class="about-cta">
       <h2 class="about-cta-h">Ready to work<br><em>together?</em></h2>
       <p class="about-cta-p">Tell us what you need. We'll get back to you with the right solution, the right grade, and the right price.</p>
-      <a href="index.html#contact" class="btn-w">Contact Us →</a>
-      <a href="index.html#industries" class="btn-ghost">View Industries</a>
+      <div class="about-cta-btns">
+        <a href="index.html#contact" class="btn-w">Contact Us →</a>
+        <a href="index.html#industries" class="btn-ghost">View Industries</a>
+      </div>
     </div>
   </div>
 </section>
