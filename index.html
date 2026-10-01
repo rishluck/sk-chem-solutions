@@ -481,8 +481,7 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
   opacity:0;transition:opacity 1.2s ease,transform .6s}
 .csr-img img.on{opacity:1}
 .csr-img:hover img{transform:scale(1.04)}
-@media(max-width:860px){.csr-card{grid-template-columns:1fr}
-  .csr-img{aspect-ratio:16/9}}
+@media(max-width:860px){.csr-card{grid-template-columns:1fr}}
 
 /* ════════════════════ CTA ════════════════════ */
 #cta{background:var(--ink);padding:clamp(4rem,7.5vw,6rem) 0;position:relative;overflow:hidden}
@@ -1076,7 +1075,7 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
       <!-- Right: square photo -->
       <div class="csr-img rv fr">
         <img class="on" src="Images/Gallery/gallery-3.jpg" alt="S.K. Chem Solutions team handing latex trays to rubber smallholders">
-        <picture><source media="(max-width:860px)" srcset="Images/Gallery/social-responsibility-2.jpg"><img src="Images/Gallery/social-responsibility-2-square.jpg" alt="S.K. Chem Solutions distributing essential goods to families at a community event" loading="lazy" style="object-position:center center"></picture>
+        <img src="Images/Gallery/social-responsibility-2-square.jpg" alt="S.K. Chem Solutions distributing essential goods to families at a community event" loading="lazy" style="object-position:center center">
       </div>
     </div>
   </div>
