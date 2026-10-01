@@ -157,6 +157,10 @@ button{font-family:'DM Sans',sans-serif;cursor:pointer;border:none;background:no
   font-weight:800;color:var(--ink);line-height:1.05;margin-bottom:1.25rem}
 .chem-name em{font-style:normal;background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.chem-specs{display:flex;flex-wrap:wrap;gap:.5rem .6rem;margin-top:1.1rem;padding-top:1rem;border-top:1px solid var(--bdr)}
+.chem-spec{display:inline-flex;flex-direction:column;font-size:12.5px;color:var(--ink);font-weight:600;
+  background:var(--mint);border-radius:8px;padding:6px 12px;line-height:1.35}
+.chem-spec b{font-size:9.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tl)}
 .chem-desc{font-size:14.5px;color:var(--tm);font-weight:400;line-height:1.9;margin-bottom:1.75rem}
 .chem-use-tags{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.75rem}
 .chem-use-tag{font-size:11px;padding:5px 14px;border-radius:50px;
@@ -498,13 +502,13 @@ const IND={
   rubber:{
     name:'Rubber &amp; Latex',nameRaw:'Rubber & Latex',badge:'🌿 Core Sector',
     img:'Images/All/isuru-ranasinha-AVhFLfD_Lv8-unsplash.jpg',
-    tagline:'High-quality Formic Acid, Sodium Sulphite, and Sodium Metabisulfite for making quality sheet and crepe rubber.',
+    tagline:'High-quality Formic Acid, Sodium Sulfite, and Sodium Metabisulfite for making quality sheet and crepe rubber.',
     ovH:'The driving force of<br><em>Sri Lankan exports</em>',
     ovP1:'Sri Lanka has a long and proud history in natural rubber production. S.K. Chem Solutions has been a trusted supply partner to rubber plantations and processing facilities since 2017, providing the chemicals that enable every stage of rubber manufacturing.',
     stats:[{n:'#1',l:'Sector We Serve'},{n:'3+',l:'Core Services'},{n:'BASF',l:'Sourced'},{n:'Year-round',l:'Supply'}],
     quickH:'Services at a Glance',
     quick:[
-      {ico:'🚛',t:'Latex Protection in Transit',s:'Sodium sulphite maintains quality during transport and holding periods. 25 kg bags.'},
+      {ico:'🚛',t:'Latex Protection in Transit',s:'Sodium sulfite maintains quality during transport and holding periods. 25 kg bags.'},
       {ico:'🌿',t:'Latex Coagulation',s:'Formic acid for fast, clean coagulation on the plantation and in processing. 35 kg carboys.'},
       {ico:'📦',t:'Crepe Rubber Preservation',s:'Sodium metabisulfite prevents yellowing and oxidation in processed rubber sheets. 25 kg bags.'}
     ],
@@ -514,29 +518,29 @@ const IND={
        imgs:['Images/All/isuru-ranasinha-3JdlP4prtjg-unsplash.jpg','Images/Industries/Rubber/formic-acid-carboys-warehouse.png'],
        desc:'Give your plantation the fast, clean coagulation it needs. We supply industrial-grade formic acid that turns fresh field latex into firm, uniform rubber slabs, enabling efficient sheet production and consistent throughput from field to factory.',
        outcomes:['Rapid, clean coagulation','Consistent quality output','Plantation-ready packaging','Year-round supply'],
-       specs:[{l:'Purity',v:'≥85%'},{l:'Packaging',v:'35 kg carboys'},{l:'Supply',v:'Year-round'},{l:'Docs',v:'CoA & SDS'}],
+       specs:[{l:'Purity',v:'85%'},{l:'Grade',v:'Technical'},{l:'Packaging',v:'35 kg carboys'},{l:'Docs',v:'CoA & SDS'}],
        supplier:'BASF China',flag:'🇨🇳'},
       {service:'Crepe Rubber Preservation',serviceEm:'Crepe Rubber <em>Preservation</em>',chemical:'Sodium Metabisulfite · Na₂S₂O₅',
        img:'Images/Industries/Rubber/rubber-sheets-preservation.png',
        imgs:['Images/Industries/Rubber/rubber-sheets-preservation.png','Images/Industries/Rubber/basf-sodium-metabisulphite-bag.png'],
        desc:'Protect your processed crepe rubber from yellowing, oxidation, and quality degradation during processing, storage, and export. Our sodium metabisulfite ensures your crepe rubber reaches buyers in peak condition, protecting your reputation and margins.',
        outcomes:['Oxidation prevention','Colour & grade protection','Extended storage life','Export-ready quality'],
-       specs:[{l:'Purity',v:'≥96%'},{l:'Packaging',v:'25 kg bags'},{l:'Grade',v:'Food & Industrial'},{l:'Docs',v:'CoA & SDS'}],
+       specs:[{l:'Purity',v:'99%'},{l:'SO₂ Content',v:'67%'},{l:'Grade',v:'Non-Food'},{l:'Packaging',v:'25 kg bags'}],
        supplier:'BASF Germany',flag:'🇩🇪'},
-      {service:'Latex Transport & Antioxidation',serviceEm:'Latex Transport &amp; <em>Antioxidation</em>',chemical:'Sodium Sulphite · Na₂SO₃',
+      {service:'Latex Transport & Antioxidation',serviceEm:'Latex Transport &amp; <em>Antioxidation</em>',chemical:'Sodium Sulfite · Na₂SO₃',
        img:'Images/Industries/Rubber/zuniar-ayu-DwyeIjDscCc-unsplash.jpg',
-       desc:'Maintain the quality of fresh latex from plantation to processing facility. Our sodium sulphite acts as a reliable antioxidant during transit and holding, giving you a wider processing window and reducing quality loss between harvest and production.',
+       desc:'Maintain the quality of fresh latex from plantation to processing facility. Our sodium sulfite acts as a reliable antioxidant during transit and holding, giving you a wider processing window and reducing quality loss between harvest and production.',
        outcomes:['Fresh latex protection','Extended processing window','Antioxidation in transit','Industrial-grade reliability'],
-       specs:[{l:'Purity',v:'≥96%'},{l:'Packaging',v:'25 kg bags'},{l:'Grade',v:'Industrial'},{l:'Docs',v:'CoA & SDS'}],
+       specs:[{l:'Purity',v:'≥97.5%'},{l:'Grade',v:'Non-Food'},{l:'Packaging',v:'25 kg bags'},{l:'Docs',v:'CoA & SDS'}],
        supplier:'BASF Germany',flag:'🇩🇪'}
     ],
     apps:[
-      {ico:'🚛',t:'Latex Transport & Preservation',s:'Sodium sulphite protects fresh latex in transit, maintaining quality from plantation gate to processing facility.'},
+      {ico:'🚛',t:'Latex Transport & Preservation',s:'Sodium sulfite protects fresh latex in transit, maintaining quality from plantation gate to processing facility.'},
       {ico:'🌿',t:'Plantation Coagulation',s:'Diluted formic acid applied to fresh latex on the plantation, initiating rapid, clean coagulation into uniform rubber slabs ready for processing.'},
       {ico:'🏭',t:'Crepe Rubber Preservation',s:'Antioxidants prevent yellowing and oxidation during roller mill processing and drying, ensuring export-grade quality at every stage.'},
       {ico:'📋',t:'Quality Assurance',s:'Consistent purity levels and full documentation ensure reproducible results and traceable supply for every batch.'},
       {ico:'🤝',t:'Reliable Year-Round Supply',s:'Guaranteed through our established supply chain with BASF, the world\'s number 1 chemical company.'},
-      {ico:'📦',t:'Plantation-Ready Packaging',s:'Formic acid in 35 kg carboys, sulphites in 25 kg bags: convenient formats for daily plantation and factory use.'}
+      {ico:'📦',t:'Plantation-Ready Packaging',s:'Formic acid in 35 kg carboys, sulfites in 25 kg bags: convenient formats for daily plantation and factory use.'}
     ]
   },
 
@@ -630,7 +634,7 @@ const IND={
        img:'Images/Industries/Food Industry/fresh-fruit-juices-beverages.png',
        desc:'Keep your juices, soft drinks, and beverages fresh and vibrant without compromising taste. Our food-grade sodium metabisulfite (E223) is the proven antioxidant preservative that prevents browning, oxidation, and spoilage, helping you extend shelf life and reduce product waste.',
        outcomes:['Extended shelf life','Natural colour retention','Spoilage prevention','International food compliance'],
-       specs:[{l:'Purity',v:'≥96%'},{l:'Grade',v:'Food Grade (E223)'},{l:'Packaging',v:'25 kg bags'},{l:'Docs',v:'CoA & SDS'}],
+       specs:[{l:'Purity',v:'97.2%'},{l:'SO₂ Content',v:'≥65.5%'},{l:'Grade',v:'Food Grade (E223)'},{l:'Packaging',v:'25 kg bags'}],
        supplier:'BASF Germany',flag:'🇩🇪'},
       {service:'Bakery & Confectionery Freshness',serviceEm:'Bakery &amp; Confectionery <em>Freshness</em>',chemical:'Monopropylene Glycol · C₃H₈O₂ (USP)',
        img:'Images/Industries/Food Industry/bakery-bread-pastries-assortment.png',
@@ -723,13 +727,13 @@ const IND={
        img:'Images/Industries/Textile Washing/levis-denim-washing.jpg',
        desc:'Stop the bleach cleanly and protect fabric strength. In garment and denim washing our sodium metabisulfite works as an anti-chlor, neutralising residual hypochlorite after bleaching so garments come out with a consistent wash-down shade, minimal fibre damage, and no yellowing on storage.',
        outcomes:['Reliable anti-chlor neutralisation','Consistent wash-down shade','Protects fibre strength','Prevents post-wash yellowing'],
-       specs:[{l:'Purity',v:'≥96%'},{l:'Grade',v:'Industrial'},{l:'Packaging',v:'25 kg bags'},{l:'Docs',v:'CoA & SDS'}],
+       specs:[{l:'Purity',v:'99%'},{l:'SO₂ Content',v:'67%'},{l:'Grade',v:'Non-Food'},{l:'Packaging',v:'25 kg bags'}],
        supplier:'BASF Germany',flag:'🇩🇪'},
       {service:'Denim Fading & Finishing Treatment',serviceEm:'Denim Fading &amp; <em>Finishing Treatment</em>',chemical:'Sodium Metabisulfite · Na₂S₂O₅',
        img:'Images/Industries/Textile Washing/second-breakfast-I2WQQaXSy-k-unsplash.jpg',
        desc:'Give your denim the fashion-forward fade buyers ask for, without compromising the fabric. Our sodium metabisulfite triggers a controlled oxidation-reduction reaction with indigo dye, lightening the surface colour for a consistent, on-trend fade, while its reaction with denim\'s cellulose fibres softens hand-feel, builds cross-linked wrinkle resistance, and leaves garments with natural antibacterial protection.',
        outcomes:['Consistent, on-trend fading','Softer fabric hand-feel','Cross-linked wrinkle resistance','Antibacterial, hygienic finish'],
-       specs:[{l:'Purity',v:'≥96%'},{l:'Grade',v:'Industrial'},{l:'Packaging',v:'25 kg bags'},{l:'Docs',v:'CoA & SDS'}],
+       specs:[{l:'Purity',v:'99%'},{l:'SO₂ Content',v:'67%'},{l:'Grade',v:'Non-Food'},{l:'Packaging',v:'25 kg bags'}],
        supplier:'BASF Germany',flag:'🇩🇪'}
     ],
     apps:[
@@ -779,6 +783,7 @@ document.getElementById('chem-list').innerHTML=d.chems.map((c,i)=>`
     <div class="chem-name">${c.serviceEm}</div>
     <p class="chem-desc">${c.desc}</p>
     <div class="chem-use-tags">${c.outcomes.map(u=>`<span class="chem-use-tag">${u}</span>`).join('')}</div>
+    ${c.specs?`<div class="chem-specs">${c.specs.map(x=>`<span class="chem-spec"><b>${x.l}</b>${x.v}</span>`).join('')}</div>`:''}
   </div>
 </div>`).join('');
 

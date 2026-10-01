@@ -68,7 +68,7 @@ All images are now local — zero loremflickr usage remaining.
 | `logo-2.png` | NBC | Rubber & Latex |
 | `bellose-logo-blk.png` | Bellosé | Personal Care |
 | `link-natural-logo.svg` | Link Natural | Personal Care & Pharma |
-| `harumi-holdings-pvt-ltd-314151.jpg` | Dreamron | Personal Care |
+| `dreamron.png` (trimmed from `harumi-holdings-pvt-ltd-314151.jpg`) | Dreamron (shown larger: `.lm-lg`) | Personal Care |
 | `Janet_Logos_1_-02.png.avif` | Janet Lanka | Personal Care |
 | `logo.webp` | 4rever Skin Naturals | Personal Care |
 | `sm-logo.png` | ACE | Pharmaceutical |
@@ -131,6 +131,12 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - JS data object `IND` contains all industry content
 - Each `chems` entry uses: `service`, `serviceEm`, `chemical`, `img`, optional `imgs` (array → prev/next + dots slider), `desc`, `outcomes`, `specs`, `supplier`, `flag`
 - Template renders: `✦ ${c.chemical}` as badge → `${c.serviceEm}` as headline
+- `specs` are rendered as chips under the outcome tags (`.chem-specs`). Client-confirmed figures (Oct 2026):
+  - Sodium Metabisulfite Food Grade (E223): purity 97.2%, SO₂ ≥65.5% (food page)
+  - Sodium Metabisulfite Non-Food Grade: purity 99%, SO₂ 67% (rubber crepe + textile rows)
+  - Sodium Sulfite Non-Food Grade: purity ≥97.5%
+  - Formic Acid: 85%, Technical Grade
+  - Spelling: always "Sulfite", not "Sulphite"
 - Motion graphics: orbFloat, shimLine, spinSlow, fadeUp keyframe animations
 - Scroll-triggered reveals via IntersectionObserver
 
