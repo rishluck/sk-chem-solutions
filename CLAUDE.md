@@ -148,6 +148,11 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - Products/Warehouse/Operations filters ready for when real photos are added
 - CSR / Social Responsibility section (separate from gallery) crossfades every 5s between `Images/Gallery/gallery-3.jpg` and `Images/Gallery/social-responsibility-2-square.jpg` (first two collage panels, square). The CSR box is square on all screen sizes (same as desktop)
 
+## Intro Splash (index.html)
+- `#intro` overlay: logo fades in, holds, zooms ×7 while the white overlay fades (~2.4s, pure CSS keyframes `introLogo` / `introOut`)
+- Plays once per browser session (`sessionStorage` key `skIntro`); a timeout removes it at 2.6s as a safety net
+- Hidden for `prefers-reduced-motion: reduce`
+
 ## Navigation
 - Logo click → `index.html` (from industry.html) or `#hero` (from homepage)
 - Industry cards on homepage → `industry.html?ind={key}`

@@ -725,9 +725,27 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
   .con-h{font-size:1.75rem}
   .why-h{font-size:1.9rem}
 }
+/* ════════════════════ INTRO SPLASH (logo zoom) ════════════════════ */
+#intro{position:fixed;inset:0;z-index:10000;background:#fff;display:flex;align-items:center;justify-content:center;
+  animation:introOut .7s ease 1.75s forwards}
+#intro img{width:min(280px,62vw);height:auto;opacity:0;
+  animation:introLogo 2.4s cubic-bezier(.65,0,.35,1) forwards}
+@keyframes introLogo{
+  0%{opacity:0;transform:scale(.55)}
+  28%{opacity:1;transform:scale(1)}
+  62%{opacity:1;transform:scale(1.06)}
+  100%{opacity:0;transform:scale(7)}}
+@keyframes introOut{to{opacity:0;visibility:hidden}}
+@media (prefers-reduced-motion:reduce){#intro{display:none}}
 </style>
 </head>
 <body>
+<div id="intro" aria-hidden="true"><img src="Logo/sk-chem-logo.png" alt=""></div>
+<script>
+/* play the intro once per browser session */
+try{if(sessionStorage.getItem('skIntro')){document.getElementById('intro').remove()}else{sessionStorage.setItem('skIntro','1')}}catch(e){}
+setTimeout(function(){var el=document.getElementById('intro');if(el)el.remove()},2600);
+</script>
 
 <!-- ══ NAV ══ -->
 <nav id="nav">
