@@ -58,8 +58,8 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/Industries/Pharmaceutical/crystalweed-cannabis-XYGuytPoYHI-unsplash.jpg` | Pharma chems[2] Solid Dosage |
 | `Images/Industries/Textile Washing/levis-denim-washing.jpg` | textile industry.html hero + textile chems[0] Garment & Denim Washing row, homepage hero decoration |
 | `Images/Industries/Textile Washing/second-breakfast-I2WQQaXSy-k-unsplash.jpg` | textile chems[1] Denim Fading row |
-| `Images/Gallery/gallery-1…6.jpg` | Homepage gallery bento slots 1,2,4,5,6 (gallery-3 is used in the CSR section; slot 3 shows social-responsibility.jpg) |
-| `Images/Gallery/social-responsibility.jpg` | Gallery bento slot 3 |
+| `Images/Gallery/1.jpeg, 2.jpeg, 4.jpeg, 5.jpeg, 6.jpeg` | Homepage gallery bento slots 1,2,4,5,6 (ORIGINAL photos, client request Oct 2026; retouched gallery-*.jpg no longer used) |
+| `Images/Gallery/Charity/charity-3.jpeg` | Gallery bento slot 3 (original of the old retouched social-responsibility.jpg) |
 
 ## Local Client Logos (`Images/Partners/Local/`)
 | File | Company | Sector |
@@ -146,7 +146,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - Bottom row items use `bi-r5` (taller row on desktop, reset to row-1 height in tablet/mobile media queries) so wide tile 5 shows both faces and the roller received
 - Wide tiles 2 and 5 use inline `object-position` (36% / 45%) to keep faces in frame — retune if photos change
 - Products/Warehouse/Operations filters ready for when real photos are added
-- CSR / Social Responsibility section (separate from gallery) crossfades every 5s between `Images/Gallery/gallery-3.jpg` and `Images/Gallery/social-responsibility-2-square.jpg` (first two collage panels, square). The CSR box is square on all screen sizes (same as desktop)
+- CSR / Social Responsibility section (separate from gallery) crossfades every 5s between `Images/Gallery/3.jpeg` (original, object-position center 62%) and `Images/Gallery/social-responsibility-2-square.jpg` (first two collage panels, square). The CSR box is square on all screen sizes (same as desktop)
 
 ## Intro Splash (index.html)
 - `#intro` overlay: logo fades in, holds, zooms ×7 while the white overlay fades (~2.4s, pure CSS keyframes `introLogo` / `introOut`)
