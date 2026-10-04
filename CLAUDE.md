@@ -138,6 +138,10 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
   - Sodium Metabisulfite Non-Food Grade: purity 99%, SO₂ 67% (rubber crepe + textile rows)
   - Sodium Sulfite Non-Food Grade: purity ≥97.5%
   - Formic Acid: 85%, Technical Grade
+  - Vitamin E Acetate: purity 98%
+  - CDE: purity 85–90%
+  - EDTA: powder only, 25 kg bags
+  - MPG (Monopropylene Glycol): purity 99.7% (food + pharma rows)
   - Spelling: always "Sulfite", not "Sulphite"
 - Motion graphics: orbFloat, shimLine, spinSlow, fadeUp keyframe animations
 - Scroll-triggered reveals via IntersectionObserver
