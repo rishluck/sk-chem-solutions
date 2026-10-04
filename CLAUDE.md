@@ -56,7 +56,7 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/Industries/Food Industry/confectionery-candies-glazed.jpg` | Food chems[2] Confectionery Glazing (Liquid Shellac) |
 | `Images/Industries/Food Industry/honey-dates-natural-sweeteners.png` | Food chems[3] Natural Sweetening  |
 | `Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg` | Pharma card (homepage), pharma industry.html hero, pharma chems[0] GMP |
-| `Images/Industries/Pharmaceutical/thaismara-figueredo-MTMn2VDnLGM-unsplash.jpg` | Pharma chems[1] Syrup row |
+| `Images/Industries/Pharmaceutical/oral-syrup-spoon.jpg` | Pharma chems[1] Oral Liquid & Syrup row (CC0, rawpixel) |
 | `Images/Industries/Pharmaceutical/crystalweed-cannabis-XYGuytPoYHI-unsplash.jpg` | Pharma chems[2] Solid Dosage |
 | `Images/Industries/Textile Washing/levis-denim-washing.jpg` | textile industry.html hero + textile chems[0] Garment & Denim Washing row, homepage hero decoration |
 | `Images/Industries/Textile Washing/second-breakfast-I2WQQaXSy-k-unsplash.jpg` | textile chems[1] Denim Fading row |
