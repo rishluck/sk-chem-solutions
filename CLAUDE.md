@@ -40,7 +40,9 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/Industries/Rubber/formic-acid-carboys-warehouse.png` | Rubber chems[0] Latex Coagulation — 2nd slide (image slider via `imgs` array) |
 | `Images/Industries/Rubber/basf-sodium-metabisulphite-bag.png` | Rubber chems[1] Crepe Rubber Preservation — 2nd slide |
 | `Images/Industries/Rubber/rubber-sheets-preservation.png` | Rubber chems[1] Crepe Rubber Preservation |
+| `Images/Industries/Rubber/basf-formic-acid-85-carboy.jpg` | Rubber chems[0] Latex Coagulation, 3rd slide |
 | `Images/Industries/Rubber/zuniar-ayu-DwyeIjDscCc-unsplash.jpg` | Rubber chems[2] Latex Transport |
+| `Images/Industries/Rubber/basf-sodium-sulfite-bag.jpg` | Rubber chems[2] Latex Transport, 2nd slide |
 | `Images/Industries/Personal Care/personal-care-vanity-flatlay.png` | Personal Care card (homepage), personal industry.html hero |
 | `Images/Industries/Personal Care/foam-bath-rich-lather.jpg` | Personal chems[2] CDE Foam Boosting row |
 | `Images/Industries/Personal Care/shampoo-body-wash-shower.png` | Personal chems[0] Shampoo & Body Wash row |
