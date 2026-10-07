@@ -152,7 +152,8 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - 6 photos (`gallery-1…6.jpg`, `data-cat="charity"`) in a 4-col bento: row 1 = 1 · 2 (wide) · 3, row 2 = 4 · 5 (wide) · 6 — every tile `bi-r3`, wide ones also `bi-c2`, so the grid fills with no gaps
 - Bottom row items use `bi-r5` (taller row on desktop, reset to row-1 height in tablet/mobile media queries) so wide tile 5 shows both faces and the roller received
 - Wide tiles 2 and 5 use inline `object-position` (36% / 45%) to keep faces in frame — retune if photos change
-- Products/Warehouse/Operations filters ready for when real photos are added
+- Warehouse filter (Oct 2026): 6 photos in `Images/Gallery/Warehouse/` (`data-cat="warehouse"`), added as rows 3 and 4 of the bento in the same narrow · wide · narrow pattern: row 3 `bi-r3` = drums-1 · exterior (wide, object-position center 60%) · drums-2; row 4 `bi-r5` = racking-aisle · carboys (wide) · steel-drums (brightened, original was dark)
+- Products/Operations filters ready for when real photos are added
 - CSR / Social Responsibility section (separate from gallery) crossfades every 5s between `Images/Gallery/3.jpeg` (original, object-position center 62%) and `Images/Gallery/social-responsibility-2-square.jpg` (first two collage panels, square). The CSR box is square on all screen sizes (same as desktop)
 
 ## Intro Splash (index.html)
