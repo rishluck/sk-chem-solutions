@@ -7,7 +7,7 @@
 <link rel="icon" type="image/png" href="Logo/favicon.png">
 <link rel="apple-touch-icon" href="Logo/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500;600&family=Poppins:wght@700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@400;500;600&family=Poppins:wght@600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -336,6 +336,87 @@ body{animation:fadeIn .5s ease both}
   .apps-h{font-size:1.5rem}
   .cta-h{font-size:1.5rem}
 }
+
+/* ════════════════════ MODERN REFRESH (visual only, no layout changes) ════════════════════ */
+:root{
+  --cream:#F6F8F5;--bdr:#E1E8E0;--mint:#F1F8F3;--tm:#3F4D45;--tl:#5B6660;
+  --grad:linear-gradient(135deg,#12C95A 0%,#7EEB5C 100%);
+  --grad-txt:linear-gradient(120deg,#00A443 0%,#2FCB66 100%);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --sh-sm:0 1px 2px rgba(16,24,20,.04),0 2px 8px rgba(16,24,20,.04);
+  --sh-md:0 2px 4px rgba(16,24,20,.04),0 12px 32px rgba(16,24,20,.08);
+  --sh-lg:0 4px 8px rgba(16,24,20,.04),0 24px 56px rgba(16,24,20,.12);
+}
+body,button{font-family:'Inter',system-ui,sans-serif}
+body{letter-spacing:-.006em;color:#141a16}
+::selection{background:#C9F5D6;color:#0a2e18}
+.rv,.chem-row,.app-card,.ov-stat{transition-timing-function:var(--ease)}
+
+/* Nav */
+#nav{background:rgba(255,255,255,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid rgba(16,24,20,.06)}
+#nav.scrolled{background:rgba(255,255,255,.88);box-shadow:0 1px 0 rgba(16,24,20,.04),0 8px 24px rgba(16,24,20,.06)}
+.nav-left a:not(.n-cta-pill),.nav-right a:not(.n-cta-pill){font-size:14px;font-weight:500;text-transform:none;letter-spacing:-.005em;
+  color:#3d4a42;position:relative}
+.nav-left a:not(.n-cta-pill)::after,.nav-right a:not(.n-cta-pill)::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;
+  border-radius:2px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav-left a:not(.n-cta-pill):hover::after,.nav-right a:not(.n-cta-pill):hover::after{transform:scaleX(1)}
+.mob a{font-weight:500}
+
+/* Buttons */
+.n-cta-pill,.btn-white,#ind-cta .btn-white{background:var(--grad);border-radius:999px;text-transform:none;letter-spacing:-.005em;font-weight:600;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 1px 2px rgba(1,120,50,.18);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),filter .3s}
+.nav-left a.n-cta-pill,.nav-right a.n-cta-pill{text-transform:none;font-size:13.5px;color:#0a2e18}
+.n-cta-pill:hover,.btn-white:hover{opacity:1;filter:brightness(1.04);transform:translateY(-2px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 30px rgba(1,191,71,.32)}
+.btn-ghost-w,#ind-cta .btn-ghost-w{border-radius:999px;text-transform:none;letter-spacing:-.005em;border-width:1.5px;
+  background:rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.btn-ghost-w:hover,#ind-cta .btn-ghost-w:hover{background:rgba(255,255,255,.18)}
+
+/* Hero */
+.ih-badge{background:rgba(255,255,255,.9);color:#0a2e18;letter-spacing:.1em;font-weight:600;
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 12px rgba(0,0,0,.12)}
+.ih-h1{font-weight:800;letter-spacing:-.04em}
+.ih-tagline{color:rgba(255,255,255,.8);font-size:clamp(14px,1.4vw,16.5px);line-height:1.7}
+.ih-breadcrumb,.ih-breadcrumb a{color:rgba(255,255,255,.65)}
+
+/* Headings */
+.ov-h,.chem-h,.apps-h,.cta-h{font-weight:700;letter-spacing:-.035em}
+.ov-h em,.chem-h em,.chem-name em{background:var(--grad-txt);-webkit-background-clip:text;background-clip:text}
+.ov-eyebrow,.chem-eyebrow,.apps-eyebrow{letter-spacing:.14em;font-weight:600;font-size:11.5px}
+.ov-eyebrow::before,.chem-eyebrow::before,.chem-eyebrow::after{width:18px;height:2px;background:var(--grad)}
+.chem-eyebrow{color:#05873A}
+
+/* Overview */
+.ov-stat{border-radius:16px;border:1px solid var(--bdr);box-shadow:var(--sh-sm);
+  transition:opacity .6s var(--ease),transform .6s var(--ease),box-shadow .4s var(--ease),border-color .4s}
+.ov-stat:hover{background:#fff;border-color:transparent;box-shadow:var(--sh-md)}
+.ov-stat-n{font-weight:700;letter-spacing:-.04em}
+.ov-quick{border-radius:24px;background:linear-gradient(160deg,#16201a 0%,#0E1712 100%);
+  box-shadow:var(--sh-lg);border:1px solid rgba(255,255,255,.04)}
+
+/* Chem rows */
+.chem-formula-badge{border-radius:14px;background:#0E1712;box-shadow:var(--sh-md);letter-spacing:-.01em}
+.chem-name{font-weight:700;letter-spacing:-.025em}
+.chem-desc{color:var(--tm);line-height:1.8}
+.chem-use-tag{border:1px solid #CDEBD6;background:#F3FAF5;color:#05873A;font-weight:500}
+.chem-spec{background:#fff;border:1px solid var(--bdr);border-radius:12px;padding:7px 14px;box-shadow:var(--sh-sm)}
+.chem-img img{transition:transform 1.1s var(--ease)}
+.chem-img.sl img{transition:opacity .7s,transform 1.1s var(--ease)}
+.sl-btn{background:rgba(255,255,255,.18);border:1px solid rgba(255,255,255,.35);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);transition:background .3s,transform .3s var(--ease)}
+.sl-btn:hover{background:rgba(255,255,255,.32)}
+.sl-dot{border:none;background:rgba(255,255,255,.55);box-shadow:0 1px 4px rgba(0,0,0,.25);transition:all .35s var(--ease)}
+.sl-dot.on{background:#fff;width:22px;border-radius:999px;transform:none}
+
+/* Applications + CTA + footer */
+#ind-apps,#ind-cta{background:#0E1712}
+.app-card{background:#0E1712}
+.app-card:hover{background:#141F18}
+.app-t{font-weight:600;letter-spacing:-.015em}
+#ind-cta::before{background:radial-gradient(ellipse 60% 90% at 80% 40%,rgba(18,201,90,.16),transparent 70%)}
+footer{background:#0B120E}
 </style>
 </head>
 <body>

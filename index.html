@@ -9,7 +9,7 @@
 <link rel="icon" type="image/png" href="Logo/favicon.png">
 <link rel="apple-touch-icon" href="Logo/apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -737,6 +737,113 @@ footer{background:#111111;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem}
   100%{opacity:0;transform:scale(7)}}
 @keyframes introOut{to{opacity:0;visibility:hidden}}
 @media (prefers-reduced-motion:reduce){#intro{display:none}}
+
+/* ════════════════════ MODERN REFRESH (visual only, no layout changes) ════════════════════ */
+:root{
+  --bg-alt:#F5F8F4;--border:#E1E8E0;--border-lt:#ECF1EB;
+  --lime-pale:#EAF7EF;--lime-soft:#F3FAF5;--muted:#5B6660;
+  --grad:linear-gradient(135deg,#12C95A 0%,#7EEB5C 100%);
+  --grad-txt:linear-gradient(120deg,#00A443 0%,#2FCB66 100%);
+  --ease:cubic-bezier(.22,1,.36,1);
+  --sh-sm:0 1px 2px rgba(16,24,20,.04),0 2px 8px rgba(16,24,20,.04);
+  --sh-md:0 2px 4px rgba(16,24,20,.04),0 12px 32px rgba(16,24,20,.08);
+  --sh-lg:0 4px 8px rgba(16,24,20,.04),0 24px 56px rgba(16,24,20,.12);
+}
+body{font-family:'Inter',system-ui,sans-serif;letter-spacing:-.006em;color:#141a16}
+::selection{background:#C9F5D6;color:#0a2e18}
+.rv{transition:opacity .8s var(--ease),transform .8s var(--ease)}
+
+/* Headings: tighter, cleaner */
+.why-h,.about-h,.ind-h,.gal-h,.csr-h,.con-h,.lm-h,.cta-h,.ind-panel-h{font-weight:700;letter-spacing:-.035em}
+.why-t,.ind-card-title,.lb-cap-t{letter-spacing:-.02em;font-weight:600}
+.why-h em,.about-h em,.ind-h em,.gal-h em,.csr-h em,.con-h em{background:var(--grad-txt);
+  -webkit-background-clip:text;background-clip:text}
+.lm-h span{color:#00A443}
+.ey{font-size:11.5px;letter-spacing:.14em;font-weight:600}
+.ey::before{width:18px;height:2px;background:var(--grad)}
+
+/* Buttons: pill, sentence case, soft glow */
+.btn-lime,.btn-dark,.btn-hero-primary,.btn-cta-dk,.btn-ink,.fsub,.n-cta{
+  background:var(--grad);border-radius:999px;text-transform:none;letter-spacing:-.005em;font-weight:600;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 1px 2px rgba(1,120,50,.18);
+  transition:transform .3s var(--ease),box-shadow .3s var(--ease),filter .3s}
+.btn-lime:hover,.btn-dark:hover,.btn-hero-primary:hover,.btn-cta-dk:hover,.btn-ink:hover,.fsub:hover{
+  opacity:1;filter:brightness(1.04);transform:translateY(-2px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 30px rgba(1,191,71,.32)}
+.n-cta{text-transform:none !important;letter-spacing:-.005em}
+.btn-outline,.btn-outline-lime,.btn-hero-ghost,.btn-cta-ol{border-radius:999px;text-transform:none;
+  letter-spacing:-.005em;border-width:1.5px;transition:all .3s var(--ease)}
+.btn-hero-ghost,.btn-cta-ol{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.btn-hero-ghost:hover,.btn-cta-ol:hover{background:rgba(255,255,255,.18)}
+
+/* Nav: sentence case links with animated underline */
+#nav{background:rgba(255,255,255,.72);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);
+  border-bottom:1px solid rgba(16,24,20,.06)}
+#nav.scrolled{background:rgba(255,255,255,.88);box-shadow:0 1px 0 rgba(16,24,20,.04),0 8px 24px rgba(16,24,20,.06)}
+.nav-left a:not(.n-cta),.nav-right a:not(.n-cta){font-size:14px;font-weight:500;text-transform:none;letter-spacing:-.005em;
+  color:#3d4a42;position:relative}
+.nav-left a:not(.n-cta)::after,.nav-right a:not(.n-cta)::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:2px;
+  border-radius:2px;background:var(--grad);transform:scaleX(0);transform-origin:left;transition:transform .35s var(--ease)}
+.nav-left a:not(.n-cta):hover::after,.nav-right a:not(.n-cta):hover::after{transform:scaleX(1)}
+.mob a{font-weight:500}
+
+/* Hero */
+.hero-badge{border-radius:999px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);
+  letter-spacing:.12em;font-weight:500}
+.hero-h1{font-weight:800;letter-spacing:-.035em}
+.hero-sub{text-transform:none;letter-spacing:0;font-size:clamp(14.5px,1.15vw,17px);line-height:1.7;color:rgba(255,255,255,.78)}
+
+/* Strip + stats */
+.hero-strip{border-top:1px solid var(--border-lt)}
+.hsi-icon,.why-icon,.ci-icon,.ci-ico{border-radius:12px;border:1px solid var(--border);background:#fff;box-shadow:var(--sh-sm)}
+.hsi-t{font-weight:600}
+.stat-n{font-weight:700;letter-spacing:-.04em;text-shadow:none;background:var(--grad-txt);
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.stat-l{font-weight:500;letter-spacing:.08em}
+
+/* Cards */
+.why-card{border-radius:22px;border:1px solid var(--border-lt);box-shadow:var(--sh-sm);
+  transition:transform .4s var(--ease),box-shadow .4s var(--ease),border-color .4s}
+.why-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:transparent}
+.why-card::before{height:2px}
+.why-card:hover .why-icon{background:var(--lime-pale);border-color:#BDEBCB;transform:scale(1.06)}
+.ach{border-radius:12px;border-left:none}
+.ach:hover{background:#fff;box-shadow:var(--sh-sm)}
+.about-yr{border:1px solid var(--border);background:#fff;box-shadow:var(--sh-sm)}
+.ind-card{transition:transform .45s var(--ease)}
+.ind-card-img{border-radius:20px;box-shadow:var(--sh-sm);transition:box-shadow .45s var(--ease)}
+.ind-card:hover .ind-card-img{box-shadow:var(--sh-lg)}
+.ind-card-img img{transition:transform .8s var(--ease)}
+.ic-badge{background:rgba(255,255,255,.88);color:#0a2e18;backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:0 2px 10px rgba(0,0,0,.12);letter-spacing:.06em;font-weight:600}
+.ic-tag{font-weight:600;letter-spacing:.04em;border:none;background:var(--lime-pale);color:#05873A}
+.ind-nav-btn{border:1px solid var(--border);box-shadow:var(--sh-sm);background:#fff}
+
+/* Gallery + filters */
+.gf,.lm-tab{border:1px solid var(--border);font-weight:500;background:#fff;transition:all .3s var(--ease)}
+.gf.on,.lm-tab.active,.lm-tab:hover{background:#111a14;color:#fff;border-color:#111a14}
+.gf:hover:not(.on){border-color:#9FDDB4;color:#05873A}
+.bento-grid{gap:8px}
+.bento-item{border-radius:16px}
+.bento-item img{transition:transform .9s var(--ease)}
+
+/* CSR + contact */
+.csr-card{background:#fff;border:1px solid var(--border-lt);border-radius:28px;box-shadow:var(--sh-md)}
+.csr-badge{background:var(--lime-pale);color:#05873A;font-weight:600}
+.csr-img{border-radius:20px}
+.fbox{background:#fff;border:1px solid var(--border-lt);border-radius:24px;box-shadow:var(--sh-md)}
+.fg label{font-weight:600;letter-spacing:.06em}
+.fg input,.fg select,.fg textarea{border:1px solid var(--border);border-radius:12px;background:#F8FAF7;font-family:'Inter',sans-serif}
+.fg input:focus,.fg select:focus,.fg textarea:focus{background:#fff;border-color:#2FCB66;box-shadow:0 0 0 4px rgba(47,203,102,.14)}
+.tm-av{border-radius:50%}
+
+/* CTA + footer */
+#cta{background:#0E1712}
+#cta::before{background:radial-gradient(ellipse 60% 90% at 80% 40%,rgba(18,201,90,.16),transparent 70%)}
+.cta-h{font-weight:700}
+footer{background:#0B120E}
+.ft-pill{border-radius:999px}
+.lb-dock{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
 </style>
 </head>
 <body>
@@ -808,7 +915,7 @@ setTimeout(function(){var el=document.getElementById('intro');if(el)el.remove()}
     <p class="hero-sub">Sri Lanka's trusted industrial raw material importer and distributor since 2017. Quality products, Reliable supply, prompt doorstep delivery.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-hero-primary">Enquire Now →</a>
-      <a href="#industries" class="btn-hero-ghost">INDUSTRIES WE SERVE</a>
+      <a href="#industries" class="btn-hero-ghost">Industries We Serve</a>
     </div>
     <div class="hero-scroll">
       <div class="hero-scroll-line"></div>
@@ -1109,7 +1216,7 @@ setTimeout(function(){var el=document.getElementById('intro');if(el)el.remove()}
       </div>
       <div class="cta-btns">
         <a href="#contact" class="btn-cta-dk">Contact Us Today</a>
-        <a href="#industries" class="btn-cta-ol">INDUSTRIES WE SERVE</a>
+        <a href="#industries" class="btn-cta-ol">Industries We Serve</a>
       </div>
     </div>
   </div>

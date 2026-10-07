@@ -90,6 +90,7 @@ All images are now local — zero loremflickr usage remaining.
 ```
 - Fonts: Cormorant Garamond (headings/serif) + DM Sans (body)
 - Style: editorial, premium, dark green palette
+- **Modern refresh (Oct 2026):** each page's `<style>` ends with a `MODERN REFRESH` override block (visual only, no layout changes): Inter for body text (Poppins stays for headings), neutral off-white `#F5F8F4` backgrounds, pill sentence-case buttons with a two-stop green gradient (`--grad`), darker green text gradient on light backgrounds (`--grad-txt`), layered soft shadows, rounder cards, sentence-case nav links with an animated underline. Edit or remove that block to tune or revert the look.
 
 ## Core Principle — Service-Centric Presentation
 **The most important design rule:** Always show SERVICES/OUTCOMES as the headline, not chemical names.
