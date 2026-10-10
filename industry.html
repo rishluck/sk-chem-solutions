@@ -415,6 +415,11 @@ body{letter-spacing:-.006em;color:#141a16}
 .app-card{background:#0E1712}
 .app-card:hover{background:#141F18}
 .app-t{font-weight:600;letter-spacing:-.015em}
+/* Last card fills the row so an uneven card count leaves no empty cell */
+.app-card:last-child:nth-child(3n+2){grid-column:span 2}
+.app-card:last-child:nth-child(3n+1){grid-column:span 3}
+@media(max-width:960px){.app-card:last-child:nth-child(n){grid-column:auto}.app-card:last-child:nth-child(odd){grid-column:span 2}}
+@media(max-width:600px){.app-card:last-child:nth-child(n){grid-column:auto}}
 #ind-cta::before{background:radial-gradient(ellipse 60% 90% at 80% 40%,rgba(18,201,90,.16),transparent 70%)}
 footer{background:#0B120E}
 </style>
@@ -741,7 +746,6 @@ const IND={
       {ico:'🥤',t:'Beverages & Juices',s:'Sodium metabisulfite preserves the colour, freshness, and taste of fruit juices and other beverages.'},
       {ico:'🍞',t:'Bakery & Confectionery',s:'Glycerine and MPG keep baked goods moist and fresh, while liquid shellac (E904) gives chocolates and candies a glossy, humidity-resistant finish.'},
       {ico:'🐟',t:'Seafood Processing',s:'Food-grade preservatives for treatment and preservation of fresh, canned, and dried seafood products.'},
-      {ico:'🌿',t:'Natural Preservation',s:'Antioxidant preservatives help reduce artificial additives while maintaining product quality and safety for health-conscious consumers.'},
       {ico:'✅',t:'Compliance & Documentation',s:'All food-grade materials supplied with CoA, SDS, GMP and Halal certification as standard.'},
       {ico:'📦',t:'Industrial-Scale Supply',s:'Available in bulk to support Sri Lanka\'s growing food manufacturing sector with year-round availability and consistent quality.'}
     ]
