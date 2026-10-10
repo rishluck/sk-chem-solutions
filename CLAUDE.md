@@ -37,10 +37,10 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/All/isuru-ranasinha-3JdlP4prtjg-unsplash.jpg` | Flagship card 1, rubber chems[0] Latex Coagulation |
 | `Images/All/closeup-shot-trees-greenery-...jpg` | About section image |
 | `Images/All/green-plant-leaves-with-blue-sky-background.jpg` | Sustainability section background |
-| `Images/Industries/Rubber/formic-acid-carboys-warehouse.png` | Rubber chems[0] Latex Coagulation — 2nd slide (image slider via `imgs` array) |
+| `Images/Industries/Rubber/formic-acid-carboys-warehouse.png` | No longer used (AI-style image without BASF logo, removed from the Latex Coagulation slider Oct 2026) |
 | `Images/Industries/Rubber/basf-sodium-metabisulphite-bag.png` | Rubber chems[1] Crepe Rubber Preservation — 2nd slide |
 | `Images/Industries/Rubber/rubber-sheets-preservation.png` | Rubber chems[1] Crepe Rubber Preservation |
-| `Images/Industries/Rubber/basf-formic-acid-85-carboy.jpg` | Rubber chems[0] Latex Coagulation, 3rd slide |
+| `Images/Industries/Rubber/basf-formic-acid-85-carboy.jpg` | Rubber chems[0] Latex Coagulation, 2nd slide (real BASF Formic Acid 85% carboy; slider has exactly 2 images) |
 | `Images/Industries/Rubber/zuniar-ayu-DwyeIjDscCc-unsplash.jpg` | Rubber chems[2] Latex Transport |
 | `Images/Industries/Rubber/basf-sodium-sulfite-bag.jpg` | Rubber chems[2] Latex Transport, 2nd slide |
 | `Images/Industries/Personal Care/personal-care-vanity-flatlay.png` | Personal Care card (homepage), personal industry.html hero |
