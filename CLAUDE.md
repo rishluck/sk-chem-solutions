@@ -158,7 +158,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - Lightbox (`olb`) cycles through the visible items of the group the clicked item belongs to (`#bento-grid` or `#csrStrip`)
 
 ## Social Responsibility (CSR) Section
-- Card: text left, square photo right crossfading every 5s between `Images/Gallery/3.jpeg` and `Images/Gallery/social-responsibility-2-square.jpg`. Square on all screen sizes
+- Card: text left, single static square photo right (`Images/Gallery/3.jpeg`, object-position center 62%). The 5s crossfade was removed (client request, Oct 2026). Square on all screen sizes
 - Below the card: "Community moments" horizontal strip (`#csrStrip`, `.csr-shot`, 3:4 tiles, scroll-snap, ← → buttons `#csrPrev/#csrNext`), each opens the lightbox. Shows all 12 unique photos from `Images/Gallery/Charity/`: trays 1,3,4,7 · rollers 5,6,8,9 · goods distribution 10,12,13,14 (charity-2 and charity-11 are duplicates of 1 and 10, left out)
 - `Images/Gallery/1.jpeg … 6.jpeg` are copies of charity photos and are no longer used on the page
 
