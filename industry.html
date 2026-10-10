@@ -423,29 +423,14 @@ body{letter-spacing:-.006em;color:#141a16}
 #ind-cta::before{background:radial-gradient(ellipse 60% 90% at 80% 40%,rgba(18,201,90,.16),transparent 70%)}
 footer{background:#0B120E}
 
-/* Full image viewer */
-.chem-img:not(.tile){cursor:zoom-in}
-.img-full{position:absolute;right:16px;bottom:14px;z-index:3;display:inline-flex;align-items:center;gap:6px;
-  padding:7px 14px;border-radius:999px;font-size:12px;font-weight:600;color:#fff;letter-spacing:-.005em;
-  background:rgba(10,20,14,.45);border:1px solid rgba(255,255,255,.35);
-  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);transition:background .3s}
-.img-full:hover{background:rgba(10,20,14,.7)}
-.ilb{position:fixed;inset:0;z-index:10000;display:none;align-items:center;justify-content:center;
-  background:rgba(8,12,10,.94);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);padding:56px 72px}
-.ilb.open{display:flex;animation:fadeIn .25s ease}
-.ilb-fig{display:flex;flex-direction:column;align-items:center;gap:14px;max-width:100%;max-height:100%}
-.ilb-fig img{max-width:min(1200px,100%);max-height:calc(100vh - 150px);width:auto;height:auto;object-fit:contain;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.5)}
-.ilb-cap{color:rgba(255,255,255,.8);font-size:14px;font-weight:500;text-align:center}
-.ilb-x{position:absolute;top:16px;right:20px;width:44px;height:44px;border-radius:50%;color:#fff;font-size:18px;
-  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);transition:background .25s}
-.ilb-x:hover{background:rgba(255,255,255,.22)}
-.ilb-nav{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;color:#fff;font-size:1.6rem;line-height:1;
-  background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);transition:background .25s}
-.ilb-nav:hover{background:rgba(255,255,255,.22)}
-.ilb-prev{left:16px}.ilb-next{right:16px}
-@media(max-width:600px){.ilb{padding:64px 10px 24px}.ilb-nav{width:40px;height:40px;top:auto;bottom:18px;transform:none}
-  .ilb-prev{left:calc(50% - 52px)}.ilb-next{right:calc(50% - 52px)}.ilb-fig img{max-height:calc(100vh - 190px)}
-  .img-full{font-size:11px;padding:6px 11px;right:12px;bottom:12px}}
+/* Chem row photos: show the whole image (no cropping) over a blurred copy of itself */
+.chem-img:not(.tile){background:#E9EEE9}
+.chem-img:not(.tile)::before{content:'';position:absolute;inset:-40px;z-index:0;
+  background:var(--bg) center/cover no-repeat;filter:blur(30px) saturate(1.05) brightness(.9);transition:background-image .7s}
+.chem-img img{object-fit:contain;z-index:1}
+.chem-img:hover img{transform:none}
+.chem-img-ov{z-index:1;display:none}
+
 </style>
 </head>
 <body>
@@ -587,12 +572,6 @@ footer{background:#0B120E}
   </div>
 </footer>
 
-<div class="ilb" id="ilb" role="dialog" aria-label="Full image view">
-  <button class="ilb-x" aria-label="Close">✕</button>
-  <button class="ilb-nav ilb-prev" aria-label="Previous image">‹</button>
-  <figure class="ilb-fig"><img id="ilbImg" alt=""><figcaption class="ilb-cap" id="ilbCap"></figcaption></figure>
-  <button class="ilb-nav ilb-next" aria-label="Next image">›</button>
-</div>
 <script>
 /* Progress */
 const prog=document.getElementById('prog');
@@ -893,10 +872,10 @@ document.getElementById('ov-q-list').innerHTML=d.quick.map(q=>`<div class="ov-q-
 
 document.getElementById('chem-list').innerHTML=d.chems.map((c,i)=>`
 <div class="chem-row${i%2===1?' rev':''}">
-  ${c.imgs&&c.imgs.length>1?`<div class="chem-img sl">${c.imgs.map((src,k)=>`<img src="${src}" alt="${c.service}"${k?' loading="lazy"':' class="on"'}>`).join('')}<div class="chem-img-ov"></div>
+  ${c.imgs&&c.imgs.length>1?`<div class="chem-img sl" style="--bg:url('${c.imgs[0]}')">${c.imgs.map((src,k)=>`<img src="${src}" alt="${c.service}"${k?' loading="lazy"':' class="on"'}>`).join('')}<div class="chem-img-ov"></div>
     <button class="sl-btn sl-prev" aria-label="Previous image">‹</button><button class="sl-btn sl-next" aria-label="Next image">›</button>
-    <div class="sl-dots">${c.imgs.map((_,k)=>`<button class="sl-dot${k?'':' on'}" aria-label="Image ${k+1}"></button>`).join('')}</div><button class="img-full" aria-label="View full image">⤢ View full image</button></div>`
-  :c.img?`<div class="chem-img"><img src="${c.img}" alt="${c.service}"><div class="chem-img-ov"></div><button class="img-full" aria-label="View full image">⤢ View full image</button></div>`:`<div class="chem-img tile"><span>${c.icon||'✦'}</span></div>`}
+    <div class="sl-dots">${c.imgs.map((_,k)=>`<button class="sl-dot${k?'':' on'}" aria-label="Image ${k+1}"></button>`).join('')}</div></div>`
+  :c.img?`<div class="chem-img" style="--bg:url('${c.img}')"><img src="${c.img}" alt="${c.service}"><div class="chem-img-ov"></div></div>`:`<div class="chem-img tile"><span>${c.icon||'✦'}</span></div>`}
   <div class="chem-txt">
     <div class="chem-formula-badge">✦ ${c.chemical}</div>
     <div class="chem-name">${c.serviceEm}</div>
@@ -950,37 +929,12 @@ document.querySelectorAll('.chem-img.sl').forEach(box=>{
     cur=(n+imgs.length)%imgs.length;
     imgs.forEach((im,k)=>im.classList.toggle('on',k===cur));
     dots.forEach((d,k)=>d.classList.toggle('on',k===cur));
+    box.style.setProperty('--bg',`url('${imgs[cur].getAttribute('src')}')`);
   };
   box.querySelector('.sl-prev').addEventListener('click',()=>go(cur-1));
   box.querySelector('.sl-next').addEventListener('click',()=>go(cur+1));
   dots.forEach((d,k)=>d.addEventListener('click',()=>go(k)));
 });
-
-/* ── FULL IMAGE VIEWER (click a chem photo or "View full image") ── */
-(function(){
-  const lb=document.getElementById('ilb'),im=document.getElementById('ilbImg'),cap=document.getElementById('ilbCap'),
-        pv=lb.querySelector('.ilb-prev'),nx=lb.querySelector('.ilb-next');
-  let set=[],cur=0,title='';
-  const show=n=>{cur=(n+set.length)%set.length;im.src=set[cur];
-    cap.textContent=title+(set.length>1?'  ·  '+(cur+1)+' / '+set.length:'');};
-  const open=box=>{const ims=[...box.querySelectorAll('img')];if(!ims.length)return;
-    set=ims.map(i=>i.getAttribute('src'));title=ims[0].alt||'';
-    const on=ims.findIndex(i=>i.classList.contains('on'));
-    pv.style.display=nx.style.display=set.length>1?'':'none';
-    show(on<0?0:on);lb.classList.add('open');document.body.style.overflow='hidden';};
-  const close=()=>{lb.classList.remove('open');document.body.style.overflow='';};
-  document.addEventListener('click',e=>{
-    const box=e.target.closest('.chem-img:not(.tile)');
-    if(!box||e.target.closest('.sl-btn,.sl-dot'))return;
-    open(box);});
-  pv.addEventListener('click',e=>{e.stopPropagation();show(cur-1)});
-  nx.addEventListener('click',e=>{e.stopPropagation();show(cur+1)});
-  lb.addEventListener('click',e=>{if(e.target===lb||e.target.closest('.ilb-x'))close()});
-  document.addEventListener('keydown',e=>{if(!lb.classList.contains('open'))return;
-    if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1);});
-  let sx=null;lb.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
-  lb.addEventListener('touchend',e=>{if(sx===null)return;const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>50&&set.length>1)show(cur+(dx<0?1:-1));sx=null;});
-})();
 
 /* ── MOTION: chemical rows slide in ── */
 const chemObs=new IntersectionObserver(es=>{
