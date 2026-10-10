@@ -38,11 +38,11 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/All/closeup-shot-trees-greenery-...jpg` | About section image |
 | `Images/All/green-plant-leaves-with-blue-sky-background.jpg` | Sustainability section background |
 | `Images/Industries/Rubber/formic-acid-carboys-warehouse.png` | No longer used (AI-style image without BASF logo, removed from the Latex Coagulation slider Oct 2026) |
-| `Images/Industries/Rubber/basf-sodium-metabisulphite-bag.png` | Rubber chems[1] Crepe Rubber Preservation — 2nd slide |
+| `Images/Industries/Rubber/basf-sodium-metabisulfite-bag-wide.jpg` | Rubber chems[1] Crepe Rubber Preservation, 2nd slide. Made from `basf-sodium-metabisulphite-bag.png` on a 3:2 white canvas so the whole BASF bag shows |
 | `Images/Industries/Rubber/rubber-sheets-preservation.png` | Rubber chems[1] Crepe Rubber Preservation |
 | `Images/Industries/Rubber/basf-formic-acid-85-carboy-wide.jpg` | Rubber chems[0] Latex Coagulation, 2nd slide (slider has exactly 2 images). Made from `basf-formic-acid-85-carboy.jpg` (real BASF carboy, portrait) centred on a 3:2 canvas with blurred sides, so the WHOLE bottle shows in the normal cover-cropped box on desktop and mobile (client wants the full bottle visible, no viewer) |
 | `Images/Industries/Rubber/zuniar-ayu-DwyeIjDscCc-unsplash.jpg` | Rubber chems[2] Latex Transport |
-| `Images/Industries/Rubber/basf-sodium-sulfite-bag.jpg` | Rubber chems[2] Latex Transport, 2nd slide |
+| `Images/Industries/Rubber/basf-sodium-sulfite-bag-wide.jpg` | Rubber chems[2] Latex Transport, 2nd slide. Made from `basf-sodium-sulfite-bag.jpg` on a 3:2 canvas with blurred sides so the whole BASF bag shows |
 | `Images/Industries/Personal Care/personal-care-vanity-flatlay.png` | Personal Care card (homepage), personal industry.html hero |
 | `Images/Industries/Personal Care/foam-bath-rich-lather.jpg` | Personal chems[2] CDE Foam Boosting row |
 | `Images/Industries/Personal Care/shampoo-body-wash-shower.png` | Personal chems[0] Shampoo & Body Wash row |
