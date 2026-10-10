@@ -16,7 +16,7 @@ Static website for **S.K. Chem Solutions** — a Sri Lankan B2B chemical raw mat
 - `Images/Gallery/gallery-1.jpg … gallery-6.jpg` — retouched, web-optimised homepage gallery photos (latex tray & rubber roller donation)
 - `Images/Gallery/New-Retouch/` — full-size retouched PNG masters (not committed, local only)
 - `Images/Gallery/Charity/` — 14 CSR/community event photos (charity-1.jpeg … charity-14.jpeg)
-- `Images/Partners/Local/` — 9 local client logos
+- `Images/Partners/Local/` — 10 local client logos
 - `Images/Partners/Global/` — Global supplier logos (BASF, Vance Group, SK Pickglobal, LG Chem)
 - `Images/Products/` — Product photos (TBD)
 
@@ -75,6 +75,7 @@ All images are now local — zero loremflickr usage remaining.
 | `logo.webp` | 4rever Skin Naturals | Personal Care |
 | `sm-logo.png` | ACE | Pharmaceutical |
 | `chemanex.png` (background removed, shown taller: `.lm-tall`, 68px) | Chemanex | Chemicals |
+| `cw-mackie.png` (recoloured red-on-transparent from the white-on-red square, re-laid out horizontally: mark + name; `.lm-lg`) | C. W. Mackie PLC | Rubber & Trading |
 
 ## Live Site
 - GitHub repo: `https://github.com/rishluck/sk-chem-solutions.git`
