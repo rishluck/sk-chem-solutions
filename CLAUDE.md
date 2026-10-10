@@ -167,6 +167,11 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - Plays once per browser session (`sessionStorage` key `skIntro`); a timeout removes it at 2.6s as a safety net
 - Hidden for `prefers-reduced-motion: reduce`
 
+## Phone Lines (client, Oct 2026)
+- +94 777 598 284: Rubber & Latex, Textile Washing
+- +94 777 414 367: all other industries (Personal Care, Food & Beverage, Pharmaceutical)
+- Homepage contact block and footer label each number; industry.html CTA has a `#ctaTel` call button set by JS from the current industry
+
 ## Navigation
 - Logo click → `index.html` (from industry.html) or `#hero` (from homepage)
 - Industry cards on homepage → `industry.html?ind={key}`

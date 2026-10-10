@@ -521,6 +521,7 @@ footer{background:#0B120E}
       <p class="cta-p">Year-round supply · Competitive pricing · Full quality documentation · Sri Lanka wide delivery</p>
       <div class="cta-btns">
         <a href="index.html#contact" class="btn-white">Contact Us Today</a>
+        <a href="tel:+94777414367" class="btn-ghost-w" id="ctaTel">📞 +94 777 414 367</a>
         <a href="index.html#industries" class="btn-ghost-w">← All Industries</a>
       </div>
     </div>
@@ -836,6 +837,8 @@ IND.estate=IND.rubber;
 const p=new URLSearchParams(window.location.search);
 const key=p.get('ind')||'rubber';
 const d=IND[key]||IND.rubber;
+/* Industry phone line: Rubber & Textile → 0777 598 284, all others → 0777 414 367 */
+(function(){const t=document.getElementById('ctaTel');if(!t)return;const n=(d===IND.rubber||d===IND.textile)?['+94777598284','+94 777 598 284']:['+94777414367','+94 777 414 367'];t.href='tel:'+n[0];t.textContent='📞 '+n[1];})();
 
 document.title=`${d.nameRaw} | S.K. Chem Solutions`;
 if(d.img){
