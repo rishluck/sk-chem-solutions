@@ -143,6 +143,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
   - CDE: purity 85–90%
   - EDTA: powder only, 25 kg bags
   - MPG (Monopropylene Glycol): purity 99.9% (food + pharma rows)
+  - Glycerine USP (pharma Solid Dosage row): purity 99.7%
   - IPA (Isopropyl Alcohol): purity 99.9% (personal care hand sanitiser + pharma GMP rows)
   - Spelling: always "Sulfite", not "Sulphite"
 - Motion graphics: orbFloat, shimLine, spinSlow, fadeUp keyframe animations
