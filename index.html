@@ -367,7 +367,8 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
   -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .gal-intro{margin-bottom:2.5rem;display:flex;align-items:flex-end;
   justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
-.gal-filter{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem}
+.gal-filter{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.9rem;justify-content:flex-end}
+.gal-empty{display:none;text-align:center;padding:3.5rem 1rem;border:1px dashed var(--border);border-radius:16px;color:var(--muted);font-size:14px;background:#fff}
 .gf{padding:7px 17px;border-radius:50px;font-size:12.5px;font-weight:600;
   border:1.5px solid var(--border);color:var(--muted);background:var(--bg);
   transition:.25s;cursor:pointer}
@@ -1162,16 +1163,16 @@ setTimeout(function(){var el=document.getElementById('intro');if(el)el.remove()}
       <div>
         <div class="ey">Gallery</div>
         <h2 class="gal-h">Our Warehouse<br>&amp; <em>Operations</em></h2>
-        <div class="gal-filter">
-          <button class="gf on" data-f="warehouse">🏭 Warehouse</button>
-          <button class="gf" data-f="products">📦 Products</button>
-          <button class="gf" data-f="operations">⚙️ Operations</button>
-        </div>
         <select class="gal-select" id="gal-select">
           <option value="warehouse">🏭 Warehouse</option>
           <option value="products">📦 Products</option>
           <option value="operations">⚙️ Operations</option>
         </select>
+      </div>
+      <div class="gal-filter">
+        <button class="gf on" data-f="warehouse">🏭 Warehouse</button>
+        <button class="gf" data-f="products">📦 Products</button>
+        <button class="gf" data-f="operations">⚙️ Operations</button>
       </div>
     </div>
     <div class="bento-grid rv d1" id="bento-grid">
@@ -1182,6 +1183,7 @@ setTimeout(function(){var el=document.getElementById('intro');if(el)el.remove()}
       <div class="bento-item bi-c2 bi-r5" data-cat="warehouse" data-title="Carboy Stock" data-desc="Year-round supply, ready to ship"><img src="Images/Gallery/Warehouse/warehouse-carboys.jpg" alt="Carboy Stock" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Carboy Stock</div><div class="bento-ov-s">Year-round supply, ready to ship</div></div></div>
       <div class="bento-item bi-r5" data-cat="warehouse" data-title="Steel Drum Storage" data-desc="Secure storage for liquid chemicals"><img src="Images/Gallery/Warehouse/warehouse-steel-drums.jpg" alt="Steel Drum Storage" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Steel Drum Storage</div><div class="bento-ov-s">Secure storage for liquid chemicals</div></div></div>
     </div>
+    <p class="gal-empty" id="gal-empty">📷 Photos coming soon.</p>
     <p class="gal-note rv">More photos of products &amp; events coming soon.</p>
   </div>
 </section>
@@ -1392,9 +1394,7 @@ const statsEl=document.getElementById('stats');if(statsEl)cntObs.observe(statsEl
   setInterval(()=>{imgs[cur].classList.remove('on');cur=(cur+1)%imgs.length;imgs[cur].classList.add('on');},5000);
 })();
 /* ── Bento gallery filter ── */
-function applyGalFilter(f){document.querySelectorAll('.bento-item').forEach(gi=>{gi.style.display=(gi.dataset.cat||'').includes(f)?'block':'none';});}
-/* Hide filter tabs that have no photos yet */
-document.querySelectorAll('.gf,#gal-select option').forEach(b=>{const f=b.dataset.f||b.value;if(!document.querySelector('.bento-item[data-cat*="'+f+'"]'))b.style.display='none';});
+function applyGalFilter(f){let n=0;document.querySelectorAll('.bento-item').forEach(gi=>{const on=(gi.dataset.cat||'').includes(f);gi.style.display=on?'block':'none';if(on)n++;});const e=document.getElementById('gal-empty');if(e)e.style.display=n?'none':'block';}
 applyGalFilter('warehouse');
 document.querySelectorAll('.gf').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.gf').forEach(b=>b.classList.remove('on'));btn.classList.add('on');applyGalFilter(btn.dataset.f);});});
 const galSel=document.getElementById('gal-select');if(galSel)galSel.addEventListener('change',()=>applyGalFilter(galSel.value));

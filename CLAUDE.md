@@ -153,7 +153,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 
 ## Gallery Section
 - Heading "Our Warehouse & Operations" (eyebrow "Gallery"). Community photos moved to the CSR section (client request, Oct 2026): **no All or Community tabs**
-- Filters: Warehouse (default, `applyGalFilter('warehouse')`), Products, Operations. Tabs/options with no matching `.bento-item` are hidden automatically by JS, so Products/Operations appear once photos with `data-cat="products"`/`"operations"` are added
+- Filters: Warehouse (default, `applyGalFilter('warehouse')`), Products, Operations. Tab buttons (`.gal-filter`) sit on the right of the heading row (desktop); on mobile the `#gal-select` dropdown under the heading is used instead. A tab with no photos shows the `#gal-empty` "Photos coming soon" box. Add photos with `data-cat="products"`/`"operations"`
 - Warehouse: 6 photos in `Images/Gallery/Warehouse/`, 4-col bento: row 1 `bi-r3` = drums-1 · exterior (wide, object-position center 60%) · drums-2; row 2 `bi-r5` = racking-aisle · carboys (wide) · steel-drums (brightened)
 - Lightbox (`olb`) cycles through the visible items of the group the clicked item belongs to (`#bento-grid` or `#csrStrip`)
 
