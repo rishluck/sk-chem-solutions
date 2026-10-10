@@ -136,7 +136,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - Template renders: `✦ ${c.chemical}` as badge → `${c.serviceEm}` as headline
 - `specs` are rendered as chips under the outcome tags (`.chem-specs`). Client-confirmed figures (Oct 2026):
   - Sodium Metabisulfite Food Grade (E223): purity 99%, SO₂ 66.5% (food page, updated Oct 2026)
-  - Sodium Metabisulfite Non-Food Grade: purity 99%, SO₂ 67% (rubber crepe + textile rows)
+  - Sodium Metabisulfite Non-Food Grade: purity >99%, SO₂ 67% (rubber crepe + textile rows)
   - Sodium Sulfite Non-Food Grade: purity ≥97.5%
   - Formic Acid: 85%, Technical Grade
   - Vitamin E Acetate: purity 98%
