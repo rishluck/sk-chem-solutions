@@ -60,8 +60,8 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/Industries/Pharmaceutical/crystalweed-cannabis-XYGuytPoYHI-unsplash.jpg` | Pharma chems[2] Solid Dosage |
 | `Images/Industries/Textile Washing/levis-denim-washing.jpg` | textile industry.html hero + textile chems[0] Garment & Denim Washing row, homepage hero decoration |
 | `Images/Industries/Textile Washing/second-breakfast-I2WQQaXSy-k-unsplash.jpg` | textile chems[1] Denim Fading row |
-| `Images/Gallery/1.jpeg, 2.jpeg, 4.jpeg, 5.jpeg, 6.jpeg` | Homepage gallery bento slots 1,2,4,5,6 (ORIGINAL photos, client request Oct 2026; retouched gallery-*.jpg no longer used) |
-| `Images/Gallery/Charity/charity-3.jpeg` | Gallery bento slot 3 (original of the old retouched social-responsibility.jpg) |
+| `Images/Gallery/Charity/charity-*.jpeg` (12 of 14) | CSR "Community moments" strip |
+| `Images/Gallery/Warehouse/*.jpg` | Gallery Warehouse bento |
 
 ## Local Client Logos (`Images/Partners/Local/`)
 | File | Company | Sector |
@@ -152,14 +152,15 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - Scroll-triggered reveals via IntersectionObserver
 
 ## Gallery Section
-- Filter buttons: All, Community (charity), Products, Warehouse, Operations
-- 6 photos (`gallery-1…6.jpg`, `data-cat="charity"`) in a 4-col bento: row 1 = 1 · 2 (wide) · 3, row 2 = 4 · 5 (wide) · 6 — every tile `bi-r3`, wide ones also `bi-c2`, so the grid fills with no gaps
-- Bottom row items use `bi-r5` (taller row on desktop, reset to row-1 height in tablet/mobile media queries) so wide tile 5 shows both faces and the roller received
-- Wide tiles 2 and 5 use inline `object-position` (36% / 45%) to keep faces in frame — retune if photos change
-- **"All" shows max 6 photos (client request, Oct 2026):** only tiles with class `feat` show under All (CSS `.bento-item:not(.feat){display:none}` + `applyGalFilter`); category filters show every tile in that category. Current featured 6: 1.jpeg · warehouse-exterior (wide) · warehouse-drums-2 / warehouse-racking-aisle · 5.jpeg (wide) · 6.jpeg. DOM order is interleaved (1,2,3,d1,ext,d2,4,rack,carb,steel,5,6) so All, Community and Warehouse each lay out as narrow · wide · narrow rows with no gaps; keep that in mind when adding photos
-- Warehouse filter (Oct 2026): 6 photos in `Images/Gallery/Warehouse/` (`data-cat="warehouse"`), added as rows 3 and 4 of the bento in the same narrow · wide · narrow pattern: row 3 `bi-r3` = drums-1 · exterior (wide, object-position center 60%) · drums-2; row 4 `bi-r5` = racking-aisle · carboys (wide) · steel-drums (brightened, original was dark)
-- Products/Operations filters ready for when real photos are added
-- CSR / Social Responsibility section (separate from gallery) crossfades every 5s between `Images/Gallery/3.jpeg` (original, object-position center 62%) and `Images/Gallery/social-responsibility-2-square.jpg` (first two collage panels, square). The CSR box is square on all screen sizes (same as desktop)
+- Heading "Our Warehouse & Operations" (eyebrow "Gallery"). Community photos moved to the CSR section (client request, Oct 2026): **no All or Community tabs**
+- Filters: Warehouse (default, `applyGalFilter('warehouse')`), Products, Operations. Tabs/options with no matching `.bento-item` are hidden automatically by JS, so Products/Operations appear once photos with `data-cat="products"`/`"operations"` are added
+- Warehouse: 6 photos in `Images/Gallery/Warehouse/`, 4-col bento: row 1 `bi-r3` = drums-1 · exterior (wide, object-position center 60%) · drums-2; row 2 `bi-r5` = racking-aisle · carboys (wide) · steel-drums (brightened)
+- Lightbox (`olb`) cycles through the visible items of the group the clicked item belongs to (`#bento-grid` or `#csrStrip`)
+
+## Social Responsibility (CSR) Section
+- Card: text left, square photo right crossfading every 5s between `Images/Gallery/3.jpeg` and `Images/Gallery/social-responsibility-2-square.jpg`. Square on all screen sizes
+- Below the card: "Community moments" horizontal strip (`#csrStrip`, `.csr-shot`, 3:4 tiles, scroll-snap, ← → buttons `#csrPrev/#csrNext`), each opens the lightbox. Shows all 12 unique photos from `Images/Gallery/Charity/`: trays 1,3,4,7 · rollers 5,6,8,9 · goods distribution 10,12,13,14 (charity-2 and charity-11 are duplicates of 1 and 10, left out)
+- `Images/Gallery/1.jpeg … 6.jpeg` are copies of charity photos and are no longer used on the page
 
 ## Intro Splash (index.html)
 - `#intro` overlay: logo fades in, holds, zooms ×7 while the white overlay fades (~2.4s, pure CSS keyframes `introLogo` / `introOut`)

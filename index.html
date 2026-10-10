@@ -826,13 +826,21 @@ body{font-family:'Inter',system-ui,sans-serif;letter-spacing:-.006em;color:#141a
 .gf:hover:not(.on){border-color:#9FDDB4;color:#05873A}
 .bento-grid{gap:8px}
 .bento-item{border-radius:16px}
-.bento-item:not(.feat){display:none}
 .bento-item img{transition:transform .9s var(--ease)}
 
 /* CSR + contact */
 .csr-card{background:#fff;border:1px solid var(--border-lt);border-radius:28px;box-shadow:var(--sh-md)}
 .csr-badge{background:var(--lime-pale);color:#05873A;font-weight:600}
 .csr-img{border-radius:20px}
+.csr-strip-head{display:flex;align-items:center;justify-content:space-between;gap:1rem;margin:2.75rem 0 1.1rem}
+.csr-strip-t{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.csr-strip{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;scrollbar-width:none;padding:4px 2px 10px}
+.csr-strip::-webkit-scrollbar{display:none}
+.csr-shot{flex:0 0 clamp(150px,17vw,205px);aspect-ratio:3/4;border-radius:16px;overflow:hidden;cursor:pointer;
+  scroll-snap-align:start;background:var(--border-lt);box-shadow:var(--sh-sm);transition:box-shadow .4s var(--ease),transform .4s var(--ease)}
+.csr-shot img{width:100%;height:100%;object-fit:cover;object-position:center 40%;transition:transform .8s var(--ease)}
+.csr-shot:hover{box-shadow:var(--sh-md);transform:translateY(-3px)}
+.csr-shot:hover img{transform:scale(1.06)}
 .fbox{background:#fff;border:1px solid var(--border-lt);border-radius:24px;box-shadow:var(--sh-md)}
 .fg label{font-weight:600;letter-spacing:.06em}
 .fg input,.fg select,.fg textarea{border:1px solid var(--border);border-radius:12px;background:#F8FAF7;font-family:'Inter',sans-serif}
@@ -1152,37 +1160,27 @@ setTimeout(function(){var el=document.getElementById('intro');if(el)el.remove()}
   <div class="W">
     <div class="gal-intro rv">
       <div>
-        <div class="ey">Community &amp; Impact</div>
-        <h2 class="gal-h">Our Community<br>&amp; <em>What We Do</em></h2>
+        <div class="ey">Gallery</div>
+        <h2 class="gal-h">Our Warehouse<br>&amp; <em>Operations</em></h2>
         <div class="gal-filter">
-          <button class="gf on" data-f="all">All</button>
-          <button class="gf" data-f="charity">🤝 Community</button>
+          <button class="gf on" data-f="warehouse">🏭 Warehouse</button>
           <button class="gf" data-f="products">📦 Products</button>
-          <button class="gf" data-f="warehouse">🏭 Warehouse</button>
           <button class="gf" data-f="operations">⚙️ Operations</button>
         </div>
         <select class="gal-select" id="gal-select">
-          <option value="all">All Photos</option>
-          <option value="charity">🤝 Community</option>
-          <option value="products">📦 Products</option>
           <option value="warehouse">🏭 Warehouse</option>
+          <option value="products">📦 Products</option>
           <option value="operations">⚙️ Operations</option>
         </select>
       </div>
     </div>
     <div class="bento-grid rv d1" id="bento-grid">
-<div class="bento-item feat bi-r3" data-cat="charity" data-title="Latex Tray Donation" data-desc="Supporting rubber smallholder families"><img src="Images/Gallery/1.jpeg" alt="Latex Tray Donation" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Latex Tray Donation</div><div class="bento-ov-s">Supporting rubber smallholder families</div></div></div>
-      <div class="bento-item bi-c2 bi-r3" data-cat="charity" data-title="Giving Back Together" data-desc="Latex trays for local tappers"><img src="Images/Gallery/2.jpeg" style="object-position:center 36%" alt="Giving Back Together" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Giving Back Together</div><div class="bento-ov-s">Latex trays for local tappers</div></div></div>
-      <div class="bento-item bi-r3" data-cat="charity" data-title="Community Handover" data-desc="Creating impact beyond business"><img src="Images/Gallery/Charity/charity-3.jpeg" alt="Community Handover" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Community Handover</div><div class="bento-ov-s">Creating impact beyond business</div></div></div>
       <div class="bento-item bi-r3" data-cat="warehouse" data-title="Drum Storage" data-desc="Liquid raw materials on pallets"><img src="Images/Gallery/Warehouse/warehouse-drums-1.jpg" alt="Drum Storage" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Drum Storage</div><div class="bento-ov-s">Liquid raw materials on pallets</div></div></div>
-      <div class="bento-item feat bi-c2 bi-r3" data-cat="warehouse" data-title="Warehouse &amp; Dispatch" data-desc="Loading bays for island-wide delivery"><img src="Images/Gallery/Warehouse/warehouse-exterior.jpg" style="object-position:center 60%" alt="Warehouse &amp; Dispatch" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Warehouse &amp; Dispatch</div><div class="bento-ov-s">Loading bays for island-wide delivery</div></div></div>
-      <div class="bento-item feat bi-r3" data-cat="warehouse" data-title="Ready for Delivery" data-desc="Stretch-wrapped drums, stock on hand"><img src="Images/Gallery/Warehouse/warehouse-drums-2.jpg" alt="Ready for Delivery" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Ready for Delivery</div><div class="bento-ov-s">Stretch-wrapped drums, stock on hand</div></div></div>
-      <div class="bento-item bi-r5" data-cat="charity" data-title="Rubber Roller Donation" data-desc="Equipping local rubber smallholders"><img src="Images/Gallery/4.jpeg" alt="Rubber Roller Donation" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Rubber Roller Donation</div><div class="bento-ov-s">Equipping local rubber smallholders</div></div></div>
-      <div class="bento-item feat bi-r5" data-cat="warehouse" data-title="Organised Racking" data-desc="Bagged materials stored safely on pallets"><img src="Images/Gallery/Warehouse/warehouse-racking-aisle.jpg" alt="Organised Racking" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Organised Racking</div><div class="bento-ov-s">Bagged materials stored safely on pallets</div></div></div>
+      <div class="bento-item bi-c2 bi-r3" data-cat="warehouse" data-title="Warehouse &amp; Dispatch" data-desc="Loading bays for island-wide delivery"><img src="Images/Gallery/Warehouse/warehouse-exterior.jpg" style="object-position:center 60%" alt="Warehouse &amp; Dispatch" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Warehouse &amp; Dispatch</div><div class="bento-ov-s">Loading bays for island-wide delivery</div></div></div>
+      <div class="bento-item bi-r3" data-cat="warehouse" data-title="Ready for Delivery" data-desc="Stretch-wrapped drums, stock on hand"><img src="Images/Gallery/Warehouse/warehouse-drums-2.jpg" alt="Ready for Delivery" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Ready for Delivery</div><div class="bento-ov-s">Stretch-wrapped drums, stock on hand</div></div></div>
+      <div class="bento-item bi-r5" data-cat="warehouse" data-title="Organised Racking" data-desc="Bagged materials stored safely on pallets"><img src="Images/Gallery/Warehouse/warehouse-racking-aisle.jpg" alt="Organised Racking" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Organised Racking</div><div class="bento-ov-s">Bagged materials stored safely on pallets</div></div></div>
       <div class="bento-item bi-c2 bi-r5" data-cat="warehouse" data-title="Carboy Stock" data-desc="Year-round supply, ready to ship"><img src="Images/Gallery/Warehouse/warehouse-carboys.jpg" alt="Carboy Stock" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Carboy Stock</div><div class="bento-ov-s">Year-round supply, ready to ship</div></div></div>
       <div class="bento-item bi-r5" data-cat="warehouse" data-title="Steel Drum Storage" data-desc="Secure storage for liquid chemicals"><img src="Images/Gallery/Warehouse/warehouse-steel-drums.jpg" alt="Steel Drum Storage" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Steel Drum Storage</div><div class="bento-ov-s">Secure storage for liquid chemicals</div></div></div>
-      <div class="bento-item feat bi-c2 bi-r5" data-cat="charity" data-title="Hands-On Support" data-desc="Rollers for quality sheet rubber"><img src="Images/Gallery/5.jpeg" style="object-position:center 45%" alt="Hands-On Support" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Hands-On Support</div><div class="bento-ov-s">Rollers for quality sheet rubber</div></div></div>
-      <div class="bento-item feat bi-r5" data-cat="charity" data-title="Roller Demonstration" data-desc="Showing best practice on site"><img src="Images/Gallery/6.jpeg" alt="Roller Demonstration" loading="lazy"><div class="bento-ov"><div class="bento-ov-t">Roller Demonstration</div><div class="bento-ov-s">Showing best practice on site</div></div></div>
     </div>
     <p class="gal-note rv">More photos of products &amp; events coming soon.</p>
   </div>
@@ -1217,6 +1215,27 @@ setTimeout(function(){var el=document.getElementById('intro');if(el)el.remove()}
         <img class="on" src="Images/Gallery/3.jpeg" style="object-position:center 62%" alt="S.K. Chem Solutions team handing latex trays to rubber smallholders">
         <img src="Images/Gallery/social-responsibility-2-square.jpg" alt="S.K. Chem Solutions distributing essential goods to families at a community event" loading="lazy" style="object-position:center center">
       </div>
+    </div>
+    <div class="csr-strip-head rv">
+      <span class="csr-strip-t">Community moments · 12 photos</span>
+      <div class="ind-nav">
+        <button class="ind-nav-btn" id="csrPrev" aria-label="Previous photos">←</button>
+        <button class="ind-nav-btn" id="csrNext" aria-label="Next photos">→</button>
+      </div>
+    </div>
+    <div class="csr-strip rv d1" id="csrStrip">
+      <div class="csr-shot" data-title="Latex Tray Donation" data-desc="Supporting rubber smallholder families"><img src="Images/Gallery/Charity/charity-1.jpeg" alt="Latex Tray Donation" loading="lazy"></div>
+      <div class="csr-shot" data-title="Latex Tray Donation" data-desc="Supporting rubber smallholder families"><img src="Images/Gallery/Charity/charity-3.jpeg" alt="Latex Tray Donation" loading="lazy"></div>
+      <div class="csr-shot" data-title="Latex Tray Donation" data-desc="Supporting rubber smallholder families"><img src="Images/Gallery/Charity/charity-4.jpeg" alt="Latex Tray Donation" loading="lazy"></div>
+      <div class="csr-shot" data-title="Latex Tray Donation" data-desc="Supporting rubber smallholder families"><img src="Images/Gallery/Charity/charity-7.jpeg" alt="Latex Tray Donation" loading="lazy"></div>
+      <div class="csr-shot" data-title="Rubber Roller Donation" data-desc="Equipping local rubber smallholders"><img src="Images/Gallery/Charity/charity-5.jpeg" alt="Rubber Roller Donation" loading="lazy"></div>
+      <div class="csr-shot" data-title="Rubber Roller Donation" data-desc="Equipping local rubber smallholders"><img src="Images/Gallery/Charity/charity-6.jpeg" alt="Rubber Roller Donation" loading="lazy"></div>
+      <div class="csr-shot" data-title="Rubber Roller Donation" data-desc="Equipping local rubber smallholders"><img src="Images/Gallery/Charity/charity-8.jpeg" alt="Rubber Roller Donation" loading="lazy"></div>
+      <div class="csr-shot" data-title="Rubber Roller Donation" data-desc="Equipping local rubber smallholders"><img src="Images/Gallery/Charity/charity-9.jpeg" alt="Rubber Roller Donation" loading="lazy"></div>
+      <div class="csr-shot" data-title="Community Goods Distribution" data-desc="Essential goods for families in need"><img src="Images/Gallery/Charity/charity-10.jpeg" alt="Community Goods Distribution" loading="lazy"></div>
+      <div class="csr-shot" data-title="Community Goods Distribution" data-desc="Essential goods for families in need"><img src="Images/Gallery/Charity/charity-12.jpeg" alt="Community Goods Distribution" loading="lazy"></div>
+      <div class="csr-shot" data-title="Community Goods Distribution" data-desc="Essential goods for families in need"><img src="Images/Gallery/Charity/charity-13.jpeg" alt="Community Goods Distribution" loading="lazy"></div>
+      <div class="csr-shot" data-title="Community Goods Distribution" data-desc="Essential goods for families in need"><img src="Images/Gallery/Charity/charity-14.jpeg" alt="Community Goods Distribution" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -1373,14 +1392,17 @@ const statsEl=document.getElementById('stats');if(statsEl)cntObs.observe(statsEl
   setInterval(()=>{imgs[cur].classList.remove('on');cur=(cur+1)%imgs.length;imgs[cur].classList.add('on');},5000);
 })();
 /* ── Bento gallery filter ── */
-function applyGalFilter(f){document.querySelectorAll('.bento-item').forEach(gi=>{const show=f==='all'?gi.classList.contains('feat'):(gi.dataset.cat||'').includes(f);gi.style.display=show?'block':'none';});}
-applyGalFilter('all');
+function applyGalFilter(f){document.querySelectorAll('.bento-item').forEach(gi=>{gi.style.display=(gi.dataset.cat||'').includes(f)?'block':'none';});}
+/* Hide filter tabs that have no photos yet */
+document.querySelectorAll('.gf,#gal-select option').forEach(b=>{const f=b.dataset.f||b.value;if(!document.querySelector('.bento-item[data-cat*="'+f+'"]'))b.style.display='none';});
+applyGalFilter('warehouse');
 document.querySelectorAll('.gf').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.gf').forEach(b=>b.classList.remove('on'));btn.classList.add('on');applyGalFilter(btn.dataset.f);});});
 const galSel=document.getElementById('gal-select');if(galSel)galSel.addEventListener('change',()=>applyGalFilter(galSel.value));
 /* ── Bento item click ── */
 const TILTS=[-13,12,-10,15,-12,9,-15,13,-11,14,-8,12,-10,16];
-document.querySelectorAll('.bento-item').forEach(el=>{el.addEventListener('click',()=>{olb(el,el.dataset.title||'',el.dataset.desc||'');});});
-function olb(el,t,d){const img=el.querySelector('img');if(!img)return;const lbi=document.getElementById('lbi');lbi.style.opacity='0';setTimeout(()=>{lbi.src=img.getAttribute('src');lbi.style.opacity='1';},80);document.getElementById('lbt').textContent=t;document.getElementById('lbd').textContent=d;const visItems=Array.from(document.querySelectorAll('.bento-item')).filter(i=>i.style.display!=='none');buildDock(visItems,visItems.indexOf(el));document.getElementById('lbox').classList.add('open');document.body.style.overflow='hidden';}
+document.querySelectorAll('.bento-item,.csr-shot').forEach(el=>{el.addEventListener('click',()=>{olb(el,el.dataset.title||'',el.dataset.desc||'');});});
+(function(){const st=document.getElementById('csrStrip'),pv=document.getElementById('csrPrev'),nx=document.getElementById('csrNext');if(!st)return;const upd=()=>{pv.disabled=st.scrollLeft<4;nx.disabled=st.scrollLeft+st.clientWidth>=st.scrollWidth-4;};pv.addEventListener('click',()=>st.scrollBy({left:-st.clientWidth*.8}));nx.addEventListener('click',()=>st.scrollBy({left:st.clientWidth*.8}));st.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();})();
+function olb(el,t,d){const img=el.querySelector('img');if(!img)return;const lbi=document.getElementById('lbi');lbi.style.opacity='0';setTimeout(()=>{lbi.src=img.getAttribute('src');lbi.style.opacity='1';},80);document.getElementById('lbt').textContent=t;document.getElementById('lbd').textContent=d;const grp=el.closest('#bento-grid,#csrStrip')||document;const visItems=Array.from(grp.querySelectorAll('.bento-item,.csr-shot')).filter(i=>i.style.display!=='none');buildDock(visItems,visItems.indexOf(el));document.getElementById('lbox').classList.add('open');document.body.style.overflow='hidden';}
 function buildDock(items,activeIdx){const dock=document.getElementById('lb-dock-inner');dock.innerHTML='';items.forEach((item,i)=>{const img=item.querySelector('img');if(!img)return;const th=document.createElement('div');th.className='lb-dk'+(i===activeIdx?' active':'');th.style.setProperty('--tilt',TILTS[i%TILTS.length]+'deg');const ti=document.createElement('img');ti.src=img.getAttribute('src');ti.alt='';th.appendChild(ti);th.addEventListener('click',e=>{e.stopPropagation();const lbi=document.getElementById('lbi');lbi.style.opacity='0';setTimeout(()=>{lbi.src=img.getAttribute('src');lbi.style.opacity='1';},80);document.getElementById('lbt').textContent=item.dataset.title||'';document.getElementById('lbd').textContent=item.dataset.desc||'';buildDock(items,i);});dock.appendChild(th);});}
 /* Partner marquee tabs */
 document.querySelectorAll('.lm-tab').forEach(btn=>{btn.addEventListener('click',()=>{document.querySelectorAll('.lm-tab').forEach(b=>b.classList.remove('active'));btn.classList.add('active');const t=btn.dataset.lm;document.getElementById('lm-global').style.display=t==='global'?'':'none';document.getElementById('lm-local').style.display=t==='local'?'':'none';});});
