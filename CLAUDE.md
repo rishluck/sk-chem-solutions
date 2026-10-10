@@ -148,6 +148,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
   - Glycerine USP (pharma Solid Dosage row): purity 99.7%
   - IPA (Isopropyl Alcohol): purity 99.9% (personal care hand sanitiser + pharma GMP rows)
   - Spelling: always "Sulfite", not "Sulphite"
+- Full image viewer (Oct 2026): every chem row photo has a "⤢ View full image" pill (`.img-full`) and is click-to-open (`cursor:zoom-in`). Opens `#ilb` showing the uncropped image (`object-fit:contain`), with ‹ › arrows / arrow keys / swipe through that row's `imgs`, caption "Service · n / total", Esc or backdrop click to close. `#ilb` markup must stay above the main `<script>`
 - Motion graphics: orbFloat, shimLine, spinSlow, fadeUp keyframe animations
 - Scroll-triggered reveals via IntersectionObserver
 
