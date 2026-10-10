@@ -40,7 +40,7 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/Industries/Rubber/formic-acid-carboys-warehouse.png` | No longer used (AI-style image without BASF logo, removed from the Latex Coagulation slider Oct 2026) |
 | `Images/Industries/Rubber/basf-sodium-metabisulphite-bag.png` | Rubber chems[1] Crepe Rubber Preservation — 2nd slide |
 | `Images/Industries/Rubber/rubber-sheets-preservation.png` | Rubber chems[1] Crepe Rubber Preservation |
-| `Images/Industries/Rubber/basf-formic-acid-85-carboy.jpg` | Rubber chems[0] Latex Coagulation, 2nd slide (real BASF Formic Acid 85% carboy; slider has exactly 2 images) |
+| `Images/Industries/Rubber/basf-formic-acid-85-carboy-wide.jpg` | Rubber chems[0] Latex Coagulation, 2nd slide (slider has exactly 2 images). Made from `basf-formic-acid-85-carboy.jpg` (real BASF carboy, portrait) centred on a 3:2 canvas with blurred sides, so the WHOLE bottle shows in the normal cover-cropped box on desktop and mobile (client wants the full bottle visible, no viewer) |
 | `Images/Industries/Rubber/zuniar-ayu-DwyeIjDscCc-unsplash.jpg` | Rubber chems[2] Latex Transport |
 | `Images/Industries/Rubber/basf-sodium-sulfite-bag.jpg` | Rubber chems[2] Latex Transport, 2nd slide |
 | `Images/Industries/Personal Care/personal-care-vanity-flatlay.png` | Personal Care card (homepage), personal industry.html hero |
@@ -148,7 +148,6 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
   - Glycerine USP (pharma Solid Dosage row): purity 99.7%
   - IPA (Isopropyl Alcohol): purity 99.9% (personal care hand sanitiser + pharma GMP rows)
   - Spelling: always "Sulfite", not "Sulphite"
-- Chem row photos show the WHOLE image, never cropped (client request, Oct 2026): `.chem-img img{object-fit:contain}` over a blurred copy of the same photo (`::before` using the `--bg` CSS variable set in the template and updated by the slider `go()`). No click-to-view / lightbox (client rejected it)
 - Motion graphics: orbFloat, shimLine, spinSlow, fadeUp keyframe animations
 - Scroll-triggered reveals via IntersectionObserver
 

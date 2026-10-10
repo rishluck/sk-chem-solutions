@@ -422,15 +422,6 @@ body{letter-spacing:-.006em;color:#141a16}
 @media(max-width:600px){.app-card:last-child:nth-child(n){grid-column:auto}}
 #ind-cta::before{background:radial-gradient(ellipse 60% 90% at 80% 40%,rgba(18,201,90,.16),transparent 70%)}
 footer{background:#0B120E}
-
-/* Chem row photos: show the whole image (no cropping) over a blurred copy of itself */
-.chem-img:not(.tile){background:#E9EEE9}
-.chem-img:not(.tile)::before{content:'';position:absolute;inset:-40px;z-index:0;
-  background:var(--bg) center/cover no-repeat;filter:blur(30px) saturate(1.05) brightness(.9);transition:background-image .7s}
-.chem-img img{object-fit:contain;z-index:1}
-.chem-img:hover img{transform:none}
-.chem-img-ov{z-index:1;display:none}
-
 </style>
 </head>
 <body>
@@ -611,7 +602,7 @@ const IND={
     chems:[
       {service:'Latex Coagulation',serviceEm:'Latex <em>Coagulation</em>',chemical:'Formic Acid · HCOOH',
        img:'Images/All/isuru-ranasinha-3JdlP4prtjg-unsplash.jpg',
-       imgs:['Images/All/isuru-ranasinha-3JdlP4prtjg-unsplash.jpg','Images/Industries/Rubber/basf-formic-acid-85-carboy.jpg'],
+       imgs:['Images/All/isuru-ranasinha-3JdlP4prtjg-unsplash.jpg','Images/Industries/Rubber/basf-formic-acid-85-carboy-wide.jpg'],
        desc:'Give your plantation the fast, clean coagulation it needs. We supply industrial-grade formic acid that turns fresh field latex into firm, uniform rubber slabs, enabling efficient sheet production and consistent throughput from field to factory.',
        outcomes:['Rapid, clean coagulation','Consistent quality output','Plantation-ready packaging','Year-round supply'],
        specs:[{l:'Purity',v:'85%'},{l:'Grade',v:'Technical'},{l:'Packaging',v:'35 kg carboys'},{l:'Docs',v:'CoA & SDS'}],
@@ -872,10 +863,10 @@ document.getElementById('ov-q-list').innerHTML=d.quick.map(q=>`<div class="ov-q-
 
 document.getElementById('chem-list').innerHTML=d.chems.map((c,i)=>`
 <div class="chem-row${i%2===1?' rev':''}">
-  ${c.imgs&&c.imgs.length>1?`<div class="chem-img sl" style="--bg:url('${c.imgs[0]}')">${c.imgs.map((src,k)=>`<img src="${src}" alt="${c.service}"${k?' loading="lazy"':' class="on"'}>`).join('')}<div class="chem-img-ov"></div>
+  ${c.imgs&&c.imgs.length>1?`<div class="chem-img sl">${c.imgs.map((src,k)=>`<img src="${src}" alt="${c.service}"${k?' loading="lazy"':' class="on"'}>`).join('')}<div class="chem-img-ov"></div>
     <button class="sl-btn sl-prev" aria-label="Previous image">‹</button><button class="sl-btn sl-next" aria-label="Next image">›</button>
     <div class="sl-dots">${c.imgs.map((_,k)=>`<button class="sl-dot${k?'':' on'}" aria-label="Image ${k+1}"></button>`).join('')}</div></div>`
-  :c.img?`<div class="chem-img" style="--bg:url('${c.img}')"><img src="${c.img}" alt="${c.service}"><div class="chem-img-ov"></div></div>`:`<div class="chem-img tile"><span>${c.icon||'✦'}</span></div>`}
+  :c.img?`<div class="chem-img"><img src="${c.img}" alt="${c.service}"><div class="chem-img-ov"></div></div>`:`<div class="chem-img tile"><span>${c.icon||'✦'}</span></div>`}
   <div class="chem-txt">
     <div class="chem-formula-badge">✦ ${c.chemical}</div>
     <div class="chem-name">${c.serviceEm}</div>
@@ -929,7 +920,6 @@ document.querySelectorAll('.chem-img.sl').forEach(box=>{
     cur=(n+imgs.length)%imgs.length;
     imgs.forEach((im,k)=>im.classList.toggle('on',k===cur));
     dots.forEach((d,k)=>d.classList.toggle('on',k===cur));
-    box.style.setProperty('--bg',`url('${imgs[cur].getAttribute('src')}')`);
   };
   box.querySelector('.sl-prev').addEventListener('click',()=>go(cur-1));
   box.querySelector('.sl-next').addEventListener('click',()=>go(cur+1));
