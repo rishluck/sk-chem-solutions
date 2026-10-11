@@ -135,6 +135,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 ## about.html
 - Sections: hero, story, Vision & Mission (`#vm`), Products & Services, Why S.K. Chem, Sustainability (`#sustain`), suppliers, CTA, mini footer
 - Products & Services (redesign, Oct 2026): `.pc-grid` of 5 `.pc` industry cards in the same style as the homepage industry cards (photo + badge, title, 2-line summary, 3-service check list, "Key materials" box, Explore footer) + a dark `.pc-cta` "Need a specific material?" card. 3 cols → 2 (≤900px); on mobile (≤600px) it becomes a horizontal swipe row (`#pcGrid`, scroll-snap, cards 84% wide so the next one peeks) with progress dots `#pcDots`
+- Sustainability (`#sustain`) contrast refresh (Oct 2026): background photo blurred + deep green overlay, frosted dark cards (`.spt`) with 80% white text and circled icons, heading balanced (no `<br>`)
 - The rest of about.html has NOT had the modern refresh yet (still DM Sans, uppercase buttons, old gradients)
 
 ## industry.html Structure
