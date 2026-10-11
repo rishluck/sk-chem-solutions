@@ -110,6 +110,7 @@ This applies to: industry cards on homepage, flagship cards, product tabs, indus
 **Exception (client request, Sep 2026):** on industry.html chem rows the chemical badge (`✦ Formic Acid · HCOOH`) is now visually emphasised — large Poppins bold badge — with the service title smaller beneath it. Order/layout unchanged.
 
 ## Industries & Services
+- **Homepage industry cards (redesign, Oct 2026):** `<a class="ind-card">` in `#ind-carousel`, white card with inset 16:10 image (`.ic-media`), number chip `01–05` (`.ic-num`) and frosted badge (`.ic-badge`, wording from each industry's `IND.badge`), title, 2-line summary (3 lines under 960px; keep summaries short enough to never show "..."), exactly 3 services as a check list (`.ic-svc`), footer "Explore industry" + round arrow (`.ic-go`, turns green on hover). Every card must keep the same structure so heights match
 5 industries are shown site-wide (homepage cards, footer, contact form): Rubber & Latex, Home & Personal Care, Food & Beverage Industry, Pharmaceutical, Textile Washing & Treatment. Coatings & Printing Inks and Specialty & Miscellaneous Products were removed as industries.
 
 | Industry | `?ind=` key | Key Services |
@@ -118,7 +119,7 @@ This applies to: industry cards on homepage, flagship cards, product tabs, indus
 | Home & Personal Care | `personal` | Shampoo Formulation · Skincare Enrichment · Detergent Stability · Hand Sanitiser Production |
 | Food & Beverage Industry | `food` | Beverage Preservation · Bakery Freshness · Confectionery Glazing (Shellac E904) · Natural Sweetening |
 | Pharmaceutical | `pharma` | GMP Facility Hygiene · Oral Formulation · Solid Dosage |
-| Textile Washing & Treatment | `textile` | Garment & Denim Washing · Denim Fading |
+| Textile Washing & Treatment | `textile` | Garment & Denim Washing · Denim Fading (homepage card also lists Bleach Neutralisation) |
 
 Home Care content lives inside the `personal` industry entry (merged). Textile Washing & Treatment is its own full `textile` industry entry — homepage card (5th, "Export-Focused" badge), footer links (index + industry.html), and contact-form option, plus the `industry.html?ind=textile` page. `IND.home` and `IND.estate` remain legacy URL aliases pointing at `personal`/`rubber` for old links.
 

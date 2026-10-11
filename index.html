@@ -860,6 +860,39 @@ body{font-family:'Inter',system-ui,sans-serif;letter-spacing:-.006em;color:#141a
 footer{background:#0B120E}
 .ft-pill{border-radius:999px}
 .lb-dock{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
+
+/* ════════════════════ INDUSTRY CARDS (redesign) ════════════════════ */
+.ind-carousel{gap:20px;padding-top:8px;padding-bottom:3rem;scroll-snap-type:x mandatory;scroll-padding-left:clamp(1.5rem,5vw,4rem)}
+.ind-card{flex:0 0 380px;max-width:82vw;display:flex;flex-direction:column;background:#fff;color:inherit;
+  border:1px solid var(--border-lt);border-radius:26px;padding:10px;box-shadow:var(--sh-sm);scroll-snap-align:start;
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s}
+.ind-card:hover{transform:translateY(-6px);box-shadow:var(--sh-lg);border-color:transparent}
+.ic-media{position:relative;aspect-ratio:16/10;border-radius:18px;overflow:hidden;background:var(--border-lt)}
+.ic-media img{width:100%;height:100%;object-fit:cover;transition:transform .9s var(--ease)}
+.ind-card:hover .ic-media img{transform:scale(1.05)}
+.ic-media::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(0,0,0,.18),transparent 38%);pointer-events:none}
+.ic-num,.ic-badge{position:absolute;top:12px;z-index:2;height:28px;display:inline-flex;align-items:center;
+  border-radius:999px;font-size:11px;font-weight:600;color:#0a2e18;background:rgba(255,255,255,.9);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);box-shadow:0 2px 10px rgba(0,0,0,.1)}
+.ic-num{left:12px;padding:0 10px;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+.ic-badge{right:12px;left:auto;padding:0 12px;letter-spacing:.06em;text-transform:uppercase;font-size:10px}
+.ic-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:#12C95A;margin-right:7px}
+.ic-body{display:flex;flex-direction:column;flex:1;padding:20px 12px 8px}
+.ic-title{font-family:'Poppins',sans-serif;font-size:1.3rem;font-weight:600;letter-spacing:-.02em;line-height:1.2;color:var(--ink);margin-bottom:8px}
+.ic-sum{font-size:13.5px;line-height:1.65;color:var(--muted);min-height:calc(2*1.65em);margin-bottom:16px;
+  display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.ic-svc{list-style:none;display:flex;flex-direction:column;gap:9px;padding:14px 0 16px;border-top:1px solid var(--border-lt)}
+.ic-svc li{display:flex;align-items:center;gap:10px;font-size:13.5px;font-weight:500;color:#26302a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.ic-check{width:20px;height:20px;flex-shrink:0;border-radius:50%;background:var(--lime-pale);display:flex;align-items:center;justify-content:center}
+.ic-check svg{width:11px;height:11px;fill:none;stroke:#05873A;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.ic-foot{margin-top:auto;display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border-lt);
+  font-size:14px;font-weight:600;color:var(--ink)}
+.ic-go{width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:#F1F5F1;transition:background .35s var(--ease),transform .35s var(--ease)}
+.ic-go svg{width:16px;height:16px;fill:none;stroke:#0a2e18;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.ind-card:hover .ic-go{background:var(--grad);transform:translateX(3px)}
+@media(max-width:960px){.ind-card{flex:0 0 320px}.ic-title{font-size:1.2rem}
+  .ic-sum{-webkit-line-clamp:3;line-clamp:3;min-height:calc(3*1.65em)}}
 </style>
 </head>
 <body>
@@ -955,68 +988,75 @@ setTimeout(function(){var el=document.getElementById('intro');if(el)el.remove()}
 
   <div class="ind-carousel rv d1" id="ind-carousel">
 
-    <div class="ind-card" onclick="location.href='industry.html?ind=rubber'">
-      <div class="ind-card-img">
-        <img src="Images/All/isuru-ranasinha-AVhFLfD_Lv8-unsplash.jpg" alt="Rubber &amp; Latex" loading="lazy">
+    <a class="ind-card" href="industry.html?ind=rubber">
+      <div class="ic-media">
+        <img src="Images/All/isuru-ranasinha-AVhFLfD_Lv8-unsplash.jpg" alt="Rubber & Latex" loading="lazy">
+        <span class="ic-num">01</span>
+        <span class="ic-badge">Core Sector</span>
       </div>
-      <div class="ind-card-body">
-        <div class="ind-card-title">Rubber &amp; Latex</div>
-        <p class="ind-card-sum">High-quality Formic Acid, Sodium Sulfite, and Sodium Metabisulfite for making quality sheet and crepe rubber.</p>
-        <div class="ind-card-tags"><span class="ic-tag">Latex Coagulation</span><span class="ic-tag">Crepe Rubber Preservation</span><span class="ic-tag">Export Protection</span></div>
-        <div class="ind-card-link">Explore Industry <span>→</span></div>
+      <div class="ic-body">
+        <h3 class="ic-title">Rubber &amp; Latex</h3>
+        <p class="ic-sum">Formic acid, sodium sulfite and sodium metabisulfite for quality sheet and crepe rubber.</p>
+        <ul class="ic-svc"><li><span class="ic-check" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.2 10,3.2"/></svg></span>Latex Coagulation</li><li><span class="ic-check" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.2 10,3.2"/></svg></span>Crepe Rubber Preservation</li><li><span class="ic-check" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.2 10,3.2"/></svg></span>Export Protection</li></ul>
+        <div class="ic-foot"><span>Explore industry</span><span class="ic-go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
       </div>
-    </div>
+    </a>
 
-    <div class="ind-card" onclick="location.href='industry.html?ind=personal'">
-      <div class="ind-card-img">
+    <a class="ind-card" href="industry.html?ind=personal">
+      <div class="ic-media">
         <img src="Images/Industries/Personal Care/personal-care-vanity-flatlay.png" alt="Home & Personal Care" loading="lazy">
+        <span class="ic-num">02</span>
+        <span class="ic-badge">Growing Sector</span>
       </div>
-      <div class="ind-card-body">
-        <div class="ind-card-title">Home &amp; Personal Care</div>
-        <p class="ind-card-sum">Cosmetic-grade CAPB, chelating agents, vitamin E, and high-purity IPA for shampoo, skincare, dishwashing, and hand sanitiser manufacturers.</p>
-        <div class="ind-card-tags"><span class="ic-tag">Shampoo Formulation</span><span class="ic-tag">Detergent Stability</span><span class="ic-tag">Hand Sanitiser Production</span></div>
-        <div class="ind-card-link">Explore Industry <span>→</span></div>
+      <div class="ic-body">
+        <h3 class="ic-title">Home &amp; Personal Care</h3>
+        <p class="ic-sum">CAPB, vitamin E, chelating agents and high-purity IPA for personal and home care brands.</p>
+        <ul class="ic-svc"><li><span class="ic-check" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.2 10,3.2"/></svg></span>Shampoo Formulation</li><li><span class="ic-check" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.2 10,3.2"/></svg></span>Detergent Stability</li><li><span class="ic-check" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.2 10,3.2"/></svg></span>Hand Sanitiser Production</li></ul>
+        <div class="ic-foot"><span>Explore industry</span><span class="ic-go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
       </div>
-    </div>
+    </a>
 
-    <div class="ind-card" onclick="location.href='industry.html?ind=food'">
-      <div class="ind-card-img">
-        <img src="Images/Industries/Food Industry/fresh-fruit-juices-beverages.png" alt="Food & Beverage Industry" loading="lazy">
-        <span class="ic-badge grow">Growth Sector</span>
+    <a class="ind-card" href="industry.html?ind=food">
+      <div class="ic-media">
+        <img src="Images/Industries/Food Industry/fresh-fruit-juices-beverages.png" alt="Food & Beverage" loading="lazy">
+        <span class="ic-num">03</span>
+        <span class="ic-badge">Growth Sector</span>
       </div>
-      <div class="ind-card-body">
-        <div class="ind-card-title">Food &amp; Beverage Industry</div>
-        <p class="ind-card-sum">Food-grade sodium metabisulfite, MPG, and glycerine for beverage preservation, bakery freshness, and sweetening.</p>
-        <div class="ind-card-tags"><span class="ic-tag">Beverage Preservation</span><span class="ic-tag">Bakery Freshness</span><span class="ic-tag">Natural Sweetening</span></div>
-        <div class="ind-card-link">Explore Industry <span>→</span></div>
+      <div class="ic-body">
+        <h3 class="ic-title">Food &amp; Beverage</h3>
+        <p class="ic-sum">Food-grade metabisulfite, MPG and glycerine for preservation, freshness and sweetening.</p>
+        <ul class="ic-svc"><li><span class="ic-check" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.2 10,3.2"/></svg></span>Beverage Preservation</li><li><span class="ic-check" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.2 10,3.2"/></svg></span>Bakery Freshness</li><li><span class="ic-check" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.2 10,3.2"/></svg></span>Natural Sweetening</li></ul>
+        <div class="ic-foot"><span>Explore industry</span><span class="ic-go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
       </div>
-    </div>
+    </a>
 
-    <div class="ind-card" onclick="location.href='industry.html?ind=pharma'">
-      <div class="ind-card-img">
+    <a class="ind-card" href="industry.html?ind=pharma">
+      <div class="ic-media">
         <img src="Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg" alt="Pharmaceutical" loading="lazy">
+        <span class="ic-num">04</span>
         <span class="ic-badge">Expanding Into</span>
       </div>
-      <div class="ind-card-body">
-        <div class="ind-card-title">Pharmaceutical</div>
-        <p class="ind-card-sum">USP grade IPA, glycerine, and excipients for pharmaceutical manufacturers, fully documented with CoA and SDS.</p>
-        <div class="ind-card-tags"><span class="ic-tag">GMP Hygiene</span><span class="ic-tag">Oral Formulation</span><span class="ic-tag">Solid Dosage</span></div>
-        <div class="ind-card-link">Explore Industry <span>→</span></div>
+      <div class="ic-body">
+        <h3 class="ic-title">Pharmaceutical</h3>
+        <p class="ic-sum">USP grade IPA, glycerine and MPG for pharma manufacturers, with full CoA and SDS.</p>
+        <ul class="ic-svc"><li><span class="ic-check" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.2 10,3.2"/></svg></span>GMP Hygiene</li><li><span class="ic-check" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.2 10,3.2"/></svg></span>Oral Formulation</li><li><span class="ic-check" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.2 10,3.2"/></svg></span>Solid Dosage</li></ul>
+        <div class="ic-foot"><span>Explore industry</span><span class="ic-go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
       </div>
-    </div>
+    </a>
 
-    <div class="ind-card" onclick="location.href='industry.html?ind=textile'">
-      <div class="ind-card-img">
-        <img src="Images/Industries/Textile Washing/levis-denim-washing.jpg" alt="Textile Washing &amp; Treatment" loading="lazy">
+    <a class="ind-card" href="industry.html?ind=textile">
+      <div class="ic-media">
+        <img src="Images/Industries/Textile Washing/levis-denim-washing.jpg" alt="Textile Washing & Treatment" loading="lazy">
+        <span class="ic-num">05</span>
         <span class="ic-badge">Export-Focused</span>
       </div>
-      <div class="ind-card-body">
-        <div class="ind-card-title">Textile Washing &amp; Treatment</div>
-        <p class="ind-card-sum">Sodium metabisulfite and specialty processing chemicals for garment washing plants: clean bleach neutralisation, controlled denim fading, and fabric pre-treatment.</p>
-        <div class="ind-card-tags"><span class="ic-tag">Garment Washing</span><span class="ic-tag">Denim Fading</span></div>
-        <div class="ind-card-link">Explore Industry <span>→</span></div>
+      <div class="ic-body">
+        <h3 class="ic-title">Textile Washing &amp; Treatment</h3>
+        <p class="ic-sum">Sodium metabisulfite for garment washing plants, from bleach neutralisation to denim fading.</p>
+        <ul class="ic-svc"><li><span class="ic-check" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.2 10,3.2"/></svg></span>Garment Washing</li><li><span class="ic-check" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.2 10,3.2"/></svg></span>Denim Fading</li><li><span class="ic-check" aria-hidden="true"><svg viewBox="0 0 12 12"><polyline points="2,6.5 5,9.2 10,3.2"/></svg></span>Bleach Neutralisation</li></ul>
+        <div class="ic-foot"><span>Explore industry</span><span class="ic-go" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M3 8h10M9 4l4 4-4 4"/></svg></span></div>
       </div>
-    </div>
+    </a>
 
   </div>
 </section>
@@ -1360,7 +1400,7 @@ const statsEl=document.getElementById('stats');if(statsEl)cntObs.observe(statsEl
   const car=document.getElementById('ind-carousel');
   const prev=document.getElementById('ind-prev');
   const next=document.getElementById('ind-next');
-  const W=396;
+  const W=(car.querySelector('.ind-card')?.offsetWidth||380)+20;
   function upd(){prev.disabled=car.scrollLeft<=2;next.disabled=car.scrollLeft+car.clientWidth>=car.scrollWidth-2;}
   prev.onclick=()=>{car.scrollBy({left:-W,behavior:'smooth'});setTimeout(upd,400);};
   next.onclick=()=>{car.scrollBy({left:W,behavior:'smooth'});setTimeout(upd,400);};
