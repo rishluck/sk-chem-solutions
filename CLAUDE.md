@@ -168,6 +168,10 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - Plays once per browser session (`sessionStorage` key `skIntro`); a timeout removes it at 2.6s as a safety net
 - Hidden for `prefers-reduced-motion: reduce`
 
+## Enquiry Form (index.html #contact)
+- Required (client, Oct 2026): Name, Email, Mobile / WhatsApp (red `*`, inline `.ferr` messages, `.bad` red outline, validated in `sf()`: email format, mobile ≥9 digits). Company, Industry, Requirements are optional
+- ⚠️ `sf()` only shows the thank-you message; the enquiry is NOT sent anywhere yet (no backend / form service connected)
+
 ## Phone Lines (client, Oct 2026)
 - +94 777 598 284: Rubber & Latex, Textile Washing
 - +94 777 414 367: all other industries (Personal Care, Food & Beverage, Pharmaceutical)

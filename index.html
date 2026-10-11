@@ -558,6 +558,10 @@ button{font-family:'Poppins',sans-serif;cursor:pointer;border:none;background:no
 .fg input:focus,.fg select:focus,.fg textarea:focus{
   border-color:var(--lime);box-shadow:0 0 0 3px rgba(168,212,0,.15)}
 .fg textarea{resize:vertical;min-height:110px}
+.req{color:#D93A3A;margin-left:2px}
+.ferr{display:block;min-height:0;font-size:12px;color:#D93A3A;margin-top:5px;font-weight:500}
+.ferr:empty{display:none}
+.fg input.bad{border-color:#E05555!important;box-shadow:0 0 0 4px rgba(224,85,85,.12)!important;background-color:#fff}
 .fsub{width:100%;padding:14px;
   background:linear-gradient(135deg,#01BF47,#89FA58,#D3FF87);color:#0a2e18;
   border:none;border-radius:8px;font-size:14px;font-weight:700;cursor:pointer;
@@ -1313,15 +1317,15 @@ setTimeout(function(){var el=document.getElementById('intro');if(el)el.remove()}
         <div class="fbox">
           <div id="fw">
             <div class="frow">
-              <div class="fg"><label>Your Name</label><input type="text" id="fn" placeholder="e.g. Kamal Silva" required></div>
+              <div class="fg"><label for="fn">Your Name <span class="req" aria-hidden="true">*</span></label><input type="text" id="fn" placeholder="e.g. Kamal Silva" required aria-required="true" autocomplete="name"><span class="ferr" id="fn-err"></span></div>
               <div class="fg"><label>Company</label><input type="text" id="fc" placeholder="Your Company Ltd"></div>
             </div>
             <div class="frow">
-              <div class="fg"><label>Email</label><input type="email" id="fe" placeholder="you@company.lk" required></div>
-              <div class="fg"><label>Phone / WhatsApp</label><input type="tel" id="fp2" placeholder="+94 77 XXX XXXX"></div>
+              <div class="fg"><label for="fe">Email <span class="req" aria-hidden="true">*</span></label><input type="email" id="fe" placeholder="you@company.lk" required aria-required="true" autocomplete="email"><span class="ferr" id="fe-err"></span></div>
+              <div class="fg"><label for="fp2">Mobile / WhatsApp <span class="req" aria-hidden="true">*</span></label><input type="tel" id="fp2" placeholder="+94 77 XXX XXXX" required aria-required="true" autocomplete="tel"><span class="ferr" id="fp2-err"></span></div>
             </div>
             <div class="fg"><label>Industry</label><select id="fi"><option value="">Select your industry</option><option>Rubber &amp; Latex</option><option>Home &amp; Personal Care</option><option>Food &amp; Beverage Industry</option><option>Pharmaceutical</option><option>Textile Washing &amp; Treatment</option><option>Other</option></select></div>
-            <div class="fg"><label>Your Requirements</label><textarea id="fm" rows="4" placeholder="Tell us about your raw material requirements..." required></textarea></div>
+            <div class="fg"><label>Your Requirements</label><textarea id="fm" rows="4" placeholder="Tell us about your raw material requirements..."></textarea></div>
             <button class="fsub" onclick="sf()">Send Enquiry →</button>
           </div>
           <div class="f-ok" id="fok"><span class="f-ok-ico">✅</span><p>Thank you! We'll be in touch within one business day.</p></div>
@@ -1388,6 +1392,7 @@ const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting)e.tar
 document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 function animCount(el,val,suf,dur){const s=performance.now();(function tick(now){const p=Math.min((now-s)/dur,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(val*e)+(p<1?'':suf);p<1?requestAnimationFrame(tick):el.textContent=val+suf;})(s);}
 const cntObs=new IntersectionObserver(es=>{if(es[0].isIntersecting){document.querySelectorAll('[data-count]').forEach(el=>animCount(el,+el.dataset.count,el.dataset.suf||'',1600));cntObs.disconnect();}},{threshold:.6});
+['fn','fe','fp2'].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('input',()=>{if(el.classList.contains('bad')){el.classList.remove('bad');el.removeAttribute('aria-invalid');document.getElementById(id+'-err').textContent='';}});});
 const statsEl=document.getElementById('stats');if(statsEl)cntObs.observe(statsEl);
 /* ── Industries carousel ── */
 (function(){
@@ -1440,7 +1445,16 @@ const indData={rubber:{eyebrow:'Core Industry · Biggest Sector',img:'Images/All
 function openIndPanel(key){const d=indData[key];if(!d)return;document.getElementById('ind-panel-img').src=d.img;document.getElementById('ind-panel-eyebrow').textContent=d.eyebrow;document.getElementById('ind-panel-h').innerHTML=d.name;document.getElementById('ind-panel-desc').textContent=d.desc;document.getElementById('ind-panel-chems').innerHTML=d.chems.map(c=>`<span class="ind-chem-pill">${c}</span>`).join('');document.getElementById('ind-panel-uses').innerHTML=d.uses.map(u=>`<div class="ind-use"><span class="ind-use-ico">${u.ico}</span><div><span class="ind-use-t">${u.t}</span><span class="ind-use-s">${u.s}</span></div></div>`).join('');document.getElementById('ind-panel').classList.add('open');document.getElementById('ind-backdrop').classList.add('open');document.body.style.overflow='hidden';}
 function closeIndPanel(){document.getElementById('ind-panel').classList.remove('open');document.getElementById('ind-backdrop').classList.remove('open');document.body.style.overflow='';}
 function burst(){const cols=['#A8D400','#C2EC00','#fff','#86AB00','#F2FBCC'];for(let i=0;i<65;i++){const c=document.createElement('div');c.className='conf';const ang=(Math.random()*360)*Math.PI/180,dist=80+Math.random()*120;c.style.cssText=`left:${38+Math.random()*24}%;top:${42+Math.random()*16}%;background:${cols[i%cols.length]};border-radius:${Math.random()>.5?'50%':'2px'};width:${5+Math.random()*6}px;height:${5+Math.random()*6}px;--cd:${1+Math.random()*1.5}s;--cdl:${Math.random()*.35}s;--cx:${Math.cos(ang)*dist}px`;document.body.appendChild(c);setTimeout(()=>c.remove(),2500);}}
-function sf(){if(!document.getElementById('fn').value.trim()||!document.getElementById('fe').value.trim()||!document.getElementById('fm').value.trim()){alert('Please fill in your name, email and message.');return;}burst();setTimeout(()=>{document.getElementById('fw').style.display='none';document.getElementById('fok').style.display='block';},300);}
+function sf(){
+  const v=id=>document.getElementById(id).value.trim();
+  const checks=[
+    ['fn',v('fn').length>=2,'Please enter your name.'],
+    ['fe',/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v('fe')),v('fe')?'Please enter a valid email address.':'Please enter your email.'],
+    ['fp2',(v('fp2').replace(/[^0-9]/g,'').length>=9)&&/^\+?[0-9\s()-]+$/.test(v('fp2')),v('fp2')?'Please enter a valid mobile number.':'Please enter your mobile number.']];
+  let first=null;
+  checks.forEach(([id,ok,msg])=>{const el=document.getElementById(id),er=document.getElementById(id+'-err');
+    el.classList.toggle('bad',!ok);el.setAttribute('aria-invalid',!ok);er.textContent=ok?'':msg;if(!ok&&!first)first=el;});
+  if(first){first.focus();return;}burst();setTimeout(()=>{document.getElementById('fw').style.display='none';document.getElementById('fok').style.display='block';},300);}
 document.querySelectorAll('.ic').forEach(el=>{el.setAttribute('role','link');el.setAttribute('tabindex','0');el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});});
 </script>
 </body>
