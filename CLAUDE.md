@@ -169,7 +169,9 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - Hidden for `prefers-reduced-motion: reduce`
 
 ## Enquiry Form (index.html #contact)
-- Required (client, Oct 2026): Name, Email, Mobile / WhatsApp (red `*`, inline `.ferr` messages, `.bad` red outline, validated in `sf()`: email format, mobile ≥9 digits). Company, Industry, Requirements are optional
+- Required (client, Oct 2026): Name, Email, Mobile / WhatsApp (red `*`, inline `.ferr` messages, `.bad` red outline). Company, Industry, Requirements are optional
+- Validation (`chk(id)`, runs on blur and on Send): email via `emailOk()` (proper local@domain.tld, no double dots, TLD ≥2 letters); mobile via `telInfo()` against the `CC` table (country → [dial code, min len, max len, first-digit pattern, name]) — strips trunk 0, accepts +code typed in the box, rejects a +code that doesn't match the chosen country
+- Country code picker `#fcc` (45 countries, default 🇱🇰 +94) sits inside the mobile field (`.ftel`); the visible `#fcc-lbl` shows flag + code, the real `<select>` is transparent on top. Typing/pasting `+44…` auto-selects the matching country. `telInfo().e164` gives the full number (e.g. +94771234567) for when a form backend is connected
 - ⚠️ `sf()` only shows the thank-you message; the enquiry is NOT sent anywhere yet (no backend / form service connected)
 
 ## Phone Lines (client, Oct 2026)
