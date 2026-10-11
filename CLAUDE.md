@@ -187,6 +187,9 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - 5 industries (Rubber & Latex, Home & Personal Care, Food & Beverage, Pharmaceutical, Textile Washing & Treatment)
 - Suppliers: BASF (Germany, China), Vance Group (Malaysia), SK Pickglobal (Korea), LG Chem (Korea), LUXI (China, details/logo to confirm)
 
+## Footer (unified, Oct 2026)
+- Same `<footer class="site-ft">` on all 3 pages: SK mark logo + name (links home), tagline, Company / Industries / Contact columns (both phone lines labelled), © year, 3 pills. Styles in the "FOOTER (unified…)" CSS block at the end of each page's `<style>`; keep the three copies in sync. Links on about/industry use `index.html#…`
+
 ## Footer year
 - Copyright year is `<span class="cy">` filled with the current year by a one-line script before `</body>` on all 3 pages
 

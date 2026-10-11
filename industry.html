@@ -460,6 +460,28 @@ footer{background:#0B120E}
   #nav .hbg{display:flex}.mob{display:flex}
   #nav .nav-logo{height:42px}
 }
+
+/* ════════════════════ FOOTER (unified across all pages, Oct 2026) ════════════════════ */
+footer.site-ft{background:#0B120E;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem;font-family:'Inter',system-ui,sans-serif}
+.site-ft .ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;padding-bottom:2.5rem;border-bottom:1px solid rgba(255,255,255,.07)}
+.site-ft .ft-logo{display:inline-flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.site-ft .ft-mark-img{height:36px;width:auto;display:block}
+.site-ft .ft-name{font-family:'Poppins',sans-serif;font-size:18px;font-weight:600;letter-spacing:-.015em;color:#fff}
+.site-ft .ft-tag{font-size:13.5px;color:rgba(255,255,255,.55);line-height:1.75;max-width:280px}
+.site-ft .ft-col h5{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:1rem}
+.site-ft .ft-col ul{list-style:none;margin:0;padding:0}
+.site-ft .ft-col li{margin-bottom:.55rem}
+.site-ft .ft-col a{font-size:13.5px;color:rgba(255,255,255,.7);transition:color .25s}
+.site-ft .ft-col a:hover{color:#7EEB5C}
+.site-ft .ft-tel-l{display:block;font-size:11px;color:rgba(255,255,255,.38);margin-top:1px}
+.site-ft .ft-btm{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;padding-top:1.75rem}
+.site-ft .ft-copy{font-size:12.5px;color:rgba(255,255,255,.42);margin:0}
+.site-ft .ft-pills{display:flex;gap:.5rem;flex-wrap:wrap}
+.site-ft .ft-pill{font-size:11.5px;padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.05);color:rgba(255,255,255,.55);
+  border:1px solid rgba(255,255,255,.1);transition:all .25s}
+.site-ft .ft-pill:hover{border-color:rgba(126,235,92,.45);color:#7EEB5C}
+@media(max-width:960px){.site-ft .ft-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.site-ft .ft-grid{grid-template-columns:1fr;gap:2rem}}
 </style>
 </head>
 <body>
@@ -570,35 +592,19 @@ footer{background:#0B120E}
 </section>
 
 <!-- FOOTER -->
-<footer>
+<footer class="site-ft">
   <div class="W">
     <div class="ft-grid">
       <div>
-        <div class="ft-logo"><img src="Logo/sk-chem-mark.png" alt="" class="ft-mark-img"><span class="ft-name">S.K. Chem Solutions</span></div>
-        <p class="ft-tag">Connecting Industries with Quality Solutions since 2017. Your trusted partner for premium raw materials, delivered with consistency and care.</p>
+        <a href="index.html" class="ft-logo"><img src="Logo/sk-chem-mark.png" alt="" class="ft-mark-img"><span class="ft-name">S.K. Chem Solutions</span></a>
+        <p class="ft-tag">Connecting Industries with Quality Solutions since 2017. Your trusted partner for premium raw materials, delivered with consistency and care for the environment.</p>
       </div>
-      <div class="ft-col"><h5>Company</h5><ul>
-        <li><a href="index.html#about">About Us</a></li>
-        <li><a href="index.html#vm">Vision &amp; Mission</a></li>
-        <li><a href="index.html#sustain">Sustainability</a></li>
-        <li><a href="index.html#contact">Contact</a></li>
-      </ul></div>
-      <div class="ft-col"><h5>Products</h5><ul>
-        <li><a href="index.html#flagship">Formic Acid</a></li>
-        <li><a href="index.html#flagship">Sodium Metabisulfite</a></li>
-        <li><a href="index.html#products">Personal Care</a></li>
-        <li><a href="index.html#products">Food Grade</a></li>
-      </ul></div>
-      <div class="ft-col"><h5>Industries</h5><ul>
-        <li><a href="industry.html?ind=rubber">Rubber &amp; Latex</a></li>
-        <li><a href="industry.html?ind=personal">Home &amp; Personal Care</a></li>
-        <li><a href="industry.html?ind=food">Food &amp; Beverage Industry</a></li>
-        <li><a href="industry.html?ind=pharma">Pharmaceutical</a></li>
-        <li><a href="industry.html?ind=textile">Textile Washing &amp; Treatment</a></li>
-      </ul></div>
+      <div class="ft-col"><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="about.html#vm">Vision &amp; Mission</a></li><li><a href="about.html#sustain">Sustainability</a></li><li><a href="index.html#csr">Social Responsibility</a></li><li><a href="index.html#contact">Contact</a></li></ul></div>
+      <div class="ft-col"><h5>Industries</h5><ul><li><a href="industry.html?ind=rubber">Rubber &amp; Latex</a></li><li><a href="industry.html?ind=personal">Home &amp; Personal Care</a></li><li><a href="industry.html?ind=food">Food &amp; Beverage</a></li><li><a href="industry.html?ind=pharma">Pharmaceutical</a></li><li><a href="industry.html?ind=textile">Textile Washing &amp; Treatment</a></li></ul></div>
+      <div class="ft-col"><h5>Contact</h5><ul><li><a href="index.html#contact">Send Enquiry</a></li><li><a href="tel:+94777598284">+94 777 598 284</a><span class="ft-tel-l">Rubber · Textile</span></li><li><a href="tel:+94777414367">+94 777 414 367</a><span class="ft-tel-l">Other industries</span></li><li><a href="mailto:gimith@skchemsolutions.lk">Email Us</a></li><li><a href="index.html#partners">Our Partners</a></li></ul></div>
     </div>
     <div class="ft-btm">
-      <p class="ft-copy">&copy; <span class="cy">2026</span> S.K. Chem Solutions · Battaramulla, Sri Lanka</p>
+      <p class="ft-copy">&copy; <span class="cy">2026</span> S.K. Chem Solutions · No 6, Lakshapana Mawatha, Battaramulla, Sri Lanka</p>
       <div class="ft-pills"><span class="ft-pill">🌿 Eco Responsible</span><span class="ft-pill">🤝 Trusted Partner</span><span class="ft-pill">🌍 Global Sourcing</span></div>
     </div>
   </div>
