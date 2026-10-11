@@ -598,7 +598,7 @@ footer{background:#0B120E}
       </ul></div>
     </div>
     <div class="ft-btm">
-      <p class="ft-copy">&copy; 2025 S.K. Chem Solutions · Battaramulla, Sri Lanka</p>
+      <p class="ft-copy">&copy; <span class="cy">2026</span> S.K. Chem Solutions · Battaramulla, Sri Lanka</p>
       <div class="ft-pills"><span class="ft-pill">🌿 Eco Responsible</span><span class="ft-pill">🤝 Trusted Partner</span><span class="ft-pill">🌍 Global Sourcing</span></div>
     </div>
   </div>
@@ -991,5 +991,6 @@ setTimeout(()=>{
   if(grid) appObs.observe(grid);
 },100);
 </script>
+<script>document.querySelectorAll('.cy').forEach(e=>e.textContent=new Date().getFullYear())</script>
 </body>
 </html>

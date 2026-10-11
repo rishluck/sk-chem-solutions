@@ -1393,7 +1393,7 @@ setTimeout(function(){var el=document.getElementById('intro');if(el)el.remove()}
       <div class="ft-col"><h5>Contact</h5><ul><li><a href="#contact">Send Enquiry</a></li><li><a href="tel:+94777598284">+94 777 598 284</a><span class="ft-tel-l">Rubber · Textile</span></li><li><a href="tel:+94777414367">+94 777 414 367</a><span class="ft-tel-l">Other industries</span></li><li><a href="mailto:gimith@skchemsolutions.lk">Email Us</a></li><li><a href="#partners">Our Partners</a></li></ul></div>
     </div>
     <div class="ft-btm">
-      <p class="ft-copy">&copy; 2025 S.K. Chem Solutions · No 6, Lakshapana Mawatha, Battaramulla, Sri Lanka</p>
+      <p class="ft-copy">&copy; <span class="cy">2026</span> S.K. Chem Solutions · No 6, Lakshapana Mawatha, Battaramulla, Sri Lanka</p>
       <div class="ft-pills"><span class="ft-pill">🌿 Eco Responsible</span><span class="ft-pill">🤝 Trusted Partner</span><span class="ft-pill">🌍 Global Sourcing</span></div>
     </div>
   </div>
@@ -1528,5 +1528,6 @@ function sf(){
   if(first){first.focus();return;}burst();setTimeout(()=>{document.getElementById('fw').style.display='none';document.getElementById('fok').style.display='block';},300);}
 document.querySelectorAll('.ic').forEach(el=>{el.setAttribute('role','link');el.setAttribute('tabindex','0');el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});});
 </script>
+<script>document.querySelectorAll('.cy').forEach(e=>e.textContent=new Date().getFullYear())</script>
 </body>
 </html>
