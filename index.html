@@ -5,6 +5,20 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="S.K. Chem Solutions is Sri Lanka's trusted B2B importer of premium chemical raw materials since 2017.">
+<meta name="theme-color" content="#0E1712">
+<link rel="canonical" href="https://rishluck.github.io/sk-chem-solutions/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="S.K. Chem Solutions">
+<meta property="og:title" content="S.K. Chem Solutions | Quality Raw Materials in Sri Lanka">
+<meta property="og:description" content="Sri Lanka's trusted B2B importer of premium chemical raw materials since 2017. BASF, LG Chem, Vance Group and SK Pickglobal products for rubber, personal care, food, pharma and textile.">
+<meta property="og:url" content="https://rishluck.github.io/sk-chem-solutions/">
+<meta property="og:image" content="https://rishluck.github.io/sk-chem-solutions/Images/All/og-share.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="S.K. Chem Solutions | Quality Raw Materials in Sri Lanka">
+<meta name="twitter:description" content="Sri Lanka's trusted B2B importer of premium chemical raw materials since 2017. BASF, LG Chem, Vance Group and SK Pickglobal products for rubber, personal care, food, pharma and textile.">
+<meta name="twitter:image" content="https://rishluck.github.io/sk-chem-solutions/Images/All/og-share.jpg">
 <title>S.K. Chem Solutions | Quality Raw Materials in Sri Lanka</title>
 <link rel="icon" type="image/png" href="Logo/favicon.png">
 <link rel="apple-touch-icon" href="Logo/apple-touch-icon.png">
@@ -963,6 +977,25 @@ footer.site-ft{background:#0B120E;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem;font-f
 .site-ft .ft-pill:hover{border-color:rgba(126,235,92,.45);color:#7EEB5C}
 @media(max-width:960px){.site-ft .ft-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:600px){.site-ft .ft-grid{grid-template-columns:1fr;gap:2rem}}
+
+/* ════════════════════ WHATSAPP BUTTON (all pages) ════════════════════ */
+.wa-fab{position:fixed;right:20px;bottom:20px;z-index:950;font-family:'Inter',system-ui,sans-serif}
+.wa-btn{width:58px;height:58px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;
+  background:#25D366;box-shadow:0 8px 24px rgba(37,211,102,.4),0 2px 6px rgba(0,0,0,.15);transition:transform .3s cubic-bezier(.22,1,.36,1),box-shadow .3s}
+.wa-btn:hover{transform:scale(1.07);box-shadow:0 12px 30px rgba(37,211,102,.5),0 2px 6px rgba(0,0,0,.15)}
+.wa-btn svg{width:30px;height:30px;fill:#fff}
+.wa-pop{position:absolute;right:0;bottom:72px;width:268px;background:#fff;border-radius:18px;padding:14px;border:1px solid #ECF1EB;
+  box-shadow:0 4px 8px rgba(16,24,20,.04),0 24px 56px rgba(16,24,20,.18);opacity:0;transform:translateY(8px);pointer-events:none;transition:all .25s}
+.wa-fab.open .wa-pop{opacity:1;transform:none;pointer-events:auto}
+.wa-pop-h{font-size:13px;font-weight:600;color:#141a16;margin:2px 4px 10px}
+.wa-opt{display:flex;align-items:center;gap:10px;padding:10px;border-radius:12px;color:#141a16;transition:background .2s}
+.wa-opt:hover{background:#F1F8F3}
+.wa-opt-ic{width:34px;height:34px;flex-shrink:0;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center}
+.wa-opt-ic svg{width:18px;height:18px;fill:#fff}
+.wa-opt b{display:block;font-size:13.5px;font-weight:600}
+.wa-opt span span{display:block;font-size:11.5px;color:#5B6660}
+.wa-opt .wa-opt-ic{display:flex}
+@media(max-width:600px){.wa-fab{right:14px;bottom:14px}.wa-btn{width:54px;height:54px}}
 </style>
 </head>
 <body>
@@ -1551,5 +1584,17 @@ function sf(){
 document.querySelectorAll('.ic').forEach(el=>{el.setAttribute('role','link');el.setAttribute('tabindex','0');el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();el.click();}});});
 </script>
 <script>document.querySelectorAll('.cy').forEach(e=>e.textContent=new Date().getFullYear())</script>
+<div class="wa-fab" id="waFab">
+  <div class="wa-pop" role="dialog" aria-label="Chat on WhatsApp">
+    <div class="wa-pop-h">Chat with us on WhatsApp</div>
+    <a class="wa-opt" href="https://wa.me/94777598284?text=Hello%20S.K.%20Chem%20Solutions%2C%20I%20would%20like%20to%20enquire%20about%20your%20raw%20materials." target="_blank" rel="noopener"><span class="wa-opt-ic"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.2-3.8 1.2 1.2-3.7-.3-.4a10.6 10.6 0 0 1-1.7-5.8C5.1 10 10 5.2 16 5.2S26.9 10 26.9 15.8 22 26.4 16 26.4zm6-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.1 1.4 3.4c.2.2 2.3 3.5 5.6 4.9 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg></span><span><b>Rubber &amp; Textile</b><span>+94 777 598 284</span></span></a>
+    <a class="wa-opt" href="https://wa.me/94777414367?text=Hello%20S.K.%20Chem%20Solutions%2C%20I%20would%20like%20to%20enquire%20about%20your%20raw%20materials." target="_blank" rel="noopener"><span class="wa-opt-ic"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.2-3.8 1.2 1.2-3.7-.3-.4a10.6 10.6 0 0 1-1.7-5.8C5.1 10 10 5.2 16 5.2S26.9 10 26.9 15.8 22 26.4 16 26.4zm6-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.1 1.4 3.4c.2.2 2.3 3.5 5.6 4.9 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg></span><span><b>Other industries</b><span>+94 777 414 367</span></span></a>
+  </div>
+  <button class="wa-btn" id="waBtn" aria-label="Chat on WhatsApp" aria-expanded="false"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2c2 1.1 4.3 1.7 6.6 1.7 7.2 0 13-5.7 13-12.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.2-3.8 1.2 1.2-3.7-.3-.4a10.6 10.6 0 0 1-1.7-5.8C5.1 10 10 5.2 16 5.2S26.9 10 26.9 15.8 22 26.4 16 26.4zm6-7.9c-.3-.2-1.9-.9-2.2-1s-.5-.2-.7.2-.8 1-1 1.2-.4.2-.7.1a8.8 8.8 0 0 1-4.4-3.8c-.3-.6.3-.5 1-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4s-1.2 1.1-1.2 2.7 1.2 3.1 1.4 3.4c.2.2 2.3 3.5 5.6 4.9 2.1.9 2.9 1 4 .8.6-.1 1.9-.8 2.2-1.5.3-.8.3-1.4.2-1.5-.1-.2-.3-.3-.6-.4z"/></svg></button>
+</div>
+<script>(function(){const f=document.getElementById('waFab'),b=document.getElementById('waBtn');
+b.addEventListener('click',e=>{e.stopPropagation();const o=f.classList.toggle('open');b.setAttribute('aria-expanded',o);});
+document.addEventListener('click',e=>{if(!f.contains(e.target)){f.classList.remove('open');b.setAttribute('aria-expanded','false');}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')f.classList.remove('open');});})();</script>
 </body>
 </html>
