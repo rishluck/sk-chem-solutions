@@ -39,22 +39,22 @@ All images are now local — zero loremflickr usage remaining.
 | `Images/All/green-plant-leaves-with-blue-sky-background.jpg` | Sustainability section background |
 | `Images/Industries/Rubber/formic-acid-carboys-warehouse.png` | No longer used (AI-style image without BASF logo, removed from the Latex Coagulation slider Oct 2026) |
 | `Images/Industries/Rubber/basf-sodium-metabisulfite-bag-wide.jpg` | Rubber chems[1] Crepe Rubber Preservation, 2nd slide. Made from `basf-sodium-metabisulphite-bag.png` on a 3:2 white canvas so the whole BASF bag shows |
-| `Images/Industries/Rubber/rubber-sheets-preservation.png` | Rubber chems[1] Crepe Rubber Preservation |
+| `Images/Industries/Rubber/rubber-sheets-preservation.jpg` | Rubber chems[1] Crepe Rubber Preservation |
 | `Images/Industries/Rubber/basf-formic-acid-85-carboy-wide.jpg` | Rubber chems[0] Latex Coagulation, 2nd slide (slider has exactly 2 images). Made from `basf-formic-acid-85-carboy.jpg` (real BASF carboy, portrait) centred on a 3:2 canvas with blurred sides, so the WHOLE bottle shows in the normal cover-cropped box on desktop and mobile (client wants the full bottle visible, no viewer) |
 | `Images/Industries/Rubber/zuniar-ayu-DwyeIjDscCc-unsplash.jpg` | Rubber chems[2] Latex Transport |
 | `Images/Industries/Rubber/basf-sodium-sulfite-bag-wide.jpg` | Rubber chems[2] Latex Transport, 2nd slide. Made from `basf-sodium-sulfite-bag.jpg` on a 3:2 canvas with blurred sides so the whole BASF bag shows |
-| `Images/Industries/Personal Care/personal-care-vanity-flatlay.png` | Personal Care card (homepage), personal industry.html hero |
+| `Images/Industries/Personal Care/personal-care-vanity-flatlay.jpg` | Personal Care card (homepage), personal industry.html hero |
 | `Images/Industries/Personal Care/foam-bath-rich-lather.jpg` | Personal chems[2] CDE Foam Boosting row |
-| `Images/Industries/Personal Care/shampoo-body-wash-shower.png` | Personal chems[0] Shampoo & Body Wash row |
-| `Images/Industries/Personal Care/skincare-cream-serum-formulation.png` | Personal chems[1] Premium Skincare & Anti-Aging row |
-| `Images/Industries/Personal Care/natural-beauty-jasmine-spa.png` | Personal chems[4] Natural Beauty row |
-| `Images/Industries/Personal Care/hand-sanitiser-production-line.png` | Personal chems[3] Hand Sanitiser row |
-| `Images/Industries/Personal Care/dishwashing-surface-cleaning.png` | Personal chems[5] Home Care Products row |
+| `Images/Industries/Personal Care/shampoo-body-wash-shower.jpg` | Personal chems[0] Shampoo & Body Wash row |
+| `Images/Industries/Personal Care/skincare-cream-serum-formulation.jpg` | Personal chems[1] Premium Skincare & Anti-Aging row |
+| `Images/Industries/Personal Care/natural-beauty-jasmine-spa.jpg` | Personal chems[4] Natural Beauty row |
+| `Images/Industries/Personal Care/hand-sanitiser-production-line.jpg` | Personal chems[3] Hand Sanitiser row |
+| `Images/Industries/Personal Care/dishwashing-surface-cleaning.jpg` | Personal chems[5] Home Care Products row |
 | `Images/Industries/Home Care/puroclean-of-fort-worth--dc38HdQR1M-unsplash.jpg` | Personal chems[6] Detergent Stability row |
-| `Images/Industries/Food Industry/fresh-fruit-juices-beverages.png` | Food industry card (homepage), food industry.html hero, food chems[0] Beverage & Fruit Juice Preservation |
-| `Images/Industries/Food Industry/bakery-bread-pastries-assortment.png` | Food chems[1] Bakery row |
+| `Images/Industries/Food Industry/fresh-fruit-juices-beverages.jpg` | Food industry card (homepage), food industry.html hero, food chems[0] Beverage & Fruit Juice Preservation |
+| `Images/Industries/Food Industry/bakery-bread-pastries-assortment.jpg` | Food chems[1] Bakery row |
 | `Images/Industries/Food Industry/confectionery-candies-glazed.jpg` | Food chems[2] Confectionery Glazing (Liquid Shellac) |
-| `Images/Industries/Food Industry/honey-dates-natural-sweeteners.png` | Food chems[3] Natural Sweetening  |
+| `Images/Industries/Food Industry/honey-dates-natural-sweeteners.jpg` | Food chems[3] Natural Sweetening  |
 | `Images/Industries/Pharmaceutical/toon-lambrechts-RkG7wp75b48-unsplash.jpg` | Pharma card (homepage), pharma industry.html hero, pharma chems[0] GMP |
 | `Images/Industries/Pharmaceutical/oral-syrup-formulation-lab.jpg` | Pharma chems[1] Oral Liquid & Syrup row |
 | `Images/Industries/Pharmaceutical/crystalweed-cannabis-XYGuytPoYHI-unsplash.jpg` | Pharma chems[2] Solid Dosage |
