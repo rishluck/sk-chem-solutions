@@ -299,6 +299,17 @@ nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 2px 24px rgba(0,0,0,.
   .sp{flex:0 0 72%;scroll-snap-align:start}.sp:hover{transform:none}
   .sp-dots{display:flex}
 }
+
+/* ── WHY S.K. CHEM cards (Oct 2026) ── */
+.why-wrap{grid-template-columns:repeat(3,1fr);gap:18px}
+.why-card{flex-direction:column;gap:16px;padding:26px 24px;border-radius:22px;border:1px solid var(--line);background:#fff;box-shadow:var(--pc-sh);
+  transition:transform .45s var(--ease),box-shadow .45s var(--ease),border-color .45s}
+.why-card:hover{background:#fff;transform:translateY(-5px);box-shadow:var(--pc-sh-lg);border-color:transparent}
+.why-ico{width:50px;height:50px;border-radius:16px;background:#EAF7EF;border:1px solid #CDEBD6;font-size:1.35rem}
+.why-t{font-family:'Poppins',sans-serif;font-size:1.05rem;font-weight:600;letter-spacing:-.015em;margin-bottom:6px}
+.why-s{font-size:13.5px;line-height:1.65;color:#5B6660}
+@media(max-width:900px){.why-wrap{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.why-wrap{grid-template-columns:1fr}.why-card{flex-direction:row;padding:20px}}
 </style>
 </head>
 <body>
@@ -348,7 +359,7 @@ nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 2px 24px rgba(0,0,0,.
         <div class="story-eyebrow">Our Story</div>
         <h2 class="story-h">Built on<br><em>long-term partnership</em></h2>
         <p class="story-p">S.K. Chem Solutions was established in 2017 as a B2B importer of premium chemical raw materials from the world's leading manufacturers, including BASF (Germany & China), LG Chem (Korea), Vance Group (Malaysia), and SK Pickglobal (Korea).</p>
-        <p class="story-p">We supply four key industries across Sri Lanka: Rubber & Latex, Home & Personal Care, Food & Beverage, and Pharmaceutical, providing the raw materials that manufacturers need to produce market-ready, quality products.</p>
+        <p class="story-p">We supply five key industries across Sri Lanka: Rubber & Latex, Home & Personal Care, Food & Beverage, Pharmaceutical, and Textile Washing & Treatment, providing the raw materials that manufacturers need to produce market-ready, quality products.</p>
         <p class="story-p">Every supply relationship is built on reliability, technical documentation, and genuine care for our clients' success. Not just a transaction.</p>
         <div class="story-tag">🌍 Sourced globally &nbsp;·&nbsp; 🤝 Delivered locally &nbsp;·&nbsp; 🌱 Sustainably minded</div>
       </div>
@@ -460,11 +471,11 @@ nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 2px 24px rgba(0,0,0,.
     <div class="why-wrap">
       <div class="why-card">
         <div class="why-ico">🗓️</div>
-        <div><div class="why-t">Established Since 2017</div><div class="why-s">7+ years of trusted, consistent supply to Sri Lankan manufacturers across six industries.</div></div>
+        <div><div class="why-t">Established Since 2017</div><div class="why-s">Nearly a decade of trusted, consistent supply to Sri Lankan manufacturers across five industries.</div></div>
       </div>
       <div class="why-card">
         <div class="why-ico">🌍</div>
-        <div><div class="why-t">Global Sourcing, Local Delivery</div><div class="why-s">Direct partnerships with BASF, LG Chem, Vance Group, and SK Pickglobal, the world's best manufacturers.</div></div>
+        <div><div class="why-t">Global Sourcing, Local Delivery</div><div class="why-s">Direct partnerships with BASF, LG Chem, Vance Group, SK Pickglobal and LUXI, the world's best manufacturers.</div></div>
       </div>
       <div class="why-card">
         <div class="why-ico">📋</div>

@@ -1072,13 +1072,13 @@ setTimeout(function(){var el=document.getElementById('intro');if(el)el.remove()}
   <div class="hsi"><div class="hsi-icon">📍</div><div><span class="hsi-t">Battaramulla, Sri Lanka</span><span class="hsi-s">Headquarters since 2017</span></div></div>
   <div class="hsi"><div class="hsi-icon">🌍</div><div><span class="hsi-t">6+ Global Suppliers</span><span class="hsi-s">BASF · LG Chem · Vance Group</span></div></div>
   <div class="hsi"><div class="hsi-icon">⚗️</div><div><span class="hsi-t">5 Industries Served</span><span class="hsi-s">Rubber · Personal Care · Food · Pharma · Textile</span></div></div>
-  <div class="hsi"><div class="hsi-icon">✅</div><div><span class="hsi-t">100% Quality Assured</span><span class="hsi-s">10+ years of trust</span></div></div>
+  <div class="hsi"><div class="hsi-icon">✅</div><div><span class="hsi-t">100% Quality Assured</span><span class="hsi-s">Trusted since 2017</span></div></div>
 </div>
 
 <!-- ══ STATS ══ -->
 <div id="stats">
   <div class="stats-row">
-    <div class="stat-item"><span class="stat-n" data-count="10" data-suf="+">10+</span><span class="stat-l">Years of Trust</span></div>
+    <div class="stat-item"><span class="stat-n" data-count="9" data-suf="+" data-since="2017">9+</span><span class="stat-l">Years of Trust</span></div>
     <div class="stat-item"><span class="stat-n" data-count="6" data-suf="+">6+</span><span class="stat-l">Global Suppliers</span></div>
     <div class="stat-item"><span class="stat-n" data-count="5" data-suf="">5</span><span class="stat-l">Industries Served</span></div>
     <div class="stat-item"><span class="stat-n" data-count="100" data-suf="%">100%</span><span class="stat-l">Quality Assured</span></div>
@@ -1091,13 +1091,13 @@ setTimeout(function(){var el=document.getElementById('intro');if(el)el.remove()}
     <div class="why-top rv">
       <p class="ey">Why Choose Us</p>
       <h2 class="why-h">Why <em>Choose Us</em></h2>
-      <p class="why-sub">Sri Lanka's most trusted chemical raw material partner for over a decade.</p>
+      <p class="why-sub">Sri Lanka's trusted chemical raw material partner since 2017.</p>
     </div>
     <div class="why-grid">
       <div class="why-card rv d1">
         <div class="why-icon">🤝</div>
         <h3 class="why-t">Tried and Trusted</h3>
-        <p class="why-s">Trusted by leading manufacturers for 10+ years. Consistent quality and supply you can rely on season after season.</p>
+        <p class="why-s">Trusted by leading manufacturers since 2017. Consistent quality and supply you can rely on season after season.</p>
       </div>
       <div class="why-card rv d2">
         <div class="why-icon">🌍</div>
@@ -1401,6 +1401,8 @@ document.querySelectorAll('.rv').forEach(el=>obs.observe(el));
 function animCount(el,val,suf,dur){const s=performance.now();(function tick(now){const p=Math.min((now-s)/dur,1),e=1-Math.pow(1-p,3);el.textContent=Math.round(val*e)+(p<1?'':suf);p<1?requestAnimationFrame(tick):el.textContent=val+suf;})(s);}
 const cntObs=new IntersectionObserver(es=>{if(es[0].isIntersecting){document.querySelectorAll('[data-count]').forEach(el=>animCount(el,+el.dataset.count,el.dataset.suf||'',1600));cntObs.disconnect();}},{threshold:.6});
 ['fn','fe','fp2'].forEach(id=>{const el=document.getElementById(id);if(el)el.addEventListener('input',()=>{if(el.classList.contains('bad')){el.classList.remove('bad');el.removeAttribute('aria-invalid');el.parentElement.classList.remove('bad');document.getElementById(id+'-err').textContent='';}});});
+/* Years of trust: always current (founded 2017) */
+document.querySelectorAll('[data-since]').forEach(el=>{const y=new Date().getFullYear()-(+el.dataset.since);el.dataset.count=y;el.textContent=y+(el.dataset.suf||'');});
 const statsEl=document.getElementById('stats');if(statsEl)cntObs.observe(statsEl);
 /* ── Industries carousel ── */
 (function(){

@@ -137,7 +137,8 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - Products & Services (redesign, Oct 2026): `.pc-grid` of 5 `.pc` industry cards in the same style as the homepage industry cards (photo + badge, title, 2-line summary, 3-service check list, "Key materials" box, Explore footer) + a dark `.pc-cta` "Need a specific material?" card. 3 cols → 2 (≤900px); on mobile (≤600px) it becomes a horizontal swipe row (`#pcGrid`, scroll-snap, cards 84% wide so the next one peeks) with progress dots `#pcDots`
 - Sustainability (`#sustain`) contrast refresh (Oct 2026): background photo blurred + deep green overlay, frosted dark cards (`.spt`) with 80% white text and circled icons, heading balanced (no `<br>`)
 - Suppliers (Oct 2026): `#spGrid` of 5 `.sp` cards, real logos from `Images/Partners/Global/` (one BASF card for 🇩🇪 Germany + 🇨🇳 China), country chips, product list. 5 in a row → 3+2 centred (≤1100px) → swipe row with dots `#spDots` (≤600px). LUXI Chemical shown with a text wordmark (no logo yet), country China and products "Chemical raw materials" — confirm with client
-- The rest of about.html has NOT had the modern refresh yet (still DM Sans, uppercase buttons, old gradients)
+- Why S.K. Chem: 6 white `.why-card`s, 3 cols → 2 (≤900px) → 1 (≤600px)
+- The rest of about.html (hero, story, V&M, CTA, nav) has NOT had the modern refresh yet (still DM Sans, uppercase buttons, old gradients)
 
 ## industry.html Structure
 - Single file serves all 5 industries via URL param `?ind=rubber`
@@ -180,6 +181,11 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - Validation (`chk(id)`, runs on blur and on Send): email via `emailOk()` (proper local@domain.tld, no double dots, TLD ≥2 letters); mobile via `telInfo()` against the `CC` table (country → [dial code, min len, max len, first-digit pattern, name]) — strips trunk 0, accepts +code typed in the box, rejects a +code that doesn't match the chosen country
 - Country code picker `#fcc` (45 countries, default 🇱🇰 +94) sits inside the mobile field (`.ftel`); the visible `#fcc-lbl` shows flag + code, the real `<select>` is transparent on top. Typing/pasting `+44…` auto-selects the matching country. `telInfo().e164` gives the full number (e.g. +94771234567) for when a form backend is connected
 - ⚠️ `sf()` only shows the thank-you message; the enquiry is NOT sent anywhere yet (no backend / form service connected)
+
+## Company Facts (keep consistent site-wide)
+- Founded 2017. Use "since 2017" in text; the homepage "Years of Trust" stat is computed live (`data-since="2017"` → current year − 2017, shown as e.g. 9+). Never hard-code "10+ years" / "over a decade"
+- 5 industries (Rubber & Latex, Home & Personal Care, Food & Beverage, Pharmaceutical, Textile Washing & Treatment)
+- Suppliers: BASF (Germany, China), Vance Group (Malaysia), SK Pickglobal (Korea), LG Chem (Korea), LUXI (China, details/logo to confirm)
 
 ## Phone Lines (client, Oct 2026)
 - +94 777 598 284: Rubber & Latex, Textile Washing
