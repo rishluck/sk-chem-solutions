@@ -132,6 +132,11 @@ Home Care content lives inside the `personal` industry entry (merged). Textile W
 
 Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, `vance-group.png`, `sk-pickglobal.png` (SK butterfly mark cropped from an SK telecom SVG — replace with an official SK Pickglobal logo if supplied), `lg-chem.svg`. Clearbit is no longer used (service shut down). LUXI Chemical has no logo yet.
 
+## about.html
+- Sections: hero, story, Vision & Mission (`#vm`), Products & Services, Why S.K. Chem, Sustainability (`#sustain`), suppliers, CTA, mini footer
+- Products & Services (redesign, Oct 2026): `.pc-grid` of 5 `.pc` industry cards in the same style as the homepage industry cards (photo + badge, title, 2-line summary, 3-service check list, "Key materials" box, Explore footer) + a dark `.pc-cta` "Need a specific material?" card. 3 cols → 2 (≤900px) → 1 (≤600px)
+- The rest of about.html has NOT had the modern refresh yet (still DM Sans, uppercase buttons, old gradients)
+
 ## industry.html Structure
 - Single file serves all 5 industries via URL param `?ind=rubber`
 - JS data object `IND` contains all industry content
