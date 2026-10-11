@@ -243,7 +243,18 @@ nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 2px 24px rgba(0,0,0,.
   color:#0a2e18;font-size:14px;font-weight:600;box-shadow:inset 0 1px 0 rgba(255,255,255,.35);transition:transform .35s var(--ease),box-shadow .35s var(--ease)}
 .pc-cta:hover .pc-cta-btn{transform:translateY(-2px);box-shadow:inset 0 1px 0 rgba(255,255,255,.35),0 10px 30px rgba(18,201,90,.35)}
 @media(max-width:900px){.pc-grid{grid-template-columns:1fr 1fr}}
-@media(max-width:600px){.pc-grid{grid-template-columns:1fr}.pc-cta-in{padding:28px 24px}}
+.pc-dots{display:none}
+@media(max-width:600px){
+  .pc-grid{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;
+    margin:0 calc(-1*clamp(1.5rem,5vw,4rem));padding:6px clamp(1.5rem,5vw,4rem) 18px;scroll-padding-left:clamp(1.5rem,5vw,4rem)}
+  .pc-grid::-webkit-scrollbar{display:none}
+  .pc{flex:0 0 84%;scroll-snap-align:start}
+  .pc:hover{transform:none}
+  .pc-cta-in{padding:28px 24px}
+  .pc-dots{display:flex;justify-content:center;gap:6px;margin-top:4px}
+  .pc-dots span{width:7px;height:7px;border-radius:999px;background:#D5DED6;transition:width .35s var(--ease),background .35s}
+  .pc-dots span.on{width:22px;background:#12C95A}
+}
 .srv-h{font-weight:700;letter-spacing:-.035em}
 .srv-h em{background:linear-gradient(120deg,#00A443 0%,#2FCB66 100%);-webkit-background-clip:text;background-clip:text}
 .srv-eyebrow{letter-spacing:.14em;font-weight:600;font-size:11.5px}
@@ -334,7 +345,7 @@ nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 2px 24px rgba(0,0,0,.
     <div class="srv-eyebrow">What We Enable</div>
     <h2 class="srv-h">Products &amp; <em>Services</em></h2>
     <p class="srv-sub">Key chemical raw materials we supply, sourced from world-class manufacturers, delivered with full documentation.</p>
-    <div class="pc-grid">
+    <div class="pc-grid" id="pcGrid">
       <a class="pc" href="industry.html?ind=rubber">
         <div class="pc-media"><img src="Images/All/isuru-ranasinha-AVhFLfD_Lv8-unsplash.jpg" alt="Rubber & Latex" loading="lazy"><span class="pc-badge">Core Sector</span></div>
         <div class="pc-body">
@@ -395,6 +406,7 @@ nav.scrolled{background:rgba(255,255,255,.96);box-shadow:0 2px 24px rgba(0,0,0,.
         </div>
       </a>
     </div>
+    <div class="pc-dots" id="pcDots" aria-hidden="true"></div>
   </div>
 </section>
 
@@ -493,6 +505,12 @@ const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>20),{passive:true});
 const hbg=document.getElementById('hbg'),mob=document.getElementById('mob');
 function cm(){mob.classList.remove('open');hbg.classList.remove('open')}
+/* Products & Services: swipe dots on mobile */
+(function(){const g=document.getElementById('pcGrid'),d=document.getElementById('pcDots');if(!g||!d)return;
+  const cards=[...g.children];d.innerHTML=cards.map(()=>'<span></span>').join('');const dots=[...d.children];
+  const upd=()=>{const x=g.scrollLeft+g.clientWidth*.3;let k=0;cards.forEach((c,i)=>{if(c.offsetLeft-g.offsetLeft<=x)k=i;});
+    if(g.scrollLeft+g.clientWidth>=g.scrollWidth-4)k=cards.length-1;dots.forEach((s,i)=>s.classList.toggle('on',i===k));};
+  g.addEventListener('scroll',upd,{passive:true});addEventListener('resize',upd);upd();})();
 hbg.addEventListener('click',()=>{const o=mob.classList.toggle('open');hbg.classList.toggle('open',o)});
 </script>
 </body>
