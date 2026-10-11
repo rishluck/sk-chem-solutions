@@ -359,6 +359,15 @@ body{font-family:'Inter',system-ui,sans-serif;letter-spacing:-.006em;color:#141a
 .ft-mini-brand{font-weight:600;letter-spacing:-.01em}
 .ft-mini-copy{color:rgba(255,255,255,.45)}
 
+/* Hero + story chips (wrap as whole items on mobile) */
+.ph-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:2.25rem}
+.ph-chip{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;padding:7px 14px;border-radius:999px;font-size:12.5px;font-weight:500;
+  color:rgba(255,255,255,.78);background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.16);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px)}
+.ph-chip-hl{color:#0a2e18;font-weight:600;background:linear-gradient(135deg,#12C95A 0%,#7EEB5C 100%);border-color:transparent}
+.story-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:.75rem}
+.story-chip{display:inline-flex;align-items:center;gap:6px;white-space:nowrap;padding:7px 14px;border-radius:999px;font-size:13px;font-weight:500;
+  color:#26302a;background:#fff;border:1px solid var(--line);box-shadow:var(--pc-sh)}
+
 /* ════════════════════ HEADER (unified across all pages, Oct 2026) ════════════════════ */
 #nav{height:72px;padding:0 clamp(1.5rem,4vw,4rem);background:rgba(255,255,255,.97);
   backdrop-filter:saturate(180%) blur(16px);-webkit-backdrop-filter:saturate(180%) blur(16px);
@@ -452,7 +461,7 @@ footer.site-ft{background:#0B120E;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem;font-f
     <div class="ph-eyebrow">Who We Are</div>
     <h1 class="ph-h">Rooted in trust.<br><em>Driven by quality.</em></h1>
     <p class="ph-sub">A trusted importer of premium chemical raw materials, enabling Sri Lanka's manufacturers to produce better products since 2017.</p>
-    <div class="ph-yr"><strong>Est. 2017</strong> · Battaramulla, Sri Lanka · B2B Supply Only</div>
+    <div class="ph-chips"><span class="ph-chip ph-chip-hl">Est. 2017</span><span class="ph-chip">📍 Battaramulla, Sri Lanka</span><span class="ph-chip">🤝 B2B Supply Only</span></div>
   </div>
 </section>
 
@@ -469,7 +478,7 @@ footer.site-ft{background:#0B120E;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem;font-f
         <p class="story-p">S.K. Chem Solutions was established in 2017 as a B2B importer of premium chemical raw materials from the world's leading manufacturers, including BASF (Germany & China), LG Chem (Korea), Vance Group (Malaysia), and SK Pickglobal (Korea).</p>
         <p class="story-p">We supply five key industries across Sri Lanka: Rubber & Latex, Home & Personal Care, Food & Beverage, Pharmaceutical, and Textile Washing & Treatment, providing the raw materials that manufacturers need to produce market-ready, quality products.</p>
         <p class="story-p">Every supply relationship is built on reliability, technical documentation, and genuine care for our clients' success. Not just a transaction.</p>
-        <div class="story-tag">🌍 Sourced globally &nbsp;·&nbsp; 🤝 Delivered locally &nbsp;·&nbsp; 🌱 Sustainably minded</div>
+        <div class="story-chips"><span class="story-chip">🌍 Sourced globally</span><span class="story-chip">🚚 Delivered locally</span><span class="story-chip">🌱 Sustainably minded</span></div>
       </div>
     </div>
   </div>
