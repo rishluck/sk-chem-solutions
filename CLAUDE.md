@@ -203,7 +203,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 ## Phone Lines (client, Oct 2026)
 - +94 777 598 284: Rubber & Latex, Textile Washing
 - +94 777 414 367: all other industries (Personal Care, Food & Beverage, Pharmaceutical)
-- Homepage contact block and footer label each number; industry.html CTA has a `#ctaTel` call button set by JS from the current industry
+- Homepage contact block and footer label each number; industry pages reach the right number through the WhatsApp button (the CTA call button was removed, client request)
 
 ## Navigation
 - **Header is identical on all 3 pages (Oct 2026):** `#nav` crisp white (97% opacity, fine bottom line, shadow when scrolled), logo 50px (42px ≤960px). Desktop: Home · About Us · Industries — logo — Partners · Gallery · Contact Us (`.n-cta` pill). Current page link gets `class="active"` (green + underline): About Us on about.html, Industries on industry.html. Mobile (≤960px) hamburger menu `#mob`: Home, About Us, Industries, Partners, Gallery, Social Responsibility, Contact Us →. Styles live in the "HEADER (unified…)" CSS block at the end of each page's `<style>`; keep the three copies in sync
