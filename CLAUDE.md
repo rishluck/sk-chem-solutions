@@ -110,7 +110,7 @@ This applies to: industry cards on homepage, flagship cards, product tabs, indus
 **Exception (client request, Sep 2026):** on industry.html chem rows the chemical badge (`✦ Formic Acid · HCOOH`) is now visually emphasised — large Poppins bold badge — with the service title smaller beneath it. Order/layout unchanged.
 
 ## Industries & Services
-- **Homepage industry cards (redesign, Oct 2026):** `<a class="ind-card">` in `#ind-carousel`, white card with inset 16:10 image (`.ic-media`), number chip `01–05` (`.ic-num`) and frosted badge (`.ic-badge`, wording from each industry's `IND.badge`), title, 2-line summary (3 lines under 960px; keep summaries short enough to never show "..."), exactly 3 services as a check list (`.ic-svc`), footer "Explore industry" + round arrow (`.ic-go`, turns green on hover). Every card must keep the same structure so heights match
+- **Homepage industry cards (redesign, Oct 2026):** `<a class="ind-card">` in `#ind-carousel`, white card with inset 16:10 image (`.ic-media`), frosted badge top-left (`.ic-badge`, wording from each industry's `IND.badge`), title, 2-line summary (3 lines under 960px; keep summaries short enough to never show "..."), exactly 3 services as a check list (`.ic-svc`), footer "Explore industry" + round arrow (`.ic-go`, turns green on hover). Every card must keep the same structure so heights match
 5 industries are shown site-wide (homepage cards, footer, contact form): Rubber & Latex, Home & Personal Care, Food & Beverage Industry, Pharmaceutical, Textile Washing & Treatment. Coatings & Printing Inks and Specialty & Miscellaneous Products were removed as industries.
 
 | Industry | `?ind=` key | Key Services |
