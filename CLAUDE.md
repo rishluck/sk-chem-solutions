@@ -193,6 +193,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - Homepage contact block and footer label each number; industry.html CTA has a `#ctaTel` call button set by JS from the current industry
 
 ## Navigation
+- **Header is identical on all 3 pages (Oct 2026):** `#nav` crisp white (97% opacity, fine bottom line, shadow when scrolled), logo 50px (42px ≤960px). Desktop: Home · About Us · Industries — logo — Partners · Gallery · Contact Us (`.n-cta` pill). Current page link gets `class="active"` (green + underline): About Us on about.html, Industries on industry.html. Mobile (≤960px) hamburger menu `#mob`: Home, About Us, Industries, Partners, Gallery, Social Responsibility, Contact Us →. Styles live in the "HEADER (unified…)" CSS block at the end of each page's `<style>`; keep the three copies in sync
 - Logo click → `index.html` (from industry.html) or `#hero` (from homepage)
 - Industry cards on homepage → `industry.html?ind={key}`
 - Nav links on industry.html prefix with `index.html#`
