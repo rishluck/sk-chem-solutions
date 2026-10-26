@@ -1,0 +1,40 @@
+# S.K. Chem Solutions · Apache / cPanel config (security + speed)
+
+Options -Indexes
+ServerSignature Off
+
+# Force HTTPS (turn on AutoSSL in cPanel first)
+RewriteEngine On
+RewriteCond %{HTTPS} off
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# Block private / project files
+RedirectMatch 404 /\.(git|claude|agents|DS_Store)
+RedirectMatch 404 /(CLAUDE\.md|Document/|Logo/CamScanner)
+<FilesMatch "\.(md|zip|pdf|psd|ai|log|bak|sql|env|ini|sh)$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_headers.c>
+  # No frame-ancestors / X-Frame-Options: they blank the page in mobile preview tools
+  Header always set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+  Header always set Cross-Origin-Opener-Policy "same-origin"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains" env=HTTPS
+  Header always unset X-Powered-By
+  Header unset X-Powered-By
+
+  # Cache images/fonts for 30 days, pages always fresh
+  <FilesMatch "\.(jpe?g|png|webp|avif|svg|ico|woff2?)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript image/svg+xml text/xml text/plain
+</IfModule>

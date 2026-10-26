@@ -221,3 +221,4 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - External `target="_blank"` links use `rel="noopener noreferrer"`
 - industry.html looks up `?ind=` with `hasOwnProperty` so unknown keys fall back to rubber
 - GitHub Pages can't send custom HTTP headers; for full header-level security (HSTS, X-Frame-Options) put the site behind Cloudflare when moving to the custom domain
+- `.htaccess` (for cPanel / Apache hosting, ignored by GitHub Pages): forces HTTPS, blocks folder listing and private files (.md, .zip, .pdf, CLAUDE.md, Document/), sends real security headers (CSP, nosniff, HSTS, Referrer, Permissions), caching + gzip. Keep its CSP in sync with the meta tags. Upload only the referenced files (the 3 pages, robots, sitemap, .htaccess and the images the pages use), not the whole folder
