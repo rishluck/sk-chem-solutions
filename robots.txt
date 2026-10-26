@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rishluck.github.io/sk-chem-solutions/sitemap.xml
+Sitemap: https://skchemsolutions.lk/sitemap.xml

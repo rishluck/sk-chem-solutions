@@ -189,7 +189,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 
 ## SEO & Sharing (Oct 2026)
 - Every page has description, canonical, Open Graph + Twitter tags pointing at `Images/All/og-share.jpg` (1200×630 share card: logo, tagline, industries). industry.html also updates its meta description from `d.tagline` per industry
-- `robots.txt` and `sitemap.xml` (home, about, 5 industry URLs) use the GitHub Pages base URL `https://rishluck.github.io/sk-chem-solutions/` — **update canonical/og:url/og:image/sitemap/robots to the new domain if the site moves to skchemsolutions.lk**
+- `robots.txt` and `sitemap.xml` (home, about, 5 industry URLs) use `https://skchemsolutions.lk/` (switched from GitHub Pages, Oct 2026; site hosted on cPanel, account skchemlk)
 
 ## WhatsApp Button (Oct 2026)
 - Floating green button bottom-right on all pages (`.wa-fab`). Home + about: click opens a small chooser (Rubber & Textile → 94777598284, Other industries → 94777414367). industry.html: goes straight to the industry's number with a prefilled message naming the industry
