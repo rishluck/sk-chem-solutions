@@ -217,7 +217,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - Commit and push after every significant change
 
 ## Security (Oct 2026)
-- Every page `<head>` starts with a Content-Security-Policy meta tag (only self, Google Fonts, inline code, data: images), a referrer policy meta and a one-line anti-framing script. **If you add any new external service (form backend, analytics, maps, CDN), add its domain to the CSP or it will be blocked**
+- Every page `<head>` starts with a Content-Security-Policy meta tag (only self, Google Fonts, inline code, data: images) and a referrer policy meta. No anti-framing script: it blanked the page in mobile preview tools (which use iframes), removed Oct 2026. **If you add any new external service (form backend, analytics, maps, CDN), add its domain to the CSP or it will be blocked**
 - External `target="_blank"` links use `rel="noopener noreferrer"`
 - industry.html looks up `?ind=` with `hasOwnProperty` so unknown keys fall back to rubber
 - GitHub Pages can't send custom HTTP headers; for full header-level security (HSTS, X-Frame-Options) put the site behind Cloudflare when moving to the custom domain
