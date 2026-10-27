@@ -1018,8 +1018,8 @@ footer.site-ft{background:#0B120E;padding:clamp(3.5rem,6vw,5.5rem) 0 2rem;font-f
 <body>
 <div id="intro" aria-hidden="true"><img src="Logo/sk-chem-logo.png" alt=""></div>
 <script>
-/* play the intro once per browser session */
-try{if(sessionStorage.getItem('skIntro')){document.getElementById('intro').remove()}else{sessionStorage.setItem('skIntro','1')}}catch(e){}
+/* play the intro once per browser session; skip it inside preview frames (it gets stuck there and covers the page) */
+try{if(window.self!==window.top||sessionStorage.getItem('skIntro')){document.getElementById('intro').remove()}else{sessionStorage.setItem('skIntro','1')}}catch(e){}
 setTimeout(function(){var el=document.getElementById('intro');if(el)el.remove()},2600);
 </script>
 

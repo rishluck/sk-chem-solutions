@@ -175,6 +175,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - `#intro` overlay: logo fades in, holds, zooms ×7 while the white overlay fades (~2.4s, pure CSS keyframes `introLogo` / `introOut`)
 - Plays once per browser session (`sessionStorage` key `skIntro`); a timeout removes it at 2.6s as a safety net
 - Hidden for `prefers-reduced-motion: reduce`
+- Skipped when the page is inside an iframe (`window.self!==window.top`): in VS Code Live Preview / Mobile Preview the splash got stuck and covered the page with white
 
 ## Enquiry Form (index.html #contact)
 - Required (client, Oct 2026): Name, Email, Mobile / WhatsApp (red `*`, inline `.ferr` messages, `.bad` red outline). Company, Industry, Requirements are optional
