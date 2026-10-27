@@ -192,6 +192,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 - Homepage title "Chemical Raw Material Supplier in Sri Lanka | S.K. Chem Solutions"; industry titles are "<Industry> Raw Materials in Sri Lanka | S.K. Chem Solutions" (search keywords, Oct 2026)
 - index.html has LocalBusiness JSON-LD (address, both phones, email) before `</head>`. industry.html sets its canonical + og:url to `industry.html?ind=<key>` in JS (aliases home/estate map to personal/rubber)
 - Every page has description, canonical, Open Graph + Twitter tags pointing at `Images/All/og-share.jpg` (1200×630 share card: logo, tagline, industries). industry.html also updates its meta description from `d.tagline` per industry
+- Google Search Console verified by `googlee167600ec5777641.html` in the site root: **never delete it** and include it in uploads
 - `robots.txt` and `sitemap.xml` (home, about, 5 industry URLs) use `https://skchemsolutions.lk/` (switched from GitHub Pages, Oct 2026; site hosted on cPanel, account skchemlk)
 
 ## WhatsApp Button (Oct 2026)
