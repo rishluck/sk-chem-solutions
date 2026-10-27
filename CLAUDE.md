@@ -204,6 +204,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 ## Phone Lines (client, Oct 2026)
 - +94 777 598 284: Rubber & Latex, Textile Washing
 - +94 777 414 367: all other industries (Personal Care, Food & Beverage, Pharmaceutical)
+- Homepage contact block shows each number as a highlighted box (`.ci-tel`: bold number + industry pill tags `.ci-tel-tags`, client asked for the industries to be more visible, Oct 2026); footer labels (`.ft-tel-l`) are bold light green on all 3 pages.
 - Homepage contact block and footer label each number; industry pages reach the right number through the WhatsApp button (the CTA call button was removed, client request)
 
 ## Navigation
