@@ -205,7 +205,7 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 ## Phone Lines (client, Oct 2026)
 - +94 777 598 284: Rubber & Latex, Textile Washing
 - +94 777 414 367: all other industries (Personal Care, Food & Beverage, Pharmaceutical)
-- Homepage contact block: one light mint card per phone line (`.ci-line`): icon + industries in bold dark green with green dots (`.ci-line-inds`), then the number (tap to call) and a small outline WhatsApp button (a dark green version was "too much") (client wants people to find their industry first, Oct 2026); footer labels (`.ft-tel-l`) are bold light green on all 3 pages.
+- Homepage contact block: one light mint card per phone line (`.ci-line`): icon + industries in bold dark green with green dots (`.ci-line-inds`), then the number (tap to call) and a small outline WhatsApp button (a dark green version was "too much"). On phones (≤600px) the icon is hidden, the number never wraps and WhatsApp is a round icon-only button. Test mobile at real 360/375px widths (headless Chrome won't go below 500px; use an iframe of that width) (client wants people to find their industry first, Oct 2026); footer labels (`.ft-tel-l`) are bold light green on all 3 pages.
 - Homepage contact block and footer label each number; industry pages reach the right number through the WhatsApp button (the CTA call button was removed, client request)
 
 ## Navigation
