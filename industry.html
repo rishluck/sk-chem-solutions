@@ -920,7 +920,7 @@ const key=p.get('ind')||'rubber';
 const d=Object.prototype.hasOwnProperty.call(IND,key)?IND[key]:IND.rubber;
 {const ck={home:'personal',estate:'rubber'}[key]||(d===IND[key]?key:'rubber');const cu='https://skchemsolutions.lk/industry.html?ind='+ck;
 document.querySelector('link[rel="canonical"]').href=cu;document.querySelector('meta[property="og:url"]').content=cu;}
-document.title=`${d.nameRaw} | S.K. Chem Solutions`;
+document.title=`${d.nameRaw} Raw Materials in Sri Lanka | S.K. Chem Solutions`;
 {const md=document.querySelector('meta[name="description"]');if(md&&d.tagline)md.setAttribute('content',d.tagline.replace(/<[^>]+>/g,''));}
 if(d.img){
   document.getElementById('ih-img').src=d.img;
