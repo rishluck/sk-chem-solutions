@@ -190,7 +190,9 @@ Global supplier logos are local files in `Images/Partners/Global/`: `basf.png`, 
 
 ## SEO & Sharing (Oct 2026)
 - Homepage title "Chemical Raw Material Supplier in Sri Lanka | S.K. Chem Solutions"; industry titles are "<Industry> Raw Materials in Sri Lanka | S.K. Chem Solutions" (search keywords, Oct 2026)
-- index.html has LocalBusiness JSON-LD (address, both phones, email) before `</head>`. industry.html sets its canonical + og:url to `industry.html?ind=<key>` in JS (aliases home/estate map to personal/rubber)
+- index.html has LocalBusiness JSON-LD (address, both phones, email) before `</head>`. industry.html has NO canonical in its HTML: JS adds it (`industry.html?ind=<key>`) and sets og:url (aliases home/estate map to personal/rubber). A hard-coded rubber canonical made Google treat the other industries as duplicates, so don't add one back
+- Homepage H1 starts with a small keyword line `.hero-kw` ("Chemical raw material supplier in Sri Lanka") above "Connecting Industries with Quality"
+- Search Console (Oct 29 2026): sitemap submitted (7 pages found); homepage, about and rubber indexed. Next idea: separate static HTML page per industry for stronger ranking
 - Every page has description, canonical, Open Graph + Twitter tags pointing at `Images/All/og-share.jpg` (1200×630 share card: logo, tagline, industries). industry.html also updates its meta description from `d.tagline` per industry
 - Google Search Console verified by `googlee167600ec5777641.html` in the site root: **never delete it** and include it in uploads
 - `robots.txt` and `sitemap.xml` (home, about, 5 industry URLs) use `https://skchemsolutions.lk/` (switched from GitHub Pages, Oct 2026; site hosted on cPanel, account skchemlk)

@@ -6,7 +6,6 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Chemical raw materials for Sri Lankan rubber & latex, home & personal care, food & beverage, pharmaceutical and textile washing industries, with full CoA and SDS.">
 <meta name="theme-color" content="#0E1712">
-<link rel="canonical" href="https://skchemsolutions.lk/industry.html?ind=rubber">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="S.K. Chem Solutions">
 <meta property="og:title" content="Industries We Serve | S.K. Chem Solutions">
@@ -919,11 +918,12 @@ const p=new URLSearchParams(window.location.search);
 const key=p.get('ind')||'rubber';
 const d=Object.prototype.hasOwnProperty.call(IND,key)?IND[key]:IND.rubber;
 {const ck={home:'personal',estate:'rubber'}[key]||(d===IND[key]?key:'rubber');const cu='https://skchemsolutions.lk/industry.html?ind='+ck;
-document.querySelector('link[rel="canonical"]').href=cu;document.querySelector('meta[property="og:url"]').content=cu;}
+const cl=document.createElement('link');cl.rel='canonical';cl.href=cu;document.head.appendChild(cl);document.querySelector('meta[property="og:url"]').content=cu;}
 document.title=`${d.nameRaw} Raw Materials in Sri Lanka | S.K. Chem Solutions`;
 {const md=document.querySelector('meta[name="description"]');if(md&&d.tagline)md.setAttribute('content',d.tagline.replace(/<[^>]+>/g,''));}
 if(d.img){
   document.getElementById('ih-img').src=d.img;
+  document.getElementById('ih-img').alt=`${d.nameRaw} raw materials in Sri Lanka`;
   document.getElementById('ih-img').style.display='block';
   document.getElementById('ih-tile').style.display='none';
 }else{
